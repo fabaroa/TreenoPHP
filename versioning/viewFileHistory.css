@@ -1,0 +1,146 @@
+div.myDlg {
+	background: #ebebeb;
+	visibility: hidden;
+	font-weight: normal;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	border-style: solid;
+	border-width: thin;
+	position:absolute;
+	font-size: 10pt;
+	right:5px;
+	top:5px;
+	padding: 5px;
+}
+.myTitle {
+	font-weight: bold;
+	font-size: 14px;
+}
+div#buttonDiv {
+	height: 50px;
+/*	position: relative;
+	top: 5px; */
+}
+
+div#delDiv {
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	display: none;
+}
+
+
+div#freezeDiv {
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	display: none;
+}
+
+div#mainVersDiv {
+	position: relative;
+	top: 35px; 
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+	background-color: #ebebeb;
+	border-bottom: 1px solid black;
+	margin-top: 1em;
+}
+
+td.icon img {
+    height: 14px;
+    width: 14px;
+}
+td p {
+    display: inline;
+}
+
+td.Date {
+	text-align: center;
+}
+
+.clickMe {
+	cursor: pointer;
+}
+
+td {
+	border-left: 1px solid black;
+	border-right: 1px solid black;
+	border-bottom: 1px inset white;
+}
+
+div#pageErrMsg {
+	visibility: hidden;
+/*	position: relative;
+	top: 15px; */
+	font-weight: bold;
+}
+
+div#versionDiv {
+	width: 30%;
+}
+
+div#errMsg {
+	visibility: hidden;
+}
+
+th.iconCol {
+	width: 50px;
+}
+
+th#versCol {
+	width: 75px;
+}
+
+td.icon {
+	text-align: center;
+}
+
+td.versEdit {
+	text-align: right;
+}
+
+h1 {
+	font-size: 12pt;
+	color: red;
+/*	position: relative;
+	top: 25px; */
+	text-align: center;
+}
+
+div.subheading {
+	font-style: italic;
+	font-size: 8pt;
+}
+
+div#noteBar {
+	cursor: pointer;
+	text-align: left;
+}
+
+div#noteBar span {
+	text-align: left;
+}
+
+div#noteDiv {
+	text-align: left;
+	background-color: #ebebeb;
+	display: none;
+	height: 100px;
+	overflow: scroll;
+}
+
+div.showVers {
+	margin-top: .5em;
+	font-weight: bold;
+}
+
+div#flocked {
+	font-weight: bold;
+	visibility: hidden;
+}
+

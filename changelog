@@ -1,0 +1,16 @@
+Docutron Systems
+Development Log
+
+Version: Mainline add changes to top of list
+
+Date	 Developer	Bug #	Change
+----	 ---------	-----	------
+07/01/05 tristan	N/A		register_globals should be OFF, and everything
+							should be tested to make sure it works with it off.
+							Also, turn off the session warning.
+
+13/01/05 ddillon	N/A		Added all the webservices to the system, primarily
+							being the CheckIn and CheckOut server and parser.
+
+09/30/05 karl		N/A		Added javascript to select all files in between 2 
+							checkboxes by holding down the a button then selecting the file

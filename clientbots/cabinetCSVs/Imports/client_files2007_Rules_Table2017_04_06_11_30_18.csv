@@ -1,0 +1,362 @@
+doc_id,doc_type,document_number,project_manager_or_author,reviewed_by_,approved_by,approved_doc_email_list,template_form_no
+,BOM,DBMDB-BO-1000001,"Dominic Lai
+ChiHo Wu",Ed King,Dominic Lai,"Ed King
+Shannon Badger
+Thomas Roschke
+Dominic Lai
+Stan Swartzel
+Saravanan Karuppiah
+ChiHo Wu
+Anil Babu",N/A
+,Design & Development plan,DCMDB-DD-1000001,"Dominic Lai
+Dominic Lai",N/A,"Ed King
+Shannon Badger
+Thomas Roschke","Ed King
+Shannon Badger
+Thomas Roschke
+Dominic Lai
+Stan Swartzel
+Saravanan Karuppiah
+ChiHo Wu
+Anil Babu",WMT-140101
+,Design Verification Plan,DCMDB-DV-1000001,"Dominic Lai
+Saravanan Karuppiah","Stan Swartzel
+Ed King","Shannon Badger
+Dominic Lai","Ed King
+Shannon Badger
+Thomas Roschke
+Dominic Lai
+Stan Swartzel
+Saravanan Karuppiah
+ChiHo Wu
+Anil Babu",WQSM-090901
+,DFMEA,DBMDB-DA-1000001,"Dominic Lai
+ChiHo Wu",Shannon Badger,Ed King,"Ed King
+Shannon Badger
+Thomas Roschke
+Dominic Lai
+Stan Swartzel
+Saravanan Karuppiah
+ChiHo Wu
+Anil Babu","WQSM-090901
+WQSM-090902
+WQSM-090903
+WQSM-090904"
+,Electronic Document Control Project Authorization Worksheet,DCMDJ-EA-1000001,"Dominic Lai
+Dominic Lai",N/A,"Ed King
+Shannon Badger","Ed King
+Shannon Badger
+Thomas Roschke
+Dominic Lai
+Stan Swartzel
+Saravanan Karuppiah
+ChiHo Wu
+Anil Babu",WMT-140202
+,Electronic Document Control Project Management Worksheet,DCMDJ-EM-1000001,"Dominic Lai
+Dominic Lai",N/A,"Ed King
+Shannon Badger","Ed King
+Shannon Badger
+Thomas Roschke
+Dominic Lai
+Stan Swartzel
+Saravanan Karuppiah
+ChiHo Wu
+Anil Babu",N/A
+,Electronic Documentation Control Plan,DCMDJ-EP-1000001,"Dominic Lai
+Dominic Lai",N/A,"Ed King
+Shannon Badger","Ed King
+Shannon Badger
+Thomas Roschke
+Dominic Lai
+Stan Swartzel
+Saravanan Karuppiah
+ChiHo Wu
+Anil Babu",WMT-160804
+,Engineering Specifications,DCMDB-ES-1000001,"Dominic Lai
+Ed King",Anil Babu,"Stan Swartzel
+Shannon Badger
+Dominic Lai
+Thomas Roschke","Ed King
+Shannon Badger
+Thomas Roschke
+Dominic Lai
+Stan Swartzel
+Saravanan Karuppiah
+ChiHo Wu
+Anil Babu",WMT-160802
+,Hardware Detailed Design,DCMDB-HE-1000001,"Dominic Lai
+Thomas Roschke","Anil Babu
+ChiHo Wu","Ed King
+Dominic Lai","Ed King
+Shannon Badger
+Thomas Roschke
+Dominic Lai
+Stan Swartzel
+Saravanan Karuppiah
+ChiHo Wu
+Anil Babu",N/A
+,Hardware Development Plan,DCMDB-HD-1000001,"Dominic Lai
+Dominic Lai","Anil Babu
+ChiHo Wu",Ed King,"Ed King
+Shannon Badger
+Thomas Roschke
+Dominic Lai
+Stan Swartzel
+Saravanan Karuppiah
+ChiHo Wu
+Anil Babu",N/A
+,Hardware Requirements Specification,DCMDB-HR-1000001,"Dominic Lai
+Thomas Roschke","Anil Babu
+ChiHo Wu","Ed King
+Dominic Lai","Ed King
+Shannon Badger
+Thomas Roschke
+Dominic Lai
+Stan Swartzel
+Saravanan Karuppiah
+ChiHo Wu
+Anil Babu",WMT-160803
+,Hardware Test Specification,DCMDB-HT-1000001,"Dominic Lai
+ChiHo Wu",Anil Babu,"Ed King
+Dominic Lai","Ed King
+Shannon Badger
+Thomas Roschke
+Dominic Lai
+Stan Swartzel
+Saravanan Karuppiah
+ChiHo Wu
+Anil Babu",N/A
+,PCB Layout & Gerber,DCMDB-PL-1000001,"Dominic Lai
+ChiHo Wu",Anil Babu,Ed King,"Ed King
+Shannon Badger
+Thomas Roschke
+Dominic Lai
+Stan Swartzel
+Saravanan Karuppiah
+ChiHo Wu
+Anil Babu",N/A
+,Product Requirements,DCMDB-PR-1000001,"Dominic Lai
+Ed King",Anil Babu,"Stan Swartzel
+Dominic Lai","Ed King
+Shannon Badger
+Thomas Roschke
+Dominic Lai
+Stan Swartzel
+Saravanan Karuppiah
+ChiHo Wu
+Anil Babu",N/A
+,Product Specifications,DCMDB-PS-1000001,"Dominic Lai
+Ed King",Anil Babu,"Stan Swartzel
+Dominic Lai","Ed King
+Shannon Badger
+Thomas Roschke
+Dominic Lai
+Stan Swartzel
+Saravanan Karuppiah
+ChiHo Wu
+Anil Babu",N/A
+,QFD (H1),DCMDB-QF-1000001,"Dominic Lai
+Ed King",N/A,N/A,"Ed King
+Shannon Badger
+Thomas Roschke
+Dominic Lai
+Stan Swartzel
+Saravanan Karuppiah
+ChiHo Wu
+Anil Babu",WMT-140102
+,QFD (H2),DCMDB-QF-1000002,"Dominic Lai
+Ed King",N/A,N/A,"Ed King
+Shannon Badger
+Thomas Roschke
+Dominic Lai
+Stan Swartzel
+Saravanan Karuppiah
+ChiHo Wu
+Anil Babu",WQM2-070502
+,Risk Management Plan,DCMDB-RP-1000001,"Dominic Lai
+Ed King","Stan Swartzel
+Saravanan Karuppiah
+Chi Ho Wu","Shannon Badger
+Dominic Lai
+Thomas Roschke","Ed King
+Shannon Badger
+Thomas Roschke
+Dominic Lai
+Stan Swartzel
+Saravanan Karuppiah
+ChiHo Wu
+Anil Babu",N/A
+,Risk Management Worksheets,DCMDB-RW-1000001,"Dominic Lai
+Ed King","Stan Swartzel
+Saravanan Karuppiah
+Chi Ho Wu","Shannon Badger
+Dominic Lai","Ed King
+Shannon Badger
+Thomas Roschke
+Dominic Lai
+Stan Swartzel
+Saravanan Karuppiah
+ChiHo Wu
+Anil Babu",N/A
+,Risk Traceability Matrix,DCMDB-RM-1000001,"Dominic Lai
+Ed King",N/A,Dominic Lai,"Ed King
+Shannon Badger
+Thomas Roschke
+Dominic Lai
+Stan Swartzel
+Saravanan Karuppiah
+ChiHo Wu
+Anil Babu",N/A
+,Schematics,DCMDB-SC-1000001,"Dominic Lai
+ChiHo Wu",Anil Babu,Thomas Roschke,"Ed King
+Shannon Badger
+Thomas Roschke
+Dominic Lai
+Stan Swartzel
+Saravanan Karuppiah
+ChiHo Wu
+Anil Babu",N/A
+,Software Design Specification,DCMDB-SS-1000001,"Dominic Lai
+Stan Swartzel","Saravanan Karuppiah
+Ed King",Dominic Lai,"Ed King
+Shannon Badger
+Thomas Roschke
+Dominic Lai
+Stan Swartzel
+Saravanan Karuppiah
+ChiHo Wu
+Anil Babu",N/A
+,Software Development Plan,DCMDB-SP-1000001,"Dominic Lai
+Stan Swartzel","Saravanan Karuppiah
+Ed King",Dominic Lai,"Ed King
+Shannon Badger
+Thomas Roschke
+Dominic Lai
+Stan Swartzel
+Saravanan Karuppiah
+ChiHo Wu
+Anil Babu",N/A
+,Software FMEA,DCMDB-SF-1000001,"Dominic Lai
+Stan Swartzel",Dominic Lai,"Saravanan Karuppiah
+Ed King","Ed King
+Shannon Badger
+Thomas Roschke
+Dominic Lai
+Stan Swartzel
+Saravanan Karuppiah
+ChiHo Wu
+Anil Babu",N/A
+,Software Requirements Specification,DCMDB-SR-1000001,"Dominic Lai
+Stan Swartzel","Saravanan Karuppiah
+Ed King",Dominic Lai,"Ed King
+Shannon Badger
+Thomas Roschke
+Dominic Lai
+Stan Swartzel
+Saravanan Karuppiah
+ChiHo Wu
+Anil Babu",N/A
+,Software Test Specification,DCMDB-ST-1000001,"Dominic Lai
+Ed King",Anil Babu,"Dominic Lai
+Stan Swartzel","Ed King
+Shannon Badger
+Thomas Roschke
+Dominic Lai
+Stan Swartzel
+Saravanan Karuppiah
+ChiHo Wu
+Anil Babu",N/A
+,Software Version Description document,DCMDB-SV-1000001,"Dominic Lai
+Stan Swartzel",N/A,N/A,"Ed King
+Shannon Badger
+Thomas Roschke
+Dominic Lai
+Stan Swartzel
+Saravanan Karuppiah
+ChiHo Wu
+Anil Babu",N/A
+,Special Use Functions Worksheet,DBMDB-SU-1000001,"Dominic Lai
+Ed King","Stan Swartzel
+Saravanan Karuppiah",Dominic Lai,"Ed King
+Shannon Badger
+Thomas Roschke
+Dominic Lai
+Stan Swartzel
+Saravanan Karuppiah
+ChiHo Wu
+Anil Babu",N/A
+,System Architecture,EBMDB-PC-1000001,"Dominic Lai
+Thomas Roschke",N/A,"Dominic Lai
+Ed King","Ed King
+Shannon Badger
+Thomas Roschke
+Dominic Lai
+Stan Swartzel
+Saravanan Karuppiah
+ChiHo Wu
+Anil Babu",N/A
+,Test Equipment List,DCMDB-EL-1000001,"Dominic Lai
+Ed King",Anil Babu,Dominic Lai,"Ed King
+Shannon Badger
+Thomas Roschke
+Dominic Lai
+Stan Swartzel
+Saravanan Karuppiah
+ChiHo Wu
+Anil Babu",N/A
+,Usability Characteristics Worksheet,DBMDB-UC-1000001,"Dominic Lai
+Ed King","Stan Swartzel
+Saravanan Karuppiah","Thomas Roschke
+Dominic Lai","Ed King
+Shannon Badger
+Thomas Roschke
+Dominic Lai
+Stan Swartzel
+Saravanan Karuppiah
+ChiHo Wu
+Anil Babu",N/A
+,Usability Engineering Plan,DCMDB-UP-1000001,"Dominic Lai
+Ed King","Stan Swartzel
+Saravanan Karuppiah","Thomas Roschke
+Shannon Badger
+Dominic Lai","Ed King
+Shannon Badger
+Thomas Roschke
+Dominic Lai
+Stan Swartzel
+Saravanan Karuppiah
+ChiHo Wu
+Anil Babu",N/A
+,Usability Question List,DBMDB-UL-1000001,"Dominic Lai
+Ed King","Stan Swartzel
+Saravanan Karuppiah","Thomas Roschke
+Dominic Lai","Ed King
+Shannon Badger
+Thomas Roschke
+Dominic Lai
+Stan Swartzel
+Saravanan Karuppiah
+ChiHo Wu
+Anil Babu",N/A
+,Usability Specifications,DBMDB-US-1000001,"Dominic Lai
+Ed King","Stan Swartzel
+Saravanan Karuppiah","Thomas Roschke
+Dominic Lai","Ed King
+Shannon Badger
+Thomas Roschke
+Dominic Lai
+Stan Swartzel
+Saravanan Karuppiah
+ChiHo Wu
+Anil Babu",N/A
+,Usability Validation Plan,DCMDB-UV-1000001,"Dominic Lai
+Ed King","Anil Babu
+Stan Swartzel","Shannon Badger
+Dominic Lai","Ed King
+Shannon Badger
+Thomas Roschke
+Dominic Lai
+Stan Swartzel
+Saravanan Karuppiah
+ChiHo Wu
+Anil Babu",N/A

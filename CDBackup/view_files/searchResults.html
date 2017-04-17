@@ -1,0 +1,325 @@
+<html>
+<head>
+<link REL="stylesheet" TYPE="text/css" HREF="style.css">
+<style>
+BODY, B, STRONG, P, TD, UL, LI {
+font-family: Tahoma, Verdana, Arial, Sans-serif;
+font-size: 11px;
+}
+BODY {
+font-family: Tahoma, Verdana, sans-serif;
+}
+.borderOut {
+border: thick solid #ffffff;
+border-collapse: collapse;
+}
+.border {
+border: thin solid #003b6f;
+border-collapse: collapse;
+}
+.tableHeader {
+background-color: #003b6f;
+color: #ffffff;
+font-weight: bold;
+}
+.documentLight {
+background-color: #cccccc;
+font-weight: bold;
+}
+A.document { 
+color: #ebebeb;
+text-decoration: none;
+}
+A.document:hover {<a href="index.html"></a>
+color: #000000;
+background-color: #cccccc;
+text-decoration: none;
+font-weight: bold;
+}
+.link {
+color: #000000;
+text-decoration: none;
+}
+</style>
+<script>
+
+var url=unescape(window.location);	//convert url into decoded string
+
+var temp=url.split("=");		//retrieve the value of "id"
+var form_index;
+var temp2=temp[1].split("&");
+var temp3=temp[2].split("&");
+var q=temp3[0];
+form_index=temp2[0];
+var cab_id=temp[3];
+
+if(!selectedRow)
+	var selectedRow="";
+
+function setSelected(rowID) 
+{
+  
+  if (selectedRow == "") 
+  {
+    selectedRow = rowID;
+    document.getElementById(rowID).setAttribute("bgColor", "003b6f");
+  }
+  else {
+    document.getElementById(selectedRow).setAttribute("bgColor", "EBEBEB");
+    document.getElementById(rowID).setAttribute("bgColor", "003b6f");
+    selectedRow = rowID;
+  }
+
+	parent.right.window.location="display.html?id="+rowID+"&cab_id="+cab_id+"&form_index="+form_index+"&q="+q;
+}
+
+function rowMouseover(rowID) 
+{
+	if(selectedRow)
+	{
+		if (selectedRow == rowID)  //set color if mouseover is selected row
+         			document.getElementById(rowID).setAttribute("bgColor", "8779E0");
+         }
+        else { // mouseover is
+               document.getElementById(rowID).setAttribute("bgColor", "888888");
+        }
+            }
+function rowMouseout(rowID) {
+	if(selectedRow)
+	{
+		if(selectedRow == rowID) 
+			document.getElementById(rowID).setAttribute("bgColor", "003b6f");
+	}
+	else {
+        	document.getElementById(rowID).setAttribute("bgColor", "EBEBEB");
+ 	}
+}
+
+//is called when a folder is selected
+function selectFolder(folder)
+{
+	parent.right.window.location="display.html?id="+folder+"&cab_id="+cab_id;
+}
+function parentFolder()
+{
+	parent.right.window.location="sidebar_white.html";
+}
+
+//function that searches all fields for the query
+
+function searchAll(cab_id,q)
+{
+  var query= new RegExp("/" + q + "/", "i");
+  var xml = new ActiveXObject("Msxml2.DOMDocument");
+  xml.async = false;
+  xml.load('../cabinet.xml');
+
+  //DOM has a limit of 3 branches !!!!
+  var node=xml.selectSingleNode("/department");
+  var cabinets=node.selectNodes("cabinet");
+  var cabinet;
+  for (var p=0;p<cabinets.length;p++) {
+	if (cabinets[p].getAttribute("ID")==cab_id) {
+		cabinet=cabinets[p];
+	}
+  }
+  var all=cabinet.selectNodes("folder");
+  var children;
+  var indexes;
+  var index_value;
+  var j=0;
+  var results=new Array();
+  var temp;
+
+  //iterate through all the indexes
+  for(var i=0;i<all.length;i++)
+  {
+     indexes=all[i].selectNodes("index");
+     for(var x=0;x<indexes.length;x++)
+     {
+         if(indexes[x].hasChildNodes())
+         {
+            index_value=indexes[x].firstChild;
+            
+            //match
+            if(index_value.nodeValue.match(query)) {
+               temp="@@@"+all[i].getAttribute("doc_id")+"@@@"+all[i].getAttribute("disk");
+               for(var q=0;q<indexes.length;q++)
+               {
+                  if(indexes[q].hasChildNodes())
+                  {
+
+                     index_value=indexes[q].firstChild;
+                     temp+="@@@"+index_value.nodeValue;
+                  }
+               }
+               results[j]=temp;
+               j++;
+               break;
+            }
+         }
+      }
+   }
+  return results;
+}
+
+function searchIndex(cab_id,form_index, q)
+{
+  var query= new RegExp(q, "i");
+  var xml = new ActiveXObject("Msxml2.DOMDocument");
+  xml.async = false;
+  xml.load("../cabinet.xml");
+
+  //DOM has a limit of 3 branches !!!!
+  var start=xml.selectSingleNode("/department");
+  var cabinets=start.selectNodes("cabinet");
+  var cabinet;
+  for(var j=0;j<cabinets.length;j++) {
+	if (cabinets[j].getAttribute("ID")==cab_id) {
+		cabinet=cabinets[j];
+	}
+  } 
+  var all=cabinet.selectNodes("folder");
+  var children;
+  var indexes;
+  var index_value;
+  var j=0;
+  var results=new Array();
+  var temp;
+  var numeric_index=parseInt(form_index)-1;
+
+  //iterate through all the indexes
+  for(var i=0;i<all.length;i++)
+  {
+     indexes=all[i].selectNodes("index");	//select the index nodes of the folder 
+      if(indexes[numeric_index].hasChildNodes())
+     {
+        index_value=indexes[numeric_index].firstChild;
+        if(index_value.nodeValue.match(query)) {
+          temp="@@@"+all[i].getAttribute("doc_id")+"@@@"+all[i].getAttribute("disk");
+             
+          for(var q=0;q<indexes.length;q++)
+          {
+             if(indexes[q].hasChildNodes())
+             {
+
+                index_value=indexes[q].firstChild;
+                temp+="@@@"+index_value.nodeValue;
+             } else {
+                temp+="@@@";
+             }
+          }
+          results[j]=temp;
+          j++;
+        }
+     }
+   }
+   return results;
+}
+function displayResults(results)
+{
+   for(var i=0;i<results.length;i++)
+   {
+      
+      row=results[i].split("@@@");
+      document.write("<tr bgcolor='#ebebeb' id='"+row[1]+"' onclick=setSelected('"+row[1]+"') onmouseover=style.cursor='pointer';rowMouseover('"+row[1]+"') onmouseout=rowMouseout('"+row[1]+"')>\n");
+      document.write("<td class='document' align='center'><img src='images/File.gif' width='14' height='14' border='0'></td>");
+      for(var j=2;j<(index_names.length+3);j++)
+      {
+          
+         if(row[j])
+            document.write("<td class='document'>"+row[j]+"</td>");
+         else
+            document.write("<td class='document'>&nbsp;</td>");
+      }
+      document.write("\n</tr>\n");
+   }
+   document.write("\n</table>\n"); 
+}
+
+//returns to cabinet display page if called
+function returnToMain() {
+
+   document.onload=window.location="main.html?cab_id="+cab_id;
+}
+
+function setCookie(name, value, expires, path, domain, secure) {
+  var curCookie = name + "=" + escape(value) +
+      ((expires) ? "; expires=" + expires.toGMTString() : "") +
+      ((path) ? "; path=" + path : "") +
+      ((domain) ? "; domain=" + domain : "") +
+      ((secure) ? "; secure" : "");
+  document.cookie = curCookie;
+}
+
+</script>
+</head> 
+<body bgcolor="#d5d6e5">
+<script>
+
+// name - name of the desired cookie
+// return string containing value of specified cookie or null if cookie does not exist
+
+//results of the search
+var results=new Array();
+//search all index fields if that form was submitted
+if(form_index==0)
+   results=searchAll(cab_id,q);
+else if (form_index!=null)
+   results=searchIndex(cab_id,form_index,q);
+else
+   document.onload=window.location="main.html";
+function getCookie(name) {
+  var dc = document.cookie;
+  var prefix = name + "=";
+  var begin = dc.indexOf("; " + prefix);
+  if (begin == -1) {
+    begin = dc.indexOf(prefix);
+    if (begin != 0) return null;
+  } else
+    begin += 2;
+  var end = document.cookie.indexOf(";", begin);
+  if (end == -1)
+    end = dc.length;
+  return unescape(dc.substring(begin + prefix.length, end));
+}
+
+//set the cookie for disk changing purposes
+var my_date=new Date();
+my_date.setHours(my_date.getHours()+1);
+setCookie("search",escape("form_index="+form_index+"&q="+q+"&cab_id="+cab_id),my_date);  
+
+</script>
+<p><b>Search Results</b></p>
+<table width="750" border="1" bgcolor="ffffff" class="border" cellpadding="5" align="center">
+<tr>
+  <td align="center" class="tableHeader" width="50">Folder</td>
+  <td align="center" class="tableHeader" width="50">Disk</td>
+<script> 
+
+  var xml = new ActiveXObject("Msxml2.DOMDocument");
+  xml.async = false;
+  xml.load('../cabinet.xml');
+
+  //DOM has a limit of 3 branches !!!!
+  var node=xml.selectSingleNode("/department/cabinet");
+  var index_names=node.selectNodes("index_name");
+
+  //write the column heading for each index name
+  for(var z=0;z<index_names.length;z++)
+  {
+     document.write("<td align='center' class='tableHeader'>"+index_names[z].firstChild.nodeValue+"</td>");
+  }
+document.write("</tr>");
+
+document.write("<tr bgcolor='#ebebeb' id='parent' onmouseover=style.cursor='pointer';rowMouseover('parent') onmouseout=rowMouseout('parent') onclick=returnToMain()><td align='center'><img src='images\\open_16.gif'></td><td>&nbsp;</td><td colspan='"+(index_names.length)+"'>Return to Cabinet</td></tr>");
+if(results.length>0)
+   displayResults(results);
+else {
+   var c=index_names.length+2; //adjusted size of column
+   document.write("<tr bgcolor='#ebebeb'><td colspan='"+c+"'><i>No results found</i></td></tr>"); 
+}
+</script>
+</body>
+</html>   
+

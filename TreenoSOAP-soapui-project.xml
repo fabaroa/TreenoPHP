@@ -1,0 +1,1418 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project name="TreenoSOAP" soapui-version="4.0.1" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="TreenoWebServicesBinding" type="wsdl" bindingName="{urn:TreenoWebServices}TreenoWebServicesBinding" soapVersion="1_1" anonymous="optional" definition="http://10.1.10.51/TreenoWebServices/TreenoWS.php?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://10.1.10.51/TreenoWebServices/TreenoWS.php?wsdl"><con:part><con:url>http://10.1.10.51/TreenoWebServices/TreenoWS.php?wsdl</con:url><con:content><![CDATA[<definitions name="TreenoWebServices" targetNamespace="urn:TreenoWebServices" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="urn:TreenoWebServices" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <schema targetNamespace="urn:TreenoWebServices" xmlns="http://www.w3.org/2001/XMLSchema">
+      <complexType name="AddTab">
+        <complexContent>
+          <restriction base="SOAP-ENC:Array">
+            <attribute ref="SOAP-ENC:arrayType" wsdl:arrayType="tns:AddTabInfo[]"/>
+          </restriction>
+        </complexContent>
+      </complexType>
+      <complexType name="AddTabInfo">
+        <all>
+          <element name="subfolderID" type="xsd:int"/>
+          <element name="realTabName" type="xsd:string"/>
+        </all>
+      </complexType>
+      <complexType name="DefinitionInfo">
+        <all>
+          <element name="index" type="xsd:string"/>
+          <element name="value" type="xsd:string"/>
+        </all>
+      </complexType>
+      <complexType name="DefinitionName">
+        <all>
+          <element name="index_name" type="xsd:string"/>
+          <element name="definition_list" type="tns:StringList"/>
+        </all>
+      </complexType>
+      <complexType name="DefinitionNameList">
+        <complexContent>
+          <restriction base="SOAP-ENC:Array">
+            <attribute ref="SOAP-ENC:arrayType" wsdl:arrayType="tns:DefinitionName[]"/>
+          </restriction>
+        </complexContent>
+      </complexType>
+      <complexType name="DocIndiciesList">
+        <complexContent>
+          <restriction base="SOAP-ENC:Array">
+            <attribute ref="SOAP-ENC:arrayType" wsdl:arrayType="tns:DefinitionInfo[]"/>
+          </restriction>
+        </complexContent>
+      </complexType>
+      <complexType name="DocumentDefInfo">
+        <all>
+          <element name="documentTypeID" type="xsd:int"/>
+          <element name="internalName" type="xsd:string"/>
+          <element name="displayName" type="xsd:string"/>
+          <element name="indicies" type="tns:DocIndiciesList"/>
+          <element name="docTypeIndexDefs" type="tns:DefinitionNameList"/>
+        </all>
+      </complexType>
+      <complexType name="DocumentDefList">
+        <complexContent>
+          <restriction base="SOAP-ENC:Array">
+            <attribute ref="SOAP-ENC:arrayType" wsdl:arrayType="tns:DocumentDefInfo[]"/>
+          </restriction>
+        </complexContent>
+      </complexType>
+      <complexType name="FileInfo">
+        <all>
+          <element name="fileID" type="xsd:int"/>
+          <element name="fileName" type="xsd:string"/>
+          <element name="subfolder" type="xsd:string"/>
+        </all>
+      </complexType>
+      <complexType name="FileList">
+        <complexContent>
+          <restriction base="SOAP-ENC:Array">
+            <attribute ref="SOAP-ENC:arrayType" wsdl:arrayType="tns:FileInfo[]"/>
+          </restriction>
+        </complexContent>
+      </complexType>
+      <complexType name="FolderIndex">
+        <complexContent>
+          <restriction base="SOAP-ENC:Array">
+            <attribute ref="SOAP-ENC:arrayType" wsdl:arrayType="tns:IndexInfo[]"/>
+          </restriction>
+        </complexContent>
+      </complexType>
+      <complexType name="FolderList">
+        <complexContent>
+          <restriction base="SOAP-ENC:Array">
+            <attribute ref="SOAP-ENC:arrayType" wsdl:arrayType="xsd:int[]"/>
+          </restriction>
+        </complexContent>
+      </complexType>
+      <complexType name="StringList">
+        <complexContent>
+          <restriction base="SOAP-ENC:Array">
+            <attribute ref="SOAP-ENC:arrayType" wsdl:arrayType="xsd:string[]"/>
+          </restriction>
+        </complexContent>
+      </complexType>
+      <complexType name="TabInfo">
+        <all>
+          <element name="parent_filename" type="xsd:string"/>
+          <element name="id" type="xsd:string"/>
+          <element name="file_size" type="xsd:int"/>
+          <element name="subfolder" type="xsd:string"/>
+        </all>
+      </complexType>
+      <complexType name="TabList">
+        <complexContent>
+          <restriction base="SOAP-ENC:Array">
+            <attribute ref="SOAP-ENC:arrayType" wsdl:arrayType="tns:TabInfo[]"/>
+          </restriction>
+        </complexContent>
+      </complexType>
+      <complexType name="integerList">
+        <complexContent>
+          <restriction base="SOAP-ENC:Array">
+            <attribute ref="SOAP-ENC:arrayType" wsdl:arrayType="xsd:int[]"/>
+          </restriction>
+        </complexContent>
+      </complexType>
+      <complexType name="IndexInfo">
+        <all>
+          <element name="key" type="xsd:string"/>
+          <element name="value" type="xsd:string"/>
+        </all>
+      </complexType>
+      <complexType name="simpleReturn">
+        <all>
+          <element name="success" type="xsd:boolean"/>
+          <element name="message" type="xsd:string"/>
+        </all>
+      </complexType>
+    </schema>
+  </types>
+  <message name="AddDocumentRequest">
+    <part name="passKey" type="xsd:string"/>
+    <part name="department" type="xsd:string"/>
+    <part name="cabinet" type="xsd:string"/>
+    <part name="folderID" type="xsd:int"/>
+    <part name="documentName" type="xsd:string"/>
+    <part name="indexes" type="tns:DocIndiciesList"/>
+  </message>
+  <message name="AddDocumentResponse">
+    <part name="return" type="xsd:int"/>
+  </message>
+  <message name="AddFileRequest">
+    <part name="passKey" type="xsd:string"/>
+    <part name="department" type="xsd:string"/>
+    <part name="cabinet" type="xsd:string"/>
+    <part name="folderID" type="xsd:int"/>
+    <part name="tabID" type="xsd:int"/>
+    <part name="fileNameFull" type="xsd:string"/>
+  </message>
+  <message name="AddFileResponse">
+    <part name="return" type="xsd:int"/>
+  </message>
+  <message name="AddFileNoteRequest">
+    <part name="passKey" type="xsd:string"/>
+    <part name="department" type="xsd:string"/>
+    <part name="cabinet" type="xsd:string"/>
+    <part name="folderID" type="xsd:int"/>
+    <part name="tabID" type="xsd:int"/>
+    <part name="fileName" type="xsd:string"/>
+    <part name="note" type="xsd:string"/>
+  </message>
+  <message name="AddFileNoteResponse">
+    <part name="return" type="xsd:boolean"/>
+  </message>
+  <message name="AddFolderRequest">
+    <part name="passKey" type="xsd:string"/>
+    <part name="department" type="xsd:string"/>
+    <part name="cabinet" type="xsd:string"/>
+    <part name="indiceArr" type="tns:FolderIndex"/>
+  </message>
+  <message name="AddFolderResponse">
+    <part name="return" type="xsd:int"/>
+  </message>
+  <message name="AddTabRequest">
+    <part name="passKey" type="xsd:string"/>
+    <part name="department" type="xsd:string"/>
+    <part name="cabinet" type="xsd:string"/>
+    <part name="docID" type="xsd:int"/>
+    <part name="tabname" type="xsd:string"/>
+    <part name="saved" type="xsd:boolean"/>
+    <part name="mkdir" type="xsd:boolean"/>
+  </message>
+  <message name="AddTabResponse">
+    <part name="return" type="xsd:int"/>
+  </message>
+  <message name="CancelCheckoutRequest">
+    <part name="passKey" type="xsd:string"/>
+    <part name="department" type="xsd:string"/>
+    <part name="cabinet" type="xsd:string"/>
+    <part name="fileID" type="xsd:int"/>
+  </message>
+  <message name="CancelCheckoutResponse">
+    <part name="return" type="xsd:boolean"/>
+  </message>
+  <message name="CheckInFileRequest">
+    <part name="passKey" type="xsd:string"/>
+    <part name="department" type="xsd:string"/>
+    <part name="cabinet" type="xsd:string"/>
+    <part name="fileID" type="xsd:int"/>
+    <part name="fileName" type="xsd:string"/>
+    <part name="encFileData" type="xsd:string"/>
+  </message>
+  <message name="CheckInFileResponse">
+    <part name="return" type="xsd:string"/>
+  </message>
+  <message name="CheckOutFileRequest">
+    <part name="passKey" type="xsd:string"/>
+    <part name="department" type="xsd:string"/>
+    <part name="cabinet" type="xsd:string"/>
+    <part name="fileID" type="xsd:int"/>
+  </message>
+  <message name="CheckOutFileResponse">
+    <part name="return" type="xsd:string"/>
+  </message>
+  <message name="DeleteDocumentRequest">
+    <part name="passKey" type="xsd:string"/>
+    <part name="department" type="xsd:string"/>
+    <part name="cabinet" type="xsd:string"/>
+    <part name="folderName" type="xsd:string"/>
+    <part name="documentID" type="xsd:int"/>
+    <part name="force" type="xsd:boolean"/>
+  </message>
+  <message name="DeleteDocumentResponse">
+    <part name="return" type="xsd:boolean"/>
+  </message>
+  <message name="DeleteFileRequest">
+    <part name="passKey" type="xsd:string"/>
+    <part name="department" type="xsd:string"/>
+    <part name="cabinet" type="xsd:string"/>
+    <part name="fileID" type="xsd:int"/>
+  </message>
+  <message name="DeleteFileResponse">
+    <part name="return" type="xsd:boolean"/>
+  </message>
+  <message name="DeleteFolderRequest">
+    <part name="passKey" type="xsd:string"/>
+    <part name="department" type="xsd:string"/>
+    <part name="cabinet" type="xsd:string"/>
+    <part name="folderID" type="xsd:int"/>
+    <part name="force" type="xsd:boolean"/>
+  </message>
+  <message name="DeleteFolderResponse">
+    <part name="return" type="xsd:boolean"/>
+  </message>
+  <message name="DownloadFileRequest">
+    <part name="passKey" type="xsd:string"/>
+    <part name="department" type="xsd:string"/>
+    <part name="cabinet" type="xsd:string"/>
+    <part name="folderID" type="xsd:int"/>
+    <part name="tab" type="xsd:string"/>
+    <part name="fileNames" type="tns:StringList"/>
+    <part name="destPath" type="xsd:string"/>
+    <part name="format" type="xsd:string"/>
+  </message>
+  <message name="DownloadFileResponse">
+    <part name="return" type="xsd:boolean"/>
+  </message>
+  <message name="EditDocumentRequest">
+    <part name="passKey" type="xsd:string"/>
+    <part name="department" type="xsd:string"/>
+    <part name="cabinet" type="xsd:string"/>
+    <part name="documentID" type="xsd:int"/>
+    <part name="documentName" type="xsd:string"/>
+    <part name="indexes" type="tns:DefinitionInfo"/>
+  </message>
+  <message name="EditDocumentResponse">
+    <part name="return" type="xsd:boolean"/>
+  </message>
+  <message name="EditFileRequest">
+    <part name="passKey" type="xsd:string"/>
+    <part name="department" type="xsd:string"/>
+    <part name="cabinet" type="xsd:string"/>
+    <part name="folderID" type="xsd:int"/>
+    <part name="tabID" type="xsd:int"/>
+    <part name="fileID" type="xsd:int"/>
+    <part name="newFileName" type="xsd:string"/>
+  </message>
+  <message name="EditFileResponse">
+    <part name="return" type="xsd:boolean"/>
+  </message>
+  <message name="EditFolderRequest">
+    <part name="passKey" type="xsd:string"/>
+    <part name="department" type="xsd:string"/>
+    <part name="cabinet" type="xsd:string"/>
+    <part name="docID" type="xsd:int"/>
+    <part name="indiceArr" type="tns:FolderIndex"/>
+  </message>
+  <message name="EditFolderResponse">
+    <part name="return" type="xsd:boolean"/>
+  </message>
+  <message name="EditTabRequest">
+    <part name="passKey" type="xsd:string"/>
+    <part name="department" type="xsd:string"/>
+    <part name="cabinet" type="xsd:string"/>
+    <part name="docID" type="xsd:int"/>
+    <part name="OldTabName" type="xsd:string"/>
+    <part name="NewTabName" type="xsd:string"/>
+    <part name="saved" type="xsd:boolean"/>
+  </message>
+  <message name="EditTabResponse">
+    <part name="return" type="xsd:boolean"/>
+  </message>
+  <message name="GetCabinetListRequest">
+    <part name="passKey" type="xsd:string"/>
+    <part name="department" type="xsd:string"/>
+  </message>
+  <message name="GetCabinetListResponse">
+    <part name="return" type="tns:StringList"/>
+  </message>
+  <message name="GetCurrentVersionRequest">
+    <part name="passKey" type="xsd:string"/>
+    <part name="department" type="xsd:string"/>
+    <part name="cabinet" type="xsd:string"/>
+    <part name="docID" type="xsd:int"/>
+    <part name="subFolder" type="xsd:string"/>
+    <part name="fileName" type="xsd:string"/>
+  </message>
+  <message name="GetCurrentVersionResponse">
+    <part name="return" type="xsd:string"/>
+  </message>
+  <message name="GetDepartmentListRequest">
+    <part name="passKey" type="xsd:string"/>
+  </message>
+  <message name="GetDepartmentListResponse">
+    <part name="return" type="tns:StringList"/>
+  </message>
+  <message name="GetDocTypeDetailsRequest">
+    <part name="passKey" type="xsd:string"/>
+    <part name="department" type="xsd:string"/>
+    <part name="cabinet" type="xsd:string"/>
+    <part name="folderID" type="xsd:int"/>
+  </message>
+  <message name="GetDocTypeDetailsResponse">
+    <part name="return" type="tns:DocumentDefInfo"/>
+  </message>
+  <message name="GetDocumentDefinitionListRequest">
+    <part name="passKey" type="xsd:string"/>
+    <part name="department" type="xsd:string"/>
+    <part name="cabinet" type="xsd:string"/>
+    <part name="filtered" type="xsd:boolean"/>
+  </message>
+  <message name="GetDocumentDefinitionListResponse">
+    <part name="return" type="tns:DocumentDefList"/>
+  </message>
+  <message name="GetDocumentListRequest">
+    <part name="passKey" type="xsd:string"/>
+    <part name="department" type="xsd:string"/>
+    <part name="cabinet" type="xsd:string"/>
+    <part name="docID" type="xsd:int"/>
+  </message>
+  <message name="GetDocumentListResponse">
+    <part name="return" type="tns:stringList"/>
+  </message>
+  <message name="GetDocumentTypeListRequest">
+    <part name="passKey" type="xsd:string"/>
+    <part name="department" type="xsd:string"/>
+    <part name="cabinet" type="xsd:string"/>
+  </message>
+  <message name="GetDocumentTypeListResponse">
+    <part name="return" type="tns:DocumentDefList"/>
+  </message>
+  <message name="GetFileListRequest">
+    <part name="passKey" type="xsd:string"/>
+    <part name="department" type="xsd:string"/>
+    <part name="cabinet" type="xsd:string"/>
+    <part name="folderID" type="xsd:int"/>
+    <part name="includeEmptyTab" type="xsd:boolean"/>
+  </message>
+  <message name="GetFileListResponse">
+    <part name="return" type="tns:FileList"/>
+  </message>
+  <message name="GetFileNotesRequest">
+    <part name="passKey" type="xsd:string"/>
+    <part name="department" type="xsd:string"/>
+    <part name="cabinet" type="xsd:string"/>
+    <part name="folderID" type="xsd:int"/>
+    <part name="tabID" type="xsd:int"/>
+    <part name="fileName" type="xsd:string"/>
+  </message>
+  <message name="GetFileNotesResponse">
+    <part name="return" type="xsd:string"/>
+  </message>
+  <message name="GetFolderListRequest">
+    <part name="passKey" type="xsd:string"/>
+    <part name="department" type="xsd:string"/>
+    <part name="cabinet" type="xsd:string"/>
+  </message>
+  <message name="GetFolderListResponse">
+    <part name="return" type="tns:FolderList"/>
+  </message>
+  <message name="GetTabListRequest">
+    <part name="passKey" type="xsd:string"/>
+    <part name="department" type="xsd:string"/>
+    <part name="cabinet" type="xsd:string"/>
+  </message>
+  <message name="GetTabListResponse">
+    <part name="return" type="tns:TabList"/>
+  </message>
+  <message name="GetVersionListRequest">
+    <part name="passKey" type="xsd:string"/>
+    <part name="department" type="xsd:string"/>
+    <part name="cabinet" type="xsd:string"/>
+    <part name="docID" type="xsd:int"/>
+    <part name="subFolder" type="xsd:string"/>
+    <part name="fileName" type="xsd:string"/>
+  </message>
+  <message name="GetVersionListResponse">
+    <part name="return" type="tns:FileList"/>
+  </message>
+  <message name="IsDocumentViewRequest">
+    <part name="passKey" type="xsd:string"/>
+    <part name="department" type="xsd:string"/>
+    <part name="cabinet" type="xsd:string"/>
+  </message>
+  <message name="IsDocumentViewResponse">
+    <part name="return" type="xsd:boolean"/>
+  </message>
+  <message name="LoginRequest">
+    <part name="userName" type="xsd:string"/>
+    <part name="md5Pass" type="xsd:string"/>
+  </message>
+  <message name="LoginResponse">
+    <part name="simpleOutput" type="tns:simpleReturn"/>
+  </message>
+  <message name="SearchCabinetIndiciesRequest">
+    <part name="passKey" type="xsd:string"/>
+    <part name="department" type="xsd:string"/>
+    <part name="cabinet" type="xsd:string"/>
+    <part name="search" type="xsd:string"/>
+  </message>
+  <message name="SearchCabinetIndiciesResponse">
+    <part name="return" type="xsd:???"/>
+  </message>
+  <message name="SearchDocumentInFolderRequest">
+    <part name="passKey" type="xsd:string"/>
+    <part name="department" type="xsd:string"/>
+    <part name="cabinet" type="xsd:string"/>
+    <part name="docType" type="xsd:string"/>
+    <part name="search" type="xsd:string"/>
+    <part name="docID" type="xsd:int"/>
+  </message>
+  <message name="SearchDocumentInFolderResponse">
+    <part name="return" type="xsd:???"/>
+  </message>
+  <message name="SearchDocumentTypesRequest">
+    <part name="passKey" type="xsd:string"/>
+    <part name="department" type="xsd:string"/>
+    <part name="cabinet" type="xsd:string"/>
+    <part name="docType" type="xsd:string"/>
+    <part name="search" type="xsd:string"/>
+    <part name="tempTable" type="xsd:string"/>
+  </message>
+  <message name="SearchDocumentTypesResponse">
+    <part name="return" type="xsd:???"/>
+  </message>
+  <message name="StartWFRequest">
+    <part name="passKey" type="xsd:string"/>
+    <part name="department" type="xsd:string"/>
+    <part name="cabinet" type="xsd:string"/>
+    <part name="wfDefsID" type="xsd:int"/>
+    <part name="wfOwner" type="xsd:string"/>
+    <part name="docID" type="xsd:int"/>
+    <part name="tabID" type="xsd:int"/>
+  </message>
+  <message name="StartWFResponse">
+    <part name="return" type="xsd:boolean"/>
+  </message>
+  <message name="changeFileVersionRequest">
+    <part name="passKey" type="xsd:string"/>
+    <part name="department" type="xsd:string"/>
+    <part name="cabinet" type="xsd:string"/>
+    <part name="docID" type="xsd:int"/>
+    <part name="subFolder" type="xsd:string"/>
+    <part name="fileName" type="xsd:string"/>
+    <part name="oldVersion" type="xsd:string"/>
+    <part name="newVersion" type="xsd:string"/>
+  </message>
+  <message name="changeFileVersionResponse">
+    <part name="return" type="xsd:boolean"/>
+  </message>
+  <message name="md5StringRequest">
+    <part name="str" type="xsd:string"/>
+  </message>
+  <message name="md5StringResponse">
+    <part name="simpleOutput" type="tns:simpleReturn"/>
+  </message>
+  <message name="searchTopLevelRequest">
+    <part name="passKey" type="xsd:string"/>
+    <part name="department" type="xsd:string"/>
+    <part name="search" type="xsd:string"/>
+  </message>
+  <message name="searchTopLevelResponse">
+    <part name="return" type="xsd:???"/>
+  </message>
+  <message name="tripleDesEncryptRequest">
+    <part name="str" type="xsd:string"/>
+  </message>
+  <message name="tripleDesEncryptResponse">
+    <part name="simpleOutput" type="tns:simpleReturn"/>
+  </message>
+  <portType name="TreenoWebServicesPort">
+    <operation name="AddDocument">
+      <input message="tns:AddDocumentRequest"/>
+      <output message="tns:AddDocumentResponse"/>
+    </operation>
+    <operation name="AddFile">
+      <input message="tns:AddFileRequest"/>
+      <output message="tns:AddFileResponse"/>
+    </operation>
+    <operation name="AddFileNote">
+      <input message="tns:AddFileNoteRequest"/>
+      <output message="tns:AddFileNoteResponse"/>
+    </operation>
+    <operation name="AddFolder">
+      <input message="tns:AddFolderRequest"/>
+      <output message="tns:AddFolderResponse"/>
+    </operation>
+    <operation name="AddTab">
+      <input message="tns:AddTabRequest"/>
+      <output message="tns:AddTabResponse"/>
+    </operation>
+    <operation name="CancelCheckout">
+      <input message="tns:CancelCheckoutRequest"/>
+      <output message="tns:CancelCheckoutResponse"/>
+    </operation>
+    <operation name="CheckInFile">
+      <input message="tns:CheckInFileRequest"/>
+      <output message="tns:CheckInFileResponse"/>
+    </operation>
+    <operation name="CheckOutFile">
+      <input message="tns:CheckOutFileRequest"/>
+      <output message="tns:CheckOutFileResponse"/>
+    </operation>
+    <operation name="DeleteDocument">
+      <input message="tns:DeleteDocumentRequest"/>
+      <output message="tns:DeleteDocumentResponse"/>
+    </operation>
+    <operation name="DeleteFile">
+      <input message="tns:DeleteFileRequest"/>
+      <output message="tns:DeleteFileResponse"/>
+    </operation>
+    <operation name="DeleteFolder">
+      <input message="tns:DeleteFolderRequest"/>
+      <output message="tns:DeleteFolderResponse"/>
+    </operation>
+    <operation name="DownloadFile">
+      <input message="tns:DownloadFileRequest"/>
+      <output message="tns:DownloadFileResponse"/>
+    </operation>
+    <operation name="EditDocument">
+      <input message="tns:EditDocumentRequest"/>
+      <output message="tns:EditDocumentResponse"/>
+    </operation>
+    <operation name="EditFile">
+      <input message="tns:EditFileRequest"/>
+      <output message="tns:EditFileResponse"/>
+    </operation>
+    <operation name="EditFolder">
+      <input message="tns:EditFolderRequest"/>
+      <output message="tns:EditFolderResponse"/>
+    </operation>
+    <operation name="EditTab">
+      <input message="tns:EditTabRequest"/>
+      <output message="tns:EditTabResponse"/>
+    </operation>
+    <operation name="GetCabinetList">
+      <input message="tns:GetCabinetListRequest"/>
+      <output message="tns:GetCabinetListResponse"/>
+    </operation>
+    <operation name="GetCurrentVersion">
+      <input message="tns:GetCurrentVersionRequest"/>
+      <output message="tns:GetCurrentVersionResponse"/>
+    </operation>
+    <operation name="GetDepartmentList">
+      <input message="tns:GetDepartmentListRequest"/>
+      <output message="tns:GetDepartmentListResponse"/>
+    </operation>
+    <operation name="GetDocTypeDetails">
+      <input message="tns:GetDocTypeDetailsRequest"/>
+      <output message="tns:GetDocTypeDetailsResponse"/>
+    </operation>
+    <operation name="GetDocumentDefinitionList">
+      <input message="tns:GetDocumentDefinitionListRequest"/>
+      <output message="tns:GetDocumentDefinitionListResponse"/>
+    </operation>
+    <operation name="GetDocumentList">
+      <input message="tns:GetDocumentListRequest"/>
+      <output message="tns:GetDocumentListResponse"/>
+    </operation>
+    <operation name="GetDocumentTypeList">
+      <input message="tns:GetDocumentTypeListRequest"/>
+      <output message="tns:GetDocumentTypeListResponse"/>
+    </operation>
+    <operation name="GetFileList">
+      <input message="tns:GetFileListRequest"/>
+      <output message="tns:GetFileListResponse"/>
+    </operation>
+    <operation name="GetFileNotes">
+      <input message="tns:GetFileNotesRequest"/>
+      <output message="tns:GetFileNotesResponse"/>
+    </operation>
+    <operation name="GetFolderList">
+      <input message="tns:GetFolderListRequest"/>
+      <output message="tns:GetFolderListResponse"/>
+    </operation>
+    <operation name="GetTabList">
+      <input message="tns:GetTabListRequest"/>
+      <output message="tns:GetTabListResponse"/>
+    </operation>
+    <operation name="GetVersionList">
+      <input message="tns:GetVersionListRequest"/>
+      <output message="tns:GetVersionListResponse"/>
+    </operation>
+    <operation name="IsDocumentView">
+      <input message="tns:IsDocumentViewRequest"/>
+      <output message="tns:IsDocumentViewResponse"/>
+    </operation>
+    <operation name="Login">
+      <input message="tns:LoginRequest"/>
+      <output message="tns:LoginResponse"/>
+    </operation>
+    <operation name="SearchCabinetIndicies">
+      <input message="tns:SearchCabinetIndiciesRequest"/>
+      <output message="tns:SearchCabinetIndiciesResponse"/>
+    </operation>
+    <operation name="SearchDocumentInFolder">
+      <input message="tns:SearchDocumentInFolderRequest"/>
+      <output message="tns:SearchDocumentInFolderResponse"/>
+    </operation>
+    <operation name="SearchDocumentTypes">
+      <input message="tns:SearchDocumentTypesRequest"/>
+      <output message="tns:SearchDocumentTypesResponse"/>
+    </operation>
+    <operation name="StartWF">
+      <input message="tns:StartWFRequest"/>
+      <output message="tns:StartWFResponse"/>
+    </operation>
+    <operation name="changeFileVersion">
+      <input message="tns:changeFileVersionRequest"/>
+      <output message="tns:changeFileVersionResponse"/>
+    </operation>
+    <operation name="md5String">
+      <input message="tns:md5StringRequest"/>
+      <output message="tns:md5StringResponse"/>
+    </operation>
+    <operation name="searchTopLevel">
+      <input message="tns:searchTopLevelRequest"/>
+      <output message="tns:searchTopLevelResponse"/>
+    </operation>
+    <operation name="tripleDesEncrypt">
+      <input message="tns:tripleDesEncryptRequest"/>
+      <output message="tns:tripleDesEncryptResponse"/>
+    </operation>
+  </portType>
+  <binding name="TreenoWebServicesBinding" type="tns:TreenoWebServicesPort">
+    <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="AddDocument">
+      <soap:operation soapAction="urn:TreenoWebServices#treenoSoapServer#AddDocument"/>
+      <input>
+        <soap:body use="encoded" namespace="urn:TreenoWebServices" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:TreenoWebServices" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+    <operation name="AddFile">
+      <soap:operation soapAction="urn:TreenoWebServices#treenoSoapServer#AddFile"/>
+      <input>
+        <soap:body use="encoded" namespace="urn:TreenoWebServices" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:TreenoWebServices" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+    <operation name="AddFileNote">
+      <soap:operation soapAction="urn:TreenoWebServices#treenoSoapServer#AddFileNote"/>
+      <input>
+        <soap:body use="encoded" namespace="urn:TreenoWebServices" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:TreenoWebServices" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+    <operation name="AddFolder">
+      <soap:operation soapAction="urn:TreenoWebServices#treenoSoapServer#AddFolder"/>
+      <input>
+        <soap:body use="encoded" namespace="urn:TreenoWebServices" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:TreenoWebServices" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+    <operation name="AddTab">
+      <soap:operation soapAction="urn:TreenoWebServices#treenoSoapServer#AddTab"/>
+      <input>
+        <soap:body use="encoded" namespace="urn:TreenoWebServices" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:TreenoWebServices" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+    <operation name="CancelCheckout">
+      <soap:operation soapAction="urn:TreenoWebServices#treenoSoapServer#CancelCheckout"/>
+      <input>
+        <soap:body use="encoded" namespace="urn:TreenoWebServices" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:TreenoWebServices" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+    <operation name="CheckInFile">
+      <soap:operation soapAction="urn:TreenoWebServices#treenoSoapServer#CheckInFile"/>
+      <input>
+        <soap:body use="encoded" namespace="urn:TreenoWebServices" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:TreenoWebServices" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+    <operation name="CheckOutFile">
+      <soap:operation soapAction="urn:TreenoWebServices#treenoSoapServer#CheckOutFile"/>
+      <input>
+        <soap:body use="encoded" namespace="urn:TreenoWebServices" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:TreenoWebServices" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+    <operation name="DeleteDocument">
+      <soap:operation soapAction="urn:TreenoWebServices#treenoSoapServer#DeleteDocument"/>
+      <input>
+        <soap:body use="encoded" namespace="urn:TreenoWebServices" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:TreenoWebServices" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+    <operation name="DeleteFile">
+      <soap:operation soapAction="urn:TreenoWebServices#treenoSoapServer#DeleteFile"/>
+      <input>
+        <soap:body use="encoded" namespace="urn:TreenoWebServices" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:TreenoWebServices" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+    <operation name="DeleteFolder">
+      <soap:operation soapAction="urn:TreenoWebServices#treenoSoapServer#DeleteFolder"/>
+      <input>
+        <soap:body use="encoded" namespace="urn:TreenoWebServices" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:TreenoWebServices" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+    <operation name="DownloadFile">
+      <soap:operation soapAction="urn:TreenoWebServices#treenoSoapServer#DownloadFile"/>
+      <input>
+        <soap:body use="encoded" namespace="urn:TreenoWebServices" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:TreenoWebServices" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+    <operation name="EditDocument">
+      <soap:operation soapAction="urn:TreenoWebServices#treenoSoapServer#EditDocument"/>
+      <input>
+        <soap:body use="encoded" namespace="urn:TreenoWebServices" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:TreenoWebServices" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+    <operation name="EditFile">
+      <soap:operation soapAction="urn:TreenoWebServices#treenoSoapServer#EditFile"/>
+      <input>
+        <soap:body use="encoded" namespace="urn:TreenoWebServices" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:TreenoWebServices" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+    <operation name="EditFolder">
+      <soap:operation soapAction="urn:TreenoWebServices#treenoSoapServer#EditFolder"/>
+      <input>
+        <soap:body use="encoded" namespace="urn:TreenoWebServices" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:TreenoWebServices" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+    <operation name="EditTab">
+      <soap:operation soapAction="urn:TreenoWebServices#treenoSoapServer#EditTab"/>
+      <input>
+        <soap:body use="encoded" namespace="urn:TreenoWebServices" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:TreenoWebServices" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+    <operation name="GetCabinetList">
+      <soap:operation soapAction="urn:TreenoWebServices#treenoSoapServer#GetCabinetList"/>
+      <input>
+        <soap:body use="encoded" namespace="urn:TreenoWebServices" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:TreenoWebServices" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+    <operation name="GetCurrentVersion">
+      <soap:operation soapAction="urn:TreenoWebServices#treenoSoapServer#GetCurrentVersion"/>
+      <input>
+        <soap:body use="encoded" namespace="urn:TreenoWebServices" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:TreenoWebServices" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+    <operation name="GetDepartmentList">
+      <soap:operation soapAction="urn:TreenoWebServices#treenoSoapServer#GetDepartmentList"/>
+      <input>
+        <soap:body use="encoded" namespace="urn:TreenoWebServices" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:TreenoWebServices" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+    <operation name="GetDocTypeDetails">
+      <soap:operation soapAction="urn:TreenoWebServices#treenoSoapServer#GetDocTypeDetails"/>
+      <input>
+        <soap:body use="encoded" namespace="urn:TreenoWebServices" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:TreenoWebServices" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+    <operation name="GetDocumentDefinitionList">
+      <soap:operation soapAction="urn:TreenoWebServices#treenoSoapServer#GetDocumentDefinitionList"/>
+      <input>
+        <soap:body use="encoded" namespace="urn:TreenoWebServices" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:TreenoWebServices" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+    <operation name="GetDocumentList">
+      <soap:operation soapAction="urn:TreenoWebServices#treenoSoapServer#GetDocumentList"/>
+      <input>
+        <soap:body use="encoded" namespace="urn:TreenoWebServices" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:TreenoWebServices" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+    <operation name="GetDocumentTypeList">
+      <soap:operation soapAction="urn:TreenoWebServices#treenoSoapServer#GetDocumentTypeList"/>
+      <input>
+        <soap:body use="encoded" namespace="urn:TreenoWebServices" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:TreenoWebServices" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+    <operation name="GetFileList">
+      <soap:operation soapAction="urn:TreenoWebServices#treenoSoapServer#GetFileList"/>
+      <input>
+        <soap:body use="encoded" namespace="urn:TreenoWebServices" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:TreenoWebServices" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+    <operation name="GetFileNotes">
+      <soap:operation soapAction="urn:TreenoWebServices#treenoSoapServer#GetFileNotes"/>
+      <input>
+        <soap:body use="encoded" namespace="urn:TreenoWebServices" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:TreenoWebServices" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+    <operation name="GetFolderList">
+      <soap:operation soapAction="urn:TreenoWebServices#treenoSoapServer#GetFolderList"/>
+      <input>
+        <soap:body use="encoded" namespace="urn:TreenoWebServices" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:TreenoWebServices" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+    <operation name="GetTabList">
+      <soap:operation soapAction="urn:TreenoWebServices#treenoSoapServer#GetTabList"/>
+      <input>
+        <soap:body use="encoded" namespace="urn:TreenoWebServices" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:TreenoWebServices" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+    <operation name="GetVersionList">
+      <soap:operation soapAction="urn:TreenoWebServices#treenoSoapServer#GetVersionList"/>
+      <input>
+        <soap:body use="encoded" namespace="urn:TreenoWebServices" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:TreenoWebServices" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+    <operation name="IsDocumentView">
+      <soap:operation soapAction="urn:TreenoWebServices#treenoSoapServer#IsDocumentView"/>
+      <input>
+        <soap:body use="encoded" namespace="urn:TreenoWebServices" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:TreenoWebServices" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+    <operation name="Login">
+      <soap:operation soapAction="urn:TreenoWebServices#treenoSoapServer#Login"/>
+      <input>
+        <soap:body use="encoded" namespace="urn:TreenoWebServices" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:TreenoWebServices" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+    <operation name="SearchCabinetIndicies">
+      <soap:operation soapAction="urn:TreenoWebServices#treenoSoapServer#SearchCabinetIndicies"/>
+      <input>
+        <soap:body use="encoded" namespace="urn:TreenoWebServices" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:TreenoWebServices" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+    <operation name="SearchDocumentInFolder">
+      <soap:operation soapAction="urn:TreenoWebServices#treenoSoapServer#SearchDocumentInFolder"/>
+      <input>
+        <soap:body use="encoded" namespace="urn:TreenoWebServices" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:TreenoWebServices" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+    <operation name="SearchDocumentTypes">
+      <soap:operation soapAction="urn:TreenoWebServices#treenoSoapServer#SearchDocumentTypes"/>
+      <input>
+        <soap:body use="encoded" namespace="urn:TreenoWebServices" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:TreenoWebServices" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+    <operation name="StartWF">
+      <soap:operation soapAction="urn:TreenoWebServices#treenoSoapServer#StartWF"/>
+      <input>
+        <soap:body use="encoded" namespace="urn:TreenoWebServices" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:TreenoWebServices" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+    <operation name="changeFileVersion">
+      <soap:operation soapAction="urn:TreenoWebServices#treenoSoapServer#changeFileVersion"/>
+      <input>
+        <soap:body use="encoded" namespace="urn:TreenoWebServices" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:TreenoWebServices" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+    <operation name="md5String">
+      <soap:operation soapAction="urn:TreenoWebServices#treenoSoapServer#md5String"/>
+      <input>
+        <soap:body use="encoded" namespace="urn:TreenoWebServices" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:TreenoWebServices" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+    <operation name="searchTopLevel">
+      <soap:operation soapAction="urn:TreenoWebServices#treenoSoapServer#searchTopLevel"/>
+      <input>
+        <soap:body use="encoded" namespace="urn:TreenoWebServices" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:TreenoWebServices" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+    <operation name="tripleDesEncrypt">
+      <soap:operation soapAction="urn:TreenoWebServices#treenoSoapServer#tripleDesEncrypt"/>
+      <input>
+        <soap:body use="encoded" namespace="urn:TreenoWebServices" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:TreenoWebServices" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="TreenoWebServicesService">
+    <documentation/>
+    <port name="TreenoWebServicesPort" binding="tns:TreenoWebServicesBinding">
+      <soap:address location="http://10.1.10.51/TreenoWebServices/TreenoWS.php"/>
+    </port>
+  </service>
+</definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://10.1.10.51/TreenoWebServices/TreenoWS.php</con:endpoint></con:endpoints><con:operation isOneWay="false" action="urn:TreenoWebServices#treenoSoapServer#AddDocument" name="AddDocument" bindingOperationName="AddDocument" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.1.10.51/TreenoWebServices/TreenoWS.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:TreenoWebServices" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <urn:AddDocument soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+         <passKey xsi:type="xsd:string">?</passKey>
+         <department xsi:type="xsd:string">?</department>
+         <cabinet xsi:type="xsd:string">?</cabinet>
+         <folderID xsi:type="xsd:int">?</folderID>
+         <documentName xsi:type="xsd:string">?</documentName>
+         <indexes xsi:type="urn:DocIndiciesList" soapenc:arrayType="urn:DefinitionInfo[]"/>
+      </urn:AddDocument>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:TreenoWebServices#treenoSoapServer#AddDocument"/></con:call></con:operation><con:operation isOneWay="false" action="urn:TreenoWebServices#treenoSoapServer#AddFile" name="AddFile" bindingOperationName="AddFile" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.1.10.51/TreenoWebServices/TreenoWS.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:TreenoWebServices">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <urn:AddFile soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+         <passKey xsi:type="xsd:string">?</passKey>
+         <department xsi:type="xsd:string">?</department>
+         <cabinet xsi:type="xsd:string">?</cabinet>
+         <folderID xsi:type="xsd:int">?</folderID>
+         <tabID xsi:type="xsd:int">?</tabID>
+         <fileNameFull xsi:type="xsd:string">?</fileNameFull>
+      </urn:AddFile>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:TreenoWebServices#treenoSoapServer#AddFile"/></con:call></con:operation><con:operation isOneWay="false" action="urn:TreenoWebServices#treenoSoapServer#AddFileNote" name="AddFileNote" bindingOperationName="AddFileNote" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.1.10.51/TreenoWebServices/TreenoWS.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:TreenoWebServices">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <urn:AddFileNote soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+         <passKey xsi:type="xsd:string">?</passKey>
+         <department xsi:type="xsd:string">?</department>
+         <cabinet xsi:type="xsd:string">?</cabinet>
+         <folderID xsi:type="xsd:int">?</folderID>
+         <tabID xsi:type="xsd:int">?</tabID>
+         <fileName xsi:type="xsd:string">?</fileName>
+         <note xsi:type="xsd:string">?</note>
+      </urn:AddFileNote>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:TreenoWebServices#treenoSoapServer#AddFileNote"/></con:call></con:operation><con:operation isOneWay="false" action="urn:TreenoWebServices#treenoSoapServer#AddFolder" name="AddFolder" bindingOperationName="AddFolder" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.1.10.51/TreenoWebServices/TreenoWS.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:TreenoWebServices" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <urn:AddFolder soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+         <passKey xsi:type="xsd:string">?</passKey>
+         <department xsi:type="xsd:string">?</department>
+         <cabinet xsi:type="xsd:string">?</cabinet>
+         <indiceArr xsi:type="urn:FolderIndex" soapenc:arrayType="urn:IndexInfo[]"/>
+      </urn:AddFolder>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:TreenoWebServices#treenoSoapServer#AddFolder"/></con:call></con:operation><con:operation isOneWay="false" action="urn:TreenoWebServices#treenoSoapServer#AddTab" name="AddTab" bindingOperationName="AddTab" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.1.10.51/TreenoWebServices/TreenoWS.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:TreenoWebServices">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <urn:AddTab soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+         <passKey xsi:type="xsd:string">?</passKey>
+         <department xsi:type="xsd:string">?</department>
+         <cabinet xsi:type="xsd:string">?</cabinet>
+         <docID xsi:type="xsd:int">?</docID>
+         <tabname xsi:type="xsd:string">?</tabname>
+         <saved xsi:type="xsd:boolean">?</saved>
+         <mkdir xsi:type="xsd:boolean">?</mkdir>
+      </urn:AddTab>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:TreenoWebServices#treenoSoapServer#AddTab"/></con:call></con:operation><con:operation isOneWay="false" action="urn:TreenoWebServices#treenoSoapServer#CancelCheckout" name="CancelCheckout" bindingOperationName="CancelCheckout" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.1.10.51/TreenoWebServices/TreenoWS.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:TreenoWebServices">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <urn:CancelCheckout soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+         <passKey xsi:type="xsd:string">?</passKey>
+         <department xsi:type="xsd:string">?</department>
+         <cabinet xsi:type="xsd:string">?</cabinet>
+         <fileID xsi:type="xsd:int">?</fileID>
+      </urn:CancelCheckout>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:TreenoWebServices#treenoSoapServer#CancelCheckout"/></con:call></con:operation><con:operation isOneWay="false" action="urn:TreenoWebServices#treenoSoapServer#changeFileVersion" name="changeFileVersion" bindingOperationName="changeFileVersion" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.1.10.51/TreenoWebServices/TreenoWS.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:TreenoWebServices">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <urn:changeFileVersion soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+         <passKey xsi:type="xsd:string">?</passKey>
+         <department xsi:type="xsd:string">?</department>
+         <cabinet xsi:type="xsd:string">?</cabinet>
+         <docID xsi:type="xsd:int">?</docID>
+         <subFolder xsi:type="xsd:string">?</subFolder>
+         <fileName xsi:type="xsd:string">?</fileName>
+         <oldVersion xsi:type="xsd:string">?</oldVersion>
+         <newVersion xsi:type="xsd:string">?</newVersion>
+      </urn:changeFileVersion>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:TreenoWebServices#treenoSoapServer#changeFileVersion"/></con:call></con:operation><con:operation isOneWay="false" action="urn:TreenoWebServices#treenoSoapServer#CheckInFile" name="CheckInFile" bindingOperationName="CheckInFile" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.1.10.51/TreenoWebServices/TreenoWS.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:TreenoWebServices">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <urn:CheckInFile soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+         <passKey xsi:type="xsd:string">?</passKey>
+         <department xsi:type="xsd:string">?</department>
+         <cabinet xsi:type="xsd:string">?</cabinet>
+         <fileID xsi:type="xsd:int">?</fileID>
+         <fileName xsi:type="xsd:string">?</fileName>
+         <encFileData xsi:type="xsd:string">?</encFileData>
+      </urn:CheckInFile>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:TreenoWebServices#treenoSoapServer#CheckInFile"/></con:call></con:operation><con:operation isOneWay="false" action="urn:TreenoWebServices#treenoSoapServer#CheckOutFile" name="CheckOutFile" bindingOperationName="CheckOutFile" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.1.10.51/TreenoWebServices/TreenoWS.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:TreenoWebServices">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <urn:CheckOutFile soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+         <passKey xsi:type="xsd:string">?</passKey>
+         <department xsi:type="xsd:string">?</department>
+         <cabinet xsi:type="xsd:string">?</cabinet>
+         <fileID xsi:type="xsd:int">?</fileID>
+      </urn:CheckOutFile>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:TreenoWebServices#treenoSoapServer#CheckOutFile"/></con:call></con:operation><con:operation isOneWay="false" action="urn:TreenoWebServices#treenoSoapServer#DeleteDocument" name="DeleteDocument" bindingOperationName="DeleteDocument" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.1.10.51/TreenoWebServices/TreenoWS.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:TreenoWebServices">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <urn:DeleteDocument soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+         <passKey xsi:type="xsd:string">?</passKey>
+         <department xsi:type="xsd:string">?</department>
+         <cabinet xsi:type="xsd:string">?</cabinet>
+         <folderName xsi:type="xsd:string">?</folderName>
+         <documentID xsi:type="xsd:int">?</documentID>
+         <force xsi:type="xsd:boolean">?</force>
+      </urn:DeleteDocument>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:TreenoWebServices#treenoSoapServer#DeleteDocument"/></con:call></con:operation><con:operation isOneWay="false" action="urn:TreenoWebServices#treenoSoapServer#DeleteFile" name="DeleteFile" bindingOperationName="DeleteFile" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.1.10.51/TreenoWebServices/TreenoWS.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:TreenoWebServices">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <urn:DeleteFile soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+         <passKey xsi:type="xsd:string">?</passKey>
+         <department xsi:type="xsd:string">?</department>
+         <cabinet xsi:type="xsd:string">?</cabinet>
+         <fileID xsi:type="xsd:int">?</fileID>
+      </urn:DeleteFile>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:TreenoWebServices#treenoSoapServer#DeleteFile"/></con:call></con:operation><con:operation isOneWay="false" action="urn:TreenoWebServices#treenoSoapServer#DeleteFolder" name="DeleteFolder" bindingOperationName="DeleteFolder" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.1.10.51/TreenoWebServices/TreenoWS.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:TreenoWebServices">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <urn:DeleteFolder soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+         <passKey xsi:type="xsd:string">?</passKey>
+         <department xsi:type="xsd:string">?</department>
+         <cabinet xsi:type="xsd:string">?</cabinet>
+         <folderID xsi:type="xsd:int">?</folderID>
+         <force xsi:type="xsd:boolean">?</force>
+      </urn:DeleteFolder>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:TreenoWebServices#treenoSoapServer#DeleteFolder"/></con:call></con:operation><con:operation isOneWay="false" action="urn:TreenoWebServices#treenoSoapServer#DownloadFile" name="DownloadFile" bindingOperationName="DownloadFile" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.1.10.51/TreenoWebServices/TreenoWS.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:TreenoWebServices" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <urn:DownloadFile soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+         <passKey xsi:type="xsd:string">?</passKey>
+         <department xsi:type="xsd:string">?</department>
+         <cabinet xsi:type="xsd:string">?</cabinet>
+         <folderID xsi:type="xsd:int">?</folderID>
+         <tab xsi:type="xsd:string">?</tab>
+         <fileNames xsi:type="urn:StringList" soapenc:arrayType="xsd:string[]"/>
+         <destPath xsi:type="xsd:string">?</destPath>
+         <format xsi:type="xsd:string">?</format>
+      </urn:DownloadFile>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:TreenoWebServices#treenoSoapServer#DownloadFile"/></con:call></con:operation><con:operation isOneWay="false" action="urn:TreenoWebServices#treenoSoapServer#EditDocument" name="EditDocument" bindingOperationName="EditDocument" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.1.10.51/TreenoWebServices/TreenoWS.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:TreenoWebServices">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <urn:EditDocument soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+         <passKey xsi:type="xsd:string">?</passKey>
+         <department xsi:type="xsd:string">?</department>
+         <cabinet xsi:type="xsd:string">?</cabinet>
+         <documentID xsi:type="xsd:int">?</documentID>
+         <documentName xsi:type="xsd:string">?</documentName>
+         <indexes xsi:type="urn:DefinitionInfo">
+            <!--You may enter the following 2 items in any order-->
+            <index xsi:type="xsd:string">?</index>
+            <value xsi:type="xsd:string">?</value>
+         </indexes>
+      </urn:EditDocument>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:TreenoWebServices#treenoSoapServer#EditDocument"/></con:call></con:operation><con:operation isOneWay="false" action="urn:TreenoWebServices#treenoSoapServer#EditFile" name="EditFile" bindingOperationName="EditFile" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.1.10.51/TreenoWebServices/TreenoWS.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:TreenoWebServices">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <urn:EditFile soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+         <passKey xsi:type="xsd:string">?</passKey>
+         <department xsi:type="xsd:string">?</department>
+         <cabinet xsi:type="xsd:string">?</cabinet>
+         <folderID xsi:type="xsd:int">?</folderID>
+         <tabID xsi:type="xsd:int">?</tabID>
+         <fileID xsi:type="xsd:int">?</fileID>
+         <newFileName xsi:type="xsd:string">?</newFileName>
+      </urn:EditFile>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:TreenoWebServices#treenoSoapServer#EditFile"/></con:call></con:operation><con:operation isOneWay="false" action="urn:TreenoWebServices#treenoSoapServer#EditFolder" name="EditFolder" bindingOperationName="EditFolder" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.1.10.51/TreenoWebServices/TreenoWS.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:TreenoWebServices" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <urn:EditFolder soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+         <passKey xsi:type="xsd:string">?</passKey>
+         <department xsi:type="xsd:string">?</department>
+         <cabinet xsi:type="xsd:string">?</cabinet>
+         <docID xsi:type="xsd:int">?</docID>
+         <indiceArr xsi:type="urn:FolderIndex" soapenc:arrayType="urn:IndexInfo[]"/>
+      </urn:EditFolder>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:TreenoWebServices#treenoSoapServer#EditFolder"/></con:call></con:operation><con:operation isOneWay="false" action="urn:TreenoWebServices#treenoSoapServer#EditTab" name="EditTab" bindingOperationName="EditTab" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.1.10.51/TreenoWebServices/TreenoWS.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:TreenoWebServices">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <urn:EditTab soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+         <passKey xsi:type="xsd:string">?</passKey>
+         <department xsi:type="xsd:string">?</department>
+         <cabinet xsi:type="xsd:string">?</cabinet>
+         <docID xsi:type="xsd:int">?</docID>
+         <OldTabName xsi:type="xsd:string">?</OldTabName>
+         <NewTabName xsi:type="xsd:string">?</NewTabName>
+         <saved xsi:type="xsd:boolean">?</saved>
+      </urn:EditTab>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:TreenoWebServices#treenoSoapServer#EditTab"/></con:call></con:operation><con:operation isOneWay="false" action="urn:TreenoWebServices#treenoSoapServer#GetCabinetList" name="GetCabinetList" bindingOperationName="GetCabinetList" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.1.10.51/TreenoWebServices/TreenoWS.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:TreenoWebServices">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <urn:GetCabinetList soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+         <passKey xsi:type="xsd:string">?</passKey>
+         <department xsi:type="xsd:string">?</department>
+      </urn:GetCabinetList>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:TreenoWebServices#treenoSoapServer#GetCabinetList"/></con:call></con:operation><con:operation isOneWay="false" action="urn:TreenoWebServices#treenoSoapServer#GetCurrentVersion" name="GetCurrentVersion" bindingOperationName="GetCurrentVersion" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.1.10.51/TreenoWebServices/TreenoWS.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:TreenoWebServices">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <urn:GetCurrentVersion soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+         <passKey xsi:type="xsd:string">?</passKey>
+         <department xsi:type="xsd:string">?</department>
+         <cabinet xsi:type="xsd:string">?</cabinet>
+         <docID xsi:type="xsd:int">?</docID>
+         <subFolder xsi:type="xsd:string">?</subFolder>
+         <fileName xsi:type="xsd:string">?</fileName>
+      </urn:GetCurrentVersion>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:TreenoWebServices#treenoSoapServer#GetCurrentVersion"/></con:call></con:operation><con:operation isOneWay="false" action="urn:TreenoWebServices#treenoSoapServer#GetDepartmentList" name="GetDepartmentList" bindingOperationName="GetDepartmentList" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.1.10.51/TreenoWebServices/TreenoWS.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:TreenoWebServices">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <urn:GetDepartmentList soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+         <passKey xsi:type="xsd:string">?</passKey>
+      </urn:GetDepartmentList>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:TreenoWebServices#treenoSoapServer#GetDepartmentList"/></con:call></con:operation><con:operation isOneWay="false" action="urn:TreenoWebServices#treenoSoapServer#GetDocTypeDetails" name="GetDocTypeDetails" bindingOperationName="GetDocTypeDetails" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.1.10.51/TreenoWebServices/TreenoWS.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:TreenoWebServices">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <urn:GetDocTypeDetails soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+         <passKey xsi:type="xsd:string">?</passKey>
+         <department xsi:type="xsd:string">?</department>
+         <cabinet xsi:type="xsd:string">?</cabinet>
+         <folderID xsi:type="xsd:int">?</folderID>
+      </urn:GetDocTypeDetails>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:TreenoWebServices#treenoSoapServer#GetDocTypeDetails"/></con:call></con:operation><con:operation isOneWay="false" action="urn:TreenoWebServices#treenoSoapServer#GetDocumentDefinitionList" name="GetDocumentDefinitionList" bindingOperationName="GetDocumentDefinitionList" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.1.10.51/TreenoWebServices/TreenoWS.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:TreenoWebServices">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <urn:GetDocumentDefinitionList soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+         <passKey xsi:type="xsd:string">?</passKey>
+         <department xsi:type="xsd:string">?</department>
+         <cabinet xsi:type="xsd:string">?</cabinet>
+         <filtered xsi:type="xsd:boolean">?</filtered>
+      </urn:GetDocumentDefinitionList>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:TreenoWebServices#treenoSoapServer#GetDocumentDefinitionList"/></con:call></con:operation><con:operation isOneWay="false" action="urn:TreenoWebServices#treenoSoapServer#GetDocumentList" name="GetDocumentList" bindingOperationName="GetDocumentList" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.1.10.51/TreenoWebServices/TreenoWS.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:TreenoWebServices">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <urn:GetDocumentList soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+         <passKey xsi:type="xsd:string">?</passKey>
+         <department xsi:type="xsd:string">?</department>
+         <cabinet xsi:type="xsd:string">?</cabinet>
+         <docID xsi:type="xsd:int">?</docID>
+      </urn:GetDocumentList>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:TreenoWebServices#treenoSoapServer#GetDocumentList"/></con:call></con:operation><con:operation isOneWay="false" action="urn:TreenoWebServices#treenoSoapServer#GetDocumentTypeList" name="GetDocumentTypeList" bindingOperationName="GetDocumentTypeList" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.1.10.51/TreenoWebServices/TreenoWS.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:TreenoWebServices">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <urn:GetDocumentTypeList soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+         <passKey xsi:type="xsd:string">?</passKey>
+         <department xsi:type="xsd:string">?</department>
+         <cabinet xsi:type="xsd:string">?</cabinet>
+      </urn:GetDocumentTypeList>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:TreenoWebServices#treenoSoapServer#GetDocumentTypeList"/></con:call></con:operation><con:operation isOneWay="false" action="urn:TreenoWebServices#treenoSoapServer#GetFileList" name="GetFileList" bindingOperationName="GetFileList" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.1.10.51/TreenoWebServices/TreenoWS.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:TreenoWebServices">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <urn:GetFileList soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+         <passKey xsi:type="xsd:string">?</passKey>
+         <department xsi:type="xsd:string">?</department>
+         <cabinet xsi:type="xsd:string">?</cabinet>
+         <folderID xsi:type="xsd:int">?</folderID>
+         <includeEmptyTab xsi:type="xsd:boolean">?</includeEmptyTab>
+      </urn:GetFileList>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:TreenoWebServices#treenoSoapServer#GetFileList"/></con:call></con:operation><con:operation isOneWay="false" action="urn:TreenoWebServices#treenoSoapServer#GetFileNotes" name="GetFileNotes" bindingOperationName="GetFileNotes" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.1.10.51/TreenoWebServices/TreenoWS.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:TreenoWebServices">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <urn:GetFileNotes soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+         <passKey xsi:type="xsd:string">?</passKey>
+         <department xsi:type="xsd:string">?</department>
+         <cabinet xsi:type="xsd:string">?</cabinet>
+         <folderID xsi:type="xsd:int">?</folderID>
+         <tabID xsi:type="xsd:int">?</tabID>
+         <fileName xsi:type="xsd:string">?</fileName>
+      </urn:GetFileNotes>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:TreenoWebServices#treenoSoapServer#GetFileNotes"/></con:call></con:operation><con:operation isOneWay="false" action="urn:TreenoWebServices#treenoSoapServer#GetFolderList" name="GetFolderList" bindingOperationName="GetFolderList" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.1.10.51/TreenoWebServices/TreenoWS.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:TreenoWebServices">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <urn:GetFolderList soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+         <passKey xsi:type="xsd:string">?</passKey>
+         <department xsi:type="xsd:string">?</department>
+         <cabinet xsi:type="xsd:string">?</cabinet>
+      </urn:GetFolderList>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:TreenoWebServices#treenoSoapServer#GetFolderList"/></con:call></con:operation><con:operation isOneWay="false" action="urn:TreenoWebServices#treenoSoapServer#GetTabList" name="GetTabList" bindingOperationName="GetTabList" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.1.10.51/TreenoWebServices/TreenoWS.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:TreenoWebServices">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <urn:GetTabList soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+         <passKey xsi:type="xsd:string">?</passKey>
+         <department xsi:type="xsd:string">?</department>
+         <cabinet xsi:type="xsd:string">?</cabinet>
+      </urn:GetTabList>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:TreenoWebServices#treenoSoapServer#GetTabList"/></con:call></con:operation><con:operation isOneWay="false" action="urn:TreenoWebServices#treenoSoapServer#GetVersionList" name="GetVersionList" bindingOperationName="GetVersionList" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.1.10.51/TreenoWebServices/TreenoWS.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:TreenoWebServices">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <urn:GetVersionList soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+         <passKey xsi:type="xsd:string">?</passKey>
+         <department xsi:type="xsd:string">?</department>
+         <cabinet xsi:type="xsd:string">?</cabinet>
+         <docID xsi:type="xsd:int">?</docID>
+         <subFolder xsi:type="xsd:string">?</subFolder>
+         <fileName xsi:type="xsd:string">?</fileName>
+      </urn:GetVersionList>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:TreenoWebServices#treenoSoapServer#GetVersionList"/></con:call></con:operation><con:operation isOneWay="false" action="urn:TreenoWebServices#treenoSoapServer#IsDocumentView" name="IsDocumentView" bindingOperationName="IsDocumentView" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.1.10.51/TreenoWebServices/TreenoWS.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:TreenoWebServices">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <urn:IsDocumentView soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+         <passKey xsi:type="xsd:string">?</passKey>
+         <department xsi:type="xsd:string">?</department>
+         <cabinet xsi:type="xsd:string">?</cabinet>
+      </urn:IsDocumentView>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:TreenoWebServices#treenoSoapServer#IsDocumentView"/></con:call></con:operation><con:operation isOneWay="false" action="urn:TreenoWebServices#treenoSoapServer#Login" name="Login" bindingOperationName="Login" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.1.10.51/TreenoWebServices/TreenoWS.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:TreenoWebServices">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <urn:Login soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+         <userName xsi:type="xsd:string">?</userName>
+         <md5Pass xsi:type="xsd:string">?</md5Pass>
+      </urn:Login>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:TreenoWebServices#treenoSoapServer#Login"/></con:call></con:operation><con:operation isOneWay="false" action="urn:TreenoWebServices#treenoSoapServer#md5String" name="md5String" bindingOperationName="md5String" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.1.10.51/TreenoWebServices/TreenoWS.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:TreenoWebServices">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <urn:md5String soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+         <str xsi:type="xsd:string">?</str>
+      </urn:md5String>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:TreenoWebServices#treenoSoapServer#md5String"/></con:call></con:operation><con:operation isOneWay="false" action="urn:TreenoWebServices#treenoSoapServer#SearchCabinetIndicies" name="SearchCabinetIndicies" bindingOperationName="SearchCabinetIndicies" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.1.10.51/TreenoWebServices/TreenoWS.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:TreenoWebServices">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <urn:SearchCabinetIndicies soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+         <passKey xsi:type="xsd:string">?</passKey>
+         <department xsi:type="xsd:string">?</department>
+         <cabinet xsi:type="xsd:string">?</cabinet>
+         <search xsi:type="xsd:string">?</search>
+      </urn:SearchCabinetIndicies>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:TreenoWebServices#treenoSoapServer#SearchCabinetIndicies"/></con:call></con:operation><con:operation isOneWay="false" action="urn:TreenoWebServices#treenoSoapServer#SearchDocumentInFolder" name="SearchDocumentInFolder" bindingOperationName="SearchDocumentInFolder" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.1.10.51/TreenoWebServices/TreenoWS.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:TreenoWebServices">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <urn:SearchDocumentInFolder soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+         <passKey xsi:type="xsd:string">?</passKey>
+         <department xsi:type="xsd:string">?</department>
+         <cabinet xsi:type="xsd:string">?</cabinet>
+         <docType xsi:type="xsd:string">?</docType>
+         <search xsi:type="xsd:string">?</search>
+         <docID xsi:type="xsd:int">?</docID>
+      </urn:SearchDocumentInFolder>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:TreenoWebServices#treenoSoapServer#SearchDocumentInFolder"/></con:call></con:operation><con:operation isOneWay="false" action="urn:TreenoWebServices#treenoSoapServer#SearchDocumentTypes" name="SearchDocumentTypes" bindingOperationName="SearchDocumentTypes" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.1.10.51/TreenoWebServices/TreenoWS.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:TreenoWebServices">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <urn:SearchDocumentTypes soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+         <passKey xsi:type="xsd:string">?</passKey>
+         <department xsi:type="xsd:string">?</department>
+         <cabinet xsi:type="xsd:string">?</cabinet>
+         <docType xsi:type="xsd:string">?</docType>
+         <search xsi:type="xsd:string">?</search>
+         <tempTable xsi:type="xsd:string">?</tempTable>
+      </urn:SearchDocumentTypes>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:TreenoWebServices#treenoSoapServer#SearchDocumentTypes"/></con:call></con:operation><con:operation isOneWay="false" action="urn:TreenoWebServices#treenoSoapServer#searchTopLevel" name="searchTopLevel" bindingOperationName="searchTopLevel" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.1.10.51/TreenoWebServices/TreenoWS.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:TreenoWebServices">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <urn:searchTopLevel soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+         <passKey xsi:type="xsd:string">?</passKey>
+         <department xsi:type="xsd:string">?</department>
+         <search xsi:type="xsd:string">?</search>
+      </urn:searchTopLevel>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:TreenoWebServices#treenoSoapServer#searchTopLevel"/></con:call></con:operation><con:operation isOneWay="false" action="urn:TreenoWebServices#treenoSoapServer#StartWF" name="StartWF" bindingOperationName="StartWF" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.1.10.51/TreenoWebServices/TreenoWS.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:TreenoWebServices">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <urn:StartWF soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+         <passKey xsi:type="xsd:string">?</passKey>
+         <department xsi:type="xsd:string">?</department>
+         <cabinet xsi:type="xsd:string">?</cabinet>
+         <wfDefsID xsi:type="xsd:int">?</wfDefsID>
+         <wfOwner xsi:type="xsd:string">?</wfOwner>
+         <docID xsi:type="xsd:int">?</docID>
+         <tabID xsi:type="xsd:int">?</tabID>
+      </urn:StartWF>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:TreenoWebServices#treenoSoapServer#StartWF"/></con:call></con:operation><con:operation isOneWay="false" action="urn:TreenoWebServices#treenoSoapServer#tripleDesEncrypt" name="tripleDesEncrypt" bindingOperationName="tripleDesEncrypt" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.1.10.51/TreenoWebServices/TreenoWS.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:TreenoWebServices">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <urn:tripleDesEncrypt soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+         <str xsi:type="xsd:string">?</str>
+      </urn:tripleDesEncrypt>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:TreenoWebServices#treenoSoapServer#tripleDesEncrypt"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/></con:soapui-project>

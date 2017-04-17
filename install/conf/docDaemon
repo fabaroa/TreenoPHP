@@ -1,0 +1,63 @@
+#!/bin/bash
+#docDaemon - runs docutron daemon
+# chkconfig: - 80 12
+# description: Docutron Daemon Server
+# processname: docDaemon
+# config: /var/www/html/poll/docDaemon.php
+# pidfile: /var/run/docDaemon.pid
+
+# Source the function library
+. /etc/rc.d/init.d/functions
+
+prog="docDaemon"
+
+start(){
+	#start server
+	daemon /usr/bin/php -q /var/www/html/poll/docDaemon.php &
+	ret=$?
+	if [ $ret -eq 0 ]; then
+		action $"Starting $prog: " /bin/true
+	else
+		action $"Starting $prog: " /bin/false
+	fi
+	return $ret
+}
+stop(){
+	/bin/kill `cat /var/run/docDaemon.pid 2> /dev/null ` 
+	ret=$?
+	/bin/rm -rf /var/run/docDaemon.pid
+	if [ $ret -eq 0 ]; then
+		action $"Stopping $prog: " /bin/true
+	else
+		action $"Stopping $prog: " /bin/false
+	fi
+	return $ret
+}
+restart(){
+	stop
+	start
+}
+# call prog
+case "$1" in
+	start)
+		start
+		;;
+	stop)
+		stop
+		;;
+	status)
+		status docDaemon
+		;;
+	restart)
+		restart
+		;;
+	*)
+		echo $"Usage: $0 {start|stop|status|restart}"
+		exit 1
+esac
+
+exit $?
+
+
+
+

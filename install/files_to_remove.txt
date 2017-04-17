@@ -1,0 +1,3 @@
+bots/cdrecord.php
+CDBackup/cdRecordStatus.php
+CDBackup/burning_poll.php

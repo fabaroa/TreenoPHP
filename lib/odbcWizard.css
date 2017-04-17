@@ -1,0 +1,123 @@
+div.hideDiv { 
+	display: none; 
+}
+
+div.mainDiv { 
+	width: 750px; 
+	height:300px
+}
+
+table.systemSelectMenu { width: 100%; }
+td.systemLabel { text-align: left; font-weight: bold;}
+td.systemDescription { text-align: left; margin-left: 5%; font-weight: bold}
+td.systemSelect { text-align: left; }
+
+div.odbcColumnsDiv {
+	float: right;
+    height: 180px;
+    overflow: auto;
+    width: 430px
+}
+
+
+
+
+
+
+
+div.odbcColumnsDiv table {
+    float: left;
+    width: 410px;
+}
+
+
+
+
+
+thead.odbcColumnsTHead tr {
+    background-color: #ffffff
+}
+
+
+
+
+
+
+
+
+
+
+
+
+thead.odbcColumnsTHead th {
+	text-align: center
+}
+
+tbody.odbcColumnsTBody td {
+	text-align: center
+}
+
+div.cabinetMappingDiv {
+	float: left;
+    height: 160px;
+    overflow: auto;
+    width: 420px
+}
+
+
+
+
+
+
+
+div.cabinetMappingDiv table {	
+	float: left;	
+	width: 400px;
+	padding: 0px 
+}
+
+
+
+
+
+thead.cabinetMappingTHead tr {	
+	background-color: #ffffff
+}
+
+
+
+
+
+
+
+
+
+
+
+
+div.mappingTestDiv {	
+	float: right; 
+	overflow: auto;
+	width:320px; 
+	height:145px 
+}
+
+
+
+
+
+
+
+div.mappingTestDiv table {  
+	float: left;
+	width: 300px 
+}
+
+
+
+
+
+thead.mappingTestTHead tr {	
+    background-color: #ffffff
+}
+

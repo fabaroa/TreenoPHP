@@ -1,0 +1,168 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- $Id: docTypeDefs.html 14326 2011-04-11 20:31:25Z fabaroa $ -->
+<html>
+<head>
+<title>Index Drop-Downs</title>
+<script type="text/javascript" src="../lib/settings2.js"></script>
+<script type="text/javascript" src="../lib/prototype.js"></script>
+<script type="text/javascript" src="../lib/behaviour.js"></script>
+<script type="text/javascript" src="docTypeDefs.js"></script>
+<link rel="stylesheet" type="text/css" href="../lib/style.css" />
+<style type="text/css">
+	#docDiv {
+		padding-top	: 10px;
+	}
+
+	table {
+		width	: 100%;
+	}
+
+	.addIndexDivFade {
+		width		: 95%;
+		padding-top	: 10px;
+		filter		: alpha(opacity=40);
+		-moz-opacity: .40;
+		opacity		: .40;
+	}
+
+	.addIndexDivShow {
+		width		: 95%;
+		padding-top	: 10px;
+		filter		: alpha(opacity=100);
+		-moz-opacity: 1;
+		opacity		: 1;
+	}
+
+	.addIndexTableFade {
+		filter		: alpha(opacity=40);
+		-moz-opacity: .40;
+		opacity		: .40;
+	}
+
+	.addIndexTableShow {
+		filter		: alpha(opacity=100);
+		-moz-opacity: 1;
+		opacity		: 1;
+	}
+
+	#actionDiv {
+		text-align	: right;
+		width		: 380px;
+		margin-right: auto;
+		margin-left	: auto;
+		padding-top	: 10px;
+		height		: 25px;
+	}
+
+	#errMsg {
+		padding-top	: 10px;
+		height		: 15px;
+	}
+</style>
+</head>
+<body>
+	<div class="mainDiv">
+		<div class="mainTitle">
+			<span>Index Drop-Downs</span>
+		</div>
+		<div id="docDiv">
+			<table>
+				<tr>
+					<td style="text-align:right;width:50%">
+						<span>Document Type:</span>
+					</td>
+					<td style="text-align:left">
+						<select id="docList" 
+							name="docList"> 
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td style="text-align:right">
+						<span>Document Index:</span>
+					</td>
+					<td style="text-align:left">
+						<select id="docIndex" 
+							name="docIndex">
+						</select>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div id="errMsg" class="error"></div>
+		<div id="div1" class="addIndexDivFade">
+			<fieldset>
+				<legend>
+						<span>Add Index Value</span>
+				</legend>
+				<table id="table1" class="addIndexTableFade">
+					<tr>
+						<td style="text-align:right;width:50%">
+							<span>Document Index Value:</span>
+						</td>
+						<td style="text-align:left">
+							<input type="text" 
+								id="newDocValue" 
+								name="newDocValue" 
+								value="" /> 
+						</td>
+					</tr>
+				</table>
+			</fieldset>
+		</div>
+		<div id="div2" class="addIndexDivFade">
+			<fieldset>
+				<legend>
+						<span>Edit Index Value</span>
+				</legend>
+				<table id="table2" class="addIndexTableFade"> 
+					<tr>
+						<td style="text-align:right;width:50%">
+							<span>Document Index:</span>
+						</td>
+						<td style="text-align:left">
+							<select id="docIndexValue" 
+								name="docIndexValue"> 
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td style="text-align:right;width:50%">
+							<span>Document Index Value:</span>
+						</td>
+						<td style="text-align:left">
+							<input type="text" 
+								id="docValue" 
+								name="docValue" 
+								value="" />
+						</td>
+					</tr>
+				</table>
+			</fieldset>
+		</div>
+		<div id="div3" class="addIndexDivFade">
+			<fieldset>
+				<legend>
+						<span>Remove Index Value</span>
+				</legend>
+				<table id="table3" class="addIndexTableFade"> 
+					<tr>
+						<td style="text-align:right;width:50%">
+							<span>Document Index Value:</span>
+						</td>
+						<td style="text-align:left">
+							<select id="rmDocIndexValue" 
+								name="rmDocIndexValue"> 
+							</select>
+						</td>
+					</tr>
+				</table>
+			</fieldset>
+		</div>
+		<div id="actionDiv">
+			<input type="button" id="saveBtn" name="saveBtn" value="Save" />
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,3 @@
+#!/bin/bash
+phpdoc --filename "CheckOutServer.php,CheckInServer.php" --target apihtml/ --title "Docutron DMS Webservice" --defaultpackagename "SOAPServer"
+chmod 777 apihtml -R

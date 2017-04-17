@@ -1,0 +1,212 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+    "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<title>Import Users</title>
+	<script type="text/javascript" src="../lib/prototype.js"></script>
+	<script type="text/javascript" src="../lib/behaviour.js"></script>
+	<script type="text/javascript" src="../lib/settings2.js"></script>
+	<script type="text/javascript">
+		function getLDAPConnections() {
+			var xmlArr = {	"include" : "lib/ldap.php",
+							"function" : "xmlGetLDAPConnector" };
+			postXML(xmlArr);
+		}
+
+		function setLDAPConnections(XML) {
+			var conList = XML.getElementsByTagName('CONNECTOR');
+			var opt = document.createElement('option');
+			opt.value = 0;
+			opt.appendChild(document.createTextNode("No Connector"));
+			$('conn_sel').appendChild(opt);
+			if(conList.length > 0) {
+				for(var i=0;i<conList.length;i++) {
+					var opt = document.createElement('option');
+					opt.value = conList[i].getAttribute('id');
+					opt.appendChild(document.createTextNode(conList[i].firstChild.nodeValue));
+					$('conn_sel').appendChild(opt);
+				}
+			} else {
+				$('ldapFS').style.display = 'none';
+			}
+		}
+
+		function importUsers() {
+			var xmlArr = {	"include" : "secure/userActions.php",
+							"function" : "xmlImportUsers" };
+			postXML(xmlArr);
+		}
+
+		function loadTempUserList(XML) {
+			var userList = XML.getElementsByTagName('USER');
+			removeElementsChildren($('userTable'));
+			if(userList.length > 0) {
+				var tbl = $('userTable');
+				var row = tbl.insertRow(tbl.rows.length);
+				var hasEmail = false;
+				if(XML.getElementsByTagName('EMAIL').length > 0) {
+					hasEmail = true;
+				}
+				createHeaderSelect(row, hasEmail);
+				for(i=0;i<userList.length;i++) {
+					cList = userList[i].childNodes;
+
+					var row = tbl.insertRow(tbl.rows.length);
+					var endPoint = 2;
+					if(hasEmail) {
+						endPoint = 3;
+					}
+					for(j=0;j<endPoint;j++) {
+						var col = row.insertCell(row.cells.length);
+						var val = "";
+						if(cList[j].firstChild) {
+							val = cList[j].firstChild.nodeValue;
+						}
+						var sp = document.createElement('span');
+						sp.appendChild(document.createTextNode(val));
+						col.appendChild(sp);
+					}
+				}
+				$('verifyUsers').style.display = 'block';
+			}
+		}
+
+		function createHeaderSelect(row, hasEmail) {
+			var endPoint = 2;
+			if(hasEmail) {
+				endPoint = 3;
+			}
+			for(i=1;i<=endPoint;i++) {
+				var col = row.insertCell(row.cells.length);
+				col.style.width = "33%";
+				var selBox = document.createElement('select');
+				selBox.id = "col-"+i;
+				selBox.name = "col-"+i;
+
+				var opt = document.createElement('option');
+				opt.value = 'username';
+				if(i == 1) {
+					opt.selected = true;
+				}
+				opt.appendChild(document.createTextNode('Username'));
+				selBox.appendChild(opt);
+
+				var opt = document.createElement('option');
+				opt.value = 'password';
+				if(i == 2) {
+					opt.selected = true;
+				}
+				opt.appendChild(document.createTextNode('Password'));
+				selBox.appendChild(opt);
+
+				if(hasEmail) {
+					var opt = document.createElement('option');
+					opt.value = 'email';
+					if(i == 3) {
+						opt.selected = true;
+					}
+					opt.appendChild(document.createTextNode('Email'));
+					selBox.appendChild(opt);
+				}
+
+				col.appendChild(selBox);
+			}
+		}
+
+		function verifyUserList() {
+			var val1 = $('col-1').value;
+			var val2 = $('col-2').value;
+			var val3 = '';
+			if($('col-3')) {
+				val3 = $('col-3').value;
+			}
+
+			if((val1 == val2) || (val2 == val3) || (val1 == val3)) {
+				return false;
+			}
+			
+			var xmlArr = {	"include" : "secure/userActions.php",
+							"function" : "xmlSaveImportUsers",
+							"username" : val1,
+							"password" : val2,
+							"email" : val3,
+							"ldap_id" : $('conn_sel').value };
+			postXML(xmlArr);
+		}
+
+		function setMessage(XML) {
+			var mess = XML.getElementsByTagName('MESSAGE');
+			removeElementsChildren($('errMsg'));
+
+			var tbl = document.createElement('table');
+			for(i=0;i<mess.length;i++) {
+				var row = tbl.insertRow(tbl.rows.length);
+				var col = row.insertCell(row.cells.length);
+
+				var sp = document.createElement('span');
+				sp.appendChild(document.createTextNode(mess[i].firstChild.nodeValue));
+				col.appendChild(sp);
+			}
+			$('errMsg').appendChild(tbl);
+		}
+
+		Behaviour.addLoadEvent(
+			function() {
+				getLDAPConnections();
+			}
+		); 
+	</script>
+	<link rel="stylesheet" type="text/css" href="../lib/style.css">
+	<style type="text/css">
+		#uploadUsers {
+			height		: 20px;
+			font-size	: 12px; 
+		}
+	</style>
+</head>
+<body>
+	<div class="mainDiv" style="width:500px">
+ 		<div class="mainTitle">
+ 			<span>User Import</span>
+ 		</div>
+		<fieldset style="text-align:left;width:95%">
+			<legend>Upload Files</legend>
+			<div id="uploadDiv" style="text-align:center">
+				<form name="importForm" 
+					method="POST" 
+					enctype="multipart/form-data" 
+					target="sideFrame" 
+					action="uploadUsers.php" 
+					style="padding:0px">
+					<input type="file" name="btnUpload" id="fileUpload" size="30" />
+					<input id="uploadUsers" type="submit" name="btn1" value="Import" />
+				</form>
+			</div>
+		</fieldset>
+		<fieldset id="verifyUsers" style="text-align:left;width:95%;padding-top:15px;display:none">
+			<legend>User Import Verification</legend>
+			<div>
+				<table id="userTable" style="width:100%">
+				</table>
+			</div>
+		</fieldset>
+		<fieldset id="ldapFS" style="text-align:left;width:95%;padding-top:15px">
+			<legend>Apply LDAP Connector Files</legend>
+			<table id="inputTable" class="inputTable" style="width:100%">
+				<tr>
+					<td class="label" style="width:45%">
+						<label for="conn_sel">Connector</label>
+					</td>
+					<td>
+						<select id="conn_sel"></select>
+					</td>
+				</tr>
+			</table>
+		</fieldset>
+		<div id="errMsg" class="error" style="margin-top:5px;height:auto"></div>
+		<div style="margin-top:5px">
+			<input type="button" name="saveBtn" value="Save" onclick="verifyUserList()" />
+		</div>
+	</div>
+</body>
+</html>

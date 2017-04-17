@@ -1,0 +1,76 @@
+<html>
+<body>
+<script>
+function searchAll(query)
+{
+  var xml = new ActiveXObject("Msxml2.DOMDocument");
+  xml.async = false;
+  xml.load('../cabinet.xml');
+
+  //DOM has a limit of 3 branches !!!!
+  var node=xml.selectSingleNode("/department/cabinet");
+  var all=node.selectNodes("folder");
+  var children;
+  var indexes;
+  var index_value;
+  var j=0;
+  var results=new Array();
+  var temp;
+
+  //iterate through all the indexes
+  for(var i=0;i<all.length;i++)
+  {
+     indexes=all[i].selectNodes("index");
+     for(var x=0;x<indexes.length;x++)
+     {
+         if(indexes[x].hasChildNodes())
+         {
+            index_value=indexes[x].firstChild;
+            
+            //match
+            if(index_value.nodeValue.match(query)) {
+               temp="@@@"+all[i].getAttribute("doc_id");
+               
+               for(var q=0;q<indexes.length;q++)
+               {
+                  if(indexes[q].hasChildNodes())
+                  {
+
+                     index_value=indexes[q].firstChild;
+                     temp+="@@@"+index_value.nodeValue;
+                  }
+               }
+               results[j]=temp;
+               j++;
+               break;
+            }
+         }
+      }
+   }
+  return results;
+}
+
+function displayResults(results)
+{
+
+var row=new Array();
+document.write("<table width=80% border=1>");
+   for(var i=0;i<results.length;i++)
+   {
+      row=results[i].split("@@@");
+      document.write("<tr>\n");
+      for(var j=2;j<row.length;j++)
+      {
+         document.write("<td>"+row[j]+"</td>");
+      }
+      document.write("\n</tr>\n");
+   }
+   document.write("\n</table>\n");      
+}
+var output=new Array();
+var q="t";
+output=searchAll(q);
+displayResults(output);
+</script>
+</body>
+</html>

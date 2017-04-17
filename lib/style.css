@@ -1,0 +1,880 @@
+.cabinetIndex {
+}
+
+.atfilename {
+	white-space : nowrap;
+}
+
+.tealbg{
+   background: #003b6f; /*8799e0*/
+   color: #ffffff ;
+   font-family: Tahoma, Verdana, sans-serif;
+}
+
+body.bluebg{
+   background: #003B6F ;
+}
+
+body{
+   font-family: Tahoma, Verdana, sans-serif;
+}
+
+/*
+body, b, strong, p, td, ul, li, input, select, option, textarea {
+   font-family: Tahoma, Verdana, Sans-serif;
+   font-size: 8.5pt;
+}
+*/
+.buttons{
+	cursor: pointer;
+	text-align: center;
+}
+div.absbuttons{
+   background: #003b6f ; /*8799e0*/
+   width: 100% ;
+   position: fixed ;
+   top: 0px ;
+   left: 0px ;
+
+}
+
+div.errorfloat{
+   border: 4px ;
+   background: #e6e6e6 ;
+   border-style: solid ;
+   border-width: 5px ;
+   border-color: #e6e6e6 ;
+   position: absolute ;
+   top: 40% ;
+   left: 35% ;
+   color: #990000 ;
+   text-align: center ;
+}
+
+.error{
+   color: #990000;
+   border-left-width: 3px;
+   font-family: Tahoma, Verdana, sans-serif;
+   font-size: 12px ;
+/*  text-align: center;*/
+}
+
+div.login{
+   color: #003B6F ;
+   font-size: 9pt ;
+}
+
+a.login:link{ text-decoration: none ; color: #003B6F;}
+a.login:visited{ text-decoration: none ; color: #003B6F;}
+a.login:hover{ text-decoration: none ; color: #003b6f;} /*8799e0*/
+
+div.logo{
+   position: absolute ;
+   top: 60% ;
+}
+
+a.headlink:link{ text-decoration: none ; color: white;}
+a.headlink:visited{ text-decoration: none ; color: white;}
+a.headlink:hover{ text-decoration: none ; color: #ebebeb;}
+
+.lnk
+{  
+   color:#FFFFFF;
+   font-family: Tahoma, Verdana, sans-serif;
+   font-size:9pt;
+   text-decoration:none;
+}
+
+.lnk_black
+{
+/* 003B6F */
+   color:#000000 ;
+   font-family: Tahoma, Verdana, sans-serif;
+   font-size:14px;
+   text-decoration:none;
+}
+
+.small_lnk
+{
+   color:#FFFFFF;
+   font-family: Tahoma, Verdana, sans-serif ;
+   font-size: 9pt ;
+   text-decoration: none ;
+}
+
+.lnk1
+{  
+   color:#FFFFFF;
+   font-family: Tahoma, Verdana, sans-serif;
+   font-size:14px;
+   text-decoration:none;
+}
+/* used for the login screen personalization text */
+div.personaltitle{
+	font-style: italic;
+	color: #666666;
+	text-align: right ;
+	font-size: 200% ;
+	font-family: Tahoma, Verdana;
+}
+
+div.personal{
+	font-style: italic;
+	color: #666666;
+	text-align: right ;
+	width: 269px;
+}
+
+/* used first in searchResults */
+
+.sortmsg{
+	visibility: hidden; 
+	text-align: center;
+	color: #666666;
+	font-size: 8pt;
+	margin: 1em 0;
+}
+
+ .gone
+ {
+   color:#000000;
+   font-family: Tahoma, Verdana, sans-serif;
+   font-size:14px;  
+   display:none;
+ }
+ .gone2
+ {
+	display:none;
+ }
+ .toolbox
+ {
+   background-color:#eeeeee;
+   border:#759AB9 outset 2px;
+   height:500px;
+ }
+ .tool
+ {
+   background-color:#003b6f; /*8799e0*/
+   border:#759AB9;
+   height:500px;
+ }
+ .allthumbstoolbox
+ {
+   background-color:#003b6f;/*8799e0*/
+/*   width:300px; */
+   margin:0px; 
+ }
+ .toolbox1
+ {
+   background-color:#FFFFFF;
+   width:300px;
+   margin:0px; 
+}
+ .toolbox2
+ {
+   background-color:#eeeeee;
+   border:#759AB9 outset 2px;
+   margin:5px;
+ }
+ .toolbox-title
+ {
+   cursor:pointer;
+   text-align:center;
+   background-color:#FFFFFF;
+   border:#759AB9 outset 2px;
+   font-family: Tahoma, Verdana, sans-serif;
+   font-size: 9pt;
+   color:#000000;
+   height:15px;
+ }
+ 
+ .toolbox1-title
+ {
+   cursor:pointer;
+   text-align:center;
+   background-color:#FFFFFF;
+   border:#759AB9 outset 2px;
+   font-family: Tahoma, Verdana, sans-serif;
+   font-size: 9pt;
+   color:#000000;
+   height:15px;
+   width:50px;
+ }
+ .main_menu
+ {
+   font-family: Tahoma, Verdana, sans-serif;
+ 	font-size:9pt;
+ 	font-weight:lighter;
+ 	text-decoration:none;
+ }
+/* FROM HERE DOWN WE ARE UNSURE WHO USES THESE */
+ .logout_menu
+ {
+   font-family: Tahoma, Verdana, sans-serif;
+ 	font-size:9pt;
+ 	font-weight:lighter;
+ }
+.fontproperties
+{
+	color:#003b6f; /*333366*/
+	text-align:center;
+	letter-spacing:normal;
+	font-size:9pt;
+	font-weight:bold;
+   font-family: Tahoma, Verdana, sans-serif;
+	text-decoration:none;
+}
+.fontpropertiesbold
+{
+	color:#003b6f; /*333366*/
+	text-align:center;
+	letter-spacing:normal;
+	font-size:11pt;
+	font-weight:bold;
+   font-family: Tahoma, Verdana, sans-serif;
+	text-decoration:none;
+}
+.alinks
+{
+	text-align:center;
+	font-size:9pt;
+	font-weight:bold;
+   font-family: Tahoma, Verdana, sans-serif;
+	text-decoration:none;
+	color: #003b6f; /*333366*/
+}
+.alinks:hover
+{
+	text-align:center;
+	font-size:9pt;
+	font-weight:bold;
+   font-family: Tahoma, Verdana, sans-serif;
+	text-decoration:none;
+	color: #FF0000;
+}
+.fontitles
+{
+	color:#003b6f; /*333366*/
+	text-align:center;
+	letter-spacing:normal;
+	font-size:9pt;
+	font-weight:bold;
+   font-family: Tahoma, Verdana, sans-serif;
+	text-decoration:none;
+}
+a.fontproperties:hover
+{
+	color:#003b6f; /*333366*/
+	font-size:9pt;
+	font-weight:bold;
+   font-family: Tahoma, Verdana, sans-serif;
+	text-decoration:none;
+	text-align:center;
+}
+.tdproperties
+{	
+	font-size:9pt;
+	font-weight:bold;
+   font-family: Tahoma, Verdana, sans-serif;
+	background-color:#003b6f; /*333366*/
+	text-align:center; 
+	border-color:#003b6f; /*333366*/
+	border-style:solid;
+	
+}
+.tableheads
+{	
+	font-size:14px;
+	font-weight:bold;
+   	font-family: Tahoma, Verdana, sans-serif;
+	background-color:#003b6f; /*333366*/
+	text-align:center; 
+	border-color:#003b6f;/*333366*/
+	border-style:solid;
+	color:#FFFFFF;	
+}
+.admin-title
+ {
+   cursor:pointer;
+   text-align:center;
+   font-family: Tahoma, Verdana, sans-serif;
+   background-color:#FFFFFF;
+   border:#759AB9 outset 2px;
+   font-size: 9pt;
+   color:#000000;
+   height:15px;
+   width:50px;
+
+ }
+.admin-tbl
+{
+   font-family: Tahoma, Verdana, sans-serif;
+	font-size:9pt;
+	border-color:#003b6f; /*333366*/
+	border-style:solid;
+	background-color:#FFFFFF;
+	text-align:center;
+}
+.admin-tbl-nested
+{
+   font-family: Tahoma, Verdana, sans-serif;
+	font-size:9pt;
+	border-color:#FFFFFF;
+	border-width:0;
+	border-style:solid;
+	background-color:#FFFFFF;
+	text-align:center;
+}
+.tbl-hdr
+{
+   font-family: Tahoma, Verdana, sans-serif;
+   color:#FFFFFF;
+	background-color:#003b6f; /*333366*/
+	border-color:#003b6f; /*333366*/
+	border-style:solid;
+	color:#003b6f;/*333366*/	
+}
+
+div#inputElems p {
+	font-size: 11pt;
+}
+
+div.warningMsg {
+	text-align: center;
+}
+
+p.select {
+	display: inline;
+}
+
+div#radioGrp {
+	width: 80%;
+	text-align: right;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+div#radioGrp div {
+	font-size: 11pt;
+}
+
+
+/* Used for upload screen in e.g. uploadInbox.php */
+div#mainForm {
+	border-top: 2px solid #003b6f;
+}
+
+div#mainForm table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+div#mainForm td {
+	background: #ebebeb;
+	border-top: 1px solid black; 
+	border-bottom: 1px solid black; 
+}
+
+div.inputForm {
+	margin: 0;
+	padding: 0;
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+div.inputForm table {
+	width: 99%;
+	border-collapse: collapse;
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 9pt;
+}
+
+div.inputForm td, div.inputForm th, table.inputTable2 td, table.inputTable2 th {
+	border: 1px solid #eeeeee; 
+}
+
+td.fname {
+	text-align: right;
+	font-size: 9pt;
+}
+
+td.remBtn {
+	text-align: left;
+}
+
+div.mainTitle {
+	background-color: #003b6f;
+	color: white;
+	height: 35px;
+}
+
+div.mainTitle span {
+	font-size: 12px;
+	font-weight: bold;
+	position: relative;
+	top: 8px;
+}
+
+div.subTitle {
+	background-color: #003b6f;
+	color: white;
+	height: 20px;
+}
+
+div.subTitle span {
+	font-size: 12px;
+	font-weight: bold;
+	position: relative;
+	top: 2px;
+}
+
+div.mainDiv {
+	width: 380px;
+	margin-left: auto;
+	margin-right: auto;  
+	border-style: double; 
+	border-width: 6px; 
+	border-color: #003b6f; 
+	text-align: center;
+	font-size: 9pt;
+}
+
+div.mainDiv form {
+	padding: 0 0 0.75em 0;
+	margin: 0;
+}
+
+/* end */
+div.deleteBtn {
+	position: relative;
+	right: 0px;
+	padding: 1px;
+}
+
+div.uploadBtn {
+/*
+	position: absolute;
+	top: 5px;
+	left: 0px;
+*/
+	background-color: #003b6f;
+	color: white;
+	cursor: pointer;
+}
+
+div.uploadBtn span {
+	font-size:12pt;
+	font-weight: normal;
+	vertical-align: middle;
+}
+
+div.uploadBtn img {
+	height: 24px;
+	width: 24px;
+	vertical-align: middle;
+	padding: 2px;
+}
+
+body.centered {
+	text-align: center;
+	font-size: 9pt;
+}
+
+p.myTitle {
+	font-size: 12px;
+	font-weight: bold;
+}
+
+img.smallBtn {
+	border: 0;
+	height: 14px;
+	width: 14px;
+	cursor: pointer;
+}
+
+table.cabList {
+	width: 80%;
+	padding: 0;
+	margin-left: auto;
+	margin-right: auto;
+	background: #ebebeb;
+	border-collapse: collapse;
+}
+
+tr#heading {
+	background: #003b6f;
+}
+
+table.cabList th {
+	text-align: center;
+	font-weight: bold;
+	border: 1px white solid;
+}
+
+table.cabList td {
+	border: 1px white solid;
+	padding: 0.25em;
+}
+
+
+table.cabList img {
+	border: 0;
+	margin: 0 auto;
+}
+
+div.imgDiv {
+	text-align: center;
+}
+
+.pointed {
+	cursor: pointer;
+}
+
+img.menuBtn {
+	border: 0;
+	vertical-align: middle;
+}
+
+td.mainMenu {
+	padding-left: 0.5em;
+	padding-right: 0.5em;
+	cursor: pointer;
+	white-space: nowrap;
+	margin-left: auto;
+	margin-right: 0;
+	text-align: right;
+}
+
+table#menuTable td {
+	padding-top: 0;
+	padding-bottom: 0;
+}
+
+/*used for deleting department administrators*/
+a.depLinks:link{ text-decoration: none ; color: #000000;}
+a.depLinks:visited{ text-decoration: none ; color: #000000;}
+a.depLinks:hover{ text-decoration: none ; color: #888888;} /*8799e0*/
+a.depLinks{
+	color:#000000; /*333366*/
+	font-size:9pt;
+    font-family: Tahoma, Verdana, sans-serif;
+	text-decoration:none;
+	text-align:center;
+
+}
+/*should be used for all tables in settings tab*/
+table.settings{
+	font-size: 9pt;
+    font-family: Tahoma, Verdana, sans-serif;
+	border-color: #003b6f; /*333366*/
+	background-color: #FFFFFF;
+	border-style: solid;
+	border-width: 2px;
+	padding: 0.20px;	
+	text-align: center;
+	margin-left: auto;
+    margin-right: auto;
+}
+
+table.settings td{
+	border: 1px solid gray; 
+}
+table.results{
+   	font-family: Tahoma, Verdana, sans-serif;
+   	font-size:14px;
+	border-color: #003b6f; /*333366*/
+   	text-decoration:none;
+   	border-style: none;
+   	border-width: 0px;
+	margin-left: auto;
+    margin-right: auto;
+}
+table.results td{
+	cursor: pointer;
+}
+.TDresults1{
+ 	background-color: #ebebeb;
+	cursor: pointer;
+}
+.TDresults2{
+ 	background-color: #888888;
+	cursor: pointer;
+}
+td#barcodeHeader {
+	text-align: center;
+	width: 40px;
+	color: white;
+	font-weight: bold;
+}
+
+td.barcodeCell {
+	text-align: center;
+}
+table.settings{
+	font-size: 9pt;
+    font-family: Tahoma, Verdana, sans-serif;
+	border-color: #003b6f; /*333366*/
+	background-color: #FFFFFF;
+	border-style: solid;
+	border-width: 2px;
+	padding: 0.20px;	
+   	text-decoration:none;
+	text-align: center;
+	margin-left: auto;
+    margin-right: auto;
+}
+
+table.settings td{
+	border: 1px solid gray; 
+}
+
+td.arrows {
+	width: 24px;
+	cursor: pointer;
+}
+img.headFoot {
+	height: 150px;
+	width: 100%;
+}
+img#logo {
+	width: 268px;
+	height: 99px;
+}
+
+img#divider {
+	width: 1px;
+	height: 358px;
+}
+table#mainTable {
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	border-collapse: collapse;
+	height: 100%;
+	border: 0;
+}
+tr.headFoot {
+	height: 150px;
+}
+td.fillTD {
+	height: 150px;
+}
+table#mainTable tr, table#mainTable td {
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+table#midTable {
+	margin-left: auto;
+	margin-right: auto;
+	padding: 6px;
+	border-collapse: collapse;
+	height: 100%;
+	border: 0;
+}
+table#midTable tr, table#midTable td {
+	padding: 6px;
+	border: 0;
+}
+table#loginbox {
+	color: #FFFFFF;
+	background-color: #003B6F;
+	border: solid #008B93 1px;
+	padding: 6px;
+	border-collapse: collapse;
+	border: 0;
+}
+div.centered {
+	margin-left: auto;
+	margin-right: auto;
+}
+div.label {
+	margin-right: 0;
+	margin-left: auto;
+	text-align: right;
+	font-weight: bold;
+}
+div.login {
+	margin-right: 0;
+	margin-left: auto;
+	text-align: right;
+}
+img#lock {
+	border: 0;
+	text-align: center;
+}
+.inputBox {
+	width: 150px;
+}
+td.inputTD {
+	text-align: left;
+}
+div.adminMenu {
+	margin-bottom: 1em;
+	margin-left: auto;
+	margin-right: auto;
+}
+div.adminMenuTitle {
+	background-color: #517ca3;
+	color: white;
+	font-size: 10.5pt;
+	padding: 0.25em;
+	font-weight: bold;
+	text-align: left;
+}
+div.adminMenu div {
+	cursor: pointer;
+}
+div.adminMenuItems {
+	background-color: #cfdbe6;
+	font-size: 10pt;
+	display: none;
+	width: 100%;
+	overflow: hidden;
+	text-align: left;
+}
+div.adminMenuItems div {
+	padding: 0.25em;
+	padding-left: 1.5em;
+	margin-bottom: 1px;
+}
+div.arrowImg {
+	float: right;
+}
+#toolsGifDiv {
+	visibility: hidden;
+}
+#newNotes, #docSearching {
+	display: none;
+}
+
+div#cabLabel {
+	padding: 0.5em 0 0.5em 0;
+	font-size: 12pt;
+	font-weight: bold;
+}
+
+#chooseCabinet form {
+	margin-bottom: 0;
+}
+div.panelImgDiv {
+	height: 19px;
+	cursor: pointer;
+	float: left;
+	width: 33%;
+	text-align:center;
+	background-color:#ebebeb;
+	color:black;
+	font-size: 12px;
+}
+
+div.panelImgDiv1 {
+	height: 19px;
+	cursor: pointer;
+	float: left;
+	width:33%;
+	text-align:center;
+	background-color:#888888;
+	color:black;
+	font-size: 12px;
+
+}
+table.searchPanelTable {
+	border-collapse: collapse;
+}
+table.searchPanelTable td {
+	padding: 0;
+}
+#cabLabel {
+	display: none;
+}
+div.tabBody {
+	color: black;
+	background-color:#ebebeb;
+	padding: 0.5em;
+	vertical-align: middle;
+	font-size: 11pt;
+}
+
+
+#advancedSearch {
+	display: none;
+}
+#cabSearchDiv {
+	display: none;
+}
+
+div#exhaustDiv {
+	font-size: 9pt;
+}
+
+div#exhaustDiv input, div#exhaustDiv span {
+	vertical-align: middle;
+}
+
+#advancedBtn, #submitDiv #docSubmitDiv {
+	display: none;
+}
+
+#submitDiv, #docSubmitDiv {
+	margin-top: 0.5em;
+}
+
+#advancedBtn {
+	cursor: pointer;
+	padding: 0.75em 0 0.75em 0;
+	font-size: 9pt;
+}
+img.ATimg {
+	border: 1px solid #222222;
+}
+#cabSearchForm, #docSearchForm {
+	margin: 0;
+}
+span.allAny {
+	font-size: 9pt;
+	vertical-align: middle;
+}
+span.matchSpan {
+	margin-right: 0.5em;
+	margin-left: 0.5em;
+}
+input.matchInput {
+	vertical-align: middle;
+}
+div#tlsSearchDiv {
+	border-bottom: 2px groove #eeeeee;
+	margin-bottom: 1em;
+}
+
+td.label {
+	text-align: right;
+}
+table.inputTable, table.inputTable2{
+	margin-left: auto;
+	margin-right: auto;
+	text-align: left;
+	font-size: 9pt;
+	border-collapse: collapse;
+}
+table.inputTable2 {
+	text-align: center;
+}
+
+span.link {
+	text-decoration: underline;
+	color: blue;
+	cursor: pointer;
+}
+
+div.passwordSettings {
+	text-align: left;
+	display: none;
+	margin-top: 5px;
+	clear: both;
+	padding: 15px 5px;
+	line-height: 18px;
+	color: red;
+	font-size: 11px;	
+}

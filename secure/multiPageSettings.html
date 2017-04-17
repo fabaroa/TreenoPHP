@@ -1,0 +1,122 @@
+<!-- $Id: multiPageSettings.html 14326 2011-04-11 20:31:25Z fabaroa $ -->
+<!DOCTYPE html 
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+		"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Multi-Page Settings</title>
+	<script type="text/javascript" src="../lib/prototype.js"></script>
+	<script type="text/javascript" src="../lib/behaviour.js"></script>
+	<script type="text/javascript" src="../yui/yahoo.js"></script>
+	<script type="text/javascript" src="../yui/event.js"></script>
+	<script type="text/javascript" src="../yui/connection.js"></script>
+	<script type="text/javascript" src="../yui/json2.js"></script>
+	<script type="text/javascript">
+		function getFileFormat() {
+			var callbacks = {
+				success: setFormat,
+				failure: fail
+			};
+			url = '../lib/settingsFuncs.php?func=getFileFormat';
+			var transaction = YAHOO.util.Connect.asyncRequest('GET',url,callbacks);
+		}
+
+		function setFormat(o) {
+			var typeInfo = YAHOO.lang.JSON.parse(o.responseText);
+			if(typeInfo.type) {
+				$(typeInfo.type).checked = true;
+				$('enable').checked = true;
+			} else {
+				$('disable').checked = true;
+				$('pdf').disabled = true;
+				$('mtiff').disabled = true;
+			}
+
+			$('settingsDiv').style.display = 'block';
+			if(typeInfo.lite != "1") {
+				$('enableDiv').style.display = 'block';
+			}
+		}
+
+		function setFileFormat() {
+			var type = "";
+			if(!$('disable').checked) {
+				type = "pdf";
+				if(!$('pdf').checked) {
+					type = "mtiff";
+				}
+			}
+
+			var callbacks = {
+				success: suc,
+				failure: fail
+			};
+			url = '../lib/settingsFuncs.php?func=setFileFormat&type='+type;
+			var transaction = YAHOO.util.Connect.asyncRequest('GET',url,callbacks);
+		}
+
+		function suc(o) {
+			while( $('errMsg').childNodes[0] ) {
+				$('errMsg').removeChild($('errMsg').childNodes[0]);
+			}
+
+			messInfo = YAHOO.lang.JSON.parse(o.responseText);
+			var sp = document.createElement('span');
+			sp.appendChild(document.createTextNode(messInfo.mess));
+			$('errMsg').appendChild(sp);
+		}
+
+		function fail() {
+
+		}
+
+		function enableSettings() {
+			$('pdf').disabled = false;
+			$('mtiff').disabled = false;
+		}
+		
+		function disableSettings() {
+			$('pdf').disabled = true;
+			$('mtiff').disabled = true;
+		}
+		
+		Behaviour.addLoadEvent(
+			function() {
+				getFileFormat();
+				$('enable').onclick = enableSettings;
+				$('disable').onclick = disableSettings;
+			}
+		); 
+	</script>
+	<link rel="stylesheet" type="text/css" href="../lib/style.css">
+	<style type="text/css">
+		body
+		{
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<div class="mainDiv">
+ 		<div class="mainTitle">
+ 			<span>Multi-Page Settings</span>
+ 		</div>
+		<div id="enableDiv" style="margin-top:10px;display:none">
+			<input type="radio" id="enable" name="setting" value="on" />
+			<span>Enabled</span>
+			<input type="radio" id="disable" name="setting" value="off" />
+			<span>Disabled</span>
+		</div>
+		<div id="settingsDiv" style="margin-top:10px;display:none">
+			<input type="radio" id="pdf" name="format" value="pdf" />
+			<span>PDF</span>
+			<input type="radio" id="mtiff" name="format" value="mtiff" />
+			<span>Multi-Page TIFF</span>
+		</div>
+		<div id="errMsg" class="error" style="margin-top:5px;height:15px"></div>
+		<div style="margin-top:5px">
+			<input type="button" name="saveBtn" value="Save" onclick="setFileFormat()" />
+		</div>
+   	</div>
+</body>
+</html>

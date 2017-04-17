@@ -1,0 +1,536 @@
+<?php
+include_once '../lib/email.php';
+include_once '../lib/xmlObj.php';
+include_once 'workflow.php';
+include_once 'stateNode.php';
+
+function xmlGrabWorkflowItem($enArr,$user,$db_doc,$db_dept) {
+	$wf_id = grabWorkflowItem($enArr['todo_id'],$db_doc,$db_dept,$user); 
+	if($wf_id) {
+		$message = "Todo Item grabbed successfully";
+		$user->audit("Grabbed Workflow Item","$wf_id");			
+	} else {
+		$message = "Unable to grab Todo Item";
+	}
+	$xmlObj = new xml();
+	$xmlObj->createKeyAndValue("FUNCTION","setMessage('$message')");
+	$xmlObj->setHeader();
+} 
+
+function grabWorkflowItem($todo_id,$db_doc,$db_dept,$user) {
+	lockTables($db_doc,array('wf_todo'));
+	$sArr = array('wf_document_id');
+	$wArr = array('id' => (int)$todo_id);
+	$wf_id = getTableInfo($db_doc,'wf_todo',$sArr,$wArr,'queryOne');
+
+	if($wf_id) {
+		$usrArr = array();
+
+		$sArr = array('id','username');	
+		$wArr = array(	'wf_document_id' => (int)$wf_id,
+						'department' => $user->db_name);
+		$todoItems = getTableInfo($db_doc,'wf_todo',$sArr,$wArr,'getAssoc');
+		foreach($todoItems AS $k => $u) {
+			if($user->username != $u) {
+				$wArr = array('id' => (int)$k );
+				deleteTableInfo($db_doc,'wf_todo',$wArr);
+				$usrArr[] = $u;
+			}
+		}
+		$arr = getCurrentWFNodeInfo($db_dept, $wf_id);
+        if(is_array($arr)) {
+            list($wf_node_id, $state) = array_values($arr);
+			$notes = "Users(".implode(",",$usrArr).") were removed from this workflow";
+			$insertArr = array( "wf_document_id"=> (int)$wf_id,
+                            	"wf_node_id"	=> (int)$wf_node_id,
+                            	"action"        => "Grabbed Workflow Item",
+                            	"username"      => $user->username,
+                            	"date_time"     => date('Y-m-d H:i:s'),
+                            	"state"         => (int)$state,
+                            	"notes"         => $notes );
+			$res = $db_dept->extended->autoExecute('wf_history',$insertArr);
+        	dbErr($res);
+		}
+	}
+	unlockTables($db_doc);
+	return $wf_id;
+}
+
+function createAndLoadTempTable($todoArr,$user) {
+	$indexArr = array(	"id INT DEFAULT 0",
+				"priority INT DEFAULT 0",
+				"notes ".TEXT16M . ' NULL',
+				"date_due ".DATETIME,
+				"link VARCHAR(255)",
+				"date ".DATETIME,
+				"department VARCHAR(255)",
+				"cabinet VARCHAR(255)",
+				"foldername VARCHAR(255) NULL",
+				"tab VARCHAR(255) NULL",
+				"workflow VARCHAR(255)",
+				"nodeName VARCHAR(255)",
+				"nodeType VARCHAR(255)",
+				"disable INT DEFAULT 0");
+	$db_dept = $user->getDbObject();
+	$tempTable = createDynamicTempTable($db_dept,$indexArr);
+	foreach($todoArr AS $entry) {
+		$entry['tab'] = substr( $entry['tab'], 0, 254 );
+		$res = $db_dept->extended->autoExecute($tempTable,$entry);
+		dbErr($res);
+	}
+	$_SESSION['todoTempTable'] = $tempTable;
+	return $tempTable;
+}
+
+function insertTodoAudit($db_dept,$user,$search) {
+	$insertArr = array( "username"  => $user->username,
+						"datetime"  => $user->getTime(),
+						"info"      => 'Search Value = '.$search,
+						"action"    => 'user searching TODO List' );
+	$res = $db_dept->extended->autoExecute('audit',$insertArr);
+	dbErr($res);
+}
+
+function getCabinetFolderList(&$todoCabList,$db_dept,$dep,$cab) {
+	$wfFolderArr = array();
+	if (isset ($todoCabList[$dep]) and isset ($todoCabList[$dep][$cab])) {
+		$wfFolderArr = $todoCabList[$dep][$cab];
+	} else {
+		$indiceNames = getCabinetInfo( $db_dept, $cab );
+		$indexArr = array();
+		foreach($indiceNames AS $name) {
+			$indexArr[] = "COALESCE($cab.$name, '')";
+		}
+
+		$tArr = array('wf_documents',$cab);
+		$sArr = array("$cab.doc_id", dbConcat($indexArr," "));
+		$wArr = array(	"cab = '$cab'",
+						"wf_documents.doc_id=$cab.doc_id");
+		$wfFolderArr = getTableInfo($db_dept,$tArr,$sArr,$wArr,'getAssoc');
+		if (!isset ($todoCabList[$dep])) {
+			$todoCabList[$dep] = array ();
+		}
+		$todoCabList[$dep][$cab] = $wfFolderArr;
+	}
+	return $wfFolderArr;
+}
+
+function getIndexDocumentFields($db_dept,$cab,$file_id) {
+	$documentFieldArr = array();
+	if($file_id > 0) {
+		$sArr = array('document_table_name','document_id');
+		$wArr = array('id' => (int)$file_id);
+		$documentInfo = getTableInfo($db_dept,$cab.'_files',$sArr,$wArr,'queryRow');
+
+		$sArr = array('id');
+		$wArr = array('document_table_name' => $documentInfo['document_table_name']);
+		$docTableID = getTableInfo($db_dept,'document_type_defs',$sArr,$wArr,'queryOne');
+
+		$sArr = array('document_field_value');
+		$wArr = array(	'document_defs_list_id' => (int)$docTableID,
+						'document_id'			=> (int)$documentInfo['document_id']);
+		$documentFieldArr = getTableInfo($db_dept,'document_field_value_list',$sArr,$wArr,'queryCol');
+	}
+	$docValue = "";
+	if($documentFieldArr) {
+		$docValue =	implode(" ",$documentFieldArr);
+	} else {
+		$docValue = "DEFAULT";
+	}
+	return $docValue;
+}
+
+function getWFTodoList($enArr,$user,$userStt) {
+	$todoInsertArr = array();
+	$todoCabList = array ();
+    	$curWFCab = "";
+    	$curWFDep = "";
+
+	$search = "";
+	if(isSet($enArr['search'])) {
+		$search = $enArr['search'];
+	}
+
+	$db_doc = getDbObject('docutron');
+	$sArr = array('real_department', 'arb_department');
+	$oArr = array('arb_department' => 'ASC');
+    $arbList = getTableInfo($db_doc,'licenses',$sArr,array(),'getAssoc',$oArr);
+
+	$whereArr = array('username'=> ($enArr['uname']) ? $enArr['uname'] : $user->username);
+	if($enArr['orderBy']) {
+		$oArr = array($enArr['orderBy'] => $enArr['orderDir']);
+	} else {
+		$oArr = array('priority' => 'ASC','department' => 'ASC','id' => 'ASC');
+	}
+	$todoList =  getTableInfo($db_doc,'wf_todo',array(),$whereArr,'queryAll',$oArr);
+	foreach($todoList AS $todoArr) {
+		$wfDep = $todoArr['department'];
+		if($wfDep != $curWFDep) {
+			$clientDB = getDbObject($wfDep);
+			$sArr = array('real_name','departmentname');
+			$arbCabArr = getTableInfo($clientDB,'departments',$sArr,array(),'getAssoc');
+			insertTodoAudit($clientDB,$user,$search);
+		}
+		$wfInfo = getWFLink($clientDB,$todoArr['wf_document_id']);
+		$wfCab = $wfInfo['cab'];
+		if($wfInfo) {
+			if($wfCab != $curWFCab || $wfDep != $curWFDep) {
+				$wfFolderArr = getCabinetFolderList($todoCabList,$clientDB,$wfDep,$wfCab);
+			}
+			$arbCab = $arbCabArr[$wfCab];
+			$foldername = $wfFolderArr[$wfInfo['doc_id']];
+			if($user->checkSetting('documentView',$wfCab) || $wfInfo['file_id'] > 0) {
+				$docValue = getIndexDocumentFields($clientDB,$wfCab,$wfInfo['file_id']);
+			} else {
+				$docValue = "DEFAULT";
+			}
+
+			$link = getLinkAbs($todoArr['id']);
+			$date_notified = $wfInfo['date_time'];
+			$todoInsertArr[(int)$todoArr['id']] = array(
+						"id"            => (int)$todoArr['id'],
+						"priority"		=> (int)$todoArr['priority'],
+						"notes"			=> $todoArr['notes'],
+						"date_due"		=> $todoArr['date'],
+						"link"          => $link,
+						"date"          => $date_notified,
+						"department"    => $arbList[$todoArr['department']],
+						"cabinet"       => $arbCabArr[$wfCab],
+						"foldername"    => $foldername,
+						"tab"			=> $docValue,
+						"workflow"		=> $wfInfo['defs_name'],
+						"nodeName"      => str_replace( "_", " ", $wfInfo['node_name'] ),
+						"nodeType"      => $wfInfo['node_type'],
+						"disable"       => 1 );
+			$curWFCab = $wfCab;
+			$curWFDep = $wfDep;
+		} else {
+			restartWorkflow($clientDB,$todoArr,$user,$db_doc);
+		}
+    }
+	return createAndLoadTempTable($todoInsertArr,$user);
+}
+
+function getFilterInfo($enArr,$user,$db_doc,$db_dept) {
+	$tempTable = $_SESSION['todoTempTable'];
+	$db_dept = getDbObject($user->db_name);
+	switch($enArr['filter']) {
+		case 'priority' :	
+				$sArr = array("DISTINCT(".$enArr['filter'].")");
+				$filterList = getTableInfo($db_dept,$tempTable,$sArr,array(),'queryCol');
+				break;
+		case 'department' :	
+				$sArr = array("DISTINCT(".$enArr['filter'].")");
+				$filterList = getTableInfo($db_dept,$tempTable,$sArr,array(),'queryCol');
+				break;
+		case 'cabinet' :	
+				$sArr = array("DISTINCT(".$enArr['filter'].")");
+				$filterList = getTableInfo($db_dept,$tempTable,$sArr,array(),'queryCol');
+				break;
+		case 'workflow' :	
+				$sArr = array("DISTINCT(".$enArr['filter'].")");
+				$filterList = getTableInfo($db_dept,$tempTable,$sArr,array(),'queryCol');
+				break;
+		case 'nodeName' :	
+				$sArr = array("DISTINCT(".$enArr['filter'].")");
+				$filterList = getTableInfo($db_dept,$tempTable,$sArr,array(),'queryCol');
+				break;
+		case 'nodeType' :	
+				$sArr = array("DISTINCT(".$enArr['filter'].")");
+				$filterList = getTableInfo($db_dept,$tempTable,$sArr,array(),'queryCol');
+				break;
+		default :
+				$filterList = array();
+				break;
+	};
+	usort($filterList,"strnatcasecmp");
+
+	$xmlObj = new xml();
+	$xmlObj->createKeyAndValue("FUNCTION","setFilterInput(XML)");
+	foreach($filterList AS $option) {
+		$xmlObj->createKeyAndValue("FILTER",$option);
+	}
+	$xmlObj->setHeader();
+}
+
+function removeFilter($enArr,$user,$db_doc,$db_dept) {
+	$wArr = array('id' => (int)$enArr['filter_id']);
+	deleteTableInfo($db_doc,'wf_filter_list',$wArr);	
+
+	$userStt = new Usrsettings ($user->username, $user->db_name);
+	$sArr = array('COUNT(id)');
+	$wArr = array('list_id' => (int)$userStt->get('filterList'));
+	$filterCt = getTableInfo($db_doc,'wf_filter_list',$sArr,$wArr,'queryOne');
+	if(!$filterCt) {
+		$userStt->removeKey('filterList');
+	}
+	searchWFTodo($enArr,$user,$db_doc,$db_dept);
+}
+
+function getFilterList($db_doc,$enArr,$userStt,&$filterArr) {
+	$whereArr = array();
+	if( isSet($enArr['search']) AND $enArr['search'] != "") {
+		if($filter_list_id = $userStt->get('filterList')) {
+			$sArr = array('name','value','exact','id');
+			$wArr = array('list_id' => (int)$filter_list_id);
+			$filterArr = getTableInfo($db_doc,'wf_filter_list',$sArr,$wArr,'getAssoc');
+
+			if(array_key_exists($enArr['filter'],$filterArr)) {
+				$uArr = array('value' => $enArr['search']);
+				$wArr = array('id' => (int)$filterArr[$enArr['filter']]['id']);
+				updateTableInfo($db_doc,'wf_filter_list',$uArr,$wArr);	
+			} else {
+				$insertArr = array( 'list_id' => (int)$filter_list_id,
+									'name' => $enArr['filter'],
+									'value' => $enArr['search'],
+									'exact' => (int)$enArr['exact'] );	
+				$res = $db_doc->extended->autoExecute('wf_filter_list',$insertArr);
+			}
+		} else {
+			lockTables($db_doc,array('wf_filter_list'));	
+			$sArr = array('MAX(list_id)+1');
+			$filter_list_id = getTableInfo($db_doc,'wf_filter_list',$sArr,array(),'queryOne');	
+			if(!$filter_list_id) {
+				$filter_list_id = 1;
+			}
+
+			$insertArr = array( 'list_id' => (int)$filter_list_id,
+								'name' => $enArr['filter'],
+								'value' => $enArr['search'],
+								'exact' => (int)$enArr['exact'] );	
+			$res = $db_doc->extended->autoExecute('wf_filter_list',$insertArr);
+			dbErr($res);
+			unlockTables($db_doc);
+			$userStt->set('filterList',$filter_list_id);
+		}
+	}
+
+	if($filter_list_id = $userStt->get('filterList')) {
+		$sArr = array('name','value','exact','id');
+		$wArr = array('list_id' => (int)$filter_list_id);
+		$filterArr = getTableInfo($db_doc,'wf_filter_list',$sArr,$wArr,'getAssoc');
+
+		$searchAll = false;
+		foreach($filterArr AS $key => $info) {
+			$search = $info['value'];
+			$exact = $info['exact'];
+
+			if($exact) { 
+				if($key == "priority") {
+					$whereArr[] = "$key = ".(int)$search;
+				} else {
+					$whereArr[] = "$key = '$search'";
+				}
+			} else {
+				if($key != "All") {
+					if($key == "date_due") {
+						$whereArr[] = "$key = '$search'";
+					} else {
+						$whereArr[] = "$key " . LIKE . " '%".$search."%'";
+					}
+				} else {
+					$searchAll = true;
+				}
+			}
+		}
+
+		if($searchAll) {
+			$allSearch = array( "notes " . LIKE . " '%".$search."%'",
+								"department " . LIKE . " '%".$search."%'",
+								"cabinet " . LIKE . " '%".$search."%'",
+								"foldername " . LIKE . " '%".$search."%'",
+								"tab " . LIKE . " '%".$search."%'",
+								"workflow " . LIKE . " '%".$search."%'",
+								"nodeName " . LIKE . " '%".$search."%'",
+								"nodeType " . LIKE . " '%".$search."%'" );
+/*			$allSearch = array( 'notes ' . LIKE . ' "%'.$search.'%"',
+								'date_due ' . LIKE . ' "%'.$search.'%"',
+								'date ' . LIKE . ' "%'.$search.'%"',
+								'department ' . LIKE . ' "%'.$search.'%"',
+								'cabinet ' . LIKE . ' "%'.$search.'%"',
+								'foldername ' . LIKE . ' "%'.$search.'%"',
+								'tab ' . LIKE . ' "%$search%"',
+								'workflow ' . LIKE . ' "%$search%"',
+								'nodeName ' . LIKE . ' "%'.$search.'%"',
+								'nodeType ' . LIKE . ' "%'.$search.'%"' );
+								*/
+			$whereArr[] = '('.implode(" OR ",$allSearch).')';
+		}
+	}
+
+	return $whereArr;
+}
+
+function searchWFTodo($enArr,$user,$db_doc,$db_dept) {
+	$gblStt = new GblStt ($user->db_name,$db_doc);
+	$userStt = new Usrsettings ($user->username, $user->db_name);
+
+	$DO_user = DataObject::factory('users', $db_doc);
+	$DO_user->get('username', $user->username);
+	$depAdminList = array ();
+
+	foreach($DO_user->departments as $dbName => $priv) {
+		if($priv == 'D') {
+			$depAdminList[] = $dbName;
+		}
+	}
+	$showReassign = false;
+	if (!in_array($user->db_name,$depAdminList)) {
+		if ($gblStt->get('allowReassignTodo')) {
+			$showReassign = true;
+		} else {
+			if ($userStt->get('allowReassignTodo')) {
+				$showReassign = true;
+			}
+		}
+	}
+	$viewGroup = 0;
+	$viewGroup = ($gblStt->get('wfGroupAccess')) ? 1 : 0;
+	if(!$viewGroup) {
+	    $viewGroup = ($userStt->get('wfGroupAccess')) ? 1 : 0;
+	}
+
+	if($viewGroup) {
+		$groupList = getGroupsForUser($db_dept,$user->username);
+		$userList = array();
+		foreach($groupList AS $g) {
+			$gList = getUsersFromGroup($db_dept,$g);
+			foreach($gList AS $u) {
+				if(!in_array($u,$userList)) {
+					$userList[] = $u;
+				}
+			}
+		}
+	} else if (!$showReassign) {
+		$userList = filterGreaterUsers($user->username, $db_doc, $depAdminList);
+	} else {
+		$userList = getTableInfo ($db_dept, 'access', array ('username'),
+			array (), 'queryCol', array ('username' => 'ASC'));
+	}
+	$tempTable = getWFTodoList($enArr,$user,$userStt);
+	if(!$user->isSuperUser()) {
+		filterDepartments($tempTable,$depAdminList,$db_dept);
+	}
+
+	$whereArr = array();
+
+	$filterArr = array();
+	$whereArr = getFilterList($db_doc,$enArr,$userStt,$filterArr);
+
+	$start = (($enArr['page'] - 1) * 100);
+	if($enArr['orderBy']) {
+		$order = "ASC";
+	    if(strtolower($enArr['orderDir']) == "asc") {
+			$order = "DESC";
+		}
+	    $oArr = array( 'date_due' => $order);
+
+	} else {
+		$oArr = array('priority' => 'ASC','id' => 'ASC');
+	}
+	$todoInsertArr = getTableInfo($db_dept,$tempTable,array(),$whereArr,'queryAll',$oArr,$start,100);
+
+
+	$sArr = array('COUNT(id)');
+	$totalWorkflows = getTableInfo($db_dept,$tempTable,$sArr,$whereArr,'queryOne');
+	$viewing = ($start + 1)." - ".($start+100);
+	$xmlObj = new xml('TODO');
+	$xmlObj->setRootAttribute('viewing',$viewing);
+	$xmlObj->setRootAttribute('total',$totalWorkflows);
+	$xmlObj->createKeyAndValue('FUNCTION','setWorkflowTodo(XML)');
+
+	foreach($filterArr AS $name => $info) {
+		$attArr = array('id' => $info['id'],
+						'name' => $name,
+						'exact' => $info['exact']);
+		$xmlObj->createKeyAndValue('FILTER',$info['value'],$attArr);
+	}
+
+	foreach($todoInsertArr AS $res) {
+		$parentEl = $xmlObj->createKeyAndValue('ENTRY');
+		foreach($res AS $k => $field) {
+			//create the text node and append
+			if($k == "date_due") {
+				if ($field and strpos ($field, '0000-00-00') === false) {
+					$field = date("Y-m-d",strtotime($field));
+				} else {
+					$field = '';
+				}
+			}
+			$field = str_replace("_"," ",$field);
+			$xmlObj->createKeyAndValue('FIELD',$field,array('name'=> $k),$parentEl);
+		}
+	}
+
+	foreach($userList AS $u) {
+		$sel = 0;
+		if($u == $enArr['uname']) {
+			$sel = 1;	
+		}
+		$xmlObj->createKeyAndValue('USERNAME',$u,array('selected'=> $sel));
+	}
+
+	if($viewGroup) {
+		$val = 1;
+	} else {
+		$val = (in_array($user->db_name,$depAdminList)) ? 1 : 0;
+	}
+	$xmlObj->createKeyAndValue('SHOWUSERDIV',NULL,array('value'=> $val));
+	$xmlObj->createKeyAndValue('NUMOFPRIORITIES',NULL,array('value'=> 5));
+	$xmlObj->setHeader();
+}
+
+function restartWorkflow($clientDB,$todoArr,$user,$db_doc) {
+	$updateArr = array('state_wf_def_id'=>'wf_def_id');
+	$whereArr = array('id'=>(int)$todoArr['wf_document_id']);
+	updateTableInfo($clientDB,'wf_documents',$updateArr,$whereArr);
+	$selArr = array('wf_def_id','cab','doc_id');
+	$wfNodeInfo = getTableInfo($clientDB,'wf_documents',$selArr,$whereArr,'queryRow');
+	$cabDispName = getTableInfo($clientDB, 'departments', array('departmentname'),
+		array('real_name' => $wfNodeInfo['cab']), 'queryOne');
+	if( !wfNodeInfo ){
+	$stateNodeObj = new stateNode($clientDB, $todoArr['department'], $user->username, $todoArr['wf_document_id'],
+					$wfNodeInfo['wf_def_id'], $wfNodeInfo['cab'], $cabDispName, $wfNodeInfo['doc_id'], $db_doc);
+	$stateNodeObj->notify();
+	$stateNodeObj->addToWFHistory('workflow restarted','current node for this workflow has been deleted');
+	}else{
+		//delete from the wf_todo list if the document no longer exists!
+		$wArr = array( 'wf_document_id' => (int)$todoArr['wf_document_id'], 'username'=>$todoArr['username'], 'department'=>$todoArr['department'] );
+		deleteTableInfo($db_doc,'wf_todo',$wArr);	
+	}
+}
+
+function updateTodoNotes($enArr,$user, $db_doc,$db_dept) {
+	$todoID = $enArr['todoID'];
+	$notes = $enArr['note'];
+	updateTableInfo($db_doc, 'wf_todo', array("notes" => $notes), array("id" => (int)$todoID));
+
+	$xmlObj = new xml('TODO');
+	$xmlObj->createKeyAndValue('FUNCTION',"setTodoNotes(XML,'$todoID')");
+	$xmlObj->createKeyAndValue('SUCCESS',NULL,array('value' => 1));
+	$xmlObj->setHeader();
+}
+
+function updateTodoDueDate($enArr,$user, $db_doc,$db_dept) {
+	$todoID = $enArr['todoID'];
+	$dueDate = $enArr['dueDate'];
+	updateTableInfo($db_doc, 'wf_todo', array("date" => $dueDate), array("id" => (int)$todoID));
+
+	$xmlObj = new xml('TODO');
+	$xmlObj->createKeyAndValue('FUNCTION','setDueDate(XML)');
+	$xmlObj->createKeyAndValue('SUCCESS',NULL,array('value' => 1));
+	$xmlObj->setHeader();
+}
+
+function updateTodoPriority($enArr,$user, $db_doc,$db_dept) {
+	$todoID = $enArr['todoID'];
+	$priority = $enArr['priority'];
+	updateTableInfo($db_doc, 'wf_todo', array("priority" => $priority), array("id" => (int)$todoID));
+	updateTableInfo($db_dept, $_SESSION['todoTempTable'], array("priority" => $priority), array("id" => (int)$todoID));
+
+	$xmlObj = new xml('TODO');
+	$xmlObj->createKeyAndValue('FUNCTION','setPriority(XML)');
+	$xmlObj->createKeyAndValue('SUCCESS',NULL,array('value' => 1));
+	$xmlObj->setHeader();
+}
+?>

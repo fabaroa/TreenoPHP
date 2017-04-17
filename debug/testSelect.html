@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+    "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<title>Test Select</title>
+<script type="text/javascript" src="../lib/settings.js"></script>
+<script type="text/javascript">
+var testVars = ['Bemis', 'Krzywicki', 'Lagasse', 'McCann', 'McCoole',
+				'Schultz', 'Tentindo', 'Thibodeau', 'Wong'];
+
+function registerVars() {
+	var mySel = getEl('testSel');
+	new comboBox(mySel, testVars);
+}
+
+function comboBox(el, varArr) {
+	this.mySel = null;
+	this.el = el;
+	this.varArr = varArr;
+	this.oldVal = '';
+	this.currSelect = -1;
+	this.el.myCombo = this;
+//	this.onkeyup = this.processKeys;
+	this.el.onfocus = function() {
+		this.myCombo.showSelect();
+	}
+	this.el.ondblclick = function() {
+		this.myCombo.showSelect();
+	}
+	this.el.onkeyup = function(e) {
+		this.myCombo.showSelect();
+		var event = e ? e : window.event;
+		this.myCombo.processKeys(event);
+	}
+	
+	this.removeSelect = function() {
+		document.body.removeChild(this.mySel);
+		this.currSelect = -1;
+		this.mySel = null;
+	}
+	
+	this.showSelect = function() {
+		if(this.mySel == null) {
+			this.currSelect = -1;
+			this.mySel = newEl('div');
+			this.mySel.style.position = 'absolute';
+			this.mySel.style.top = this.el.offsetBottom + 'px';
+			this.mySel.style.left = this.el.offsetLeft + 'px';
+			this.mySel.style.width = this.el.offsetWidth + 'px';
+			this.mySel.style.cursor = 'pointer';
+			this.mySel.style.borderWidth = '1px';
+			this.mySel.style.borderStyle = 'solid';
+			this.mySel.style.borderColor = 'black';
+			this.selArr = new Array();
+			for(var i = 0; i < this.varArr.length; i++) {
+				this.selArr[i] = newEl('div');
+				this.selArr[i].divNum = i;
+				this.selArr[i].appendChild(newTxt(this.varArr[i]));
+				this.selArr[i].value = this.varArr[i];
+				this.selArr[i].style.backgroundColor = 'white';
+				this.selArr[i].obj = this;
+				this.selArr[i].onmouseover = function() {
+					if(this.obj.currSelect != -1) {
+						this.obj.selArr[this.obj.currSelect].style.backgroundColor = 'white';
+					}
+					this.obj.currSelect = this.divNum;
+					this.style.backgroundColor = 'silver';
+				}
+				this.selArr[i].onmouseout = function() {
+					this.style.backgroundColor = 'white';
+				}
+				this.selArr[i].onclick = function() {
+					this.obj.el.value = this.value;
+					this.obj.el.select();
+					this.obj.removeSelect();
+				}
+				this.mySel.appendChild(this.selArr[i]);
+			}
+			document.body.appendChild(this.mySel);
+		}
+	}
+	this.processKeys = function(event) {
+		var oldVal = this.el.value;
+		if(this.el.value != '' && this.el.value != this.oldVal && event.keyCode != 8) {
+			for(var i = 0; i < this.selArr.length; i++) {
+				if(this.selArr[i].value.substring(0, this.el.value.length).toLowerCase() == this.el.value.toLowerCase()) {
+					this.el.value = this.selArr[i].value;
+					this.el.setSelectionRange(oldVal.length, this.selArr[i].value.length);
+					break;
+				}
+			}
+		}
+		if(event.keyCode == 38) {
+			this.currSelect--;
+			if(this.currSelect < -1) {
+				this.currSelect = -1;
+			}
+		} else if(event.keyCode == 40) {
+			this.currSelect++;
+			if(this.currSelect >= this.selArr.length) {
+				this.currSelect = this.selArr.length - 1;
+			}
+		}
+		//this.setSelected(this.currSelect);
+		this.oldVal = this.el.value;
+	}
+	this.setSelected = function() {
+		var range = document.createRange();
+		for(var i = 0; i < this.selArr.length; i++) {
+			if(this.currSelect == i) {
+				this.selArr[i].style.backgroundColor = 'silver';
+				this.el.value = this.selArr[i].value;
+				this.el.select();
+			} else {
+				this.selArr[i].style.backgroundColor = 'white';
+			}
+		}
+	}
+}
+
+</script>
+</head>
+<body onload="registerVars()">
+<div>
+<input type="text" id="testSel" />
+</div>
+</body>
+</html>

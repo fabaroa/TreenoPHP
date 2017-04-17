@@ -1,0 +1,19 @@
+to enable the auth upload file for the filemonitor, docutron printer, indexing drag and drop do the following steps
+1. Find the structure in /etc/httpd/conf/httpd.conf the looks like the following:
+<Directory />
+    Options FollowSymLinks
+    AllowOverride None
+</Directory>
+
+2. add the line "Script PUT /authupload/upload.php" to the structure so that it looks like:
+<Directory />
+    Options FollowSymLinks
+    AllowOverride None
+    Script PUT /authupload/upload.php
+</Directory>
+
+go to the /var/www/html/authupload directory.  add a .htaccess file and type the following command:
+htdigest -c .htdigest docutron upload
+then type docutron in for the password
+restart httpd
+/etc/init.d/httpd restart

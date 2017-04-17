@@ -1,0 +1,117 @@
+<!DOCTYPE html 
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+		"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html style="height:100%">
+<head>
+	<title>Cabinet Indexing</title>
+	<link rel="stylesheet" type="text/css" href="../lib/style.css"/>				
+	<link rel="stylesheet" type="text/css" href="indexValues.css"/>				
+	<link rel="stylesheet" type="text/css" href="../lib/calendar.css"/>
+	<script type="text/javascript" src="../lib/prototype.js"></script> 
+	<script type="text/javascript" src="../lib/behaviour.js"></script> 
+	<script type="text/javascript" src="indexValues.js"></script> 
+	<script type="text/javascript" src="../lib/settings2.js"></script> 
+	<script type="text/javascript" src="../lib/calendar.js"></script>		
+	<script type="text/javascript">
+		var totalPages = 0;
+		var autoComp = 0;
+		var scroll = 0;
+		var dateFuncs = 0;
+		var indArr = new Array();
+
+		Behaviour.addLoadEvent(
+			function() {
+				loadInitData();
+				adjustHeight();
+			}
+		); 
+	</script>
+	<style>
+		.addNewActionDiv {	position : absolute;
+							left : 33%;
+							display: none;
+							width : 350px;
+							margin-right: auto;
+							margin-left: auto;
+							padding-top: 5px;
+							background: #ffffff,
+							}
+		
+		.cabFieldsDivFocus {
+			filter:alpha(opacity=100);
+			-moz-opacity:1;
+			opacity:1;
+		}
+
+		.cabFieldsDivUnFocus {
+			filter:alpha(opacity=40);
+			-moz-opacity:.40;
+			opacity:.40
+		}
+
+		.docField {}
+	</style>
+</head>
+<body>
+	<div id="fileContainer">
+		<iframe id="indexFile" src="../energie/bottom_white.php">
+		</iframe>
+	</div>
+	<div id="confirmDelete">
+		<div>
+			<span>Confirm Delete</span>
+		</div>
+		<div>
+			<input type="button" id="yesDelete" name="yes" value="Yes" />
+			<input type="button" id="noDelete" name="no" value="No" />
+		</div>
+	</div>
+	<div id="outerDiv">
+		<div id="checkDiv">
+			<input type="checkbox" id="quickView" name="quickVie0" value="1" onclick="setFirstPage()" checked />
+			<span>Show PDF as JPEG</span>
+		</div>
+		<div id="pageDiv">
+			<img id="first" src="../energie/images/begin_button.gif" border="0" />
+			<img id="back" src="../energie/images/back_button.gif" border="0" />
+			<input type="text" id="pageNum" name="pageNum" value="1" disabled />
+			<span>of</span>
+			<span id="totalPages" style="padding:2px"></span>
+			<img id="next" src="../energie/images/next_button.gif" border="0" />
+			<img id="last" src="../energie/images/end_button.gif" border="0" />
+		</div>
+		<div id="viewingDiv">
+			<span>Viewing:</span>
+			<span id="viewingFile"></span>
+		</div>
+		<div id="foldersLeftOuterDiv">
+			<span>  Batches Remaining: </span>
+			<span id="foldersLeft"></span>
+		</div>
+	</div>
+	<div id="cabFieldsDiv" class="cabFieldsDivFocus">
+		<table id="cabFieldsTable"></table>
+	</div>
+	<div id="actionDiv">
+		<div style="width:25%;float:left">
+			<input type="button" id="submit" name="submit" value="Submit" />
+			<input type="button" id="delete" name="delete" value="Delete" />
+			<input type="button" id="skip" name="skip" value="Skip" />
+		</div>
+		<div id="messDiv" style="width:33%"></div>
+		<!--Hidden, because we only index to the Main tab in the new product-->
+		<div id="tabDiv" style="width:40%;float:right;padding-right:5px;text-align:right">
+			<span id="tabSpan" style="padding-right:5px;font-weight:bold"></span>
+			<select id="tabSelect" name="tabSelect" onchange=""></select>
+		</div>
+	</div>
+	<div id="addNewDocumentDiv" class="addNewActionDiv">
+		<div style="border-style:double;border-width: 5px;border-color: #003B6F" id="addDocOuterDiv">
+			<div class="mainTitle" style="text-align:center">
+				<span id="indexSpan"></span>
+			</div>
+			<div id="addDocumentDiv" style="background:white"></div>
+		</div>
+	</div>
+</body>
+</html>

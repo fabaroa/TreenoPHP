@@ -1,0 +1,531 @@
+﻿15955	50613	Acme, Inc.	77877
+13980	54790	Widget Corp	90802
+13857	56289	123 Warehousing	18081
+13970	56712	Demo Company	33936
+10061	51198	Smith and Co.	28959
+17617	57528	Foo Bars	48182
+12136	53873	ABC Telecom	74495
+16221	58377	Fake Brothers	4493
+15455	57427	QWERTY Logistics	17661
+13035	58540	Demo, Inc.	42493
+10958	51652	Sample Company	96548
+10903	54681	Sample, Inc.	77726
+19936	53797	Acme Corp	83142
+11593	50028	Allied Biscuit	8550
+13371	54621	Ankh-Sto Associates	34742
+19815	59689	Extensive Enterprise	32283
+14280	53093	Galaxy Corp	46560
+13567	56874	Globo-Chem	88121
+11508	56328	Mr. Sparkle	15678
+10362	51760	Globex Corporation	89205
+19742	58531	LexCorp	75789
+13705	50895	LuthorCorp	70707
+16343	56599	North Central Positronics	99911
+12297	55125	Omni Consimer Products	47305
+18859	53395	Praxis Corporation	61012
+10881	55191	Sombra Corporation	6884
+14446	54568	Sto Plains Holdings	61681
+12509	50732	Tessier-Ashpool	53736
+12427	57328	Wayne Enterprises	67600
+15927	51549	Wentworth Industries	47536
+17648	57745	ZiffCorp	72319
+17999	58769	Bluth Company	46030
+11229	54743	Strickland Propane	89130
+14888	58607	Thatherton Fuels	53599
+14776	57156	Three Waters	16115
+14140	52293	Water and Power	88915
+19162	57273	Western Gas & Electric	53059
+18591	50333	Mammoth Pictures	73690
+14926	55481	Mooby Corp	32939
+11104	50117	Gringotts	53939
+12615	51492	Thrift Bank	37340
+19890	54179	Flowers By Irene	78777
+15335	53765	The Legitimate Businessmens Club	36277
+13468	52338	Osato Chemicals	37434
+15728	57712	Transworld Consortium	18735
+13469	58763	Universal Export	98818
+13779	51547	United Fried Chicken	18142
+19441	50876	Virtucon	78930
+11840	59126	Kumatsu Motors	33125
+14151	52982	Keedsler Motors	80683
+13603	50777	Powell Motors	73358
+17373	55149	Industrial Automation	16718
+17761	57705	Sirius Cybernetics Corporation	19730
+18492	55389	U.S. Robotics and Mechanical Men	1328
+14408	50568	Colonial Movers	61990
+13663	54236	Corellian Engineering Corporation	99530
+16854	57592	Incom Corporation	10905
+11514	50984	General Products	14347
+10417	55853	Leeding Engines Ltd.	12655
+18991	52037	Blammo	3208
+11290	51337	Input, Inc.	45439
+18165	55932	Mainway Toys	38844
+13095	52369	Videlectrix	6463
+16101	58301	Zevo Toys	1082
+15400	54355	Ajax	74098
+17189	55009	Axis Chemical Co.	87743
+16589	59003	Barrytron	27490
+11148	58728	Carrys Candles	57718
+14454	59167	Cogswell Cogs	52709
+13128	54929	Spacely Sprockets	68396
+15056	58291	General Forge and Foundry	8271
+12306	58186	Duff Brewing Company	23946
+17742	56561	Dunder Mifflin	8235
+15447	55057	General Services Corporation	77251
+12039	57758	Monarch Playing Card Co.	83448
+17382	52730	Krustyco	5904
+16750	51906	Initech	67091
+19073	54168	Roboto Industries	69769
+14142	51076	Primatech	5441
+19387	55089	Sonky Rubber Goods	88806
+14072	53753	St. Anky Beer	6536
+10379	58286	Stay Puft Corporation	50172
+18706	50767	Vandelay Industries	15813
+16950	50966	Wernham Hogg	83187
+13972	55335	Gadgetron	1441
+14245	57629	Burleigh and Stronginthearm	21602
+18227	56522	BLAND Corporation	63151
+16922	50440	Nordyne Defense Dynamics	69612
+19723	56390	Petrox Oil Company	6340
+12284	56192	Roxxon	71495
+11375	54081	McMahon and Tate	56344
+17493	54298	Sixty Second Avenue	43258
+19900	58176	Charles Townsend Agency	28755
+16483	56520	Spade and Archer	22614
+19372	50290	Megadodo Publications	64548
+15297	55406	Rouster and Sideways	54485
+18210	58167	C.H. Lavatory and Sons	88172
+15744	50181	Globo Gym American Corp	71586
+13795	59567	The New Firm	70850
+12223	52455	SpringShield	69010
+19945	54923	Compuglobalhypermeganet	72758
+10277	52444	Data Systems	46706
+14100	55296	Gizmonic Institute	72382
+10471	51795	Initrode	35461
+13548	52452	Taggart Transcontinental	49730
+19465	51870	Atlantic Northern	11213
+16219	58943	Niagular	76842
+19306	53269	Plow King	55054
+10828	54704	Big Kahuna Burger	87581
+19706	50750	Big T Burgers and Fries	61942
+16147	57242	Chez Quis	40398
+17363	54363	Chotchkies	55782
+10446	50462	The Frying Dutchman	70140
+14876	55904	Klimpys	25457
+14949	54883	The Krusty Krab	33459
+19267	50436	Monks Diner	85451
+10785	51157	Milliways	29349
+16922	54752	Minuteman Cafe	2077
+11524	58095	Taco Grande	15196
+18468	56164	Tip Top Cafe	29236
+13904	53433	Moes Tavern	74751
+14012	50289	Central Perk	55330
+13453	58962	Chasers	15119
+15009	59169	Acme, Inc.	9306
+16682	50542	Widget Corp	34641
+14924	54971	123 Warehousing	96643
+15939	58996	Demo Company	18270
+14787	52076	Smith and Co.	82840
+10902	50126	Foo Bars	97763
+10387	54164	ABC Telecom	43062
+15821	57540	Fake Brothers	6064
+12501	52718	QWERTY Logistics	75852
+19975	57252	Demo, Inc.	52250
+18059	58207	Sample Company	38847
+10002	57465	Sample, Inc.	3467
+17785	58935	Acme Corp	89983
+15691	55195	Allied Biscuit	76212
+17773	51555	Ankh-Sto Associates	7030
+12576	59051	Extensive Enterprise	11901
+14478	54740	Galaxy Corp	89666
+12196	52040	Globo-Chem	65595
+16474	56263	Mr. Sparkle	22466
+11404	57484	Globex Corporation	53740
+19885	59963	LexCorp	16976
+19472	50685	LuthorCorp	7182
+14658	57798	North Central Positronics	99356
+10458	54737	Omni Consimer Products	52189
+18676	54150	Praxis Corporation	36781
+16762	53535	Sombra Corporation	64085
+14909	56044	Sto Plains Holdings	26420
+10872	54431	Tessier-Ashpool	17838
+11475	55101	Wayne Enterprises	49828
+18969	52609	Wentworth Industries	88467
+16740	56973	ZiffCorp	94044
+17671	55232	Bluth Company	28433
+16556	52640	Strickland Propane	82509
+11327	54556	Thatherton Fuels	20790
+11874	57674	Three Waters	29612
+13040	56887	Water and Power	58251
+15827	51664	Western Gas & Electric	80080
+17590	50113	Mammoth Pictures	96700
+13143	55671	Mooby Corp	4301
+11732	53589	Gringotts	97865
+16892	55061	Thrift Bank	35802
+18895	55542	Flowers By Irene	33154
+17257	53359	The Legitimate Businessmens Club	84780
+16421	58608	Osato Chemicals	89275
+19458	55661	Transworld Consortium	86901
+10150	59101	Universal Export	64197
+10890	58921	United Fried Chicken	33920
+19218	57520	Virtucon	82131
+11338	51244	Kumatsu Motors	635
+11600	50335	Keedsler Motors	57938
+18349	53784	Powell Motors	92241
+19483	58180	Industrial Automation	75325
+13632	54882	Sirius Cybernetics Corporation	38235
+16639	55503	U.S. Robotics and Mechanical Men	56834
+13912	50733	Colonial Movers	85027
+17667	56747	Corellian Engineering Corporation	10488
+19088	58512	Incom Corporation	14959
+18637	51249	General Products	64573
+14961	56812	Leeding Engines Ltd.	89508
+18071	53098	Blammo	8419
+18341	58810	Input, Inc.	37403
+19158	57510	Mainway Toys	5147
+15765	56894	Videlectrix	11458
+17837	50952	Zevo Toys	50038
+19485	51747	Ajax	25380
+14552	55948	Axis Chemical Co.	43544
+16085	55702	Barrytron	16548
+16784	55286	Carrys Candles	35986
+12863	51122	Cogswell Cogs	68273
+17659	50105	Spacely Sprockets	766
+10989	54749	General Forge and Foundry	4886
+19199	53764	Duff Brewing Company	94857
+14401	57886	Dunder Mifflin	42785
+17609	58878	General Services Corporation	2842
+14150	52618	Monarch Playing Card Co.	13895
+16860	50771	Krustyco	38252
+13759	50627	Initech	67791
+17427	54419	Roboto Industries	75246
+19570	58537	Primatech	59139
+19087	52542	Sonky Rubber Goods	99113
+11650	52751	St. Anky Beer	94959
+14018	59109	Stay Puft Corporation	45813
+16277	55165	Vandelay Industries	22798
+14638	59553	Wernham Hogg	29257
+12772	57336	Gadgetron	62376
+17851	57817	Burleigh and Stronginthearm	65911
+16177	55679	BLAND Corporation	61024
+17511	55157	Nordyne Defense Dynamics	28448
+17804	55602	Petrox Oil Company	77630
+19420	58079	Roxxon	50919
+19939	50315	McMahon and Tate	56613
+18558	54116	Sixty Second Avenue	2300
+14215	59781	Charles Townsend Agency	25380
+12446	56702	Spade and Archer	52157
+18774	55595	Megadodo Publications	63380
+11334	51794	Rouster and Sideways	37373
+12060	55290	C.H. Lavatory and Sons	80123
+17815	52035	Globo Gym American Corp	74496
+16092	54342	The New Firm	53494
+10207	50539	SpringShield	92685
+18564	53596	Compuglobalhypermeganet	52236
+19283	54458	Data Systems	5063
+16852	51820	Gizmonic Institute	52340
+18971	53413	Initrode	58880
+15999	54384	Taggart Transcontinental	15349
+11001	59443	Atlantic Northern	89911
+15034	52283	Niagular	76226
+14434	50114	Plow King	62852
+10604	53008	Big Kahuna Burger	55073
+14463	53379	Big T Burgers and Fries	85234
+12757	54204	Chez Quis	83191
+11703	50668	Chotchkies	46464
+12580	56159	The Frying Dutchman	47633
+12145	50192	Klimpys	53240
+19644	52894	The Krusty Krab	85799
+10321	51522	Monks Diner	99134
+18404	58505	Milliways	19326
+11168	58645	Minuteman Cafe	55772
+16807	51829	Taco Grande	12573
+18887	52264	Tip Top Cafe	78911
+13355	56776	Moes Tavern	9891
+18516	54694	Central Perk	37960
+12196	57851	Chasers	93369
+11595	56406	Acme, Inc.	9951
+14008	54704	Widget Corp	59242
+15707	51307	123 Warehousing	67338
+15192	54238	Demo Company	73615
+15365	58691	Smith and Co.	10665
+11902	53276	Foo Bars	4353
+15427	58681	ABC Telecom	28603
+11402	59478	Fake Brothers	91331
+13773	58838	QWERTY Logistics	2686
+10819	51924	Demo, Inc.	87502
+19369	50775	Sample Company	85904
+11328	58315	Sample, Inc.	87249
+17650	58823	Acme Corp	74065
+14565	50241	Allied Biscuit	29481
+15574	51948	Ankh-Sto Associates	22268
+16078	59818	Extensive Enterprise	40712
+10952	57085	Galaxy Corp	97624
+13720	52771	Globo-Chem	54594
+12362	51357	Mr. Sparkle	72919
+12872	56110	Globex Corporation	85081
+17277	55017	LexCorp	20276
+16528	52583	LuthorCorp	18862
+16404	55913	North Central Positronics	7916
+11990	58928	Omni Consimer Products	35483
+12220	59735	Praxis Corporation	47649
+16725	50654	Sombra Corporation	1493
+14107	57781	Sto Plains Holdings	73538
+16188	54495	Tessier-Ashpool	34199
+13864	58835	Wayne Enterprises	64401
+16121	58158	Wentworth Industries	2304
+10943	57940	ZiffCorp	65074
+19573	53417	Bluth Company	31094
+19547	51465	Strickland Propane	12457
+15669	57479	Thatherton Fuels	73929
+19265	52525	Three Waters	29622
+18834	54669	Water and Power	95027
+13398	59856	Western Gas & Electric	87358
+11044	53912	Mammoth Pictures	27992
+13096	53405	Mooby Corp	54736
+13531	57878	Gringotts	7711
+18212	51880	Thrift Bank	91117
+12480	58492	Flowers By Irene	56550
+12263	50225	The Legitimate Businessmens Club	77421
+17931	58693	Osato Chemicals	53596
+12866	56161	Transworld Consortium	25123
+18261	50446	Universal Export	35390
+13165	52982	United Fried Chicken	18158
+14950	59876	Virtucon	12511
+12118	52656	Kumatsu Motors	74389
+18714	55852	Keedsler Motors	78861
+10262	51709	Powell Motors	6042
+17464	59592	Industrial Automation	96512
+16775	56191	Sirius Cybernetics Corporation	53818
+10995	56656	U.S. Robotics and Mechanical Men	91959
+13704	58173	Colonial Movers	70036
+11858	51604	Corellian Engineering Corporation	55185
+12025	52540	Incom Corporation	94350
+16669	51349	General Products	56371
+12642	58008	Leeding Engines Ltd.	63226
+10514	58866	Blammo	6949
+15817	55046	Input, Inc.	1827
+19303	53596	Mainway Toys	7815
+18761	57078	Videlectrix	49833
+18456	55901	Zevo Toys	6009
+14633	55416	Ajax	95133
+10845	55059	Axis Chemical Co.	99008
+19675	55315	Barrytron	75802
+12922	51134	Carrys Candles	79911
+19147	55511	Cogswell Cogs	17991
+19698	55291	Spacely Sprockets	66574
+11330	54299	General Forge and Foundry	24252
+18073	53049	Duff Brewing Company	37997
+19925	58774	Dunder Mifflin	53439
+16335	54871	General Services Corporation	91002
+17745	56928	Monarch Playing Card Co.	85413
+12309	59650	Krustyco	16623
+14090	51271	Initech	72225
+17391	52083	Roboto Industries	12604
+13433	54922	Primatech	20797
+17846	50728	Sonky Rubber Goods	4466
+14815	55106	St. Anky Beer	63166
+11328	55416	Stay Puft Corporation	90968
+15175	53021	Vandelay Industries	99619
+11736	52668	Wernham Hogg	94632
+13557	59438	Gadgetron	20265
+16623	50010	Burleigh and Stronginthearm	13927
+18021	57598	BLAND Corporation	21374
+10367	51241	Nordyne Defense Dynamics	84095
+18092	58730	Petrox Oil Company	2226
+14953	51114	Roxxon	1200
+11967	50478	McMahon and Tate	5134
+18110	55327	Sixty Second Avenue	27650
+11440	56336	Charles Townsend Agency	60434
+11200	56775	Spade and Archer	96705
+18519	55996	Megadodo Publications	90220
+17406	51776	Rouster and Sideways	73595
+16092	53122	C.H. Lavatory and Sons	73291
+13764	58587	Globo Gym American Corp	49361
+11405	57502	The New Firm	52536
+15487	57502	SpringShield	99917
+12112	56762	Compuglobalhypermeganet	52649
+10570	50467	Data Systems	77731
+16351	54213	Gizmonic Institute	45283
+17028	55836	Initrode	94638
+10747	55621	Taggart Transcontinental	91622
+13521	54363	Atlantic Northern	39306
+10138	56964	Niagular	43315
+16112	58858	Plow King	67940
+12576	57379	Big Kahuna Burger	88829
+15574	53643	Big T Burgers and Fries	32254
+14202	59590	Chez Quis	99719
+19427	56489	Chotchkies	94218
+18874	57611	The Frying Dutchman	66922
+19870	57359	Klimpys	32886
+17458	54048	The Krusty Krab	25009
+13866	51811	Monks Diner	25240
+16583	57524	Milliways	33839
+19693	51989	Minuteman Cafe	27629
+18019	54041	Taco Grande	61626
+17667	52533	Tip Top Cafe	49182
+13845	59891	Moes Tavern	99597
+19988	56775	Central Perk	50086
+13259	56211	Chasers	21271
+16681	56703	Acme, Inc.	73653
+16817	56546	Widget Corp	16955
+16595	58927	123 Warehousing	29950
+18773	51588	Demo Company	19974
+13002	51230	Smith and Co.	60102
+16188	53528	Foo Bars	97430
+11407	51450	ABC Telecom	32198
+10296	53865	Fake Brothers	39728
+10341	57688	QWERTY Logistics	12028
+16096	53881	Demo, Inc.	91788
+15405	52790	Sample Company	42030
+19603	55596	Sample, Inc.	75350
+19522	58017	Acme Corp	21099
+15764	51505	Allied Biscuit	97227
+15048	58799	Ankh-Sto Associates	10408
+19376	59241	Extensive Enterprise	94252
+15789	59592	Galaxy Corp	41821
+10538	51140	Globo-Chem	2001
+15775	55119	Mr. Sparkle	85681
+12124	52796	Globex Corporation	84124
+17915	54755	LexCorp	81141
+10787	54553	LuthorCorp	85918
+18556	56517	North Central Positronics	83904
+18072	52290	Omni Consimer Products	36642
+12732	59842	Praxis Corporation	44370
+10320	57207	Sombra Corporation	94794
+16855	54022	Sto Plains Holdings	83007
+17375	54045	Tessier-Ashpool	78015
+19069	54852	Wayne Enterprises	52582
+15452	58765	Wentworth Industries	95386
+12189	53364	ZiffCorp	22148
+14063	51835	Bluth Company	54005
+13987	50279	Strickland Propane	39189
+12140	59128	Thatherton Fuels	23017
+17610	59755	Three Waters	38342
+12743	57494	Water and Power	55593
+13048	54173	Western Gas & Electric	62726
+10983	50403	Mammoth Pictures	83220
+15695	55713	Mooby Corp	34683
+15152	56265	Gringotts	39654
+15802	53435	Thrift Bank	38068
+17390	55215	Flowers By Irene	56313
+11759	54354	The Legitimate Businessmens Club	99474
+18953	53251	Osato Chemicals	11020
+19266	50085	Transworld Consortium	53414
+13300	52607	Universal Export	22152
+10351	56229	United Fried Chicken	80232
+16430	54804	Virtucon	23737
+12121	58388	Kumatsu Motors	10815
+14096	59318	Keedsler Motors	52460
+19083	54934	Powell Motors	77799
+14428	56252	Industrial Automation	27828
+12926	52080	Sirius Cybernetics Corporation	20559
+19332	50716	U.S. Robotics and Mechanical Men	20214
+11041	54491	Colonial Movers	18803
+15794	59356	Corellian Engineering Corporation	47963
+10383	58401	Incom Corporation	80985
+13911	55531	General Products	7656
+18409	53914	Leeding Engines Ltd.	88572
+14275	53052	Blammo	88408
+17727	54959	Input, Inc.	76726
+12667	55454	Mainway Toys	79446
+10355	59867	Videlectrix	52269
+13086	56937	Zevo Toys	13701
+11940	50360	Ajax	39471
+15826	57697	Axis Chemical Co.	53320
+15539	51184	Barrytron	79733
+15703	59133	Carrys Candles	37379
+13652	58998	Cogswell Cogs	80991
+10106	58443	Spacely Sprockets	9875
+14762	58584	General Forge and Foundry	19849
+12471	55626	Duff Brewing Company	38710
+17805	52306	Dunder Mifflin	55211
+16481	52148	General Services Corporation	28675
+17834	51402	Monarch Playing Card Co.	64362
+19212	52893	Krustyco	89189
+10400	50864	Initech	24721
+10319	54674	Roboto Industries	18102
+14162	50978	Primatech	42305
+13244	59315	Sonky Rubber Goods	42606
+12076	53418	St. Anky Beer	45525
+17254	50950	Stay Puft Corporation	40329
+16155	52932	Vandelay Industries	12741
+19515	53404	Wernham Hogg	8302
+10851	54229	Gadgetron	66023
+10729	59134	Burleigh and Stronginthearm	32863
+14924	53559	BLAND Corporation	20443
+14866	52721	Nordyne Defense Dynamics	12627
+17247	56518	Petrox Oil Company	59254
+15233	50532	Roxxon	56300
+15166	58645	McMahon and Tate	1498
+12872	52573	Sixty Second Avenue	26129
+14121	55617	Charles Townsend Agency	15673
+14694	57895	Spade and Archer	57461
+17499	56708	Megadodo Publications	10179
+10292	59117	Rouster and Sideways	82807
+12450	56653	C.H. Lavatory and Sons	11882
+19952	58892	Globo Gym American Corp	40720
+15450	54558	The New Firm	70352
+10740	53025	SpringShield	56063
+18136	51520	Compuglobalhypermeganet	93091
+14293	55550	Data Systems	59703
+16571	58284	Gizmonic Institute	98711
+16829	52115	Initrode	68770
+10571	58837	Taggart Transcontinental	24564
+12764	54737	Atlantic Northern	45271
+17681	53638	Niagular	1237
+11057	59782	Plow King	60142
+15045	52103	Big Kahuna Burger	28893
+17574	55327	Big T Burgers and Fries	59826
+13242	56955	Chez Quis	26099
+10492	54233	Chotchkies	10453
+17684	55188	The Frying Dutchman	55438
+19827	57317	Klimpys	15349
+14287	53380	The Krusty Krab	94553
+10918	52167	Monks Diner	31968
+18222	57795	Milliways	23669
+16472	53469	Minuteman Cafe	45779
+17124	55092	Taco Grande	12410
+12548	55346	Tip Top Cafe	87249
+19145	51109	Moes Tavern	67615
+19228	55337	Central Perk	3230
+10688	51815	Chasers	57840
+11563	59156	Acme, Inc.	27809
+17015	59347	Widget Corp	36873
+17919	57746	123 Warehousing	5310
+15870	57547	Demo Company	64203
+16915	59892	Smith and Co.	2298
+17579	51206	Foo Bars	26469
+13468	50189	ABC Telecom	58096
+19330	56667	Fake Brothers	77963
+15059	51268	QWERTY Logistics	41784
+11721	56012	Demo, Inc.	18923
+17443	56088	Sample Company	19856
+17824	55827	Sample, Inc.	82859
+10343	52449	Acme Corp	15819
+18025	59694	Allied Biscuit	34621
+11206	51514	Ankh-Sto Associates	30941
+17979	54361	Extensive Enterprise	92935
+18215	57781	Galaxy Corp	69769
+12278	56949	Globo-Chem	66925
+19973	54737	Mr. Sparkle	17558
+19897	51755	Globex Corporation	3345
+15006	53473	LexCorp	21422
+18473	55605	LuthorCorp	1866
+19126	59261	North Central Positronics	82434
+13434	51279	Omni Consimer Products	70405
+19810	57197	Praxis Corporation	494
+17940	50889	Sombra Corporation	95941
+11272	54495	Sto Plains Holdings	48356
+12430	51063	Tessier-Ashpool	86458
+12004	56816	Wayne Enterprises	24986
+14488	51518	Wentworth Industries	44780
+16914	58604	ZiffCorp	58441
+12815	55755	Bluth Company	95784
+15025	53677	Strickland Propane	9319
+19909	57093	Thatherton Fuels	55189
+13544	51795	Three Waters	76448
+11018	52543	Water and Power	34860
+15157	54235	Western Gas & Electric	37389
+14163	59312	Mammoth Pictures	49485
+

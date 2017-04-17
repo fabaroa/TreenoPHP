@@ -1,0 +1,289 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+    "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+<head>
+	<title>Upload File</title>
+	<script type="text/javascript" src="../lib/settings2.js"></script>
+	<script type="text/javascript" src="../lib/prototype.js"></script>
+	<script type="text/javascript" src="../lib/behaviour.js"></script>
+	<script>
+		var ptr = 1;
+		var isFinished = false;
+		var mess = "";
+		var fname = "";
+		var selList = new Array();
+
+		function startUpload() {
+			$('uploadBtn').disabled = true;
+			clearMeter();
+			addMeter();
+		}
+
+		function addMeter() {
+			$('bar').style.visibility = 'visible';
+			if(!isFinished) {
+				if(ptr < 12) {
+					var div = document.createElement('div');
+					div.className = "meter";
+					$('meterContainer').appendChild(div);	
+					ptr++;
+					setTimeout("addMeter()",500);
+				} else {
+					removeElementsChildren($('meterContainer'));
+					ptr = 1;
+					setTimeout("addMeter()",500);
+				}
+			} else {
+				removeElementsChildren($('errMsg'));
+				var sp = document.createElement('span');
+				sp.appendChild(document.createTextNode(mess));
+				$('errMsg').appendChild(sp);
+
+				while(ptr < 12) {
+					var div = document.createElement('div');
+					div.className = "meter";
+					$('meterContainer').appendChild(div);	
+					ptr++;
+				}
+
+				if(fname) {
+					createUploadElement();
+				}
+				$('uploadBtn').disabled = false;
+			}
+		}
+
+		function toggleIsFinished(message,filename) {
+			isFinished = true;
+			mess = message;
+			fname = filename;
+		}
+
+		function getUploadInfo() {
+			xmlArr = {	"include" : "secure/uploadFuncs.php",
+						"function" : "xmlGetUploadInfo" };
+			postXML(xmlArr);
+		}
+
+		function setDestination(XML) {
+			var dest = XML.getElementsByTagName("DEST");
+			if(dest.length > 0) {
+				var txt = dest[0].firstChild.nodeValue;
+				$('spDest').appendChild(document.createTextNode(txt));
+			}
+
+			var sList = XML.getElementsByTagName("OPTION");
+			if(sList.length > 0) {
+				for(var i=0;i<sList.length;i++) {
+					selList[i] = sList[i].firstChild.nodeValue; 		
+				}
+			}
+
+			var fList = XML.getElementsByTagName("FILE");
+			if(fList.length > 0) {
+				for(var i=0;i<fList.length;i++) {
+					fname = fList[i].firstChild.nodeValue;
+					createUploadElement();
+				}
+			}
+			fname = "";
+		}
+
+		function createUploadElement() {
+			var dv = document.createElement('div');
+			dv.style.width = "100%";
+			dv.style.height = "25px";
+			dv.style.marginTop = "5px";
+
+			btnDiv = document.createElement('div');
+			btnDiv.className = "btnDiv";
+
+			btn = document.createElement('input');
+			btn.type = "button";
+			btn.name = "b1";
+			btn.value = "Remove"
+			btn.parentDiv = dv;
+			btn.fname = fname;
+			btn.className = "btnClass";
+			btn.onclick = removeFile;
+			btnDiv.appendChild(btn);
+			dv.appendChild(btnDiv);
+
+			dispDiv = document.createElement('div');
+			dispDiv.className = "dispDiv";
+
+			sp = document.createElement('span');
+			sp.style.paddingRight = "5px";
+			sp.appendChild(document.createTextNode(fname));
+			dispDiv.appendChild(sp);
+
+			if(selList.length > 0) {
+				var sel = document.createElement('select');
+				sel.id = "file-"+fname;
+				for(var i=0;i<selList.length;i++) {
+					var opt = document.createElement('option');
+					opt.value = selList[i];
+					opt.appendChild(document.createTextNode(selList[i]));
+					sel.appendChild(opt);
+				}
+				dispDiv.appendChild(sel);
+			}
+			dv.appendChild(dispDiv);
+			$('fqueue').appendChild(dv);
+			$('queue').style.display = 'block';
+		}
+
+		function removeFile() {
+			xmlArr = {	"include" : "secure/uploadFuncs.php",
+						"function" : "xmlRemoveFile",
+						"filename" : this.fname };
+			postXML(xmlArr);
+			this.parentDiv.parentNode.removeChild(this.parentDiv);
+
+			var fileList = document.getElementsByClassName('btnClass');
+			if(!fileList.length) {
+				$('queue').style.display = 'none';
+			}
+		}
+
+		function processUpload() {
+			xmlArr = {	"include" : "secure/uploadFuncs.php",
+						"function" : "xmlProcessUpload" };
+
+			var fileList = document.getElementsByClassName('btnClass');
+			for(var i=0;i<fileList.length;i++) {
+				var n = fileList[i].fname;
+				if($('file-'+n)) {
+					selBox = $('file-'+n);
+					opt = selBox.options[selBox.selectedIndex].value;
+					xmlArr[n] = opt; 
+				}
+			}
+			postXML(xmlArr);
+		}
+
+		function displayMessage(XML) {
+			removeElementsChildren($('errMsg'));
+			var mess = XML.getElementsByTagName('MESSAGE');	
+			var sp = document.createElement('span');
+			sp.appendChild(document.createTextNode(mess[0].firstChild.nodeValue));
+			$('errMsg').appendChild(sp);
+
+			removeElementsChildren($('fqueue'))
+			$('queue').style.display = 'none';
+			$('bar').style.visibility = 'hidden';
+			document.uploadForm.reset();
+
+			var url = XML.getElementsByTagName('URL');	
+			var type = XML.getElementsByTagName('TYPE');	
+			if(type[0].firstChild.nodeValue == "folder") {
+				parent.sideFrame.location = url[0].firstChild.nodeValue;
+			} else {
+				window.location = url[0].firstChild.nodeValue;
+			}
+		}
+
+		function clearMeter() {
+			isFinished = false;
+			ptr = 1;
+
+			removeElementsChildren($('meterContainer'));
+			removeElementsChildren($('errMsg'));
+			var sp = document.createElement('span');
+			sp.appendChild(document.createTextNode(''));
+			$('errMsg').appendChild(sp);
+		}
+
+		Behaviour.addLoadEvent(
+			function() {
+				getUploadInfo();
+			}
+		); 
+	</script>
+	<link rel="stylesheet" type="text/css" href="../lib/style.css"/>
+	<style>
+		.meter {
+			float			: left;
+			width			: 20px;
+			height			: 15px;
+			background-color: blue;
+			border-left		: 1px solid white;
+			border-right	: 1px solid white;
+		}
+
+		.btnDiv {
+			float		: left;
+			width		: 25%;
+			text-align	: left;
+		}
+
+		.dispDiv {
+			float		: left;
+			width		: 75%;
+			text-align	: right;
+		}
+
+		.btnClass {
+
+		}
+
+		#bar {
+			width			: 255px;
+			height			: 25px;
+			margin-left		: auto;
+			margin-right	: auto;
+			background-color: LightGrey;
+			border			: 1px green solid;
+		}
+
+		.meterContainer {
+			width			: 242px;
+			height			: 15px;
+			margin-top		: 5px;
+			margin-left		: auto;
+			margin-right	: auto;
+			background-color: white;
+		}
+
+		.error {
+			color	: red;
+		}
+	</style>
+</head>
+<body>
+	<div class="mainDiv" style="width:500px">
+		<div class="mainTitle">
+			<span>Upload File</span>
+		</div>
+		<div>
+			<span>Upload Files to :</span>
+			<div style="margin-top:5px">
+				<span id="spDest"></span>
+			</div>
+		</div>
+		<div style="margin-top:20px">
+			<form name="uploadForm" 
+				enctype="multipart/form-data" 
+				target="uploadFrame" 
+				action="uploadInbox2.php" 
+				onsubmit="startUpload()" 
+				method="POST">
+				<iframe src="../energie/bottom_white.php" name="uploadFrame" style="display:none"></iframe>
+				<input type="file" id="finput" name="finput" size="50" style="width:400px" onclick="clearMeter()" />
+				<input type="submit" id="uploadBtn" name="upload" value="Upload" style="height:20px;font-size:9pt" />
+			</form>
+			<div id="bar" style="visibility:hidden;height:30px">
+				<div id="meterContainer" class="meterContainer"></div>
+			</div>
+			<div id="queue" style="width:95%;margin-bottom:5px;display:none;text-align:right">
+				<fieldset>
+					<legend>File Queue</legend>
+					<div id="fqueue"></div>
+				</fieldset>
+				<input type="button" name="procBtn" value="Process" onclick="processUpload()" />
+			</div>
+			<div id="errMsg" class="error"></div>
+		</div>
+	</div>
+</body>
+</html>

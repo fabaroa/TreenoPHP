@@ -1,0 +1,94 @@
+<!DOCTYPE html 
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+		"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Publishing Wizard</title>
+	<script type="text/javascript" src="../lib/prototype.js"></script>
+	<script type="text/javascript" src="../lib/behaviour.js"></script>
+	<script type="text/javascript" src="../lib/settings2.js"></script>
+	<script type="text/javascript" src="viewPubWizard.js"></script>
+	<script type="text/javascript">
+		Behaviour.addLoadEvent(
+			function() {
+				initialize();
+				getPublishingData();
+			}
+		); 
+	</script>
+	<link rel="stylesheet" type="text/css" href="viewPubWizard.css">
+</head>
+<body>
+	<div style="height:100%">
+		<div style="height:11%;padding-bottom:10px">
+			<fieldset>
+				<legend>
+					<span>Publish Name</span>
+				</legend>
+				<div style="height:90%">
+					<div>
+						<input type="text" id="pubName" name="pubName" value="" />
+						<input type="button" id="pubAdd" name="add" value="Add" />
+						<select id="pubList" name="pubList"></select>
+					</div>
+					<div class="expireDiv">
+						<span>Expiration(hours):</span>
+						<input type="radio" id="noExp" name="expire" value="0" />
+						<span>None</span>
+						<input type="radio" id="defExp" name="expire" value="1" checked />
+						<span>Default</span>
+						<input type="radio" id="custExp" name="expire" value="2" />
+						<span>Custom</span>
+						<input type="text" id="expireTime" name="expireTime" value="" />
+						<span id="maxDesc"></span>
+					</div>
+				</div>
+			</fieldset>
+		</div>
+		<div style="height:37%;padding-bottom:10px">
+			<fieldset>
+				<legend>
+					<span>Select User</span>
+				</legend>
+				<div style="height:90%">
+					<div style="padding-bottom:5px;padding-top:5px;height:12%">
+						<input type="text" id="search" name="search" value="" size="45" />
+						<input type="button" id="searchUser" name="searchUser" value="Search" />
+					</div>
+					<div class="userList" id="userList">
+						<ul id="listContainer">
+							<li id="newUser" title="Create New User">
+								<span>Create New User</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</fieldset>
+		</div>
+		<div id="itemDiv" style="height:42%">
+			<fieldset>
+				<legend>
+					<span>Published Items</span>
+				</legend>
+				<div style="height:95%" >
+					<div style="padding-bottom:5px;padding-top:5px;height:10%">
+						<input type="text" id="item" name="item" value="" size="45" />
+						<input type="button" id="searchItems" name="searchItems" value="Search" />
+					</div>
+					<div class="itemList" id="itemList">
+						<ul id="itemContainer" class="itemOpen"></ul>
+					</div>
+				</div>
+			</fieldset>
+		</div>
+		<div class="action">
+			<div class="actionMess">
+				<span class="error" id="error"></span>
+			</div>
+			<div class="actionButtons">
+				<input type="button" id="finishBtn" name="finish" value="Finish" />
+			</div>
+		</div>
+	</div>
+</body>
+</html>

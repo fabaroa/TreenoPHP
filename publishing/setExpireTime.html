@@ -1,0 +1,48 @@
+<!DOCTYPE html 
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+		"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- $Id: setExpireTime.html 14198 2011-01-04 15:29:04Z acavedon $ -->
+<html>
+<head>
+	<title>Publishing Expire Time</title>
+	<script type="text/javascript" src="../lib/prototype.js"></script>
+	<script type="text/javascript" src="../lib/behaviour.js"></script>
+	<script type="text/javascript" src="../lib/settings2.js"></script>
+	<script type="text/javascript" src="setExpireTime.js"></script>
+	<script type="text/javascript">
+		Behaviour.addLoadEvent(
+			function() {
+				initialize();
+				getPublishingExpiration();
+			}
+		); 
+	</script>
+	<link rel="stylesheet" type="text/css" href="../lib/style.css">
+	<link rel="stylesheet" type="text/css" href="publishing.css">
+</head>
+<body>
+	<div class="mainDiv" style="width:300px">
+		<div class="mainTitle">
+			<span>Publishing Expiring Time</span>
+		</div>
+		<table class="inputTable">
+			<tr>
+	   			<td class="label">
+					<label for="defExp">Default Expire Time</label>
+	   			</td>
+	   			<td style="width:30px">
+					<input type="text" id="defExp" name="defExp" value="0" size="2" maxlength="8"/>
+	   			</td>
+			</tr>
+			<tr>
+				<td class-"label">
+					<label for="maxExp">Max Expire Time</label>
+				</td>
+	   			<td style="width:30px">
+					<input type="text" id="maxExp" name="maxExp" value="0" size="2" maxlength="8"/>
+	   			</td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>

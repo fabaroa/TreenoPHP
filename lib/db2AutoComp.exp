@@ -1,0 +1,21 @@
+#!/usr/bin/expect -f
+
+proc send {ignore arg} {
+	sleep .1
+	exp_send -s -- $arg
+}
+
+set timeout -1
+set send_slow {1 .1}
+
+set user [lindex $argv 0]
+set passwd [lindex $argv 1]
+set db [lindex $argv 2]
+set cabinet [lindex $argv 3]
+set autoCompFile [lindex $argv 4]
+
+spawn su - $user -c "db2 CONNECT TO $db; db2 LOAD FROM $autoCompFile OF DEL MODIFIED BY coldelx09 INSERT INTO $cabinet"
+match_max 100000
+expect -exact "Password: "
+send -- "docutron\r"
+expect eof

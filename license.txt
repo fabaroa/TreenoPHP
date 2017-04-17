@@ -1,0 +1,114 @@
+
+/**********************************************************************
+SOFTWARE LICENSE AGREEMENT
+DEFINITIONS
+This Agreement covers Docutron Systems, Inc. including: dctENERGIE,
+dctFLEX, Docutron User Interface and related components of each.
+dctENERGIE is a standard software product owned exclusively by
+Docutron Systems, Inc. and intended for commercial use only. CUSTOMER
+is the entity purchasing the dctENERGIE license and any product or
+service of Docutron Systems, Inc herein or otherwise.
+LICENSE
+Docutron Systems, Inc. (COMPANY) grants the CUSTOMER a personal,
+non-exclusive, non-transferable, revocable license to install and use
+a single object code copy of the purchased version of the Software
+during the term of this Agreement. The COMPANY retains all right,
+title and interest in and to the Software. The CUSTOMER agrees to
+abide by terms of sale detailed in written Docutron Systems, Inc.
+sales policies at the time of acquisition of the Software that may
+vary the term and conditions of this license. Docutron Systems, Inc.
+(COMPANY) grants the CUSTOMER purchasing dctEnergie one or more of the
+following licenses.  The COMPANY invoice presented to CUSTOMER at time
+of purchase defines which of these apply:
+dctEnergie LAN License: Only one copy of the dctEnergie LAN license
+file is allowed. All users on the licensed LAN who can execute
+dctEnergie via file server, are licensed for full viewing. Wide-area
+networks (WANs) are not LANs and require multiple LAN licenses.
+dctEnergie Web Site License:  The dctEnergie Web Site License file must
+reside in the "root" of the licensed web site. CUSTOMER is authorized
+to view dctENERGIE and use the document management functions it provides.
+CUSTOMER may use dctEnergie in any location at no additional charge.
+COPYRIGHT RESTRICTIONS
+The Software is owned by Docutron Systems, Inc. and its design,
+structure, organization and code are valuable trade secrets of Docutron
+Systems, Inc. protected by U.S. copyright law and international treaty.
+The CUSTOMER agrees not to disclose, publish, or distribute the Software
+except as permitted above, and agrees to take reasonable precautions to
+prevent any unauthorized use, disclosure, publication, or distribution.
+Proprietary rights notices on the Software shall be preserved on all
+copies made.  The Software shall not be modified, reverse engineered,
+or decompiled for any purpose, or translated into another computer
+language. The CUSTOMER agrees not to rent, lease, loan, sell, sublicense,
+distribute or otherwise transfer the Software, except as expressly
+authorized in this Agreement. The CUSTOMER may not use the Software to
+provide service bureau or time-sharing services. 
+OWNERSHIP
+(a) The CUSTOMER agrees that Docutron Systems, Inc. owns all right,
+title, interest and intellectual property rights in and to the Software,
+including without limitation any and all copyrights, patents,
+trade secrets, trademarks and other proprietary or industrial rights,
+and that the marks dctENERGIE, dctFLEX, and Docutron User Interface are
+copyrights and trademarks of Docutron Systems, Inc. (b) The CUSTOMER
+agrees that unauthorized copying of the Software will cause Docutron
+Systems, Inc. great and irreparable harm, and that Docutron Systems,Inc.
+shall have no adequate remedy at law in the event of such unauthorized
+copying. The CUSTOMER agrees that Docutron Systems, Inc. will be
+entitled to receive immediate equitable relief from any court of
+competent jurisdiction to prevent or stop threatened or actual
+infringement of any of the Docutron Systems, Inc. intellectual property
+rights. 
+LIMITATION OF LIABILITY
+THE SOFTWARE IS PROVIDED "AS IS," AND WITHOUT ANY WARRANTY, EXPRESS OR
+IMPLIED, AS TO NON-INFRINGEMENT, MERCHANTABILITY OR FITNESS FOR ANY
+PARTICULAR PURPOSE, OR AS TO ITS PERFORMANCE, ACCURACY OR COMPLETENESS.
+Docutron Systems, Inc. does not guarantee that the Software (or any
+similar products) will be available in the future. Docutron Systems, Inc.
+does not guarantee that the Software (or any similar products) will
+function with any particular computer operating system or version thereof.
+Use of the Software is entirely at CUSTOMERS risk. DOCUTRON SYSTEMS, INC.
+SHALL NOT BE LIABLE FOR ANY SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES,
+WHETHER ARISING IN TORT (INCLUDING NEGLIGENCE), CONTRACT OR OTHERWISE,
+THAT ARISE FROM ANY USE OF THE SOFTWARE, AND/OR OTHER CONFIDENTIAL
+INFORMATION, OR DOCUTRON SYSTEMS, INC.'S PERFORMANCE OR FAILURE TO PERFORM
+UNDER THIS AGREEMENT.
+TERMINATION
+This Agreement will commence upon installation of the Software. The
+CUSTOMER's rights will immediately and automatically terminate upon breach
+of any provision of this Agreement, at which time the CUSTOMER must return
+or destroy all copies of the Software. The CUSTOMER may terminate this
+Agreement at any time by destroying all copies of the Software.
+EXPORT CONTROLS
+The CUSTOMER agrees not to distribute, download or otherwise export or
+re-export the Software or any underlying information or technology except
+in full compliance with United States laws and regulations or any other
+applicable laws and regulations. In particular, but without limitation the
+CUSTOMER agrees that, none of the Software or underlying technology may be
+transmitted or otherwise exported or re-exported (i) into (or to a national
+or resident of) Cuba, Haiti, Iraq, Libya, Yugoslavia, North Korea, Iran, or
+Syria or (ii) to anyone on the U.S. Treasury Department's list of Specially
+Designated Nationals or the U.S. Commerce Department's Table of Deny Orders.
+By accepting the Software, the acquirer is agreeing to the foregoing and
+represents and warrants that you/they are not located in, under control, or
+a national or resident of any such country or on any such list.
+U.S. GOVERNMENT END USERS
+You agree that the Software is a "commercial item," as that term is defined
+in 48 C.F.R. 2.101 (Oct. 1995), consisting of "commercial computer software"
+and "commercial computer software documentation," as such terms are used in
+48 C.F.R. 12.212 (Sept. 1995). Consistent with 48 C.F.R. 12.212 and 
+48 C.F.R. 227.7202-1 through 227.7202-4 (June 1995), all U.S. Government End
+Users acquire the Software with only those rights set forth herein.
+APPLICABLE LAW
+This agreement shall be deemed to have been negotiated and executed in the
+State of New Hampshire and shall be interpreted and construed in accordance
+with, and governed by, the laws of the State of New Hampshire.  
+CUSTOMER designates New Hampshire as the forum state for the resolution of any
+disputes arising out of this agreement.
+ENTIRE AGREEMENT
+This Agreement constitutes the complete and exclusive agreement between
+Docutron Systems, Inc. and the CUSTOMER with respect to the subject matter
+hereof, and supersedes all prior oral or written understandings, communications
+or agreements not specifically incorporated herein. This Agreement may not be
+modified except in a writing duly signed by an authorized representative of
+Docutron Systems, Inc. and you.
+Copyright DOCUTRON SYSTEMS, INC., 2002, 2003. All rights reserved.
+******************************************************************************/

@@ -1,0 +1,68 @@
+# DOCUTRON MANAGEMENT SOFTWARE
+# DEFINITIONS FILE
+#DOC_DIR is the place where apaches document root points to
+#and your main index.php
+DOC_DIR = /var/www/html
+#DATA_DIR is the place where client_files,client_files0 should be
+DATA_DIR=/var/www
+#TMP_DIR is for temp files that are to be deleted later
+TMP_DIR=/tmp
+UPLOAD_TMP=/tmp
+OCR_THRESH=0.2
+KEEP_BCPAGE=0
+HOST=localhost
+OCRDEBUG=0
+POP3_INI=/etc/opt/docutron/pop3Bot.ini
+#
+#REMOTE_IP is for remote ODBC connection with sagitta
+#REMOTE_IP=192.168.1.11
+#
+#LOCAL_IP is a quick way to get the localhosts IP address if it doesn't change
+LOCAL_IP=127.0.0.1
+DB_HOST=localhost
+DB_TYPE=mysql
+#CENT_HOST=212.3.248.41,212.3.248.41?/etc/opt/docutron/docutron.pea
+
+WWW_USER=apache
+WWW_GROUP=apache
+TO_PDF=0
+FIRSTFILE=0
+
+PHP_EXE=/usr/bin/php
+ZIP_EXE=zip
+UNZIP_EXE=unzip
+MYDUMP_EXE=mysqldump
+TAR_EXE=tar
+MKISO_EXE=mkisofs
+GOCRFULL_EXE=gocr
+GOCR_EXE=gocr
+ANTIWORD_EXE=antiword
+TIFFTOPNM_EXE=tifftopnm
+PNMTOTIFF_EXE=pnmtotiff
+PNMSCALE_EXE=pnmscale
+PNMDEPTH_EXE=pnmdepth
+PAMFILE_EXE=pamfile
+PAMCOMP_EXE=pamcomp
+PAMFLIP_EXE=pamflip
+PNMTOJPEG_EXE=pnmtojpeg
+PNMTOPS_EXE=pnmtops
+PNMTOPNG_EXE=pnmtopng
+PNGTOPNM_EXE=pngtopnm
+PSTOPNM_EXE=pstopnm
+PSSELECT_EXE=psselect
+PS2PDF_EXE=ps2pdf
+PDF2PS_EXE=pdf2ps
+JPEGTOPNM_EXE=jpegtopnm
+WGET_EXE=wget
+TIFFCP_EXE=tiffcp
+GUNZIP_EXE=gunzip
+CONVERT_EXE=convert
+PEAR_EXE=pear
+MYSQLADMIN_EXE=mysqladmin
+XCACLS_EXE=xcacls
+FILE_EXE=file
+TIFFSPLIT_EXE=tiffsplit
+MD5SUM_EXE=md5sum
+TIFFINFO_EXE=tiffinfo
+TIFF2PDF_EXE=tiff2pdf
+PGDUMP_EXE=pgdump

@@ -1,0 +1,243 @@
+<!DOCTYPE html 
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+		"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>LDAP Connector</title>
+	<script type="text/javascript" src="../lib/prototype.js"></script>
+	<script type="text/javascript" src="../lib/behaviour.js"></script>
+	<script type="text/javascript" src="../lib/settings2.js"></script>
+	<script type="text/javascript">
+		function saveLDAPConnector() {
+			
+			var conn_id = $('conn_sel').value;
+			var active_dir = 0;
+			if($('active_directory').checked) {
+				active_dir = 1;
+			}
+
+			var xmlArr = {	"include" : "lib/ldap.php",
+							"function" : "xmlSetLDAPConnector",
+							"conn_id" : conn_id, 
+							"name" : $('name').value, 
+							"connect_string" : $('connect_string').value,
+							"suffix" : $('suffix').value,
+							"host" : $('host').value,
+							"query_user" : $('query_user').value,
+							"query_password" : $('query_password').value,
+							"active_directory" : active_dir };
+			postXML(xmlArr);
+		}
+
+		function setMessage(XML) {
+			var mess = XML.getElementsByTagName("MESSAGE");
+			var m = mess[0].firstChild.nodeValue;
+
+			removeElementsChildren($('errMsg'));
+			var sp = document.createElement('span');
+			sp.appendChild(document.createTextNode(m));
+			$('errMsg').appendChild(sp);
+		}
+
+		function testLDAPConnection() {
+			var active_dir = 0;
+			if($('active_directory').checked) {
+				active_dir = 1;
+			}
+			var xmlArr = {	"include" : "lib/ldap.php",
+							"function" : "testLDAPConnection",
+							"connect_string" : $('connect_string').value,
+							"suffix" : $('suffix').value,
+							"host" : $('host').value,
+							"query_user" : $('query_user').value,
+							"query_password" : $('query_password').value,
+							"active_directory" : active_dir,
+							"test_user" : $('test_user').value ,
+							"test_passwd" : $('test_passwd').value };
+			postXML(xmlArr);
+		}
+
+		function openLDAPTest() {
+			$('testDiv').style.display = 'block';
+			$('test_user').value = "";
+			$('test_passwd').value = "";
+			$('test_user').focus();
+		}
+
+		function closeLDAPTest() {
+			$('testDiv').style.display = 'none';
+		}
+
+		function getLDAPConnections() {
+			var xmlArr = {	"include" : "lib/ldap.php",
+							"function" : "xmlGetLDAPConnector" };
+			postXML(xmlArr);
+		}
+
+		function setLDAPConnections(XML) {
+			var conList = XML.getElementsByTagName('CONNECTOR');
+			var opt = document.createElement('option');
+			opt.value = "__new";
+			opt.appendChild(document.createTextNode("New Connector"));
+			$('conn_sel').appendChild(opt);
+			if(conList.length > 0) {
+				for(var i=0;i<conList.length;i++) {
+					var opt = document.createElement('option');
+					opt.value = conList[i].getAttribute('id');
+					opt.appendChild(document.createTextNode(conList[i].firstChild.nodeValue));
+					$('conn_sel').appendChild(opt);
+				}
+			}
+		}
+
+		function getLDAPConnInfo() {
+			var connSel = $('conn_sel');
+			var val = connSel.options[connSel.selectedIndex].value;
+
+			if(val != "__new") {
+				var xmlArr = {	"include" : "lib/ldap.php",
+								"function" : "xmlGetLDAPConnInfo",
+								"conn_id" : val };
+				postXML(xmlArr);
+			} else {
+				$('name').value = "";
+				$('connect_string').value = "";
+				$('suffix').value = "";
+				$('host').value = "";
+				$('query_user').value = "";
+				$('query_password').value = "";
+				$('active_directory').checked = false;
+			}
+		}
+
+		function setLDAPConnInfo(XML) {
+			var connInfo = XML.getElementsByTagName('KEY');
+			for(i=0;i<connInfo.length;i++) {
+				if(connInfo[i].firstChild) {
+					var key = connInfo[i].getAttribute('name');
+					var val = connInfo[i].firstChild.nodeValue;
+					if(el = $(key)) {
+						if(key == "active_directory") {
+							el.checked = true;
+						} else {
+							el.value = val;
+						}
+					}
+				}
+			}
+		}
+
+		Behaviour.addLoadEvent(
+			function() {
+				getLDAPConnections();
+			}
+		); 
+	</script>
+	<link rel="stylesheet" type="text/css" href="../lib/style.css">
+</head>
+<body>
+	<div class="mainDiv">
+ 		<div class="mainTitle">
+ 			<span>LDAP Connector</span>
+ 		</div>
+     	<table id="inputTable" class="inputTable">
+			<tr>
+				<td class="label">
+					<label for="conn_sel">Connector</label>
+				</td>
+				<td>
+					<select id="conn_sel" name="conn_sel" onchange="getLDAPConnInfo()"></select>
+				</td>
+			</tr>
+			<tr>
+				<td class="label">
+					<label for="name">Connector Name</label>
+				</td>
+				<td>
+					<input type="text" id="name" name="name" value="" />
+				</td>
+			</tr>
+			<tr>
+				<td class="label">
+					<label for="connect_string">Connect String</label>
+				</td>
+				<td>
+					<input type="text" id="connect_string" name="connect_string" value="" />
+				</td>
+			</tr>
+			<tr>
+				<td class="label">
+					<label for="suffix">Suffix</label>
+				</td>
+				<td>
+					<input type="text" id="suffix" name="suffix" value="" />
+				</td>
+			</tr>
+			<tr>
+				<td class="label">
+					<label for="host">Host</label>
+				</td>
+				<td>
+					<input type="text" id="host" name="host" value="" />
+				</td>
+			</tr>
+			<tr>
+				<td class="label">
+					<label for="query_user">Username</label>
+				</td>
+				<td>
+					<input type="text" id="query_user" name="query_user" value="" />
+				</td>
+			</tr>
+			<tr>
+				<td class="label">
+					<label for="query_password">Password</label>
+				</td>
+				<td>
+					<input type="password" id="query_password" name="query_password" value="" />
+				</td>
+			</tr>
+			<tr>
+				<td class="label">
+					<label for="active_directory">Active Directory</label>
+				</td>
+				<td>
+					<input type="checkbox" id="active_directory" name="active_directory" value="1" />
+				</td>
+			</tr>
+		</table>
+		<div id="errMsg" class="error" style="margin-top:5px;height:15px"></div>
+		<div style="margin-top:5px">
+			<input type="button" name="testBtn" value="Test Connector" onclick="openLDAPTest()"/>
+			<input type="button" name="saveBtn" value="Save" onclick="saveLDAPConnector()" />
+		</div>
+   	</div>
+	<div id="testDiv" class="mainDiv" style="margin-top:10px;display:none">
+ 		<div class="mainTitle">
+ 			<span>LDAP Connector Test</span>
+ 		</div>
+		<table id="inputTable" class="inputTable">
+			<tr>
+				<td class="label">
+					<label for="test_user">Test Username</label>
+				</td>
+				<td>
+					<input type="text" id="test_user" name="test_user" value="" />
+				</td>
+			</tr>
+			<tr>
+				<td class="label">
+					<label for="test_password">Test Password</label>
+				</td>
+				<td>
+					<input type="password" id="test_passwd" name="test_passwd" value="" />
+				</td>
+			</tr>
+		</table>
+		<div style="margin-top:5px">
+			<input type="button" name="cancelBtn" value="Cancel" onclick="closeLDAPTest()" />
+			<input type="button" name="testBtn" value="Test" onclick="testLDAPConnection()" />
+		</div>
+	</div>
+</body>
+</html>

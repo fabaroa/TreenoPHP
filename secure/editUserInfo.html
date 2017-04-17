@@ -1,0 +1,289 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+    "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<title>Edit Email Address</title>
+  	<link rel="stylesheet" type="text/css" href="../lib/style.css"/>
+  	<script type="text/javascript" src="../lib/behaviour.js"></script>
+  	<script type="text/javascript" src="../lib/prototype.js"></script>
+  	<script type="text/javascript" src="../lib/settings2.js"></script>
+  	<script type="text/javascript">
+		Behaviour.addLoadEvent(
+        	function() {
+        	    xmlGetUserList();
+				focusEmail();
+        	}
+    	)	
+		
+		function xmlGetUserList() {
+			var xmlArr = {	"include" : "secure/userActions.php",
+							"function" : "xmlGetUserList" };
+			postXML(xmlArr);
+		}
+	
+		function loadUserList(XML) {
+			uList = XML.getElementsByTagName('USERNAME');
+			for(var i=0;i<uList.length;i++) {
+				var opt = document.createElement('option');
+				opt.value = uList[i].firstChild.nodeValue;
+				opt.appendChild(document.createTextNode(opt.value));
+				$('userList').appendChild(opt);
+			}
+		}
+
+	   	function selectUser() {
+			var uList = $('userList');
+			var uname = uList.options[uList.selectedIndex].value;
+
+			var xmlArr = {	"include" : "secure/userActions.php",
+							"function" : "xmlGetUserInfo",
+							"username" : uname };
+			postXML(xmlArr);
+   		}	
+
+		function loadUserInfo(XML) {
+			var tbl = $('inputTable');
+			while(tbl.rows.length > 1) {
+				tbl.deleteRow(1);
+			}
+
+			uname = XML.getElementsByTagName('USERNAME');
+			uname = uname[0].firstChild.nodeValue;
+			createTextRow(tbl,"Username",uname);
+
+			email = XML.getElementsByTagName('EMAIL');
+			if(email.length > 0) {
+				var em = "";
+				if(email[0].firstChild) {
+					em = email[0].firstChild.nodeValue;
+				}
+				createTextRow(tbl,"Email",em);
+			}
+
+			createCheckboxRow(tbl, "change_password", "Change Password on Next Login");
+			
+			var isSignixEnabled = XML.getElementsByTagName('ISSIGNIXENABLED');
+			if(isSignixEnabled.length > 0 && isSignixEnabled[0].firstChild) {
+				var signixUserNameELement = XML.getElementsByTagName('SIGNIXUSERNAME');
+				var signixPasswordELement = XML.getElementsByTagName('SIGNIXPASSWORD');
+				var signixSponsorELement = XML.getElementsByTagName('SIGNIXSPONSOR');
+				var signixClientELement = XML.getElementsByTagName('SIGNIXCLIENT');
+				
+				if(signixUserNameELement.length > 0 && signixUserNameELement[0].firstChild) {
+					signixUserName = signixUserNameELement[0].firstChild.nodeValue;
+				}
+				else{
+					signixUserName = '';
+				} 
+				
+				if(signixPasswordELement.length > 0 && signixPasswordELement[0].firstChild) {
+					signixPassword = signixPasswordELement[0].firstChild.nodeValue;
+				}
+				else{
+					signixPassword = '';
+				} 
+				if(signixSponsorELement.length > 0 && signixSponsorELement[0].firstChild) {
+					signixSponsor = signixSponsorELement[0].firstChild.nodeValue;
+				}else{
+					signixSponsor = '';
+				} 
+				
+				if(signixClientELement.length > 0 && signixClientELement[0].firstChild) {
+					signixClient = signixClientELement[0].firstChild.nodeValue;
+				}else{
+					signixClient = '';
+				} 
+				createTextRow(tbl, "Signix Username", signixUserName);
+				createPasswordRow(tbl,"Signix Password", signixPassword);
+				createTextRow(tbl, "Signix Sponsor", signixSponsor);
+				createTextRow(tbl, "Signix Client", signixClient);
+			}
+
+			var connList = XML.getElementsByTagName("CONNECTOR");
+			if(connList.length > 0) {
+				var row = tbl.insertRow(tbl.rows.length);
+				var col = row.insertCell(row.cells.length);
+				col.style.textAlign = 'right';
+				col.appendChild(document.createTextNode('LDAP Connector'));
+
+				var col = row.insertCell(row.cells.length);
+				var selBox = document.createElement('select');
+				selBox.id = "connList";
+				selBox.name = "connList";
+
+				var opt = document.createElement('option');
+				opt.value = 0;
+				opt.appendChild(document.createTextNode('None'));
+				selBox.appendChild(opt);
+				for(i=0;i<connList.length;i++) {
+					var opt = document.createElement('option');
+					opt.value = connList[i].getAttribute('conn_id');
+					opt.appendChild(document.createTextNode(connList[i].firstChild.nodeValue));
+					if(connList[i].getAttribute('selected')) {
+						opt.selected = true;
+					}
+					selBox.appendChild(opt);
+				}
+				col.appendChild(selBox);
+			}
+
+			var row = tbl.insertRow(tbl.rows.length);
+			var col = row.insertCell(row.cells.length);
+			col.id = "errMsg";
+			col.className = "error";
+			col.colSpan = 2;
+			col.style.textAlign = "center";
+			col.style.height = "25px";
+
+			var row = tbl.insertRow(tbl.rows.length);
+			var col = row.insertCell(row.cells.length);
+			var col = row.insertCell(row.cells.length);
+
+			var btn = document.createElement('input');
+			btn.type = "button";
+			btn.name = "Update";
+			btn.value = "Update";
+			btn.onclick = xmlSetUserInfo;
+			col.appendChild(btn);
+		}
+
+		function createTextRow(tbl,desc,val) {
+			var row = tbl.insertRow(tbl.rows.length);
+			var col = row.insertCell(row.cells.length);
+			col.style.textAlign = 'right';
+			col.appendChild(document.createTextNode(desc));
+
+			var col = row.insertCell(row.cells.length);
+			var txtBox = document.createElement('input');
+			txtBox.type = 'text';
+			txtBox.id = desc.toLowerCase()+'Box';
+			txtBox.value = val;
+			txtBox.onkeypress = onEnter;
+			col.appendChild(txtBox);
+		}
+		
+		function createPasswordRow(tbl,desc,val) {
+			var row = tbl.insertRow(tbl.rows.length);
+			var col = row.insertCell(row.cells.length);
+			col.style.textAlign = 'right';
+			col.appendChild(document.createTextNode(desc));
+
+			var col = row.insertCell(row.cells.length);
+			var txtBox = document.createElement('input');
+			txtBox.type = 'password';
+			txtBox.id = desc.toLowerCase()+'Box';
+			txtBox.value = val;
+			txtBox.onkeypress = onEnter;
+			col.appendChild(txtBox);
+		}
+
+		function createCheckboxRow(tbl, name, desc) {
+			var row = tbl.insertRow(tbl.rows.length);
+			var col = row.insertCell(row.cells.length);
+			col.style.textAlign = 'right';
+			col.appendChild(document.createTextNode(desc));
+
+			var col = row.insertCell(row.cells.length);
+			var checkbox = document.createElement('input');
+			checkbox.type = 'checkbox';
+			checkbox.id = name.toLowerCase();
+			checkbox.name = name;
+			col.appendChild(checkbox);
+		}
+		
+		function xmlSetUserInfo() {
+			var uname = $('userList').value;
+			var new_email;
+			if($('emailBox')) {
+				new_email = $('emailBox').value;
+			} else {
+				new_email = '';
+			}
+			var new_name = $('usernameBox').value;
+			var conn = 0;
+			if($('connList')) {
+				conn = $('connList').value;
+			}
+
+			var change_password = $('change_password').checked;
+			
+			var signix_username, signix_password, signix_sponsor, signix_client;
+			if($('signix usernameBox') && $('signix passwordBox') && $('signix sponsorBox') && $('signix clientBox')){
+				signix_username = $('signix usernameBox').value;
+				signix_password = $('signix passwordBox').value;
+				signix_sponsor = $('signix sponsorBox').value;
+				signix_client = $('signix clientBox').value;
+			} else {
+				signix_username = '';
+				signix_password = '';
+				signix_sponsor = '';
+				signix_client = '';
+			}
+			
+			var xmlArr = { 	"include" : "secure/userActions.php",
+							"function" : "xmlSetUserInfo",
+							"username" : uname,
+							"ldap_id" : conn,
+							"new_uname" : new_name,
+							"change_password": change_password };	
+			if(new_email) {
+				xmlArr["new_email"] = new_email;
+			}
+			
+			if(signix_username && signix_password && signix_sponsor && signix_client){
+				xmlArr["signix_username"] = signix_username;
+				xmlArr["signix_password"] = signix_password;
+				xmlArr["signix_sponsor"] = signix_sponsor;
+				xmlArr["signix_client"] = signix_client;
+			}
+			
+			postXML(xmlArr);
+		}
+
+	  	function onEnter(e) {
+			var evt = (e) ? e : event;
+			var code = (evt.keyCode) ? evt.keyCode : evt.charCode;
+			if(code == 13) {
+				xmlSetUserInfo();
+			}
+			return true;
+	   	}
+
+	   	function focusEmail() {
+			var toFocus = document.getElementById('emailBox');
+			if(toFocus) {
+				toFocus.focus();
+			}
+	   	}
+
+		function setMessage(XML) {
+			var mess = XML.getElementsByTagName('MESSAGE');
+			if(mess[0]) {
+				var sp = document.createElement('span');
+				sp.appendChild(document.createTextNode(mess[0].firstChild.nodeValue));
+				removeElementsChildren($('errMsg'));
+				$('errMsg').appendChild(sp);
+			}
+		}
+	</script>
+</head>
+<body class="centered">
+	<div class="mainDiv">
+ 		<div class="mainTitle">
+ 			<span>Edit User Info</span>
+ 		</div>
+     	<table id="inputTable" class="inputTable">
+			<tr>
+				<td class="label">
+					<label for="userList">Select a User</label>
+				</td>
+				<td>
+					<select name="userList" id="userList" onchange="selectUser()">
+						<option>Select User</option>
+					</select>
+				</td>
+	  		</tr>
+		</table>
+   	</div>
+</body>
+</html>

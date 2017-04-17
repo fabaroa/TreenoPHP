@@ -1,0 +1,609 @@
+<?php
+//$Id: departmentActions.php 14862 2012-06-27 19:08:24Z cz $
+include_once '../check_login.php';
+include_once 'depfuncs.php';
+include_once '../lib/quota.php';
+include_once '../lib/settings.php';
+
+function editDepInfoController($db_doc) {
+	$xmlStr = file_get_contents('php://input');
+	$deptInfo = array ();
+	$func = '';
+	if (substr (PHP_VERSION, 0, 1) == '4') {
+		$domDoc = domxml_open_mem( $xmlStr );
+		$root = $domDoc->get_elements_by_tagname('ROOT');
+		$func = $root[0]->get_attribute('func');
+		$licenseType = $root[0]->get_attribute('licenseType');
+		$depList = $domDoc->get_elements_by_tagname('DEPARTMENT');
+		foreach($depList as $department) {
+			$tmpArr = array ('name' => $department->get_attribute('name'));
+			if ($department->has_attribute ('scalar')) {
+				$tmpArr['quota'] = $department->get_attribute('quota');
+				$tmpArr['scalar'] = $department->get_attribute('scalar');
+			} else {
+				//$tmpArr['dept_licenses'] =	$department->get_attribute('dept_licenses');
+				$tmpArr['limit'] = $department->get_attribute('limit');
+			}
+			$deptInfo[] = $tmpArr;
+		}
+	} else {
+		$domDoc = new DOMDocument ();
+		$domDoc->loadXML ($xmlStr);
+		$func = $domDoc->documentElement->getAttribute ('func');
+		$licenseType = $domDoc->documentElement->getAttribute ('licenseType');
+		$xml = simplexml_import_dom ($domDoc);
+		$deptInfo = $xml->DEPARTMENT;
+	}
+	$depArr = array();
+	$totalLimit = 0;
+	$type = false;
+	foreach($deptInfo as $department) {
+		if(!empty ($department['scalar'])) {
+			$quota = $department['quota'];
+			if ($department['scalar'] == "TB") {
+				$quota *= 1099511627776;
+			} elseif ($department['scalar'] == "GB") {
+				$quota *= 1073741824;
+			} elseif ($department['scalar'] == "MB") {
+				$quota *= 1048576;
+			} elseif ($department['scalar'] == "KB") {
+				$quota *= 1024;
+			}
+			$depArr[(string) $department['name']] = $quota;
+		} else {
+			$type = true;
+			if($licenseType == 'disable') {
+				$limit = -1;
+				$totalLimit = 1;
+			} else {
+				$limit = $department['limit'];
+				$totalLimit += $limit;
+			}
+			$depArr[(string) $department['name']] = array('dept_licenses'=> (int)
+					$department['dept_licenses'], 'limit' => (int) $limit);
+		}
+	}
+
+	if($type && $totalLimit == 0) {
+		$errMsg = "A minimum of one license must be granted to at least one " .
+			"department";
+		if (substr (PHP_VERSION, 0, 1) == '4') {
+			$xmlDoc = domxml_new_doc('1.0');
+			$root = $xmlDoc->create_element('ROOT');
+			$xmlDoc->append_child($root);
+			$error = $xmlDoc->create_element('MESSAGE');
+			$root->append_child($error);
+			$error->set_attribute('message', $errMsg);
+			$xmlStr = $xmlDoc->dump_mem(false);
+		} else {
+			$xmlDoc = new DOMDocument ();
+			$root = $xmlDoc->createElement ('ROOT');
+			$xmlDoc->appendChild ($root);
+			$error = $xmlDoc->createElement ('MESSAGE');
+			$root->appendChild($error);
+			$error->setAttribute ('message', $errMsg);
+			$xmlStr = $xmlDoc->saveXML ();
+		}
+		header('Content-type: text/xml');
+		echo $xmlStr;
+	} else {
+		if($func == 'editLicenses') {
+			$func($depArr,$licenseType, $db_doc);
+		} else {
+			$func($depArr, $db_doc);
+		}
+	}
+}
+
+function editQuota($depArr, $db_doc) {
+ 
+ 	$total = getTableInfo ($db_doc, 'quota', array('max_size'), array(),
+ 			'queryOne');
+  
+ 	$depQuota = getTableInfo ($db_doc,'licenses', array('real_department',
+ 				'quota_allowed'), array(), 'getAssoc');
+ 
+ 	foreach ($depQuota as $d => $q) {
+ 		if (!array_key_exists ($d, $depArr)) {
+  			$depArr[$d] = $q;
+  		}
+  	}
+  	$adjustedQuota = array_sum($depArr);
+  	if($adjustedQuota <= $total) {
+  		$setArr = array();
+  		foreach($depArr AS $dep => $quota) {
+ 			$setArr['quota_allowed'] = (double) $quota;
+			updateTableInfo($db_doc, 'licenses', $setArr,
+ 					array('real_department' => $dep));
+  		}
+  		$mess = "Department Quota Succussfully Updated";
+ 		$hadError = 0;
+  	} else {
+  		$mess = "Too much space has been distributed";
+ 		$hadError = 1;
+  	}
+ 
+ 	if (substr (PHP_VERSION, 0, 1) == '4') {
+ 		$xmlDoc = domxml_new_doc ('1.0');
+ 		$root = $xmlDoc->create_element ('ROOT');
+ 		$xmlDoc->append_child ($root);
+ 		$error = $xmlDoc->create_element ('MESSAGE');
+ 		$root->append_child ($error);
+ 		$error->set_attribute ('message', $mess);
+ 		$error->set_attribute ('error', $hadError);
+ 		$xmlStr = $xmlDoc->dump_mem (false);
+ 	} else {
+ 		$xmlDoc = new DOMDocument ();
+ 		$root = $xmlDoc->createElement ('ROOT');
+ 		$xmlDoc->appendChild ($root);
+ 		$error = $xmlDoc->createElement ('MESSAGE');
+ 		$root->appendChild ($error);
+ 		$error->setAttribute ('message', $mess);
+ 		$error->setAttribute ('error', $hadError);
+ 		$xmlStr = $xmlDoc->saveXML ();
+ 	}
+ 	header('Content-type: text/xml');
+ 	echo $xmlStr;
+}
+
+function editLicenses($depArr,$type, $db_doc) {
+	$selArr = array('max_licenses');
+	$global_total = getTableInfo ($db_doc, array('global_licenses'), $selArr,
+			array(), 'queryOne');
+	if($type == 'disable') {
+		$setArr = array('max' => -1, 'dept_licenses' => 0);
+		updateTableInfo ($db_doc, 'licenses', $setArr, array());
+		$mess = 'Department Licenses Succussfully Updated';
+	} else {
+		//need to make sure limit doesn't exceed the dept licenses plus global
+		//licenses available
+		$adjustedTotal = 0;
+		foreach($depArr as $vArr) {
+			if($vArr['limit'] > 0) {
+				$adjustedTotal += $vArr['dept_licenses'];
+			}
+		}
+
+		if ($adjustedTotal <= $global_total) {
+			$setArr = array();
+			foreach ($depArr as $dep => $licArr) {
+				$setArr['max'] = $licArr['limit'];
+				if($licArr['limit'] > 0){
+					$setArr['dept_licenses'] = $licArr['limit'];
+				}
+				else {
+					$setArr['dept_licenses'] = 0;
+				}
+				updateTableInfo ($db_doc, 'licenses', $setArr,
+				array('real_department' => $dep));
+			}
+			$mess = "Department Licenses Succussfully Updated";
+		} else {
+			$mess = "Too many departmental licenses have been distributed";
+		}
+	}
+
+	if (substr (PHP_VERSION, 0, 1) == '4') {
+		$xmlDoc = domxml_new_doc ('1.0');
+		$root = $xmlDoc->create_element ('ROOT');
+		$xmlDoc->append_child ($root);
+		$error = $xmlDoc->create_element ('MESSAGE');
+		$root->append_child($error);
+		$error->set_attribute('message', $mess);
+		$xmlStr = $xmlDoc->dump_mem (false);
+	} else {
+		$xmlDoc = new DOMDocument ();
+		$root = $xmlDoc->createElement ('ROOT');
+		$xmlDoc->appendChild ($root);
+		$error = $xmlDoc->createElement ('MESSAGE');
+		$root->appendChild ($error);
+		$error->setAttribute ('message', $mess);
+		$xmlStr = $xmlDoc->saveXML ();
+	}
+	header('Content-type: text/xml');
+	echo $xmlStr;
+}
+
+function addDepartment($user, $db_doc) {
+ 	global $DEFS;
+ 	$xmlStr = file_get_contents ('php://input');
+ 	$userList = array ();
+ 	if (substr (PHP_VERSION, 0, 1) == '4') {
+ 		$domDoc = domxml_open_mem ($xmlStr);
+ 		$newDep = $domDoc->get_elements_by_tagname('NAME');
+ 		$newDep = $newDep[0]->get_content();
+ 		$userInfo = $domDoc->get_elements_by_tagname('USER');
+ 		foreach ($userInfo as $myUser) {
+ 			$userList[] = $myUser->get_content();
+ 		}
+ 	} else {
+ 		$domDoc = new DOMDocument ();
+		$domDoc->loadXML ($xmlStr); 
+ 		$newDep = $domDoc->getElementsByTagName('NAME');
+		$newDep = $newDep->item(0);
+		$newDep = $newDep->nodeValue;
+ 		$userInfo = $domDoc->getElementsByTagName('USER');
+ 		for ($i = 0; $i < $userInfo->length; $i++) {
+			$myUser = $userInfo->item($i);
+ 			$userList[] = $myUser->nodeValue;
+ 		}
+ 	}
+ 
+ 
+ 	$getArr = array ('COUNT(real_department)');
+ 	$whereArr = array ('arb_department' => $newDep);
+ 
+     if (getTableInfo ($db_doc, 'licenses', $getArr, $whereArr, 'queryOne') > 0)
+ 	{
+ 		$mess = "Department Already Exists";
+ 	} else {
+ 		$real_dep = getRealDepartment ($db_doc);
+ 		if (createNewDepartment ($db_doc, $real_dep, $newDep, true)) {
+			$currentDB = getDBObject($real_dep);
+ 			//cannot use glbstt
+			$db_doc = getDbObject('docutron');
+ 			$cmd = $DEFS['PHP_EXE'] . " -q " .
+ 				escapeshellarg($DEFS['DOC_DIR']."/departments/samba.php") .
+ 				escapeshellarg($real_dep);
+ 			$queryArr = array ('k'			=> 'docDaemon_execute',
+ 							   'value'		=> $cmd,
+ 							   'department'	=> $real_dep);
+ 			$res = $db_doc->extended->autoExecute ('settings', $queryArr);
+ 			dbErr($res);
+ 
+ 			foreach($userList as $uname) {
+ 				$DO_user = DataObject::factory ('users', $db_doc);
+ 				$DO_user->get ('username', $uname);
+ 				if ($uname == "admin") {
+ 					if (!$DO_user->defaultDept) {
+ 						$DO_user->changeDepartmentAccess ($real_dep, 'D', 1);
+ 					} else {
+ 						$DO_user->changeDepartmentAccess ($real_dep, 'D');
+ 					}
+ 				} else {
+ 					if (!$DO_user->defaultDept) {
+ 						$DO_user->changeDepartmentAccess ($real_dep, 'N', 1);
+					} else {
+ 						$DO_user->changeDepartmentAccess ($real_dep, 'N');
+  					}
+					$access = array();
+ 					$insertArr = array ('username' => $uname, 'access'=>base64_encode(serialize($access)));
+ 					$res = $currentDB->extended->autoExecute ('access', $insertArr);
+					dbErr($res);
+ 				}
+ 			}
+ 			$mess = 'Department Created';
+			$currentDB->disconnect ();
+		} else {
+			$mess = 'Permission Denied';
+		}
+	}
+
+	if (substr (PHP_VERSION, 0, 1) == '4') {
+		$xmlDoc = domxml_new_doc('1.0');
+		$root = $xmlDoc->create_element('ROOT');
+		$xmlDoc->append_child($root);
+		$message = $xmlDoc->create_element('MESSAGE');
+		$root->append_child($message);
+		$text = $xmlDoc->create_text_node($mess);
+		$message->append_child($text);
+		$xmlStr = $xmlDoc->dump_mem (false);
+	} else {
+		$xmlDoc = new DOMDocument ();
+		$root = $xmlDoc->createElement ('ROOT');
+		$xmlDoc->appendChild ($root);
+		$message = $xmlDoc->createElement ('MESSAGE');
+		$root->appendChild ($message);
+		$message->appendChild ($xmlDoc->createTextNode ($mess));
+		$xmlStr = $xmlDoc->saveXML ();
+		
+	}
+	header('Content-type: text/xml');
+	echo $xmlStr;
+}
+
+function refreshQuota($db_name,$db_doc) {
+	$sArr = array('quota_used','quota_allowed');
+	$whereArr = array('real_department' => $db_name);
+	$quotaInfo = getTableInfo($db_doc,'licenses',$sArr,$whereArr,'queryRow');
+	$quotaUsed = adjustQuota($quotaInfo['quota_used']);
+
+    if( $quotaInfo['quota_used'] != 0 && $quotaInfo['quota_allowed'] != 0) {
+    	$pUsed = round(($quotaInfo['quota_used'] / $quotaInfo['quota_allowed']) * 100, 2);
+    } else {
+        $pUsed = 0;
+	}
+
+	if (substr (PHP_VERSION, 0, 1) == '4') {
+		$xmlDoc = domxml_new_doc('1.0');
+		$root = $xmlDoc->create_element('ROOT');
+		$xmlDoc->append_child($root);
+		$q = $xmlDoc->create_element('QUOTA');
+		$q->set_attribute('percentUsed',$pUsed);
+		$root->append_child($q);
+
+		$text = $xmlDoc->create_text_node($quotaUsed);
+		$q->append_child($text);
+		$xmlStr = $xmlDoc->dump_mem(false);
+	} else {
+		$xmlDoc = new DOMDocument ();
+		$root = $xmlDoc->createElement('ROOT');
+		$xmlDoc->appendChild($root);
+		$q = $xmlDoc->createElement('QUOTA');
+		$q->setAttribute('percentUsed',$pUsed);
+		$root->appendChild($q);
+
+		$text = $xmlDoc->createTextNode($quotaUsed);
+		$q->appendChild($text);
+		$xmlStr = $xmlDoc->saveXML ();
+	}
+
+	header('Content-type: text/xml');
+	echo $xmlStr;
+}
+
+function xmlAddDepartmentAdministrator($user, $db_doc) {
+	$xmlStr = file_get_contents('php://input');
+	if (substr(PHP_VERSION, 0, 1) == '4') {
+		$domDoc = domxml_open_mem($xmlStr);
+
+		$depInfo = $domDoc->get_elements_by_tagname('DEPARTMENT');
+		$dep = $depInfo[0]->get_content();
+
+		$userInfo = $domDoc->get_elements_by_tagname('USERNAME');
+		$uname = $userInfo[0]->get_content();
+	} else {
+		$domDoc = new DOMDocument (); 
+		$domDoc->loadXML ($xmlStr);
+
+		$depInfo = $domDoc->getElementsByTagName('DEPARTMENT');
+		$dep = $depInfo->item(0);
+		$dep = $dep->nodeValue;
+
+		$userInfo = $domDoc->getElementsByTagName('USERNAME');
+		$uname = $userInfo->item(0);
+		$uname = $uname->nodeValue;
+	}
+	$res = addDepartmentAdministrator($user,$dep,$uname, $db_doc);
+	if($res) {
+		$mess = "Department Administrator Added Successfully";
+	} else {
+		$mess = "XML Error Occurred";
+	}
+	if (substr(PHP_VERSION, 0, 1) == '4') {
+		$xmlDoc = domxml_new_doc('1.0');
+		$root = $xmlDoc->create_element('ROOT');
+		$xmlDoc->append_child($root);
+
+		$m = $xmlDoc->create_element('MESSAGE');
+		$root->append_child($m);
+
+		$text = $xmlDoc->create_text_node($mess);
+		$m->append_child($text);
+		$xmlStr = $xmlDoc->dump_mem (false);
+	} else {
+		$xmlDoc = new DOMDocument ();
+		$root = $xmlDoc->createElement('ROOT');
+		$xmlDoc->appendChild($root);
+
+		$m = $xmlDoc->createElement('MESSAGE');
+		$root->appendChild($m);
+
+		$text = $xmlDoc->createTextNode($mess);
+		$m->appendChild($text);
+		$xmlStr = $xmlDoc->saveXML ();
+	}
+
+	header('Content-type: text/xml');
+	echo $xmlStr;
+}
+
+function addDepartmentAdministrator($user,$dep,$uname, $db_doc) {
+	$DO_user = DataObject::factory('users', $db_doc);
+	$DO_user->get('username', $uname);
+	
+	if(isset($DO_user->departments[$dep])) {
+		$user->setDepAdmin(true, $dep, $uname);
+		if($user->db_name == $dep) {
+			$db_dept = $user->getDbObject ();
+			$doDisconnect = false;
+		} else {
+			$db_dept = getDBObject($dep);
+			$doDisconnect = true;
+		}
+
+		$sArr = array('arb_department');
+		$wArr = array('real_department' => $dep);
+		$arb = getTableInfo($db_doc,'licenses',$sArr,$wArr,'queryOne');
+		$auditStr = "$uname set to be department administrator for department ".$arb." [$dep], ";
+		$auditStr .= $user->username." currently in department ".$user->db_name;
+		$user->audit("Department Permissions Changed", $auditStr, $db_dept);
+		if($doDisconnect) {
+			$db_dept->disconnect ();
+		}
+		return true;
+	}
+	return false;
+}
+
+function xmlGetDepartmentUsers($db_doc) {
+	$xmlStr = file_get_contents('php://input');
+	if (substr (PHP_VERSION, 0, 1) == '4') {
+		$domDoc = domxml_open_mem($xmlStr);
+
+		$depInfo = $domDoc->get_elements_by_tagname('DEPARTMENT');
+		$dep = $depInfo[0]->get_content();
+	} else {
+		$domDoc = new DOMDocument ();
+		$domDoc->loadXML ($xmlStr);
+
+		$depInfo = $domDoc->getElementsByTagName('DEPARTMENT');
+		$dep = $depInfo->item(0);
+		$dep = $dep->nodeValue;
+	}
+
+	$userList = getDepartmentUsers($dep, $db_doc);
+	if (count ($userList) == 0) {
+		$myMsg = 'There are no users to add as department administrator.';
+	} else {
+		$myMsg = '';
+	}
+
+	if (substr (PHP_VERSION, 0, 1) == '4') {
+		$xmlDoc = domxml_new_doc('1.0');
+		$root = $xmlDoc->create_element('ROOT');
+		$xmlDoc->append_child($root);
+		foreach($userList AS $uname) {
+			$u = $xmlDoc->create_element('USERNAME');
+			$root->append_child($u);
+
+			$text = $xmlDoc->create_text_node($uname);
+			$u->append_child($text);
+		}
+		if ($myMsg) {
+			$m = $xmlDoc->create_element('MESSAGE');
+			$root->append_child($m);
+
+			$text = $xmlDoc->create_text_node($myMsg);
+			$m->append_child($text);
+		}
+		$xmlStr = $xmlDoc->dump_mem (false);
+	} else {
+		$xmlDoc = new DOMDocument ();
+		$root = $xmlDoc->createElement('ROOT');
+		$xmlDoc->appendChild($root);
+		foreach($userList AS $uname) {
+			$u = $xmlDoc->createElement('USERNAME');
+			$root->appendChild($u);
+
+			$text = $xmlDoc->createTextNode($uname);
+			$u->appendChild($text);
+		}
+		if ($myMsg) {
+			$m = $xmlDoc->createElement('MESSAGE');
+			$root->appendChild($m);
+
+			$text = $xmlDoc->createTextNode($myMsg);
+			$m->appendChild($text);
+		}
+		$xmlStr = $xmlDoc->saveXML ();
+	}
+
+	header('Content-type: text/xml');
+	echo $xmlStr;
+}
+
+function getDepartmentUsers($dep, $db_doc) {
+	$userList = array();
+	
+	$DO_user = DataObject::factory('users', $db_doc);
+	$DO_user->orderBy('username', 'ASC');
+	$DO_user->find();
+	while($DO_user->fetch()) {
+		if($DO_user->username != 'admin' 
+			&& isset($DO_user->departments[$dep]) 
+			&& $DO_user->departments[$dep] != 'D') {
+			$userList[] = $DO_user->username;
+		}
+	}
+
+	return $userList;
+}
+
+function xmlDeleteDepartmentAdministrator($user,$db_doc) {
+	$xmlStr = file_get_contents('php://input');
+	if (substr(PHP_VERSION, 0, 1) == '4') {
+		$domDoc = domxml_open_mem($xmlStr);
+
+		$depInfo = $domDoc->get_elements_by_tagname('DEPARTMENT');
+		$dep = $depInfo[0]->get_content();
+
+		$userInfo = $domDoc->get_elements_by_tagname('USERNAME');
+		$uname = $userInfo[0]->get_content();
+	} else {
+		$domDoc = new DOMDocument ();
+		$domDoc->loadXML ($xmlStr);
+
+		$depInfo = $domDoc->getElementsByTagName('DEPARTMENT');
+		$dep = $depInfo->item(0);
+		$dep = $dep->nodeValue;
+
+		$userInfo = $domDoc->getElementsByTagName('USERNAME');
+		$uname = $userInfo->item(0);
+		$uname = $uname->nodeValue;
+	}
+
+	deleteDepartmentAdministrator($user,$dep,$uname,$db_doc);
+
+	$mess = "Department Administrator Removed Successfully";
+
+	if (substr (PHP_VERSION, 0, 1) == '4') {
+		$xmlDoc = domxml_new_doc('1.0');
+		$root = $xmlDoc->create_element('ROOT');
+		$xmlDoc->append_child($root);
+
+		$m = $xmlDoc->create_element('MESSAGE');
+		$root->append_child($m);
+
+		$text = $xmlDoc->create_text_node($mess);
+		$m->append_child($text);
+		$xmlStr = $xmlDoc->dump_mem (false);
+	} else {
+		$xmlDoc = new DOMDocument ();
+		$root = $xmlDoc->createElement('ROOT');
+		$xmlDoc->appendChild($root);
+
+		$m = $xmlDoc->createElement('MESSAGE');
+		$root->appendChild($m);
+
+		$text = $xmlDoc->createTextNode($mess);
+		$m->appendChild($text);
+		$xmlStr = $xmlDoc->saveXML ();
+	}
+
+	header('Content-type: text/xml');
+	echo $xmlStr;
+}
+
+function deleteDepartmentAdministrator($user,$dep,$uname,$db_doc) {
+	$user->setDepAdmin(false, $dep, $uname);
+	if($user->db_name == $dep) {
+		$db_dept = $user->getDbObject ();
+		$doDisconnect = false;
+	} else {
+		$db_dept = getDBObject($dep);
+		$doDisconnect = true;
+	}
+
+	$sArr = array('arb_department');
+	$wArr = array('real_department' => $dep);
+	$arb = getTableInfo($db_doc,'licenses',$sArr,$wArr,'queryOne');
+	$auditStr = "$uname removed as department administrator for department ".$arb." [$dep], ";
+	$auditStr .= $user->username." currently in department ".$user->db_name;
+	$user->audit("Department Permissions Changed", $auditStr, $db_dept);
+	if($doDisconnect) {
+		$db_dept->disconnect ();
+	}
+}
+
+if($logged_in ==1 && strcmp($user->username,"")!=0) {
+	if(isSet($_GET['switchDep'])) {
+		switchDepartments($_GET['newDep'],$user,$db_doc, true);
+	} elseif(isSet($_GET['editDepInfo'])) {
+		editDepInfoController($db_doc);
+	} elseif(isSet($_GET['addDepartment'])) {
+		addDepartment($user, $db_doc);
+	} elseif(isSet($_GET['refreshQuota'])) {
+		refreshQuota($user->db_name,$db_doc);
+	} elseif(isSet($_GET['addAdmin'])) {
+		xmlAddDepartmentAdministrator($user, $db_doc);
+	} elseif(isSet($_GET['getDepUsers'])) { 
+		xmlGetDepartmentUsers($db_doc);
+	} elseif(isSet($_GET['deleteAdmin'])) {
+		xmlDeleteDepartmentAdministrator($user,$db_doc);
+	}
+	setSessionUser($user);
+} else {
+	logUserOut();
+}
+?>

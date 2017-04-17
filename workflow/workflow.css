@@ -1,0 +1,64 @@
+body {
+	font-family: sans-serif;
+	font-size: 10pt;
+}
+.centeredTable {
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+/*
+label {
+	display: block;
+	float: left;
+	width: 10em;
+	text-align: right;
+	margin-right: 0.5em;
+}
+*/
+div.node {
+	padding: 1em;
+	background: #ebebeb;
+	float: left;
+	margin: 1em;
+	cursor: pointer;
+}
+div.inputBoxDiv {
+	margin-left: auto;
+	margin-right: auto;
+	text-align: left;
+	width: 100%;
+	white-space: nowrap;
+}
+div#contentDiv {
+	margin-top: 1em;
+}
+div.mainDiv {
+    width: 70%;
+	overflow: visible;
+}
+div.btnDiv {
+	padding: 1em;
+	border-collapse: collapse;
+	text-align: center;
+}
+div.spacer {
+	clear: both;
+}
+div.fieldSetDiv {
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: left;
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+
+fieldset {
+	width: 100%;
+}
+
+#groupBox {
+	float: left;
+}
+

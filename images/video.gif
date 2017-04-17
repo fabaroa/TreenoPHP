@@ -1,0 +1,374 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml1-transitional.dtd">
+<!-- IMP: Copyright 2001-2003, The Horde Project. IMP is under the GPL. -->
+<!--   Horde Project: http://horde.org/ | IMP: http://horde.org/imp/    -->
+<!--      GNU Public License: http://www.fsf.org/copyleft/gpl.html      -->
+<html lang="en-US"><head>
+<link rel="icon" href="/horde/imp/graphics/imp.gif" type="image/gif" />
+<title>Mail :: INBOX: Fwd: could you give the to josiah</title>
+<link href="/horde/css.php?app=imp" rel="stylesheet" type="text/css" /></head>
+
+<body>
+<script language="JavaScript" type="text/javascript" src="https://mail.docutronsystems.com/horde/javascript.php?file=open_compose_win.js&app=imp"></script><link rel="search" href="/horde/imp/search.php" />
+
+<form action="/horde/imp/mailbox.php" method="get" name="menu">
+<input type="hidden" name="newmail_popup" value="no" />
+<table border="0" cellpadding="2" cellspacing="0" width="100%">
+<tr>
+    <td class="menu">
+
+<table border="0" width="100%">
+<tr>
+<td align="center" nowrap="nowrap" valign="bottom"><a href="/horde/imp/mailbox.php?mailbox=INBOX" onmouseout="window.status='';" onmouseover="window.status='INBOX'; return true;" class="menuitem" accesskey="I"><img src="/horde/imp/graphics/folders/inbox.gif" border="0" alt="INBOX" title="INBOX" /><br /><span class="accessKey">I</span>NBOX</a>&nbsp;</td>
+<td align="center" nowrap="nowrap" valign="bottom"><a href="javascript:open_compose_win('thismailbox=INBOX');" onmouseout="window.status='';" onmouseover="window.status='Compose'; return true;" class="menuitem" accesskey="C"><img src="/horde/imp/graphics/compose.gif" border="0" alt="Compose" title="Compose" /><br /><span class="accessKey">C</span>ompose</a>&nbsp;</td>
+<td align="center" nowrap="nowrap" valign="bottom"><a href="/horde/imp/folders.php" onmouseout="window.status='';" onmouseover="window.status='Folders'; return true;" class="menuitem" accesskey="F"><img src="/horde/imp/graphics/folders.gif" border="0" alt="Folders" title="Folders" /><br /><span class="accessKey">F</span>olders</a>&nbsp;</td>
+<td align="center" nowrap="nowrap" valign="bottom"><a href="/horde/imp/search.php" onmouseout="window.status='';" onmouseover="window.status='Search'; return true;" class="menuitem" accesskey="S"><img src="/horde/imp/graphics/search.gif" border="0" alt="Search" title="Search" /><br /><span class="accessKey">S</span>earch</a>&nbsp;</td>
+<td align="center" nowrap="nowrap" valign="bottom"><a href="/horde/imp/fetchmail.php" onmouseout="window.status='';" onmouseover="window.status='Accounts'; return true;" class="menuitem" accesskey="A"><img src="/horde/imp/graphics/fetchmail.gif" border="0" alt="Accounts" title="Accounts" /><br /><span class="accessKey">A</span>ccounts</a>&nbsp;</td>
+<td align="center" nowrap="nowrap" valign="bottom"><a href="/horde/imp/prefs.php" onmouseout="window.status='';" onmouseover="window.status='Options'; return true;" class="menuitem" accesskey="O"><img src="/horde/graphics/prefs.gif" border="0" alt="Options" title="Options" /><br /><span class="accessKey">O</span>ptions</a>&nbsp;</td>
+<td align="center" nowrap="nowrap" valign="bottom"><a href="javascript:open_help_win('imp');" onmouseout="window.status='';" onmouseover="window.status='Help'; return true;" class="menuitem" accesskey="H"><img src="/horde/graphics/manual.gif" border="0" alt="Help" title="Help" /><br /><span class="accessKey">H</span>elp</a>&nbsp;</td>
+<td align="center" nowrap="nowrap" valign="bottom"><a href="/horde/login.php?reason=logout" onmouseout="window.status='';" onmouseover="window.status='Logout'; return true;" class="menuitem" target="_parent" accesskey="L"><img src="/horde/graphics/logout.gif" border="0" alt="Logout" title="Logout" /><br /><span class="accessKey">L</span>ogout</a>&nbsp;</td>
+
+<td width="100%">&nbsp;</td><!-- spacer -->
+
+<td class="light" align="center" nowrap="nowrap" valign="bottom">
+    <a class="menuitem" href="" onclick="folderSubmit(true); return false;" onmouseover="window.status='Open Folder'; return true;" onmouseout="window.status=''; return true;">
+<img src="/horde/imp/graphics/folders/folder_open.gif" border="0" alt="Open Folder" title="Open Folder" /><br />O<span class="accessKey">p</span>en Folder    </a>
+</td>
+<td class="light" align="right" nowrap="nowrap">
+        <label for="mailbox" accesskey="p"></label>
+    <select id="mailbox" name="mailbox" onchange="folderSubmit()"><option value="INBOX" selected="selected">INBOX</option>
+</select>
+</td>
+
+</tr>
+</table>
+
+    </td>
+</tr>
+</table>
+</form>
+<script language="JavaScript" type="text/javascript">
+<!--
+var loading;
+function folderSubmit(clear)
+{
+    if (document.menu.mailbox[document.menu.mailbox.selectedIndex].value != '') {
+        if (loading == null || clear != null) {
+            loading = true;
+            document.menu.submit();
+        }
+    }
+}
+// -->
+</script>
+<br />
+<script language="JavaScript" type="text/javascript">
+<!--
+function open_help_win(module, topic)
+{
+    var win_location;
+    var screen_width, screen_height;
+    var win_top, win_left;
+    var HelpWin;
+
+    screen_height = 0;
+    screen_width = 0;
+    win_top = 0;
+    win_left = 0;
+
+    var help_win_width = 300;
+    var help_win_height = 300;
+
+    if (window.innerWidth) screen_width = window.innerWidth;
+    if (window.innerHeight) screen_height = window.innerHeight;
+
+    win_location = 'https://mail.docutronsystems.com/horde/help.php?1=1';
+    if (topic == null) {
+        win_location += '&module=' + module;
+    } else if (topic == "") {
+        win_location += '&module=' + module + '&show=topics';
+    } else {
+        win_location += '&module=' + module + '&topic=' + topic;
+    }
+
+    win_top  = screen_height - help_win_height - 20;
+    win_left = screen_width  - help_win_width  - 20;
+    HelpWin  = window.open(
+        win_location,
+        'HelpWindow',
+        'width='+help_win_width+',height='+help_win_height+',top='+win_top+',left='+win_left
+    );
+    HelpWin.focus();
+}
+//-->
+</script>
+<script language="JavaScript" type="text/javascript">
+<!--
+
+function open_print_win(args)
+{
+    var url = "message.php";
+    if (url.indexOf('?') == -1) glue = '?';
+    else glue = '&';
+    var now = new Date();
+    var name = "compose_windows_" + now.getTime();
+    if (args != "") {
+        url = url + glue + args + "&uniq=" + now.getTime();
+    } else {
+        url = url + glue + "uniq=" + now.getTime();
+    }
+    param = "toolbar=yes,location=no,status=yes,scrollbars=yes,resizable=yes,width=630,height=650,left=0,top=0";
+    eval ("name = window.open(url, name, param)");
+    if (!eval("name.opener")) eval("name.opener = self");
+}
+
+// -->
+</script>
+<form method="get" name="messages" action="/horde/imp/message.php">
+<input type="hidden" name="targetMbox" value="" />
+<input type="hidden" name="actionID" value="" />
+<input type="hidden" name="thismailbox" value="INBOX" />
+<input type="hidden" name="start" value="11" />
+<input type="hidden" name="index" value="11" />
+<input type="hidden" name="newMbox" value="0" />
+
+<table border="0" cellpadding="0" cellspacing="0" align="center" width="100%">
+<tr>
+    <td align="left" class="header">
+    INBOX: Fwd: could you give the to josiah (11&nbsp;of&nbsp;11)&nbsp;&nbsp;<img src="/horde/imp/graphics/personal.gif" border="0" alt="Personal" title="Personal" />    </td>
+
+        <td align="right" class="header" nowrap="nowrap" valign="top"><span class="smallheader">
+    <a class="menuitem" href="" onclick="Transfer(103, 1); return false;">Move</a> |
+    <a class="menuitem" href="" onclick="Transfer(104, 1); return false;">Copy</a>
+    <select name="target1" onchange="updateFolders(1);">
+    <option value="">This message to</option>
+<option value="">----</option>
+<option value="*new*">New Folder</option>
+<option value="">----</option>
+    </select>
+        </span></td>
+</tr>
+</table>
+<table border="0" align="center" width="100%" cellspacing="0" cellpadding="2">
+<tr class="control">
+<td align="left">
+<a href="/horde/imp/message.php?index=11&start=11&actionID=101" onmouseout="window.status='';" onmouseover="window.status='Delete'; return true;" class="widget" title="Delete" accesskey="D"><span class="accessKey">D</span>elete</a> | <a href="javascript:open_compose_win('actionID=106&index=11&identity=0&array_index=10&thismailbox=INBOX');" onmouseout="window.status='';" onmouseover="window.status='Reply'; return true;" class="widget" title="Reply" accesskey="R"><span class="accessKey">R</span>eply</a> | <a href="javascript:open_compose_win('actionID=108&index=11&identity=0&array_index=10&thismailbox=INBOX');" onmouseout="window.status='';" onmouseover="window.status='Forward'; return true;" class="widget" title="Forward" accesskey="w">For<span class="accessKey">w</span>ard</a> | <a href="javascript:open_compose_win('actionID=120&index=11&array_index=10&thismailbox=INBOX');" onmouseout="window.status='';" onmouseover="window.status='Redirect'; return true;" class="widget" title="Redirect" accesskey="e">R<span class="accessKey">e</span>direct</a> | <a href="/horde/imp/message.php?index=11&start=11&actionID=158" onmouseout="window.status='';" onmouseover="window.status='Blacklist'; return true;" class="widget" title="Blacklist" accesskey="B"><span class="accessKey">B</span>lacklist</a> | <a href="" onclick="view('/horde/imp/view.php?index=11&mailbox=INBOX&actionID=115&id=0&mimecache=54aa034301e503922b04509b3b192479', '1608147231'); return false;" onmouseout="window.status='';" onmouseover="window.status='Message Source'; return true;" class="widget">Message Source</a> // | <a href="/horde/download/?module=imp&actionID=116&index=11&fn=%2FFwd%253A%2520could%2520you%2520give%2520the%2520to%2520josiah" onmouseout="window.status='';" onmouseover="window.status='Save as'; return true;" class="widget" title="Save as" accesskey="v">Sa<span class="accessKey">v</span>e as</a> | <a href="" onclick="open_print_win('actionID=148&index=11'); return false;" onmouseout="window.status='';" onmouseover="window.status='Print'; return true;" class="widget" title="Print" accesskey="n">Pri<span class="accessKey">n</span>t</a></td>
+<td align="right" nowrap="nowrap">
+<a href="/horde/imp/mailbox.php?start=11" onmouseout="window.status='';" onmouseover="window.status='Back to INBOX'; return true;" class="widget" title="Back to INBOX" accesskey="X">Back to INBO<span class="accessKey">X</span></a>&nbsp;&nbsp;
+<link href="/horde/imp/mailbox.php?start=11" rel="Up" />
+<a href="/horde/imp/message.php?index=10" onmouseout="window.status='';" onmouseover="window.status='Previous Message'; return true;" class="widget" accesskey="&lt;"><img src="/horde/imp/graphics/prev.gif" border="0" alt="Previous Message" title="Previous Message" width="12" height="13" /></a>
+<link href="/horde/imp/message.php?index=10" rel="Previous" />
+<img src="/horde/imp/graphics/next-grey.gif" border="0" alt="" title="" width="12" height="13" /></td>
+</tr>
+</table>
+<table border="0" align="center" width="100%" cellpadding="2" cellspacing="0">
+      <tr>
+  <td class="item0" nowrap="nowrap" align="right" valign="top"><b>Date:</b>&nbsp;</td>
+  <td class="item0" width="100%">Fri,  2 Jan 2004 15:53:34 -0500</td>
+</tr>
+          <tr>
+  <td class="item1" nowrap="nowrap" align="right" valign="top"><b>From:</b>&nbsp;</td>
+  <td class="item1" width="100%"><a href="javascript:open_compose_win('to=bemis%40docutronsystems.com&thismailbox=INBOX');" onmouseout="window.status='';" onmouseover="window.status='Compose Message (bemis@docutronsystems.com)'; return true;">bemis@docutronsystems.com</a></td>
+</tr>
+          <tr>
+  <td class="item0" nowrap="nowrap" align="right" valign="top"><b>To:</b>&nbsp;</td>
+  <td class="item0" width="100%"><a href="javascript:open_compose_win('to=jwong%40docutronsystems.com&thismailbox=INBOX');" onmouseout="window.status='';" onmouseover="window.status='Compose Message (jwong@docutronsystems.com)'; return true;">jwong@docutronsystems.com</a></td>
+</tr>
+                            <tr>
+  <td class="item1" nowrap="nowrap" align="right" valign="top"><b>Subject:</b>&nbsp;</td>
+  <td class="item1" width="100%">Fwd: could you give the to josiah</td>
+</tr>
+      <tr>
+  <td class="item0" align="right" valign="top"><b>Part(s):</b>&nbsp;</td>
+  <td class="item0" width="100%"><table cellspacing="2" cellpadding="1"><tr valign="middle"><td><img src="/horde/imp/graphics/mime/image.gif" height="16" width="16" border="0" alt="" />&nbsp;</td>
+<td>3&nbsp;</td>
+<td><a href="" onclick="view('/horde/imp/view.php?index=11&mailbox=INBOX&actionID=113&id=3&mimecache=54aa034301e503922b04509b3b192479', '3'); return false;" onmouseout="window.status='';" onmouseover="window.status='View txt.gif'; return true;">txt.gif</a>&nbsp;</td>
+<td>image/gif&nbsp;</td>
+<td>0.30 KB&nbsp;</td>
+<td><a href="/horde/download/?module=imp&thismailbox=INBOX&index=11&mailbox=INBOX&actionID=112&id=3&mimecache=54aa034301e503922b04509b3b192479&fn=%2Ftxt.gif" onmouseout="window.status='';" onmouseover="window.status='Download txt.gif'; return true;"><img src="/horde/graphics/download.gif" border="0" alt="Download" title="Download" /></a>&nbsp;</td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+<tr valign="middle"><td><img src="/horde/imp/graphics/mime/image.gif" height="16" width="16" border="0" alt="" />&nbsp;</td>
+<td>4&nbsp;</td>
+<td><a href="" onclick="view('/horde/imp/view.php?index=11&mailbox=INBOX&actionID=113&id=4&mimecache=54aa034301e503922b04509b3b192479', '4'); return false;" onmouseout="window.status='';" onmouseover="window.status='View video.gif'; return true;">video.gif</a>&nbsp;</td>
+<td>image/gif&nbsp;</td>
+<td>0.58 KB&nbsp;</td>
+<td><a href="/horde/download/?module=imp&thismailbox=INBOX&index=11&mailbox=INBOX&actionID=112&id=4&mimecache=54aa034301e503922b04509b3b192479&fn=%2Fvideo.gif" onmouseout="window.status='';" onmouseover="window.status='Download video.gif'; return true;"><img src="/horde/graphics/download.gif" border="0" alt="Download" title="Download" /></a>&nbsp;</td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+<tr valign="middle"><td><img src="/horde/imp/graphics/mime/image.gif" height="16" width="16" border="0" alt="" />&nbsp;</td>
+<td>5&nbsp;</td>
+<td><a href="" onclick="view('/horde/imp/view.php?index=11&mailbox=INBOX&actionID=113&id=5&mimecache=54aa034301e503922b04509b3b192479', '5'); return false;" onmouseout="window.status='';" onmouseover="window.status='View xls.gif'; return true;">xls.gif</a>&nbsp;</td>
+<td>image/gif&nbsp;</td>
+<td>0.59 KB&nbsp;</td>
+<td><a href="/horde/download/?module=imp&thismailbox=INBOX&index=11&mailbox=INBOX&actionID=112&id=5&mimecache=54aa034301e503922b04509b3b192479&fn=%2Fxls.gif" onmouseout="window.status='';" onmouseover="window.status='Download xls.gif'; return true;"><img src="/horde/graphics/download.gif" border="0" alt="Download" title="Download" /></a>&nbsp;</td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+<tr valign="middle"><td><img src="/horde/imp/graphics/mime/image.gif" height="16" width="16" border="0" alt="" />&nbsp;</td>
+<td>6&nbsp;</td>
+<td><a href="" onclick="view('/horde/imp/view.php?index=11&mailbox=INBOX&actionID=113&id=6&mimecache=54aa034301e503922b04509b3b192479', '6'); return false;" onmouseout="window.status='';" onmouseover="window.status='View audio.gif'; return true;">audio.gif</a>&nbsp;</td>
+<td>image/gif&nbsp;</td>
+<td>1.39 KB&nbsp;</td>
+<td><a href="/horde/download/?module=imp&thismailbox=INBOX&index=11&mailbox=INBOX&actionID=112&id=6&mimecache=54aa034301e503922b04509b3b192479&fn=%2Faudio.gif" onmouseout="window.status='';" onmouseover="window.status='Download audio.gif'; return true;"><img src="/horde/graphics/download.gif" border="0" alt="Download" title="Download" /></a>&nbsp;</td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+<tr valign="middle"><td><img src="/horde/imp/graphics/mime/image.gif" height="16" width="16" border="0" alt="" />&nbsp;</td>
+<td>7&nbsp;</td>
+<td><a href="" onclick="view('/horde/imp/view.php?index=11&mailbox=INBOX&actionID=113&id=7&mimecache=54aa034301e503922b04509b3b192479', '7'); return false;" onmouseout="window.status='';" onmouseover="window.status='View generic.gif'; return true;">generic.gif</a>&nbsp;</td>
+<td>image/gif&nbsp;</td>
+<td>0.65 KB&nbsp;</td>
+<td><a href="/horde/download/?module=imp&thismailbox=INBOX&index=11&mailbox=INBOX&actionID=112&id=7&mimecache=54aa034301e503922b04509b3b192479&fn=%2Fgeneric.gif" onmouseout="window.status='';" onmouseover="window.status='Download generic.gif'; return true;"><img src="/horde/graphics/download.gif" border="0" alt="Download" title="Download" /></a>&nbsp;</td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table></td>
+</tr><tr>
+  <td class="item1" align="right" valign="top"><b>Headers:</b>&nbsp;</td>
+  <td class="item1" width="100%">
+                    <a href="/horde/imp/message.php?index=11&show_all_headers=1" onmouseout="window.status='';" onmouseover="window.status='Show All Headers'; return true;">Show All Headers</a>
+          </td>
+</tr>
+</table>
+<table border="0" align="center" width="100%" cellspacing="0" cellpadding="0"><tr><td class="control" align="center">
+<table border="0" align="center" width="100%" cellpadding="2" cellspacing="3">
+<tr><td align="left"><table border="0"><tr valign="middle"><td><img src="/horde/graphics/mime/text.gif" height="16" width="16" border="0" alt="" />&nbsp;</td>
+<td>1&nbsp;</td>
+<td><a href="" onclick="view('/horde/imp/view.php?index=11&mailbox=INBOX&actionID=113&id=1&mimecache=54aa034301e503922b04509b3b192479', '1'); return false;" onmouseout="window.status='';" onmouseover="window.status='View unnamed'; return true;">unnamed</a>&nbsp;</td>
+<td>text/plain&nbsp;</td>
+<td>0.36 KB&nbsp;</td>
+<td><a href="/horde/download/?module=imp&thismailbox=INBOX&index=11&mailbox=INBOX&actionID=112&id=1&mimecache=54aa034301e503922b04509b3b192479&fn=%2Funnamed" onmouseout="window.status='';" onmouseover="window.status='Download unnamed'; return true;"><img src="/horde/graphics/download.gif" border="0" alt="Download" title="Download" /></a>&nbsp;</td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table></td></tr>
+<tr><td class="text" align="left"><p class="fixed"><br />
+<br />
+----- Forwarded message from wthibodeau@docutronsystems.com -----<br />
+&nbsp;&nbsp; &nbsp;Date: Fri, 2 Jan 2004 15:39:32 -0500<br />
+&nbsp;&nbsp; &nbsp;From: Will Thibodeau &lt;wthibodeau@docutronsystems.com&gt;<br />
+Reply-To: Will Thibodeau &lt;wthibodeau@docutronsystems.com&gt;<br />
+&nbsp;Subject: could you give the to josiah<br />
+&nbsp;&nbsp; &nbsp; &nbsp;To: bemis@docutronsystems.com<br />
+<br />
+&nbsp;<br />
+<br />
+<br />
+----- End forwarded message -----<br />
+<br />
+<br />
+take this<br /></p></td></tr><tr><td align="left"><table border="0"><tr valign="middle"><td><img src="/horde/graphics/mime/text.gif" height="16" width="16" border="0" alt="" />&nbsp;</td>
+<td>2&nbsp;</td>
+<td><a href="" onclick="view('/horde/imp/view.php?index=11&mailbox=INBOX&actionID=113&id=2.1&mimecache=54aa034301e503922b04509b3b192479', '2.1'); return false;" onmouseout="window.status='';" onmouseover="window.status='View unnamed'; return true;">unnamed</a>&nbsp;</td>
+<td>text/plain&nbsp;</td>
+<td>0.00 KB&nbsp;</td>
+<td><a href="/horde/download/?module=imp&thismailbox=INBOX&index=11&mailbox=INBOX&actionID=112&id=2.1&mimecache=54aa034301e503922b04509b3b192479&fn=%2Funnamed" onmouseout="window.status='';" onmouseover="window.status='Download unnamed'; return true;"><img src="/horde/graphics/download.gif" border="0" alt="Download" title="Download" /></a>&nbsp;</td>
+<td>&nbsp;&nbsp;</td>
+</tr>
+</table></td></tr>
+<tr><td class="text" align="left"><i>There was no text in this message part.</i><p />
+<i>Alternative parts for this section:</i>&nbsp;&nbsp;<a href="" onclick="open_help_win('imp', 'alternative-msg'); return false;" onmouseout="window.status='';" onmouseover="window.status='Help'; return true;"><img src="/horde/graphics/help.gif" border="0" alt="Help" title="Help" width="16" height="16" /></a><br />
+<table border="0"><tr valign="middle"><td><img src="/horde/graphics/mime/html.gif" height="16" width="16" border="0" alt="" />&nbsp;</td><td><a href="" onclick="view('/horde/imp/view.php?index=11&mailbox=INBOX&actionID=113&id=2.2&mimecache=54aa034301e503922b04509b3b192479', '2.2'); return false;" onmouseout="window.status='';" onmouseover="window.status='View unnamed'; return true;">unnamed</a>&nbsp;</td><td>text/html&nbsp;</td><td>2.67 KB&nbsp;</td><td><a href="/horde/download/?module=imp&thismailbox=INBOX&index=11&mailbox=INBOX&actionID=112&id=2.2&mimecache=54aa034301e503922b04509b3b192479&fn=%2Funnamed" onmouseout="window.status='';" onmouseover="window.status='Download unnamed'; return true;"><img src="/horde/graphics/download.gif" border="0" alt="Download" title="Download" /></a>&nbsp;</td><td>&nbsp;&nbsp;</td></tr>
+</table>
+</td></tr></table></td></tr></table>
+<table border="0" align="center" width="100%" cellspacing="0" cellpadding="2">
+<tr class="control">
+<td align="left">
+<a href="/horde/imp/message.php?index=11&start=11&actionID=101" onmouseout="window.status='';" onmouseover="window.status='Delete'; return true;" class="widget" title="Delete" accesskey="D"><span class="accessKey">D</span>elete</a> | <a href="javascript:open_compose_win('actionID=106&index=11&identity=0&array_index=10&thismailbox=INBOX');" onmouseout="window.status='';" onmouseover="window.status='Reply'; return true;" class="widget" title="Reply" accesskey="R"><span class="accessKey">R</span>eply</a> | <a href="javascript:open_compose_win('actionID=108&index=11&identity=0&array_index=10&thismailbox=INBOX');" onmouseout="window.status='';" onmouseover="window.status='Forward'; return true;" class="widget" title="Forward" accesskey="w">For<span class="accessKey">w</span>ard</a> | <a href="javascript:open_compose_win('actionID=120&index=11&array_index=10&thismailbox=INBOX');" onmouseout="window.status='';" onmouseover="window.status='Redirect'; return true;" class="widget" title="Redirect" accesskey="e">R<span class="accessKey">e</span>direct</a> | <a href="/horde/imp/message.php?index=11&start=11&actionID=158" onmouseout="window.status='';" onmouseover="window.status='Blacklist'; return true;" class="widget" title="Blacklist" accesskey="B"><span class="accessKey">B</span>lacklist</a> | <a href="" onclick="view('/horde/imp/view.php?index=11&mailbox=INBOX&actionID=115&id=0&mimecache=54aa034301e503922b04509b3b192479', '1608147231'); return false;" onmouseout="window.status='';" onmouseover="window.status='Message Source'; return true;" class="widget">Message Source</a> // | <a href="/horde/download/?module=imp&actionID=116&index=11&fn=%2FFwd%253A%2520could%2520you%2520give%2520the%2520to%2520josiah" onmouseout="window.status='';" onmouseover="window.status='Save as'; return true;" class="widget" title="Save as" accesskey="v">Sa<span class="accessKey">v</span>e as</a> | <a href="" onclick="open_print_win('actionID=148&index=11'); return false;" onmouseout="window.status='';" onmouseover="window.status='Print'; return true;" class="widget" title="Print" accesskey="n">Pri<span class="accessKey">n</span>t</a></td>
+<td align="right" nowrap="nowrap">
+<a href="/horde/imp/mailbox.php?start=11" onmouseout="window.status='';" onmouseover="window.status='Back to INBOX'; return true;" class="widget" title="Back to INBOX" accesskey="X">Back to INBO<span class="accessKey">X</span></a>&nbsp;&nbsp;
+<link href="/horde/imp/mailbox.php?start=11" rel="Up" />
+<a href="/horde/imp/message.php?index=10" onmouseout="window.status='';" onmouseover="window.status='Previous Message'; return true;" class="widget" accesskey="&lt;"><img src="/horde/imp/graphics/prev.gif" border="0" alt="Previous Message" title="Previous Message" width="12" height="13" /></a>
+<link href="/horde/imp/message.php?index=10" rel="Previous" />
+<img src="/horde/imp/graphics/next-grey.gif" border="0" alt="" title="" width="12" height="13" /></td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" align="center" width="100%">
+<tr>
+    <td align="right" class="header"><span class="smallheader">
+        <a class="menuitem" href="" onclick="Transfer(103, 2); return false;">Move</a> |
+    <a class="menuitem" href="" onclick="Transfer(104, 2); return false;">Copy</a>
+    <select name="target2" onchange="updateFolders(2);">
+    <option value="">This message to</option>
+<option value="">----</option>
+<option value="*new*">New Folder</option>
+<option value="">----</option>
+    </select>
+        </span></td>
+</tr>
+</table>
+</form>
+<script language="JavaScript" type="text/javascript">
+<!--
+
+function Transfer(actID, form)
+{
+    if (form == 1) {
+        document.messages.targetMbox.value = document.messages.target1.options[document.messages.target1.selectedIndex].value;
+    } else {
+        document.messages.targetMbox.value = document.messages.target2.options[document.messages.target2.selectedIndex].value;
+    }
+
+    // Check for a mailbox actually being selected.
+    if (document.messages.targetMbox.value == '*new*') {
+        var newFolder = window.prompt('You are copying/moving to a new folder.\nPlease enter a name for the new folder:\n', '');
+        if (newFolder != null && newFolder != '') {
+            document.messages.newMbox.value = 1;
+            document.messages.targetMbox.value = newFolder;
+            document.messages.actionID.value = actID;
+            document.messages.submit();
+        }
+    } else {
+        if (document.messages.targetMbox.value == '') {
+            window.alert('You must select a target mailbox first.');
+        } else {
+            document.messages.actionID.value = actID;
+            document.messages.submit();
+        }
+    }
+}
+
+function Submit(actID)
+{
+    document.messages.actionID.value = actID;
+    document.messages.submit();
+}
+
+function tr(badval)
+{
+    retval = '';
+    for (i = 0; i < badval.length; i++) {
+        if (badval.charAt(i) == '.') {
+            retval += '_';
+        } else {
+            retval += badval.charAt(i);
+        }
+    }
+    return retval;
+}
+
+function updateFolders(form)
+{
+    if (form == 1) {
+        document.messages.target2.selectedIndex = document.messages.target1.selectedIndex;
+    } else {
+        document.messages.target1.selectedIndex = document.messages.target2.selectedIndex;
+    }
+}
+
+// -->
+</script>
+<script language="JavaScript" type="text/javascript">
+<!--
+
+function view(url, partid)
+{
+    param = "menubar=yes,toolbar=no,location=no,status=no,scrollbars=yes,resizable=yes";
+    window.open(url, '27ef62da12167bf23f2d56e23dd306be' + tr(partid), param);
+}
+
+// -->
+</script>
+<script language="JavaScript" type="text/javascript">
+<!--
+if (parent.frames.horde_main) parent.document.title = 'Mail :: INBOX: Fwd: could you give the to josiah';
+//-->
+</script>
+</body>
+</html>

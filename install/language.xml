@@ -1,0 +1,2203 @@
+<?xml version="1.0"?>
+<translations>
+  <trans>
+    <k>LastName</k>
+    <english>Last Name</english>
+    <spanish>Apellido</spanish>
+  </trans>
+  <trans>
+    <k>Last_Name</k>
+    <english>Last Name</english>
+    <spanish>Apellido</spanish>
+  </trans>
+  <trans>
+    <k>SSN</k>
+    <english>SSN</english>
+    <spanish>SSN</spanish>
+  </trans>
+  <trans>
+    <k>spanish</k>
+    <english>Espa&#xF1;ol</english>
+    <spanish>Espa&#xF1;ol</spanish>
+  </trans>
+  <trans>
+    <k>english</k>
+    <english>English</english>
+    <spanish>English</spanish>
+  </trans>
+  <trans>
+    <k>Cabinet Functions</k>
+    <english>Cabinet Functions</english>
+    <spanish>Funci&#xF3;nes del Archivador</spanish>
+  </trans>
+  <trans>
+    <k>Create New Cabinet</k>
+    <english>Create New Cabinet</english>
+    <spanish>Crear Archivador Nuevo</spanish>
+  </trans>
+  <trans>
+    <k>Create New Folder</k>
+    <english>Create New Folder</english>
+    <spanish>Crear Carpeta Nueva</spanish>
+  </trans>
+  <trans>
+    <k>Cabinet Access</k>
+    <english>Cabinet Access</english>
+    <spanish>Acceso al Archivador</spanish>
+  </trans>
+  <trans>
+    <k>Edit Cabinet</k>
+    <english>Edit Cabinet</english>
+    <spanish>Editar el Archivador</spanish>
+  </trans>
+  <trans>
+    <k>Create Tabs</k>
+    <english>Create Tabs</english>
+    <spanish>Crear Sub-Carpeta</spanish>
+  </trans>
+  <trans>
+    <k>Setup Indexing</k>
+    <english>Setup Indexing</english>
+    <spanish>Arreglar los Indices</spanish>
+  </trans>
+  <trans>
+    <k>Indexing</k>
+    <english>Indexing</english>
+    <spanish>Indices</spanish>
+  </trans>
+  <trans>
+    <k>User Functions</k>
+    <english>User Functions</english>
+    <spanish>Funci&#xF3;nes del Usuario</spanish>
+  </trans>
+  <trans>
+    <k>Change Permissions</k>
+    <english>Change Permissions</english>
+    <spanish>Cambiar la Autorizaci&#xF3;n</spanish>
+  </trans>
+  <trans>
+    <k>Create New User</k>
+    <english>Create New User</english>
+    <spanish>Crear un Usuario Nuevo</spanish>
+  </trans>
+  <trans>
+    <k>Delete a User</k>
+    <english>Delete a User</english>
+    <spanish>Borrar Usuario</spanish>
+  </trans>
+  <trans>
+    <k>Create Guest User</k>
+    <english>Create Guest User</english>
+    <spanish>Crear un Usuario Visitante</spanish>
+  </trans>
+  <trans>
+    <k>Manage Passwords</k>
+    <english>Manage Passwords</english>
+    <spanish>Manejo de Contrase&#xF1;as</spanish>
+  </trans>
+  <trans>
+    <k>Change Password</k>
+    <english>Change Password</english>
+    <spanish>Cambiar la Contrase&#xF1;a</spanish>
+  </trans>
+  <trans>
+    <k>Audit</k>
+    <english>Audit</english>
+    <spanish>Auditor&#xED;a</spanish>
+  </trans>
+  <trans>
+    <k>Audit Table</k>
+    <english>Audit Table</english>
+    <spanish>Tabla de Auditor&#xED;a</spanish>
+  </trans>
+  <trans>
+    <k>Download Audit Table</k>
+    <english>Download Audit Table</english>
+    <spanish>Bajar Tabla de Auditor&#xED;a</spanish>
+  </trans>
+  <trans>
+    <k>Administer Audit Table</k>
+    <english>Administer Audit Table</english>
+    <spanish>Administrar la Tabla de Auditoria</spanish>
+  </trans>
+  <trans>
+    <k>Backup Whole Table</k>
+    <english>Backup Whole Table</english>
+    <spanish>Guardar Copia de Seguridad (Tabla Entera)</spanish>
+  </trans>
+  <trans>
+    <k>Truncated Backup</k>
+    <english>Truncated Backup</english>
+    <spanish>Guardar Copia de Seguridad (Tabla Parcial)</spanish>
+  </trans>
+  <trans>
+    <k>View List of Backups</k>
+    <english>View List of Backups</english>
+    <spanish>Ver Lista de Copias de Seguridad</spanish>
+  </trans>
+  <trans>
+    <k>Download A Backup</k>
+    <english>Download A Backup</english>
+    <spanish>Bajar Copia de Seguridad</spanish>
+  </trans>
+  <trans>
+    <k>Backup</k>
+    <english>Backup</english>
+    <spanish>Copia de Seguridad</spanish>
+  </trans>
+  <trans>
+    <k>Backup_</k>
+    <english>Backup</english>
+    <spanish>Copia de Seguridad</spanish>
+  </trans>
+  <trans>
+    <k>Show Log</k>
+    <english>Show Log</english>
+    <spanish>Mostrar Registro de Seguridad</spanish>
+  </trans>
+  <trans>
+    <k>Shutdown Backup Server</k>
+    <english>Shutdown Backup Server</english>
+    <spanish>Cerrar Servidor de Seguridad</spanish>
+  </trans>
+  <trans>
+    <k>CD Backup</k>
+    <english>CD Backup</english>
+    <spanish>Guardar Copia en CD-ROM</spanish>
+  </trans>
+  <trans>
+    <k>System Information</k>
+    <english>System Information</english>
+    <spanish>Informaci&#xF3;n del Sistema</spanish>
+  </trans>
+  <trans>
+    <k>System Preferences</k>
+    <english>System Preferences</english>
+    <spanish>Preferencia del Sistema</spanish>
+  </trans>
+  <trans>
+    <k>Set Current HD Settings</k>
+    <english>Set Current Hard Drive Settings</english>
+    <spanish>Configurar Disco Duro Actual</spanish>
+  </trans>
+  <trans>
+    <k>Index File Extensions</k>
+    <english>Index File Extensions</english>
+    <spanish>Extensi&#xF3;nes del &#xED;ndice de archivo</spanish>
+  </trans>
+  <trans>
+    <k>Indexing Type Definitions</k>
+    <english>Indexing Type Definitions</english>
+    <spanish>Definici&#xF3;nes del tipo de &#xED;ndice</spanish>
+  </trans>
+  <trans>
+    <k>Change Language</k>
+    <english>Update Language</english>
+    <spanish>Idioma De la Actualizaci&#xF3;n</spanish>
+  </trans>
+  <trans>
+    <k>Create Cab w Indexes</k>
+    <english>Create Cabinet with Indexes</english>
+    <spanish>Crear Archivador con Indeces</spanish>
+  </trans>
+  <trans>
+    <k>Add a Folder</k>
+    <english>Add a Folder</english>
+    <spanish>Anadir Carpeta</spanish>
+  </trans>
+  <trans>
+    <k>Add a folder to a cabinet</k>
+    <english>Add a folder to a cabinet</english>
+    <spanish>Anadir Carpeta al Archivador</spanish>
+  </trans>
+  <trans>
+    <k>Cabinet Access controls</k>
+    <english>Cabinet Access controls</english>
+    <spanish>Controlar Acceso de Archivador</spanish>
+  </trans>
+  <trans>
+    <k>Set User Access</k>
+    <english>Set user access rights to cabinets</english>
+    <spanish>Establecer Permisos de Usuarios a los Archivadores</spanish>
+  </trans>
+  <trans>
+    <k>Add/Remove Cabinet Access</k>
+    <english>Add or remove cabinet indexes</english>
+    <spanish>Anadir o Borrar Indeces de Archivador</spanish>
+  </trans>
+  <trans>
+    <k>Create tabs for a cabinet</k>
+    <english>Create tabs for a cabinet</english>
+    <spanish>Crear Sub-Carpetastabs para un Archivador</spanish>
+  </trans>
+  <trans>
+    <k>Setup indexing settings</k>
+    <english>Setup indexing settings</english>
+    <spanish>Establecer Configiraci&#xF3;nes por los Indeces</spanish>
+  </trans>
+  <trans>
+    <k>Indexing Explanation</k>
+    <english>Index files away to appropriate folders</english>
+    <spanish>Indexar Archivos a Carpetas</spanish>
+  </trans>
+  <trans>
+    <k>Configure User Access</k>
+    <english>Configure user access to resources</english>
+    <spanish>Configurar Acceso de Usuario a Recursos</spanish>
+  </trans>
+  <trans>
+    <k>User Creation</k>
+    <english>User Creation</english>
+    <spanish>Crear Usuario</spanish>
+  </trans>
+  <trans>
+    <k>Create User Explanation</k>
+    <english>Create user, assign password and administrator right</english>
+    <spanish>Crear usuario, asignar contrase&#xF1;a y privilegio de administrador</spanish>
+  </trans>
+  <trans>
+    <k>User Deletion</k>
+    <english>User Deletion</english>
+    <spanish>Borrar Usuario</spanish>
+  </trans>
+  <trans>
+    <k>RM User from System</k>
+    <english>Remove a user from the system</english>
+    <spanish>Borrar Usuario del sistema</spanish>
+  </trans>
+  <trans>
+    <k>Guest Accounts</k>
+    <english>Guest Accounts</english>
+    <spanish>Cuentas de visitantes</spanish>
+  </trans>
+  <trans>
+    <k>Guest Account Explanation</k>
+    <english>Create a guest account that expires within a certain time period</english>
+    <spanish>Crear cuenta de visitante qui  caduca despues de algunas horas</spanish>
+  </trans>
+  <trans>
+    <k>Search Audit Table</k>
+    <english>Search Audit Table</english>
+    <spanish>Busqueda en la Tabla de Auditor&#xED;a</spanish>
+  </trans>
+  <trans>
+    <k>Search Audit Explanation</k>
+    <english>Search the audit table by id, user, date, info, or action</english>
+    <spanish>Busqar en la Tabla de Auditor&#xED;a sobre id, usuario, fecha, informaci&#xF3;n, or acci&#xF3;n</spanish>
+  </trans>
+  <trans>
+    <k>Get Audit As CSV</k>
+    <english>Get the audit table as a CSV file</english>
+    <spanish>Consigue la tabla de auditor&#xED;a como archivo de CSV</spanish>
+  </trans>
+  <trans>
+    <k>Audit Administration</k>
+    <english>Audit Administration</english>
+    <spanish>Administraci&#xF3;n de Auditor&#xED;a</spanish>
+  </trans>
+  <trans>
+    <k>Audit Admin Explanation</k>
+    <english>View administrative information about the audit table</english>
+    <spanish>Ver informaci&#xF3;n administrativa sobre la tabla de auditor&#xED;a</spanish>
+  </trans>
+  <trans>
+    <k>Make Copy of Audit Table</k>
+    <english>Make a compressed backup copy of the whole audit table</english>
+    <spanish>Hacer copia de seguridad compresada de la tabla entera</spanish>
+  </trans>
+  <trans>
+    <k>Make Copy of Audit Range</k>
+    <english>Make a compressed backup copy of a specific range of records and remove them from the main table</english>
+    <spanish>Hacer copia de seguridad compresada de ambito de registros especifico y borrarlos de la tabla principal</spanish>
+  </trans>
+  <trans>
+    <k>Display List of Backups</k>
+    <english>Display a list of all backup files created from the audit table</english>
+    <spanish>Mostrar lista de todos copias de seguridad de la tabla de auditoria</spanish>
+  </trans>
+  <trans>
+    <k>Download Backup Audit</k>
+    <english>Download a backup audit table</english>
+    <spanish>Bajar copia de seguridad de la tabla de auditor&#xED;a</spanish>
+  </trans>
+  <trans>
+    <k>Backup Functions</k>
+    <english>Backup Functions</english>
+    <spanish>Funci&#xF3;nes de Copias de Seguridad</spanish>
+  </trans>
+  <trans>
+    <k>Show Backup Log</k>
+    <english>Show Backup Log</english>
+    <spanish>Mostrar Registro de Copias de Seguridad</spanish>
+  </trans>
+  <trans>
+    <k>Index Current Extensions</k>
+    <english>Index current file extensions</english>
+    <spanish>Indexar extensi&#xF3;nes de archivos actual</spanish>
+  </trans>
+  <trans>
+    <k>Index Current Type Defs</k>
+    <english>Indexing current type definitons</english>
+    <spanish>Indexar definici&#xF3;nes de tipo actual</spanish>
+  </trans>
+  <trans>
+    <k>Change Language Explanation</k>
+    <english>Change the language of the application</english>
+    <spanish>Cambiar la idioma del programa</spanish>
+  </trans>
+  <trans>
+    <k>Upload File</k>
+    <english>Indexing Settings</english>
+    <spanish>Configuraci&#xF3;n de Indeces</spanish>
+  </trans>
+  <trans>
+    <k>Upload File for Indexing</k>
+    <english>Uploading a File for Auto Complete Indexing</english>
+    <spanish>Cargar Archivo por Indexarlo Automaticamente</spanish>
+  </trans>
+  <trans>
+    <k>Home</k>
+    <english>Home</english>
+    <spanish>Hogar</spanish>
+  </trans>
+  <trans>
+    <k>Search</k>
+    <english>Search</english>
+    <spanish>Busqueda</spanish>
+  </trans>
+  <trans>
+    <k>Inbox</k>
+    <english>Inbox</english>
+    <spanish>Bandeja de Entrada</spanish>
+  </trans>
+  <trans>
+    <k>Settings</k>
+    <english>Settings</english>
+    <spanish>Configuraci&#xF3;n</spanish>
+  </trans>
+  <trans>
+    <k>Logout</k>
+    <english>Logout</english>
+    <spanish>Salir</spanish>
+  </trans>
+  <trans>
+    <k>User</k>
+    <english>User</english>
+    <spanish>Usuario</spanish>
+  </trans>
+  <trans>
+    <k>Super Administrator</k>
+    <english>Super Administrator</english>
+    <spanish>Administrador Principal</spanish>
+  </trans>
+  <trans>
+    <k>Administrator</k>
+    <english>Administrator</english>
+    <spanish>Administrador</spanish>
+  </trans>
+  <trans>
+    <k>Cabinet</k>
+    <english>Cabinet</english>
+    <spanish>Archivador</spanish>
+  </trans>
+  <trans>
+    <k>Number of Folders</k>
+    <english>Number of Folders</english>
+    <spanish>Numero de Carpetas</spanish>
+  </trans>
+  <trans>
+    <k>dieMessage</k>
+    <english>&lt;b&gt;No Cabinets Available. &lt;br/&gt;                                 You must create cabinets to use the system,&lt;br/&gt;                                or have permissions to access any cabinets.&lt;/b&gt;</english>
+    <spanish>&lt;b&gt;Archivadores No Disponibles. &lt;br/&gt;                                 Hay que crear archivadores para usar el sistema,&lt;br/&gt;                                o tener acceso a los archivadores.&lt;/b&gt;</spanish>
+  </trans>
+  <trans>
+    <k>Top-Level Search</k>
+    <english>Top-Level Search</english>
+    <spanish>Busqueda Superficial</spanish>
+  </trans>
+  <trans>
+    <k>GO</k>
+    <english>GO</english>
+    <spanish>Ir</spanish>
+  </trans>
+  <trans>
+    <k>Select</k>
+    <english>Select</english>
+    <spanish>Seleccionar</spanish>
+  </trans>
+  <trans>
+    <k>Delete</k>
+    <english>Delete</english>
+    <spanish>Borrar</spanish>
+  </trans>
+  <trans>
+    <k>Name</k>
+    <english>Name</english>
+    <spanish>Nombre</spanish>
+  </trans>
+  <trans>
+    <k>Date Created</k>
+    <english>Date Created</english>
+    <spanish>Fecha de Creacion</spanish>
+  </trans>
+  <trans>
+    <k>Info</k>
+    <english>Info</english>
+    <spanish>Informaci&#xF3;n</spanish>
+  </trans>
+  <trans>
+    <k>Cabinet_inbox</k>
+    <english>Cabinet:</english>
+    <spanish>Archivador:</spanish>
+  </trans>
+  <trans>
+    <k>Main</k>
+    <english>Main</english>
+    <spanish>Principal</spanish>
+  </trans>
+  <trans>
+    <k>New Cabinet</k>
+    <english>New Cabinet</english>
+    <spanish>Archivador Nuevo</spanish>
+  </trans>
+  <trans>
+    <k>Submit</k>
+    <english>Submit</english>
+    <spanish>Enviar Informacion</spanish>
+  </trans>
+  <trans>
+    <k>Cabinet Name</k>
+    <english>Cabinet Name:</english>
+    <spanish>Nombre del Archivador:</spanish>
+  </trans>
+  <trans>
+    <k>Index</k>
+    <english>Index</english>
+    <spanish>Indice</spanish>
+  </trans>
+  <trans>
+    <k>Missing Cabinet Name</k>
+    <english>Missing Cabinet Name</english>
+    <spanish>Falta un Nombre de Archivador</spanish>
+  </trans>
+  <trans>
+    <k>Minimum One Character</k>
+    <english>At Least One Character Required-&gt;</english>
+    <spanish>Por lo Menos, se Necesita un Car&#xE1;cter-&gt;</spanish>
+  </trans>
+  <trans>
+    <k>Cabinet Name Taken</k>
+    <english>Cabinet Name Already Taken</english>
+    <spanish>Nombre de Archivador Ya Ha Sido Tomado</spanish>
+  </trans>
+  <trans>
+    <k>Duplicate Index Error</k>
+    <english>Error: duplicate index title -&gt;</english>
+    <spanish>Error: Indece Duplicado</spanish>
+  </trans>
+  <trans>
+    <k>First Character Invalid</k>
+    <english>First Character of Index Must Be a Letter -&gt;</english>
+    <spanish>El Primer Caracter Tiene Que Ser una Letra-&gt;</spanish>
+  </trans>
+  <trans>
+    <k>Cabinet successfully created</k>
+    <english>Cabinet successfully created</english>
+    <spanish>Archivador ha sido creado con exito</spanish>
+  </trans>
+  <trans>
+    <k>Query Failed</k>
+    <english>Query Failed</english>
+    <spanish>Busqueda en la base de datos ha fallada</spanish>
+  </trans>
+  <trans>
+    <k>cabinet edited</k>
+    <english>cabinet edited</english>
+    <spanish>archivador corregido</spanish>
+  </trans>
+  <trans>
+    <k>index changed to</k>
+    <english>index changed to</english>
+    <spanish>indice ha sido cambiado a</spanish>
+  </trans>
+  <trans>
+    <k>index added</k>
+    <english>index added</english>
+    <spanish>indice ha sido anadido</spanish>
+  </trans>
+  <trans>
+    <k>index deleted</k>
+    <english>index deleted</english>
+    <spanish>indice ha sido borrado</spanish>
+  </trans>
+  <trans>
+    <k>Cabinet Successfully Edited</k>
+    <english>Cabinet Successfully Edited</english>
+    <spanish>Archivador Ha Sido Corregido con Exito</spanish>
+  </trans>
+  <trans>
+    <k>no security access</k>
+    <english>no security access</english>
+    <spanish>no hay acceso</spanish>
+  </trans>
+  <trans>
+    <k>File Not Selected</k>
+    <english>File Not Selected</english>
+    <spanish>Archivo no es seleccionado</spanish>
+  </trans>
+  <trans>
+    <k>Add Folder</k>
+    <english>Add Folder</english>
+    <spanish>Anadir Carpeta</spanish>
+  </trans>
+  <trans>
+    <k>Must enter at least one field</k>
+    <english>Must enter at least one field</english>
+    <spanish>Tiene que llenar un campo por lo menos</spanish>
+  </trans>
+  <trans>
+    <k>Folder successfully added</k>
+    <english>Folder successfully added</english>
+    <spanish>Carpeta ha sido editada con exito</spanish>
+  </trans>
+  <trans>
+    <k>Minimum One Index Required</k>
+    <english>Minimum One Index Required</english>
+    <spanish>Por lo Menos, Un Indice Es Requerido</spanish>
+  </trans>
+  <trans>
+    <k>Current</k>
+    <english>Current</english>
+    <spanish>Actual</spanish>
+  </trans>
+  <trans>
+    <k>New</k>
+    <english>New</english>
+    <spanish>Nuevo</spanish>
+  </trans>
+  <trans>
+    <k>Reserved Word</k>
+    <english>Is a Reserved MySQL Word</english>
+    <spanish>es una palabra reservada por MySQL!</spanish>
+  </trans>
+  <trans>
+    <k>Invalid Characters</k>
+    <english>These Are Invalid Characters</english>
+    <spanish>Estos son car&#xE1;cteres inv&#xE1;lidos</spanish>
+  </trans>
+  <trans>
+    <k>Duplicate Index</k>
+    <english>Duplicate Index Fields Are Not Allowed</english>
+    <spanish>No Se Puede Duplucar Indices</spanish>
+  </trans>
+  <trans>
+    <k>Delete Alert</k>
+    <english>You Clicked the Delete Button for Index</english>
+    <spanish>Ud. Hizo un Clic para Borrar un Indice</spanish>
+  </trans>
+  <trans>
+    <k>Choose Cabinet</k>
+    <english>Choose a Cabinet</english>
+    <spanish>Escoger Archivador</spanish>
+  </trans>
+  <trans>
+    <k>No File List Created</k>
+    <english>Could Not Create a File List.</english>
+    <spanish>No Podia Crear una Lista de Archivos</spanish>
+  </trans>
+  <trans>
+    <k>Tab Name</k>
+    <english>Tab Name</english>
+    <spanish>Nombre de Sub-Carpeta</spanish>
+  </trans>
+  <trans>
+    <k>Add Tab</k>
+    <english>Create a Tab</english>
+    <spanish>Anadir Sub-Carpeta</spanish>
+  </trans>
+  <trans>
+    <k>Tab</k>
+    <english>Tab</english>
+    <spanish>Sub-carpeta</spanish>
+  </trans>
+  <trans>
+    <k>Has Been Created</k>
+    <english> Has Been Created in the</english>
+    <spanish> Ha sido creado(a) en</spanish>
+  </trans>
+  <trans>
+    <k>Click</k>
+    <english>Click Here</english>
+    <spanish>Haga un Clic Aqui</spanish>
+  </trans>
+  <trans>
+    <k>Continue</k>
+    <english>to Continue</english>
+    <spanish>para Continuar</spanish>
+  </trans>
+  <trans>
+    <k>Tab successfully created</k>
+    <english>Tab successfully created</english>
+    <spanish>Sub-carpeta ha sido creada con exito</spanish>
+  </trans>
+  <trans>
+    <k>Tab already exists</k>
+    <english>Tab already exists</english>
+    <spanish>Sub-carpeta ya existe</spanish>
+  </trans>
+  <trans>
+    <k>Indexing Type</k>
+    <english>Indexing Type</english>
+    <spanish>Tipo de Indice</spanish>
+  </trans>
+  <trans>
+    <k>Standard</k>
+    <english>Standard</english>
+    <spanish>Normal</spanish>
+  </trans>
+  <trans>
+    <k>Auto-Indexing</k>
+    <english>Auto-Indexing</english>
+    <spanish>Indexar Automatico</spanish>
+  </trans>
+  <trans>
+    <k>Save Settings</k>
+    <english>Save Settings</english>
+    <spanish>Guardar Configuraci&#xF3;n</spanish>
+  </trans>
+  <trans>
+    <k>Off</k>
+    <english>Off</english>
+    <spanish>Apagar</spanish>
+  </trans>
+  <trans>
+    <k>On</k>
+    <english>On</english>
+    <spanish>Prender</spanish>
+  </trans>
+  <trans>
+    <k>Upload a File</k>
+    <english>Upload a File</english>
+    <spanish>Cargar Archivo</spanish>
+  </trans>
+  <trans>
+    <k>Upload</k>
+    <english>Upload</english>
+    <spanish>Cargar</spanish>
+  </trans>
+  <trans>
+    <k>Select a File</k>
+    <english>Select a File</english>
+    <spanish>Seleccionar Archivo</spanish>
+  </trans>
+  <trans>
+    <k>Filename</k>
+    <english>Filename</english>
+    <spanish>Nombre de Archivo</spanish>
+  </trans>
+  <trans>
+    <k>No Files Available</k>
+    <english>No Files Available</english>
+    <spanish>No Hay Archivos Disponibles</spanish>
+  </trans>
+  <trans>
+    <k>Run Setup First</k>
+    <english>Nothing to index - run setup indexing first!</english>
+    <spanish>No hay archivos para indexar - tiene que hacer arreglo antes de indexar</spanish>
+  </trans>
+  <trans>
+    <k>Nothing to Index</k>
+    <english>Nothing to index.</english>
+    <spanish>No hay archivos para indexar.</spanish>
+  </trans>
+  <trans>
+    <k>Duplicate Index Names</k>
+    <english>Duplicate Index Names</english>
+    <spanish>Indices Duplicados</spanish>
+  </trans>
+  <trans>
+    <k>Invalid Index Name</k>
+    <english>Invalid Index Name ( Missing</english>
+    <spanish>El Nombre del Indice Es Inv&#xE1;lido ( Falta</spanish>
+  </trans>
+  <trans>
+    <k>File Type Not Supported</k>
+    <english>This File Type Is Not Supported</english>
+    <spanish>No Existe Suporte para Abrir Este Archivo.</spanish>
+  </trans>
+  <trans>
+    <k>Missing</k>
+    <english>Missing</english>
+    <spanish>Falta</spanish>
+  </trans>
+  <trans>
+    <k>Indeces</k>
+    <english>Indexe(s)</english>
+    <spanish>Indice(s)</spanish>
+  </trans>
+  <trans>
+    <k>Files Ready for Indexing</k>
+    <english>File(s) Ready for Indexing</english>
+    <spanish>Archivo(s) Listo(s) para Indexar</spanish>
+  </trans>
+  <trans>
+    <k>Files to Index</k>
+    <english># of Files to Index</english>
+    <spanish>Archivos para Indexar</spanish>
+  </trans>
+  <trans>
+    <k>Files Locked</k>
+    <english># of Files Locked</english>
+    <spanish>Archivos Indesponibles</spanish>
+  </trans>
+  <trans>
+    <k>Change User Permissions</k>
+    <english>Change User Permissions</english>
+    <spanish>Cambiar Permisos de Usuarios</spanish>
+  </trans>
+  <trans>
+    <k>noCabsMessage</k>
+    <english>No cabinets available. &lt;br/&gt; 		               You must create cabinets in order for                               permissions for this user to be changed.                                &lt;br/&gt;</english>
+    <spanish>No hay Archivadores. &lt;br/&gt; 		                Hay que crear archivadores para cambiar los                                 permisios por este usuario.                                 &lt;br/&gt;</spanish>
+  </trans>
+  <trans>
+    <k>userwNoPerm</k>
+    <english>&lt;br/&gt;User</english>
+    <spanish>&lt;br/&gt;Un usuario</spanish>
+  </trans>
+  <trans>
+    <k>noPermMessage</k>
+    <english>created with no permissions. &lt;br/&gt;</english>
+    <spanish>sin acceso ha sido creado . &lt;br/&gt;</spanish>
+  </trans>
+  <trans>
+    <k>roCabinetsMessage</k>
+    <english>Administrator must have read/write access 	          	       to cabinets before permissions can be changed.</english>
+    <spanish>El Administrador tiene que tener acceso total 	          	        para cambiar permisos por archivadores .</spanish>
+  </trans>
+  <trans>
+    <k>Select User</k>
+    <english>Select User</english>
+    <spanish>Seleccionar Usuario</spanish>
+  </trans>
+  <trans>
+    <k>Update</k>
+    <english>Update</english>
+    <spanish>Actualizar</spanish>
+  </trans>
+  <trans>
+    <k>read_write</k>
+    <english>read/write</english>
+    <spanish>leer/escribir</spanish>
+  </trans>
+  <trans>
+    <k>read_only</k>
+    <english>read only</english>
+    <spanish>solo leer</spanish>
+  </trans>
+  <trans>
+    <k>no_permissions</k>
+    <english>none</english>
+    <spanish>no acceso</spanish>
+  </trans>
+  <trans>
+    <k>Permissions Changed</k>
+    <english>Permissions Have Been Changed for User</english>
+    <spanish>Autorizacion Ha Sido Cambiada por Este Usuario</spanish>
+  </trans>
+  <trans>
+    <k>Has Been Added</k>
+    <english>Has Been Added</english>
+    <spanish>es agregado</spanish>
+  </trans>
+  <trans>
+    <k>Register Document Title</k>
+    <english>Register an Account</english>
+    <spanish>Registrar Titulo del Documento</spanish>
+  </trans>
+  <trans>
+    <k>Missing Field</k>
+    <english>Missing Required Field</english>
+    <spanish>Falta un Campo por Llenar</spanish>
+  </trans>
+  <trans>
+    <k>Invalid Character in Name</k>
+    <english>Invalid Character Used in User Name</english>
+    <spanish>Car&#xE1;cter Inv&#xE1;lido en Nombre del Usuario</spanish>
+  </trans>
+  <trans>
+    <k>Username Taken</k>
+    <english>This Username Is Already Taken</english>
+    <spanish>Este Nombre de Usuario Ya Ha Sido Tomado</spanish>
+  </trans>
+  <trans>
+    <k>Invalid Character in Password</k>
+    <english>Invalid Character Used in Password</english>
+    <spanish>Car&#xE1;cter Inv&#xE1;lido en Contrase&#xF1;a</spanish>
+  </trans>
+  <trans>
+    <k>No Match Password</k>
+    <english>Passwords Entered Did Not Match</english>
+    <spanish>Contrase&#xF1;as no Corresponden</spanish>
+  </trans>
+  <trans>
+    <k>Users Remaining</k>
+    <english>Users Remaining</english>
+    <spanish>Usuarios Restantes</spanish>
+  </trans>
+  <trans>
+    <k>Username</k>
+    <english>Username</english>
+    <spanish>Nombre de Usuario</spanish>
+  </trans>
+  <trans>
+    <k>Password</k>
+    <english>Password</english>
+    <spanish>Contrase&#xF1;a</spanish>
+  </trans>
+  <trans>
+    <k>Confirm Password</k>
+    <english>Confirm Password</english>
+    <spanish>Confirme la Contrase&#xF1;a</spanish>
+  </trans>
+  <trans>
+    <k>Admin</k>
+    <english>Admin</english>
+    <spanish>Admin</spanish>
+  </trans>
+  <trans>
+    <k>Sign Up</k>
+    <english>Sign Up</english>
+    <spanish>Inscribase Aqui</spanish>
+  </trans>
+  <trans>
+    <k>No More Users Allowed</k>
+    <english>No More Users Allowed</english>
+    <spanish>No Quedan Mas Usuarios Permitidos</spanish>
+  </trans>
+  <trans>
+    <k>Currently Using</k>
+    <english>Currently Using</english>
+    <spanish>Utilizando Ahora</spanish>
+  </trans>
+  <trans>
+    <k>Current Password</k>
+    <english>Current Password</english>
+    <spanish>Contrase&#xF1;a Actual</spanish>
+  </trans>
+  <trans>
+    <k>Has to Login</k>
+    <english>You will need to log in after the password has changed</english>
+    <spanish>Ud. tiene que ingresar otra vez despues de cambiar la contrasena</spanish>
+  </trans>
+  <trans>
+    <k>user password has changed</k>
+    <english>User password has changed</english>
+    <spanish>La contrase&#xF1;a de usuario ha sido cambiada</spanish>
+  </trans>
+  <trans>
+    <k>Deleted</k>
+    <english>Deleted</english>
+    <spanish>Borrado</spanish>
+  </trans>
+  <trans>
+    <k>No Security Access</k>
+    <english>No Security Access</english>
+    <spanish>No Tiene Acceso Total</spanish>
+  </trans>
+  <trans>
+    <k>Password for User</k>
+    <english>Password for User</english>
+    <spanish>La contrase&#xF1;a para el usuario</spanish>
+  </trans>
+  <trans>
+    <k>Has Been Set</k>
+    <english>Has Been Set</english>
+    <spanish>Ha Sido Configurada</spanish>
+  </trans>
+  <trans>
+    <k>Manage User Passwords</k>
+    <english>Manage User Passwords</english>
+    <spanish>Manege Contrasenas de Usuarios</spanish>
+  </trans>
+  <trans>
+    <k>New Password</k>
+    <english>New Password</english>
+    <spanish>Contrase&#xF1;a Nueva</spanish>
+  </trans>
+  <trans>
+    <k>Invalid Char in User Name</k>
+    <english>Invalid Character in User Name</english>
+    <spanish>Car&#xE1;cter Inv&#xE1;lido en Nombre de Usuario</spanish>
+  </trans>
+  <trans>
+    <k>Expires</k>
+    <english>Expires in (hours)</english>
+    <spanish>Se Vence en (horas)</spanish>
+  </trans>
+  <trans>
+    <k>Expiration Time</k>
+    <english>Expiration Time Should Be Between 0 and 72 hours</english>
+    <spanish>Hora de Vencimiento Tiene que Ser Entre 0 y 72 horas</spanish>
+  </trans>
+  <trans>
+    <k>No User Licenses Available</k>
+    <english>No User Licenses Available</english>
+    <spanish>No Quedan Mas Licencias</spanish>
+  </trans>
+  <trans>
+    <k>Create New Guest Accounts</k>
+    <english>Create New Guest Accounts</english>
+    <spanish>Crear Cuentas Nuevas por Visitantes</spanish>
+  </trans>
+  <trans>
+    <k>id</k>
+    <english>ID</english>
+    <spanish>Identificacion</spanish>
+  </trans>
+  <trans>
+    <k>username</k>
+    <english>User</english>
+    <spanish>Usuario</spanish>
+  </trans>
+  <trans>
+    <k>datetime</k>
+    <english>Date-Time</english>
+    <spanish>Fecha/Hora</spanish>
+  </trans>
+  <trans>
+    <k>info</k>
+    <english>Info</english>
+    <spanish>Informaci&#xF3;n</spanish>
+  </trans>
+  <trans>
+    <k>action</k>
+    <english>Action</english>
+    <spanish>Acci&#xF3;n</spanish>
+  </trans>
+  <trans>
+    <k>Lowest Record</k>
+    <english>is the lowest record in the database</english>
+    <spanish>es el registro mas bajo en la base de datos</spanish>
+  </trans>
+  <trans>
+    <k>Highest Record</k>
+    <english>is the highest record in the database</english>
+    <spanish>es el registro mas alto en la base de datos</spanish>
+  </trans>
+  <trans>
+    <k>File Already Exists</k>
+    <english> already exists, aborting...</english>
+    <spanish> ya exista, abortando...</spanish>
+  </trans>
+  <trans>
+    <k>Compressing Error</k>
+    <english>Error Compressing File</english>
+    <spanish>Error en Compresion del Archivo</spanish>
+  </trans>
+  <trans>
+    <k>Aborting</k>
+    <english>, aborting..</english>
+    <spanish>, abortando..</spanish>
+  </trans>
+  <trans>
+    <k>Not Decompressed</k>
+    <english>Not Decompressed</english>
+    <spanish>No es Decompresado</spanish>
+  </trans>
+  <trans>
+    <k>Record Range</k>
+    <english>Record Range</english>
+    <spanish>Ambito de Archivos</spanish>
+  </trans>
+  <trans>
+    <k>to</k>
+    <english>to</english>
+    <spanish>a</spanish>
+  </trans>
+  <trans>
+    <k>Invalid Range Message</k>
+    <english> is invalid (all or some of the values in this                                range are missing)</english>
+    <spanish> es inv&#xE1;lido (todas o algunas valores en el rango son perdidos)</spanish>
+  </trans>
+  <trans>
+    <k>Audit Table Administration</k>
+    <english>Audit Table Administration</english>
+    <spanish>Administrar la Tabla de Auditor&#xED;a</spanish>
+  </trans>
+  <trans>
+    <k>Space Allowed</k>
+    <english>Space Allowed</english>
+    <spanish>Espacio Permitido</spanish>
+  </trans>
+  <trans>
+    <k>Space Used</k>
+    <english>Space Used</english>
+    <spanish>Espacio Usado</spanish>
+  </trans>
+  <trans>
+    <k>Percent Used</k>
+    <english>Percent Used</english>
+    <spanish>Porcentaje Usado</spanish>
+  </trans>
+  <trans>
+    <k>Number of Records</k>
+    <english>Number of Records</english>
+    <spanish>Numero de Archivos</spanish>
+  </trans>
+  <trans>
+    <k>First Record ID</k>
+    <english>First Record ID</english>
+    <spanish>Primera Identificacion</spanish>
+  </trans>
+  <trans>
+    <k>Earliest Date</k>
+    <english>Earliest Date</english>
+    <spanish>Fecha mas temprana</spanish>
+  </trans>
+  <trans>
+    <k>Last Record ID</k>
+    <english>Last Record ID</english>
+    <spanish>Ultima Identificacion</spanish>
+  </trans>
+  <trans>
+    <k>Latest Date</k>
+    <english>Latest Date</english>
+    <spanish>Ultima Fecha</spanish>
+  </trans>
+  <trans>
+    <k>Success Message</k>
+    <english>successfully created as a backup file                                 for the Audit Table</english>
+    <spanish>Ha Sido Creado con Exito Como Copia de Seguridad en Su Tabla de Auditoria.</spanish>
+  </trans>
+  <trans>
+    <k>Error Message</k>
+    <english>There Was an Error in Creating a Backup File</english>
+    <spanish>Hay Error en Crear Archivo como Copia de Seguridad</spanish>
+  </trans>
+  <trans>
+    <k>Select Range</k>
+    <english>Select Range of Record Numbers                                 to Backup and Remove</english>
+    <spanish>Seleccionar Ambito de Copia de Seguridad</spanish>
+  </trans>
+  <trans>
+    <k>Note</k>
+    <english>Note: Record ranges are INCLUSIVE</english>
+    <spanish>Nota: Ambitos de Archivos son INCLUSIVOS</spanish>
+  </trans>
+  <trans>
+    <k>Low ID Number</k>
+    <english>Low ID Number</english>
+    <spanish>Numero Bajo de Identificacion</spanish>
+  </trans>
+  <trans>
+    <k>Lowest Record Number</k>
+    <english>Lowest Record Number</english>
+    <spanish>Numero Mas Bajo de Archivo</spanish>
+  </trans>
+  <trans>
+    <k>High ID Number</k>
+    <english>High ID Number</english>
+    <spanish>Numero Alto de Identificacion</spanish>
+  </trans>
+  <trans>
+    <k>Highest Record Number</k>
+    <english>Highest Record Number</english>
+    <spanish>Numero Mas Alto de Archivo</spanish>
+  </trans>
+  <trans>
+    <k>Truncate</k>
+    <english>Truncate</english>
+    <spanish>Trunce</spanish>
+  </trans>
+  <trans>
+    <k>Reset</k>
+    <english>Reset</english>
+    <spanish>Rehacer</spanish>
+  </trans>
+  <trans>
+    <k>Truncated Backup Success</k>
+    <english>now contains the audit table information for                                records</english>
+    <spanish>ahora contiene informacion auditoria sobre registros</spanish>
+  </trans>
+  <trans>
+    <k>Error in Backup</k>
+    <english>There was an error in creating a backup...old                                database is left untarnished</english>
+    <spanish>Hay error en crear copia de seguridad... &lt;b&gt;                                pero la base original de datos esta en orden.</spanish>
+  </trans>
+  <trans>
+    <k>Error in Truncate</k>
+    <english>There was an error in truncating the audit table</english>
+    <spanish>Hay error en crear la tabla de auditor&#xED;a parcial</spanish>
+  </trans>
+  <trans>
+    <k>List of Backup Files</k>
+    <english>List of Backup Files for Audit Table</english>
+    <spanish>Lista de Copias de Seguridad de la Tabla de Auditoria</spanish>
+  </trans>
+  <trans>
+    <k>Restore Backup Audit Table</k>
+    <english>Restore Backup Audit Table</english>
+    <spanish>Restablecer la Tabla de Auditor&#xED;a</spanish>
+  </trans>
+  <trans>
+    <k>Select Backup File</k>
+    <english>Select Backup File</english>
+    <spanish>Seleccionar Copia de Seguridad</spanish>
+  </trans>
+  <trans>
+    <k>Select File</k>
+    <english>Select File</english>
+    <spanish>Seleccionar Archivo</spanish>
+  </trans>
+  <trans>
+    <k>Download</k>
+    <english>Download</english>
+    <spanish>Bajar</spanish>
+  </trans>
+  <trans>
+    <k>Backup Server Files</k>
+    <english>Backup Server Files</english>
+    <spanish>Hacer Copia de Seguridad para el Servidor</spanish>
+  </trans>
+  <trans>
+    <k>Contact System Administrator</k>
+    <english>Please contact system administrator                                &lt;br/&gt; to mount backup system.</english>
+    <spanish>Por favor contacte la administracion                                &lt;br/&gt; para anadir un sistema de seguridad.</spanish>
+  </trans>
+  <trans>
+    <k>Backup is Offline</k>
+    <english>Backup is Offline</english>
+    <spanish>Proceso de seguridad esta desconectado</spanish>
+  </trans>
+  <trans>
+    <k>Backup Problem</k>
+    <english>Backup is online, but problem exists.</english>
+    <spanish>Proceso de seguridad esta en linea, pero hay un error.</spanish>
+  </trans>
+  <trans>
+    <k>Backup Done</k>
+    <english>System Finished Backing Up</english>
+    <spanish>Proceso de seguridad esta completo</spanish>
+  </trans>
+  <trans>
+    <k>Backing Up Now</k>
+    <english>System Backing Up Now</english>
+    <spanish>Haciendo copia de seguridad ahora</spanish>
+  </trans>
+  <trans>
+    <k>Backup Log</k>
+    <english>Backup Log</english>
+    <spanish>Registro de las Copias de Seguridad</spanish>
+  </trans>
+  <trans>
+    <k>System Not Mounted</k>
+    <english>System is not mounted                                 - please contact system administrator</english>
+    <spanish>El sistema no esta puesto                                 - por favor contacte el Administrador</spanish>
+  </trans>
+  <trans>
+    <k>Backup Cabinet</k>
+    <english>Backup Cabinet</english>
+    <spanish>Guardar</spanish>
+  </trans>
+  <trans>
+    <k>Creating Tree</k>
+    <english>Creating Cabinet Tree Structure</english>
+    <spanish>Creando Arbol de Archivadores</spanish>
+  </trans>
+  <trans>
+    <k>Backing Up Files</k>
+    <english>Backing Up Cabinet Files</english>
+    <spanish>Haciendo Copias de Seguridad del Archivador</spanish>
+  </trans>
+  <trans>
+    <k>Done</k>
+    <english>Done</english>
+    <spanish>Terminado</spanish>
+  </trans>
+  <trans>
+    <k>Disk</k>
+    <english>Disk</english>
+    <spanish>Disco</spanish>
+  </trans>
+  <trans>
+    <k>Writing ISO Files</k>
+    <english>Writing ISO Files</english>
+    <spanish>Escribiendo Archivos de tipo ISO</spanish>
+  </trans>
+  <trans>
+    <k>Modules</k>
+    <english>Modules</english>
+    <spanish>Los Modulos</spanish>
+  </trans>
+  <trans>
+    <k>Currently Installed</k>
+    <english>Currently Installed</english>
+    <spanish>Esta(n) Instalado(s)</spanish>
+  </trans>
+  <trans>
+    <k>Available Upgrades</k>
+    <english>Available Upgrades</english>
+    <spanish>M&#xF3;dulos Pr&#xF3;ximos</spanish>
+  </trans>
+  <trans>
+    <k>Storage Status</k>
+    <english>Storage Status</english>
+    <spanish>Situacion de Almacenamiento</spanish>
+  </trans>
+  <trans>
+    <k>User Status</k>
+    <english>User Status</english>
+    <spanish>Situacion de Usuario</spanish>
+  </trans>
+  <trans>
+    <k>Contact Admin</k>
+    <english>Contact Administrator to Setup Storage Status</english>
+    <spanish>Contacte el Administrador para reglar la                                 situacion de almacenamiento.</spanish>
+  </trans>
+  <trans>
+    <k>Users Allowed</k>
+    <english>Users Allowed</english>
+    <spanish>Usuarios Permitidos</spanish>
+  </trans>
+  <trans>
+    <k>Users Registered</k>
+    <english>Users Logged On</english>
+    <spanish>Usuarios Ya Registrados</spanish>
+  </trans>
+  <trans>
+    <k>Version</k>
+    <english>Version</english>
+    <spanish>Versi&#xF3;n</spanish>
+  </trans>
+  <trans>
+    <k>January</k>
+    <english>January</english>
+    <spanish>Enero</spanish>
+  </trans>
+  <trans>
+    <k>Hard Drive Settings</k>
+    <english>Hard Drive Settings</english>
+    <spanish>Configuraci&#xF3;n del Disco Duro</spanish>
+  </trans>
+  <trans>
+    <k>Select Hard Drive</k>
+    <english>Select Hard Drive</english>
+    <spanish>Seleccionar Disco Duro</spanish>
+  </trans>
+  <trans>
+    <k>HD Message</k>
+    <english>Current Hard Drive is</english>
+    <spanish>Disco Duro Usado Es</spanish>
+  </trans>
+  <trans>
+    <k>Change Hard Drive</k>
+    <english>Change Hard Drive</english>
+    <spanish>Cambiar Disco Duro</spanish>
+  </trans>
+  <trans>
+    <k>Indexing File Extensions</k>
+    <english>Indexing File Extensions</english>
+    <spanish>Poner indices de extensi&#xF3;nes de archivo</spanish>
+  </trans>
+  <trans>
+    <k>Select an Extension</k>
+    <english>Select an Extension</english>
+    <spanish>Seleccionar Extensi&#xF3;n</spanish>
+  </trans>
+  <trans>
+    <k>Add File Extension</k>
+    <english>Add File Extension</english>
+    <spanish>Agregue Extensi&#xF3;n de Archivo</spanish>
+  </trans>
+  <trans>
+    <k>Remove Extension</k>
+    <english>Remove Extension</english>
+    <spanish>Elimine Extensi&#xF3;n</spanish>
+  </trans>
+  <trans>
+    <k>Add Extension</k>
+    <english>Add Extension</english>
+    <spanish>Agregue Extensi&#xF3;n</spanish>
+  </trans>
+  <trans>
+    <k>File Extension</k>
+    <english>File Extension</english>
+    <spanish>Extensi&#xF3;n de Archivo</spanish>
+  </trans>
+  <trans>
+    <k>New Extension Message</k>
+    <english>Can Now Be Used in Indexing</english>
+    <spanish>Puede usarse por indices</spanish>
+  </trans>
+  <trans>
+    <k>Remove Extension Message</k>
+    <english>Please Select an Extension to Remove</english>
+    <spanish>Por Favor Selecte Extension a Eliminar</spanish>
+  </trans>
+  <trans>
+    <k>Extension Removed Message</k>
+    <english>has been removed from file extension list</english>
+    <spanish>esta eiliminado de la lista con extensi&#xF3;nes</spanish>
+  </trans>
+  <trans>
+    <k>Definitions Erased</k>
+    <english>Definitions Erased</english>
+    <spanish>Definici&#xF3;nes Borrados</spanish>
+  </trans>
+  <trans>
+    <k>Updated Strings</k>
+    <english>Updated Strings</english>
+    <spanish>Cadenas Actualizadas</spanish>
+  </trans>
+  <trans>
+    <k>Add Definition</k>
+    <english>Add Definition:</english>
+    <spanish>Agregue Definici&#xF3;n:</spanish>
+  </trans>
+  <trans>
+    <k>Select an Index</k>
+    <english>Select an Index</english>
+    <spanish>Selecte Indice</spanish>
+  </trans>
+  <trans>
+    <k>MV File Setts Changed</k>
+    <english>Move File Settings Have Changed</english>
+    <spanish>La Configuraci&#xF3;n de Mover Archivos Ha Sido Cambiada</spanish>
+  </trans>
+  <trans>
+    <k>MV File Settings</k>
+    <english>Move File Settings</english>
+    <spanish>Configuraci&#xF3;n de Mover Archivos</spanish>
+  </trans>
+  <trans>
+    <k>Select Settings</k>
+    <english>Select Settings</english>
+    <spanish>Seleccionar Configuraci&#xF3;n</spanish>
+  </trans>
+  <trans>
+    <k>Change Setting</k>
+    <english>Change Setting</english>
+    <spanish>Cambiar la Configuraci&#xF3;n</spanish>
+  </trans>
+  <trans>
+    <k>Enable</k>
+    <english>Enable</english>
+    <spanish>Activar</spanish>
+  </trans>
+  <trans>
+    <k>Disable</k>
+    <english>Disable</english>
+    <spanish>Desactivar</spanish>
+  </trans>
+  <trans>
+    <k>Results Found</k>
+    <english> - Results Found</english>
+    <spanish> - Resultados de Busqueda</spanish>
+  </trans>
+  <trans>
+    <k>Parent Folder</k>
+    <english>Parent Folder</english>
+    <spanish>Carpeta Principal</spanish>
+  </trans>
+  <trans>
+    <k>of</k>
+    <english>of</english>
+    <spanish>de</spanish>
+  </trans>
+  <trans>
+    <k>Now Viewing</k>
+    <english>Now Viewing</english>
+    <spanish>Ahora Ver</spanish>
+  </trans>
+  <trans>
+    <k>per page</k>
+    <english> per page</english>
+    <spanish> por pagina</spanish>
+  </trans>
+  <trans>
+    <k>Results</k>
+    <english>Results</english>
+    <spanish>Resultados</spanish>
+  </trans>
+  <trans>
+    <k>Folder</k>
+    <english>Folder</english>
+    <spanish>Carpeta</spanish>
+  </trans>
+  <trans>
+    <k>Edit</k>
+    <english>Edit</english>
+    <spanish>Redacte</spanish>
+  </trans>
+  <trans>
+    <k>Selection</k>
+    <english>Selection</english>
+    <spanish>Selecci&#xF3;n</spanish>
+  </trans>
+  <trans>
+    <k>Choose Action</k>
+    <english>Choose Action</english>
+    <spanish>Escoja la Acci&#xF3;n</spanish>
+  </trans>
+  <trans>
+    <k>Select All</k>
+    <english>Select All</english>
+    <spanish>Selecto Todos</spanish>
+  </trans>
+  <trans>
+    <k>Select None</k>
+    <english>Select None</english>
+    <spanish>Selecto Nada</spanish>
+  </trans>
+  <trans>
+    <k>Get As</k>
+    <english>Get File As...</english>
+    <spanish>Consiga el Archivo commo...</spanish>
+  </trans>
+  <trans>
+    <k>Get As PDF File</k>
+    <english>Get As PDF File</english>
+    <spanish>Consiga commo PDF</spanish>
+  </trans>
+  <trans>
+    <k>Get As ZIP File</k>
+    <english>Get As ZIP File</english>
+    <spanish>Consiga commo ZIP</spanish>
+  </trans>
+  <trans>
+    <k>Delete File</k>
+    <english>Delete File</english>
+    <spanish>Borre el Archivo</spanish>
+  </trans>
+  <trans>
+    <k>Move File</k>
+    <english>Move File</english>
+    <spanish>Mueve el Archivo</spanish>
+  </trans>
+  <trans>
+    <k>Sign File</k>
+    <english>Sign File</english>
+    <spanish>Señal de archivo</spanish>
+  </trans>
+  <trans>
+    <k>Create New Tab</k>
+    <english>Create New Tab</english>
+    <spanish>Crear Sub-Carpeta Nueva</spanish>
+  </trans>
+  <trans>
+    <k>Tab Is Empty</k>
+    <english>Tab Contains No Files</english>
+    <spanish>Esta Sub-Carpeta &lt;br/&gt; No Contiene Archivos</spanish>
+  </trans>
+  <trans>
+    <k>Back To Results</k>
+    <english>Back To Results</english>
+    <spanish>A Volver a los Resultos</spanish>
+  </trans>
+  <trans>
+    <k>Tab Contains Files</k>
+    <english>These Tab(s) contain file(s)</english>
+    <spanish>Estas Sub-Carpetas Contienen Archivos!</spanish>
+  </trans>
+  <trans>
+    <k>Cannot Delete</k>
+    <english>...Cannot Delete!!</english>
+    <spanish>...No Se Puede Borrarlo!!</spanish>
+  </trans>
+  <trans>
+    <k>Tab Reserved</k>
+    <english>Tab name reserved-&gt;</english>
+    <spanish>Este nombre de sub-carpeta: main                                 es reservado por archivos qui van a la carpeta.</spanish>
+  </trans>
+  <trans>
+    <k>Tab Name Too Long</k>
+    <english>Tab name cannot exceed 12 characters.</english>
+    <spanish>Nombre de Sub-Carpeta no puede exceder 12 caracteres.</spanish>
+  </trans>
+  <trans>
+    <k>Add/Edit Tabs</k>
+    <english>Add/Edit Tabs</english>
+    <spanish>Redacte la Sub-Carpeta</spanish>
+  </trans>
+  <trans>
+    <k>Create Tab</k>
+    <english>Create Tab</english>
+    <spanish>Crear Sub-Carpeta</spanish>
+  </trans>
+  <trans>
+    <k>Edit Tab</k>
+    <english>Edit Tab</english>
+    <spanish>Redacte la Sub-Carpeta</spanish>
+  </trans>
+  <trans>
+    <k>Delete Warning</k>
+    <english>Warning, this will remove tab(s) and all files inside the tabs</english>
+    <spanish>Aviso: este va a borrar todas las sub-carpetas y los archivos adentro de la(s) sub-carpeta(s)</spanish>
+  </trans>
+  <trans>
+    <k>Tab Already Exists</k>
+    <english>Tab Already Exists</english>
+    <spanish>La Sub-Carpeta Existe Ya</spanish>
+  </trans>
+  <trans>
+    <k>Security Level</k>
+    <english>Security Level</english>
+    <spanish>Nivel de Seguridad</spanish>
+  </trans>
+  <trans>
+    <k>Secure SSL</k>
+    <english>Secure SSL</english>
+    <spanish>Seguro SSL</spanish>
+  </trans>
+  <trans>
+    <k>Login</k>
+    <english>Login</english>
+    <spanish>Ingresar</spanish>
+  </trans>
+  <trans>
+    <k>Username Does Not Exist</k>
+    <english>Incorrect Username and or Password</english>
+    <spanish>Este Nombre de Usuario No Existe</spanish>
+  </trans>
+  <trans>
+    <k>Incorrect Password</k>
+    <english>Incorrect Username and or Password</english>
+    <spanish>Contrase&#xF1;a Incorrecta</spanish>
+  </trans>
+  <trans>
+    <k>Guest Account Expired</k>
+    <english>Guest Account Has Expired</english>
+    <spanish>Esta Cuenta de Visitante Es Caducada</spanish>
+  </trans>
+  <trans>
+    <k>Language</k>
+    <english>Language</english>
+    <spanish>Idioma</spanish>
+  </trans>
+  <trans>
+    <k>Select to View</k>
+    <english>Select Cabinet to View Its Folders</english>
+    <spanish>Seleccionar Archivador para Ver las Carpetas</spanish>
+  </trans>
+  <trans>
+    <k>No Results Found</k>
+    <english>- No Results Found -</english>
+    <spanish>- No Hay Resultados de Esta Busqueda -</spanish>
+  </trans>
+  <trans>
+    <k>User Logged In From Another Location</k>
+    <english>User Logged In From Another Location</english>
+    <spanish>Otro Usuario hay hecho un logon de otra locaci&#xF3;n.</spanish>
+  </trans>
+  <trans>
+    <k>Login Expired Message</k>
+    <english>User Login Has Expired</english>
+    <spanish>Login de Usuario Es Caducado</spanish>
+  </trans>
+  <trans>
+    <k>Select Language</k>
+    <english>Select Language</english>
+    <spanish>Seleccionar la Lengua</spanish>
+  </trans>
+  <trans>
+    <k>Default</k>
+    <english>Default</english>
+    <spanish>Valor Actual</spanish>
+  </trans>
+  <trans>
+    <k>auto complete indexing</k>
+    <english>Auto Complete Settings</english>
+    <spanish>Configuraci&#xF3;n de Tipo \"Auto Complete\"</spanish>
+  </trans>
+  <trans>
+    <k>File</k>
+    <english>File</english>
+    <spanish>Mueve Archivo</spanish>
+  </trans>
+  <trans>
+    <k>Add</k>
+    <english>Add</english>
+    <spanish>Anadir</spanish>
+  </trans>
+  <trans>
+    <k>Index Field</k>
+    <english>Index Field</english>
+    <spanish>Campo de Indices</spanish>
+  </trans>
+  <trans>
+    <k>Delete Definition</k>
+    <english>Delete Definition</english>
+    <spanish>Borrar Definici&#xF3;n</spanish>
+  </trans>
+  <trans>
+    <k>Folder Creation Settings</k>
+    <english>Folder Creation Settings</english>
+    <spanish>Ajustes De la Creaci&#xF3;n De la Carpeta</spanish>
+  </trans>
+  <trans>
+    <k>folder creation</k>
+    <english>Folder Creation</english>
+    <spanish>Creaci&#xF3;n de la Carpeta</spanish>
+  </trans>
+  <trans>
+    <k>File Into Existing Folder</k>
+    <english>File into Existing Folder</english>
+    <spanish>Archive en carpeta existente</spanish>
+  </trans>
+  <trans>
+    <k>File Into Existing Change</k>
+    <english>Folder Creation Options have Changed</english>
+    <spanish>Las opciones de la creaci&#xF3;n de la carpeta han cambiado</spanish>
+  </trans>
+  <trans>
+    <k>Concurrent Licensing Message</k>
+    <english>User Limit Reached</english>
+    <spanish>No mas permisos de usuarios</spanish>
+  </trans>
+  <trans>
+    <k>french</k>
+    <english>Fran&#xE7;ais</english>
+    <spanish>Fran&#xE7;ais</spanish>
+  </trans>
+  <trans>
+    <k>Ordering</k>
+    <english>Ordering</english>
+    <spanish>Ordenando</spanish>
+  </trans>
+  <trans>
+    <k>Are You Sure?</k>
+    <english>Are You Sure?</english>
+    <spanish>Estas Seguro?</spanish>
+  </trans>
+  <trans>
+    <k>Enter Filename</k>
+    <english>Enter Filename Without Extension</english>
+    <spanish>Pone el Nobre de Archivo Sin Extencion</spanish>
+  </trans>
+  <trans>
+    <k>Check For Updates</k>
+    <english>Check For Updates</english>
+    <spanish>Verifica Para Noticias</spanish>
+  </trans>
+  <trans>
+    <k>Please Logout to See Changes</k>
+    <english>Please Logout to See Changes</english>
+    <spanish>Por Favor, Salga Para Ver los Cambios</spanish>
+  </trans>
+  <trans>
+    <k>Please Specify Extension</k>
+    <english>Please specify the extension</english>
+    <spanish>*Need spanish*</spanish>
+  </trans>
+  <trans>
+    <k>Duplicate Extension</k>
+    <english>Specified Extension is Already Present</english>
+    <spanish>La Extension Especificado Ya esta Presente</spanish>
+  </trans>
+  <trans>
+    <k>indexScroll</k>
+    <english>Index Scroll Settings</english>
+    <spanish>Ajustes De la Voluta Del &#xCD;ndice</spanish>
+  </trans>
+  <trans>
+    <k>indexScroll Changed</k>
+    <english>Index Scroll Settings Changed</english>
+    <spanish>Los Ajustes De la Voluta Del &#xCD;ndice Cambiaron</spanish>
+  </trans>
+  <trans>
+    <k>Are you sure Unlock</k>
+    <english>Are you sure you want to unlock all files?</english>
+    <spanish>&#xBF;Quiere abrir todos los archivos sin duda?</spanish>
+  </trans>
+  <trans>
+    <k>Are you sure Truncate</k>
+    <english>Are you sure you want to truncate table?</english>
+    <spanish>&#xBF;Quiere truncar todas las tablas sin duda?</spanish>
+  </trans>
+  <trans>
+    <k>Spaces Error</k>
+    <english>Cannot have spaces in extension</english>
+    <spanish>No se puede tener espacios en la extensi&#xF3;n</spanish>
+  </trans>
+  <trans>
+    <k>inboxEmpty</k>
+    <english>The Inbox is Currently Empty</english>
+    <spanish>Actualmente Esta Vac&#xED;o el Inbox</spanish>
+  </trans>
+  <trans>
+    <k>foldersLeft</k>
+    <english>folders left to index</english>
+    <spanish>carpetas dejadas al &#xED;ndice</spanish>
+  </trans>
+  <trans>
+    <k>Skip</k>
+    <english>Skip</english>
+    <spanish>Salto</spanish>
+  </trans>
+  <trans>
+    <k>Backup A Cabinet</k>
+    <english>Backup A Cabinet</english>
+    <spanish>Copia de Seguridad un Archivador</spanish>
+  </trans>
+  <trans>
+    <k>Process Started</k>
+    <english>Process Started</english>
+    <spanish>Proceso comenzado</spanish>
+  </trans>
+  <trans>
+    <k>to CD</k>
+    <english>to CD</english>
+    <spanish>a CD</spanish>
+  </trans>
+  <trans>
+    <k>A user is backing up a cabinet already.</k>
+    <english>A user is backing up a cabinet already.</english>
+    <spanish>Un usuario est&#xE1; sosteniendo un archivador ya.</spanish>
+  </trans>
+  <trans>
+    <k>Try again later</k>
+    <english>Try again later</english>
+    <spanish>Intento otra vez m&#xE1;s adelante</spanish>
+  </trans>
+  <trans>
+    <k>Writing</k>
+    <english>Writing</english>
+    <spanish>Escribiendo</spanish>
+  </trans>
+  <trans>
+    <k>total CDs</k>
+    <english>total CDs</english>
+    <spanish>totales CDs</spanish>
+  </trans>
+  <trans>
+    <k>current CD is</k>
+    <english>current CD is</english>
+    <spanish>actual CD es</spanish>
+  </trans>
+  <trans>
+    <k>CD not writable</k>
+    <english>The CD is not writable</english>
+    <spanish>El CD no es escribible</spanish>
+  </trans>
+  <trans>
+    <k>Please insert a blank CD for disk</k>
+    <english>Please insert a blank CD for disk</english>
+    <spanish>Inserte por favor un CD blanco para el disco</spanish>
+  </trans>
+  <trans>
+    <k>Backup cancelled by user</k>
+    <english>Backup cancelled by user</english>
+    <spanish>Copia de Seguridad cancelado por el usuario</spanish>
+  </trans>
+  <trans>
+    <k>All</k>
+    <english>All</english>
+    <spanish>Todos</spanish>
+  </trans>
+  <trans>
+    <k>CDs have been successfully created</k>
+    <english>CDs have been successfully created</english>
+    <spanish>CDs se han creado con &#xE9;xito</spanish>
+  </trans>
+  <trans>
+    <k>This backup requires</k>
+    <english>This backup requires</english>
+    <spanish>Esta copia de seguridad requiere</spanish>
+  </trans>
+  <trans>
+    <k>Do you want to continue?</k>
+    <english>Do you want to continue?</english>
+    <spanish>&#xBF;Usted desea continuar?</spanish>
+  </trans>
+  <trans>
+    <k>This server now has</k>
+    <english>This server now has</english>
+    <spanish>Este servidor ahora tiene</spanish>
+  </trans>
+  <trans>
+    <k>registered licenses to use.</k>
+    <english>registered licenses to use.</english>
+    <spanish>licencias registradas de utilizar.</spanish>
+  </trans>
+  <trans>
+    <k>Do you want to update from version</k>
+    <english>Do you want to update from version</english>
+    <spanish>&#xBF;Usted desea actualizar la versi&#xF3;n</spanish>
+  </trans>
+  <trans>
+    <k>to version</k>
+    <english>to version</english>
+    <spanish>a la versi&#xF3;n</spanish>
+  </trans>
+  <trans>
+    <k>Logout Until Complete</k>
+    <english>This action will logout and prevent all users from logging in until completion</english>
+    <spanish>Esta acci&#xF3;n salir y prevenga a todos los usuarios de ingresar hasta terminaci&#xF3;n</spanish>
+  </trans>
+  <trans>
+    <k>Update Aborted By User</k>
+    <english>Update Aborted By User</english>
+    <spanish>La actualizaci&#xF3;n abort&#xF3; por el usuario</spanish>
+  </trans>
+  <trans>
+    <k>No version update</k>
+    <english>Sorry, there is no version update available for your system at this time</english>
+    <spanish>Apesadumbrado, no hay actualizaci&#xF3;n de la versi&#xF3;n disponible para su sistema en este tiempo</spanish>
+  </trans>
+  <trans>
+    <k>Push Licenses</k>
+    <english>Push Licenses</english>
+    <spanish>Empuje las licencias</spanish>
+  </trans>
+  <trans>
+    <k>Update Software</k>
+    <english>Update Software</english>
+    <spanish>Actualice el Software</spanish>
+  </trans>
+  <trans>
+    <k>Update Number of Licenses</k>
+    <english>Update Number of Licenses</english>
+    <spanish>Actualice n&#xFA;mero de licencias</spanish>
+  </trans>
+  <trans>
+    <k>Update DMS Version</k>
+    <english>Update DMS Version</english>
+    <spanish>Actualice Versi&#xF3;n del DMS</spanish>
+  </trans>
+  <trans>
+    <k>No Files Have Been Checked</k>
+    <english>No Files Have Been Checked</english>
+    <spanish>No se ha comprobado ningunos archivos</spanish>
+  </trans>
+  <trans>
+    <k>Only tif files can be converted to PDFs</k>
+    <english>Only tif files can be converted to PDFs</english>
+    <spanish>Solamente los archivos del tif se pueden convertir a PDFs.</spanish>
+  </trans>
+  <trans>
+    <k>This Will Remove All Files in Folders</k>
+    <english>This Will Remove All Files in Folders</english>
+    <spanish>Va a Quitar Todos los Archivos en las Carpetas</spanish>
+  </trans>
+  <trans>
+    <k>Please enter at least one field</k>
+    <english>Please enter at least one field</english>
+    <spanish>por favor entre por lo menos un campo</spanish>
+  </trans>
+  <trans>
+    <k>Back</k>
+    <english>Back</english>
+    <spanish>Volver</spanish>
+  </trans>
+  <trans>
+    <k>Admin Login Exceeded User Limit</k>
+    <english>Admin Login Exceeded User Limit</english>
+    <spanish>*Need spanish*</spanish>
+  </trans>
+  <trans>
+    <k>Kickoff</k>
+    <english>Admin Login Exceeded User Limit</english>
+    <spanish>*Need spanish*</spanish>
+  </trans>
+  <trans>
+    <k>from</k>
+    <english>from</english>
+    <spanish>de</spanish>
+  </trans>
+  <trans>
+    <k>Select Default Language</k>
+    <english>Select Default Language</english>
+    <spanish>Seleccione la Lengua del Defecto</spanish>
+  </trans>
+  <trans>
+    <k>from</k>
+    <english>from</english>
+    <spanish>de</spanish>
+  </trans>
+  <trans>
+    <k>No Files To Index</k>
+    <english>No Files To Index</english>
+    <spanish>*need spanish*</spanish>
+  </trans>
+  <trans>
+    <k>Cabinet Status</k>
+    <english>Cabinet Status</english>
+    <spanish>Situacion de Archivador</spanish>
+  </trans>
+  <trans>
+    <k>Folders</k>
+    <english>Folders</english>
+    <spanish>Carpetas</spanish>
+  </trans>
+  <trans>
+    <k>Files</k>
+    <english>Files</english>
+    <spanish>Archivos</spanish>
+  </trans>
+  <trans>
+    <k>Delete File Options</k>
+    <english>Delete File Options</english>
+    <spanish>*Need spanish*</spanish>
+  </trans>
+  <trans>
+    <k>Backup Media Settings</k>
+    <english>Backup Media Settings</english>
+    <spanish>*Need spanish*</spanish>
+  </trans>
+  <trans>
+    <k>Delete Files</k>
+    <english>Delete Files</english>
+    <spanish>Borre el Archivos</spanish>
+  </trans>
+  <trans>
+    <k>Delete Folders</k>
+    <english>Delete Folders</english>
+    <spanish>Borre el Carpetas</spanish>
+  </trans>
+  <trans>
+    <k>Confirm on Delete</k>
+    <english>Confirm on Delete</english>
+    <spanish>*Need spanish*</spanish>
+  </trans>
+  <trans>
+    <k>February</k>
+    <english>February</english>
+    <spanish>Febrero</spanish>
+  </trans>
+  <trans>
+    <k>March</k>
+    <english>March</english>
+    <spanish>Marcha</spanish>
+  </trans>
+  <trans>
+    <k>April</k>
+    <english>April</english>
+    <spanish>Abril</spanish>
+  </trans>
+  <trans>
+    <k>May</k>
+    <english>May</english>
+    <spanish>Mayo</spanish>
+  </trans>
+  <trans>
+    <k>June</k>
+    <english>June</english>
+    <spanish>Junio</spanish>
+  </trans>
+  <trans>
+    <k>July</k>
+    <english>July</english>
+    <spanish>Julio</spanish>
+  </trans>
+  <trans>
+    <k>August</k>
+    <english>August</english>
+    <spanish>Agosto</spanish>
+  </trans>
+  <trans>
+    <k>September</k>
+    <english>September</english>
+    <spanish>Septiembre</spanish>
+  </trans>
+  <trans>
+    <k>October</k>
+    <english>October</english>
+    <spanish>Octubre</spanish>
+  </trans>
+  <trans>
+    <k>November</k>
+    <english>November</english>
+    <spanish>Noviembre</spanish>
+  </trans>
+  <trans>
+    <k>December</k>
+    <english>December</english>
+    <spanish>Diciembre</spanish>
+  </trans>
+  <trans>
+    <k>Delete File Settings Have Been Changed</k>
+    <english>Delete File Settings Have Been Changed</english>
+    <spanish>*Need spanish*</spanish>
+  </trans>
+  <trans>
+    <k>Indexed By</k>
+    <english>Indexed By</english>
+    <spanish>Puesto en un &#xED;ndice por</spanish>
+  </trans>
+  <trans>
+    <k>File Information</k>
+    <english>File Information</english>
+    <spanish>Informaci&#xF3;n Del Archivo</spanish>
+  </trans>
+  <trans>
+    <k>Edit File Name</k>
+    <english>Edit File Name</english>
+    <spanish>Corrija El Nombre Del Archivo</spanish>
+  </trans>
+  <trans>
+    <k>User Login Expired</k>
+    <english>User Login Expired</english>
+    <spanish>La Conexi&#xF3;n Del Usuario Expir&#xF3;</spanish>
+  </trans>
+  <trans>
+    <k>User Logged Out By Administrator</k>
+    <english>User Logged Out By Administrator</english>
+    <spanish>Usuario Registrado Hacia Fuera Por Administrator</spanish>
+  </trans>
+  <trans>
+    <k>User Session Expired</k>
+    <english>User Session Expired</english>
+    <spanish>La Sesi&#xF3;n Del Usuario Expir&#xF3;</spanish>
+  </trans>
+  <trans>
+    <k>Invalid File Path</k>
+    <english>Invalid File Path</english>
+    <spanish>Trayectoria inv&#xE1;lida del archivo</spanish>
+  </trans>
+  <trans>
+    <k>Error: Indexing File Not Found</k>
+    <english>Error: Indexing File Not Found</english>
+    <spanish>Error: Archivo De la Indexaci&#xF3;n de Direcciones No Encontrado</spanish>
+  </trans>
+  <trans>
+    <k>Skip to next page</k>
+    <english>Skip to next page</english>
+    <spanish>Salto a la p&#xE1;gina siguiente</spanish>
+  </trans>
+  <trans>
+    <k>Customize Hotlinks</k>
+    <english>Customize Hotlinks</english>
+    <spanish>*Need spanish*</spanish>
+  </trans>
+  <trans>
+    <k>Hotlink Settings Have Changed</k>
+    <english>Hotlink Settings Have Changed</english>
+    <spanish>*Need spanish*</spanish>
+  </trans>
+  <trans>
+    <k>View Settings Changed</k>
+    <english>View Settings Changed</english>
+    <spanish>*Need spanish*</spanish>
+  </trans>
+  <trans>
+    <k>View Options</k>
+    <english>View Options</english>
+    <spanish>*Need spanish*</spanish>
+  </trans>
+  <trans>
+    <k>Add Version Control to a Cabinet</k>
+    <english>Add Version Control to a Cabinet</english>
+    <spanish>*Need spanish*</spanish>
+  </trans>
+  <trans>
+    <k>Add Version Control to this Cabinet</k>
+    <english>Add Version Control to this Cabinet</english>
+    <spanish>*Need spanish*</spanish>
+  </trans>
+  <trans>
+    <k>Warning - no undo</k>
+    <english>Warning - This action cannot be undone!</english>
+    <spanish>*Need spanish*</spanish>
+  </trans>
+  <trans>
+    <k>No Versioning</k>
+    <english>Do not include this cabinet in versioning</english>
+    <spanish>*Need spanish*</spanish>
+  </trans>
+  <trans>
+    <k>Cabinet is now a versioned cabinet</k>
+    <english>Cabinet is now a versioned cabinet:</english>
+    <spanish>*Need spanish*</spanish>
+  </trans>
+  <trans>
+    <k>System AllThumbs Icons</k>
+    <english>System File Option Settings</english>
+    <spanish>*Need spanish*</spanish>
+  </trans>
+  <trans>
+    <k>File Option Name</k>
+    <english>File Option Name</english>
+    <spanish>*Need spanish*</spanish>
+  </trans>
+  <trans>
+    <k>Do Not Show</k>
+    <english>Do Not Show</english>
+    <spanish>*Need spanish*</spanish>
+  </trans>
+  <trans>
+    <k>Admin Only</k>
+    <english>Admin Only</english>
+    <spanish>*Need spanish*</spanish>
+  </trans>
+  <trans>
+    <k>All Users</k>
+    <english>All Users</english>
+    <spanish>*Need spanish*</spanish>
+  </trans>
+  <trans>
+    <k>File Option Settings Have Changed</k>
+    <english>File Option Settings Have Changed</english>
+    <spanish>*Need spanish*</spanish>
+  </trans>
+  <trans>
+    <k>File Option Settings</k>
+    <english>File Option Settings</english>
+    <spanish>*Need spanish*</spanish>
+  </trans>
+  <trans>
+    <k>User AllThumbs Icons</k>
+    <english>User File Option Settings</english>
+    <spanish>*Need spanish*</spanish>
+  </trans>
+  <trans>
+    <k>Show</k>
+    <english>Show</english>
+    <spanish>*Need spanish*</spanish>
+  </trans>
+  <trans>
+    <k>Use System Defaults</k>
+    <english>Use System Defaults</english>
+    <spanish>*Need spanish*</spanish>
+  </trans>
+  <trans>
+    <k>Manage Bookmarks</k>
+    <english>Manage Bookmarks</english>
+    <spanish>*Need spanish*</spanish>
+  </trans>
+  <trans>
+    <k>OCR currently on</k>
+    <english>OCR processing is currently in progress</english>
+    <spanish>*Need spanish*</spanish>
+  </trans>
+  <trans>
+    <k>OCR currently off</k>
+    <english>OCR processing is currently halted</english>
+    <spanish>*Need spanish*</spanish>
+  </trans>
+  <trans>
+    <k>OCR currently stopped</k>
+    <english>OCR has been successfully halted</english>
+    <spanish>*Need spanish*</spanish>
+  </trans>
+  <trans>
+    <k>OCR currently started</k>
+    <english>OCR processing has begun</english>
+    <spanish>*Need spanish*</spanish>
+  </trans>
+  <trans>
+    <k>Search Settings</k>
+    <english>Search Settings</english>
+    <spanish>*Need spanish*</spanish>
+  </trans>
+  <trans>
+    <k>Reserved js Word</k>
+    <english>Is a Reserved javascript Word</english>
+    <spanish>es una palabra reservada por javascript!</spanish>
+  </trans>
+  <trans>
+    <k>Dep Administrator</k>
+    <english>Department Administrator</english>
+    <spanish>*Need spanish*</spanish>
+  </trans>
+</translations>

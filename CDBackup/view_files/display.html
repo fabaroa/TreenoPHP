@@ -1,0 +1,173 @@
+<html>
+<head>
+<link REL="stylesheet" TYPE="text/css" HREF="style.css">
+<script>parent.document.getElementById("all").setAttribute("cols","200,*,200");
+
+var url=unescape(window.location);	//convert url into decoded string
+var temp=url.split("=");		//retrieve the value of "id"
+var temp1=temp[1].split("&");
+var doc_id=temp1[0];
+var form_index="";
+var q="";
+var cab_id;
+//alert (url);
+
+//if coming from search results, remember criteria for return
+if (temp.length > 3) {
+	temp1=temp[2].split("&");
+	cab_id=temp1[0];
+	temp1=temp[3].split("&");
+	form_index=temp1[0];
+	q=temp[4];
+}
+else cab_id=temp[2];
+
+//alert ("doc_id="+doc_id+" cab_id="+cab_id+" form_index="+form_index+" q="+q);
+
+/*
+//if coming from search results page, store query type and string info
+if(temp.length>2) {
+   temp2=temp[2].split("&");
+   form_index=temp2[0];
+   q=temp[3];
+}
+*/
+var selected_tab="";
+var selectedRow="";
+
+//function that shows or hides tab contents when it is clicked
+function selectTab ( tabname )
+{
+	if(selected_tab==tabname)
+	{
+		document.getElementById(tabname).style.visibility="hidden";
+		document.getElementById(tabname).style['display']="none";
+		selected_tab="";
+	}
+	else
+	{
+		if(selected_tab!="")
+		{
+			document.getElementById(selected_tab).style.visibility="hidden";
+			document.getElementById(selected_tab).style['display']="none";
+		}
+		document.getElementById(tabname).style.visibility="visible";
+		document.getElementById(tabname).style['display']="table-header-group";
+		selected_tab=tabname;
+	}var url=unescape(window.location);	//convert url into decoded string
+var temp=url.split("=");		//retrieve the value of "id"
+var temp2=temp[1].split("&");
+
+var doc_id=temp2[0];
+
+	
+}
+/*
+//functions to change file's color on mouseover
+function changeColor(id,row)
+{
+	//alert("change color id="+id+" row="+row);
+	document.getElementById(id).setAttribute("bgcolor","6a78af");
+}
+
+function resetColor(id,row)
+{
+	document.getElementById(id).setAttribute("bgcolor","ebebeb");
+}
+*/
+
+function setSelected(rowID, id, filelocation) 
+{
+  if (selectedRow == "") 
+  {
+    selectedRow = rowID;
+    document.getElementById(rowID).setAttribute("bgColor", "003b6f");
+  }
+  else {
+    document.getElementById(selectedRow).setAttribute("bgColor", "003b6f");
+    document.getElementById(rowID).setAttribute("bgColor", "003b6f");
+    selectedRow = rowID;
+  }
+
+  openFile(id,filelocation);	//open the file
+}
+
+function rowMouseover(rowID) 
+{
+	if(selectedRow&&selectedRow==rowID)
+	{
+        	document.getElementById(rowID).setAttribute("bgColor", "EBEBEB");
+        }
+        else { // mouseover is
+               document.getElementById(rowID).setAttribute("bgColor", "888888");
+        }
+}
+
+function rowMouseout(rowID) {
+	if(selectedRow&&selectedRow==rowID)
+	{
+		document.getElementById(rowID).setAttribute("bgColor", "003b6f");
+	}
+	else {
+        	document.getElementById(rowID).setAttribute("bgColor", "003b6f");
+ 	}
+}
+
+
+function saveFile(file_name,file_location)
+{
+   document.onload=parent.window.location="../"+file_location+file_name;
+}
+function openFile(file_name,file_location)
+{
+   var this_disk=document.forms[0].this_disk.value;
+
+   var this_folder=document.forms[0].this_folder.value;
+   if(this_folder!=this_disk)	//no files in this folder are on this disk
+     alert('Please Insert Disk '+this_folder+' to use this file ');
+	else {
+		document.onload=parent.main.window.location="../"+file_location+file_name;
+	}
+}
+
+function downloadFile (file_location) 
+{
+   var this_disk=document.forms[0].this_disk.value;
+   var this_folder=document.forms[0].this_folder.value;
+   if(this_folder!=this_disk)	//no files in this folder are on this disk
+     alert('Please Insert Disk '+this_folder+' to use this file ');
+   else
+     document.onload=window.open(file_location);
+}
+function BackToResults()
+{
+   //load search results page if came from there, or front page if from there
+   if(form_index)
+      document.onload=parent.main.window.location='searchResults.html?form_index='+form_index+'&q='+q+"&cab_id="+cab_id;
+   else
+      document.onload=parent.main.window.location='main.html?cab_id='+cab_id;
+   document.onload=window.location='sidebar_white.html';
+}
+</script>
+</head>
+<body class="tealbg">
+<div onmouseover="style.cursor='pointer'" onclick="BackToResults()">
+<img src="images/open_16.gif"/>Back to Results
+</div>
+<div id="t2"></div>
+<script>
+  var xml = new ActiveXObject("Msxml2.DOMDocument");
+  xml.async = false;
+  xml.load('../cabinet.xml');
+
+  var xsl = new ActiveXObject("Msxml2.DOMDocument");
+  xsl.async = false;
+  xsl.load('displayFolder.xslt');
+  var xParam = xsl.selectSingleNode("/*/xsl:param[@name = \'selected_id\']/@select");
+  xParam.value = doc_id;
+  var xParam2 = xsl.selectSingleNode("/*/xsl:param[@name = \'cab_id\']/@select");
+  xParam2.value=cab_id;
+  document.getElementById("t2").innerHTML = xml.transformNode(xsl);
+</script>
+</body>
+</html>

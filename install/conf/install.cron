@@ -1,0 +1,2 @@
+0 0 * * * /usr/bin/php -q /var/www/html/bots/backupDB.php &> /dev/null
+0 * * * * php -q /var/www/html/bots/deleteTempTables.php &> /dev/null

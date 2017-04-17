@@ -1,0 +1,171 @@
+<?php
+// $Id: viewDocumentPermissions.php 14284 2011-03-18 20:28:04Z acavedon $
+
+include_once '../check_login.php';
+include_once '../classuser.inc';
+
+if($logged_in == 1 && strcmp($user->username,"") != 0) {
+	$tableTitle = "Document Type Permissions";
+
+	$db_dept = $user->getDbObject();
+	$sArr = array('id','document_type_name');
+	$oArr = array('document_type_name' => 'ASC');
+	$docList = getTableInfo($db_dept,'document_type_defs',$sArr,array(),'getAssoc',$oArr);
+	uasort($docList,'strnatcasecmp');
+
+	$groupList = getRealGroupNames($db_dept);
+?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>View Document</title>
+<script type="text/javascript" src="viewDocuments.js"></script>
+<script type="text/javascript" src="../lib/settings.js"></script>
+<script type="text/javascript" src="../lib/prototype.js"></script>
+<script type="text/javascript">
+	docType = "";
+	function selectDocument() {
+		var selBox = getEl('docList');
+		removeDefault(selBox);
+		clearDiv(getEl('errMsg'));
+		getEl('docDiv').style.display = "block";
+
+		docType = selBox.options[selBox.selectedIndex].value;		
+
+		var xmlDoc = createDOMDoc();
+		var root = xmlDoc.createElement('ROOT');
+		xmlDoc.appendChild(root);
+		createKeyAndValue(xmlDoc,root,'function','xmlGetDocumentPermissions');
+		createKeyAndValue(xmlDoc,root,'docType',docType);
+		
+		postXML(domToString(xmlDoc));
+	}
+
+	function fillDocumentPermissions(XML) {
+		togglePermissionCheckBoxes();
+		var permList = XML.getElementsByTagName('PERMISSION');
+		if(permList.length > 0) {
+			for(var i=0;i<permList.length;i++) {
+				var id = permList[i].firstChild.nodeValue;		
+				getEl('check-'+id).checked = true;
+			}
+		}
+	}
+
+	function togglePermissionCheckBoxes() {
+		var checkList = document.getElementsByTagName('input');
+		for(var i=0;i<checkList.length;i++) {
+			if(checkList[i].type == "checkbox") {
+				checkList[i].checked = false;
+			}
+		}
+	}
+
+	function addDocumentPermissions() {
+		var xmlDoc = createDOMDoc();
+		var root = xmlDoc.createElement('ROOT');
+		xmlDoc.appendChild(root);
+		createKeyAndValue(xmlDoc,root,'function','xmlAddDocumentPermissions');
+		createKeyAndValue(xmlDoc,root,'docType',docType);
+		
+		var ct = 1;
+		var checkList = document.getElementsByTagName('input');
+		for(var i=0;i<checkList.length;i++) {
+			if(checkList[i].type == "checkbox" && checkList[i].checked) {
+				createKeyAndValue(xmlDoc,root,'perm-'+ct,checkList[i].value);
+				ct++;
+			}
+		}
+		if (ct==1)
+		{
+			alert("Please select at least one group.");
+			return false;
+		}
+		postXML(domToString(xmlDoc));
+	}
+</script>
+<link rel="stylesheet" type="text/css" href="../lib/style.css" />
+<style type="text/css">
+	div.docDiv {
+		padding-top	: 10px;
+		height		: 35px;
+	}
+
+	select.docList {
+		width: 250px;
+	}
+	
+	div.groupDiv {
+		overflow-x	: hidden;
+		overflow-y	: scroll;
+		height		: 250px;
+		width		: 250px;
+		margin-right: auto;
+		margin-left	: auto;
+		border		: 1px solid #ebebeb;
+	}
+
+	div.actionDiv {
+		text-align	: right;
+		width		: 250px;
+		margin-right: auto;
+		margin-left	: auto;
+		padding-top	: 10px;
+		height		: 35px;
+	}
+</style>
+</head>
+<body>
+	<div class="mainDiv">
+		<div class="mainTitle">
+			<span><?php echo $tableTitle ?></span>
+		</div>
+		<div id="docDiv" class="docDiv">
+			<select id="docList" 
+				class="docList"
+				name="docList" 
+				onchange="selectDocument()">
+				<option value="__default">Choose a Document</option>
+				<?php foreach($docList AS $id => $name): ?>
+				<option value="<?php echo $id; ?>"><?php echo $name; ?></option>
+				<?php endforeach; ?>
+			</select>
+		</div>
+		<div style="font-weight: bold">Groups</div>
+		<div id="groupDiv" class="groupDiv">
+			<table style="width:100%">
+			<?php foreach($groupList AS $key => $value): ?>
+				<tr>
+					<td style="width:25px">
+						<input type="checkbox" 
+							id="check-<?php echo $key;?>" 
+							name="check-<?php echo $key;?>" 
+							value="<?php echo $key; ?>" 
+						/>
+					</td>
+					<td style="text-align: left">
+						<span><?php echo $value; ?><span>
+					</td>
+				</tr>
+			<?php endforeach; ?>
+			</table>
+		</div>
+		<div id="actionDiv" class="actionDiv">
+			<span id="errMsg" class="error"></span>
+			<input type="button" 
+				name="btn1" 
+				value="Save" 
+				onclick="addDocumentPermissions()" 
+			/>
+		</div>
+	</div>
+</body>
+</html>
+<?php
+	setSessionUser($user);
+} else {
+	logUserOut();
+}
+?>

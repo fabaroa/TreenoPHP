@@ -1,0 +1,72 @@
+.mChange {
+	float: left;
+	font-size: 7pt;
+}
+
+.yChange {
+	float: right;
+	font-size: 7pt;
+}
+
+.monthCell {
+	width: 7em;
+}
+
+.yearCell {
+	width: 3em;
+}
+
+.monthDiv {
+	width: 14em;
+	font-size: 10pt;
+	font-family: sans;
+	color: black;
+	text-align: center;
+	background-color: #eeeeee;
+	border-style: double;
+	border-color: #cccccc;
+}
+
+.monthDiv img {
+	cursor: pointer;
+}
+
+.monthTable {
+	margin-left: auto;
+	margin-right: auto;
+	text-align: right;
+	border-collapse: collapse;
+	margin-bottom: 1em;
+	font-size: 9pt;
+}
+
+.monthTable td {
+	width: 2em;
+	border-width: 1px;
+	border-color: #888888;
+	border-style: solid;
+}
+
+td.currDate {
+	background-color: yellow;
+}
+
+td.currDate, td.anyDate {
+	cursor: pointer;
+}
+
+td.calMouseOver {
+	background-color: #ffffff;
+}
+
+div.calClass {
+	position: absolute;
+	left: 100px;
+	top: 100px;
+}
+
+tr.weekRow {
+	font-weight: bold;
+	text-align: center;
+	font-size: 7pt;
+}

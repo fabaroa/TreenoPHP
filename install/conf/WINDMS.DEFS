@@ -1,0 +1,67 @@
+# DOCUTRON MANAGEMENT SOFTWARE
+# DEFINITIONS FILE
+#DOC_DIR is the place where apaches document root points to
+#and your main index.php
+DOC_DIR=c:/apache/htdocs
+#DATA_DIR is the place where client_files,client_files0 should be
+DATA_DIR=c:/docutron
+#TMP_DIR is for temp files that are to be deleted later
+TMP_DIR=c:/docutron/temp
+OCR_THRESH=0.2
+#
+#REMOTE_IP is for remote ODBC connection with sagitta
+#REMOTE_IP=192.168.1.11
+#
+#LOCAL_IP is a quick way to get the localhosts IP address if it doesn't change
+LOCAL_IP=127.0.0.1
+DB_HOST=localhost
+HOST=192.168.1.231
+DB_TYPE=mysqli
+WWW_GROUP=none
+WWW_USER=apache
+TO_PDF=0
+FIRSTFILE=0
+UPLOAD_TMP=c:/docutron/temp
+CENTERA_MODULE=0
+
+PHP_EXE=c:\php\php.exe
+ZIP_EXE=c:\bin\zip.exe
+UNZIP_EXE=c:\bin\unzip.exe
+MYDUMP_EXE=C:\Program Files\MySQL\MySQL Server 5.0\bin\mysqldump.exe
+TAR_EXE=c:\gnu\bin\tar.exe
+MKISO_EXE=c:\bin\mkisofs.exe
+BGRUN_EXE=c:\bin\bgrun.exe
+GOCRFULL_EXE=c:\bin\gocrFull.exe
+GOCR_EXE=c:\bin\gocr.exe
+ANTIWORD_EXE=c:\bin\antiword.exe
+TIFFTOPNM_EXE=c:\gnu\bin\tifftopnm.exe
+PNMTOTIFF_EXE=c:\gnu\bin\pnmtotiff.exe
+PNMSCALE_EXE=c:\gnu\bin\pnmscale.exe
+PNMDEPTH_EXE=c:\gnu\bin\pnmdepth.exe
+PAMFILE_EXE=c:\gnu\bin\pamfile.exe
+PAMCOMP_EXE=c:\gnu\bin\pamcomp.exe
+PAMFLIP_EXE=c:\gnu\bin\pamflip.exe
+PNMTOJPEG_EXE=c:\gnu\bin\pnmtojpeg.exe
+PNMTOPS_EXE=c:\gnu\bin\pnmtops.exe
+PNMTOPNG_EXE=c:\gnu\bin\pnmtopng.exe
+PNGTOPNM_EXE=c:\gnu\bin\pngtopnm.exe
+PSTOPNM_EXE=c:\gnu\bin\pstopnm.exe
+PSSELECT_EXE=c:\gnu\bin\psselect.exe
+PS2PDF_EXE=C:\gs\gs8.54\lib\ps2pdf.bat
+PDF2PS_EXE=C:\gs\gs8.54\lib\pdf2ps.bat
+JPEGTOPNM_EXE=c:\gnu\bin\jpegtopnm.exe
+WGET_EXE=c:\bin\wget.exe
+TIFFCP_EXE=c:\gnu\bin\tiffcp.exe
+GUNZIP_EXE=c:\bin\gunzip.exe
+CMD_EXE=c:\WINDOWS\system32\cmd.exe
+LINKD_EXE=linkd.exe
+CONVERT_EXE=convert.exe
+PEAR_EXE=c:\php\pear.bat
+MYSQLADMIN_EXE=mysqladmin.exe
+XCACLS_EXE=xcacls.exe
+FILE_EXE=c:\gnu\bin\file.exe
+TIFFSPLIT=c:\gnu\bin\tiffsplit.exe
+TASKLIST_EXE=C:\WINDOWS\system32\tasklist.exe
+TASKKILL_EXE=C:\WINDOWS\system32\taskkill.exe
+IPCONFIG_EXE=C:\WINDOWS\system32\ipconfig.exe
+MD5SUM_EXE=C:\bin\md5sum.exe

@@ -1,0 +1,10 @@
+to build php with db2 odbc access you need to rebuild php and added the --with-ibm-db2 flag to the spec file( it is already added to the FC3-php.spec file )
+you'll need to download the right php source rpm  and install it.
+then put the spec file in the /usr/src/redhat/SPECS
+to rebuild php go to the specs directory and type rpmbuild -ba <spec-file>
+resolve any problems.
+when you are done go to the /usr/src/redhat/RPMS/i386 directory and install the php-odbc rpm
+rpm -Uvh --force php-odbc<version>.rpm
+
+make sure to export DB2INSTANCE=the db2 username that is created
+/etc/bashrc is the place where you will export the variable

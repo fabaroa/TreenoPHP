@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="../lib/style.css">
+  </head>
+	<script type="text/vbscript" language="VBScript">
+		On Error Resume Next
+		detected = IsObject(CreateObject("Alttiff.AlttiffCtl"))
+			if detected Then
+				''alternatiff is installed, continue normally
+				document.getElementById("iestuff").display = "block"
+            else
+                ''redirect to alternatiff installation
+                ''MsgBox "loading install page - detected is " & detected
+                parent.mainFrame.window.location = "../atinstall/instAT.php"
+                                                                                                                                                                                     
+            end If
+	</script>
+  <body>
+	<div id="iestuff" style="display: block">
+	    <object width="0" height="0" id="atiff" classid="CLSID:106E49CF-797A-11D2-81A2-00E02C015623" codebase="alttiff.cab#version=1,8,4,1">
+			<param name=target value="_top">
+   	 </object>
+  	  To make AlternaTIFF open all tiffs for Internet Explorer,
+   	 <a href="#" onclick="document.all.atiff.RegisterFileTypes(0)">click here to register it</a>.
+	</div>
+	<div>If your browser version is Internet Explorer 7 then you must close and reopen your browser</div>
+  </body>
+</html>

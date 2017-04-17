@@ -1,0 +1,15 @@
+47
+update wf_todo set notes ='note 5' where department ='client_files808' and wf_document_id=47
+
+48
+update wf_todo set notes ='note 4' where department ='client_files808' and wf_document_id=48
+
+49
+update wf_todo set notes ='note 3' where department ='client_files808' and wf_document_id=49
+
+50
+update wf_todo set notes ='note 2' where department ='client_files808' and wf_document_id=50
+
+51
+update wf_todo set notes ='note 1' where department ='client_files808' and wf_document_id=51
+

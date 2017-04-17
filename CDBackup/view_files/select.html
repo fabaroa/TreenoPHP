@@ -1,0 +1,27 @@
+<html>
+<head>
+<link REL="stylesheet" TYPE="text/css" HREF="style.css">
+<script>
+
+var selectedID="";
+
+if(selectedID=="")
+	selectedID="0";
+
+//go back to the beginning of an index
+function goBegin () {
+	
+   selectedID="0";
+}
+
+</script>
+<body class="tealbg">
+<form name="browse">
+<img src="images\begin_button.gif" border="0"/><img src="images\back_button.gif" border="0"/>
+<script>
+document.write("<input type='text' name='num' size=5 value='"+selectedID+"'/>");
+</script>
+<img src="images\next_button.gif" border="0"/><img src="images\end_button.gif" border="0"/>
+</form>
+</body>
+</html>

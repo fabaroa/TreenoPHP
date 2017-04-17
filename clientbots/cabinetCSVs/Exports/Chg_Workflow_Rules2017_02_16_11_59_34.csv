@@ -1,0 +1,391 @@
+"doc_id","new_workflow_title","pack_type","carrier_or_type","prs_and_locs","contact_pr","approve_ehr_enc","assign_to_completer","hb","assign_to_completer_2","qa","assign_to_completer_3","demographics","assign_to_completer_4","dl_charges","code","assign_to_completer_5","key_charges","assign_to_completer_6","first_review","assign_to_completer_7","contact_pr_2","pndg_pr_k1","process","assign_to_completer_8","pndg_pr_p","pndg_eom","post_process_rvw","hb_2","second_pass","assign_to_completer_9","manager_rvw"
+"1","","","","","13","6","","","","7","","8","","9","10","","11","","12","","13","14","15","","16","17","18","","19","","20"
+"2","ANES - I/M/M","ANES","","24","Log Rec","","","","","","","BLAIRP
+CYNTHIAM
+JENNIFERA","x","","CHARLENE
+JERRILYN
+KIM","x","CHARLENE
+JENNIFERA
+JERRILYN","x","","","Log Rec","Receiving","CHARLENE
+JERRILYN
+KIM","x","Receiving","","","","","",""
+"3","ANES - C/M/M","ANES","","42","Log Rec","","","","","","","BLAIRP
+CYNTHIAM
+JENNIFERA","x","","CHARLENE
+JERRILYN
+KIM","x","CHARLENE
+JENNIFERA
+JERRILYN","x","","","Log Rec","Receiving","CHARLENE
+JERRILYN
+KIM","x","Receiving","","","","","",""
+"4","ANES - I/M/M","ANES","","68-AG","Log Rec","","","","","","","BLAIRP
+CYNTHIAM
+JENNIFERA","x","","CHARLENE
+JERRILYN
+KIM","x","CHARLENE
+CYNTHIAM
+JENNIFERA
+JERRILYN","x","","","Log Rec","Receiving","CYNTHIAM
+JENNIFERA
+JERRILYN
+KIM","x","Receiving","","","","","",""
+"5","ANES - I/M/M","ANES","","68-AN","Log Rec","","","HB","x","","","BLAIRP
+CYNTHIAM
+JENNIFERA","x","","CHARLENE
+JERRILYN
+KIM","x","CHARLENE
+CYNTHIAM
+JENNIFERA
+JERRILYN","x","","","Log Rec","Receiving","CHARLENE
+JENNIFERA
+JERRILYN
+KIM","x","Receiving","","","","","",""
+"6","EKG - DL/Bi-Weekly","EKG","","44","Log Rec","","","","","","","BLAIRP
+CYNTHIAM
+VICKIEK","x","FRT OFC","","","","","JENNIFERA","x","Log Rec","Receiving","JENNIFERA","x","Receiving","","","","","",""
+"7","EKG - DL/Weekly","EKG","","68","Log Rec","","","","","","","","","FRT OFC","","","","","CYNTHIAM
+JENNIFERA
+KIM","x","Log Rec","Receiving","JENNIFERA
+KIM","x","Receiving","","","","","",""
+"8","HOSP - I/P/M","HOSP","","3","Log Rec","","","","","","","","","","","","","","LESLIE
+SHANNONS","x","Log Rec","Receiving","LESLIE
+SHANNONS","x","Receiving","","","","","",""
+"9","HOSP - I/P/M","HOSP","","04-ESURG","Log Rec","","","","","","","","","","","","","","LESLIE
+SHANNONS","x","Log Rec","Receiving","LESLIE
+SHANNONS","x","Receiving","","","","","",""
+"10","HOSP - I/P/M","HOSP","","04-OSURG","Log Rec","","","","","","","","","","","","","","CHARLENE
+LESLIE
+SHANNONS","x","Log Rec","Receiving","CHARLENE
+LESLIE
+SHANNONS","x","Receiving","","","","","",""
+"11","HOSP - I/P/M","HOSP","","5","Log Rec","","","","","","","","","","","","","","LESLIE
+SHANNONS","x","Log Rec","Receiving","LESLIE
+SHANNONS","x","Receiving","","","","","",""
+"12","HOSP - I/P/P","HOSP","","10","Log Rec","","","","","","","","","","","","","","","","Log Rec","Receiving","","x","Receiving","","","","","",""
+"13","HOSP - I/P/P","HOSP","","18","Log Rec","","","","","","","","","","","","","","","","Log Rec","Receiving","","x","Receiving","","","","","",""
+"14","HOSP - I/P/P","HOSP","","38","Log Rec","","","","","","","","","","","","","","","","Log Rec","Receiving","","x","Receiving","","","","","",""
+"15","HOSP - C/M/M","HOSP","","40","Log Rec","","","","","","","","","","","","KRISTENM
+MOLLYB","x","","","Log Rec","Receiving","CHARLENE
+LESLIE
+SHANNONS","x","Receiving","","","","","",""
+"16","HOSP - I/M/M","HOSP","","52","Log Rec","","","","","","","","","","","","KRISTENM
+MOLLYB","x","","","Log Rec","Receiving","LESLIE
+SHANNONS","x","Receiving","","","","","",""
+"17","HOSP - I/P/M","HOSP","","56","Log Rec","","","","","","","","","","","","","","KRISTENM
+LESLIE
+MOLLYB
+SHANNONS","x","Log Rec","Receiving","LESLIE
+MOLLYB
+SHANNONS","x","Receiving","","","","","",""
+"18","HOSP - I/P/P","HOSP","","64","Log Rec","","","","","","","","","","","","","","","","Log Rec","Receiving","","","Receiving","","","","","",""
+"19","HOSP - I/P/P","HOSP","","68-CV","Log Rec","","","","","","","","","","","","","","","","Log Rec","Receiving","","","Receiving","","","","","",""
+"20","HOSP - I/P/P","HOSP","","68-EN","Log Rec","","","","","","","","","","","","","","","","Log Rec","Receiving","","","Receiving","","","","","",""
+"21","HOSP - I/P/P","HOSP","","68-F1","Log Rec","","","","","","","","","","","","","","","","Log Rec","Receiving","","","Receiving","","","","","",""
+"22","HOSP - I/P/P","HOSP","","68-F2","Log Rec","","","","","","","","","","","","","","","","Log Rec","Receiving","","","Receiving","","","","","",""
+"23","HOSP - I/M/M","HOSP","","68-GP","Log Rec","","","","","","","","","","","","CYNTHIAM
+JENNIFERA","x","","","Log Rec","Receiving","JENNIFERA
+KIM","x","Receiving","","","","","",""
+"24","HOSP - I/P/P","HOSP","","68-IM","Log Rec","","","","","","","","","","","","","","","","Log Rec","Receiving","","","Receiving","","","","","",""
+"25","HOSP - DL/P/M/25th","HOSP","","68-MF","Log Rec","","","","","","","","","","","","","","CHARLENE
+JENNIFERA
+JERRILYN
+KIM","x","Log Rec","Receiving","JERRILYN","x","Receiving","","","","","",""
+"26","HOSP - I/P/M","HOSP","","68-NL","Log Rec","","","","","","","","","","","","","","LESLIE
+SHANNONS","x","Log Rec","Receiving","LESLIE
+SHANNONS","x","Receiving","","","","","",""
+"27","HOSP - I/P/P","HOSP","","68-NS","Log Rec","","","","","","","","","","","","","","","","Log Rec","Receiving","","","Receiving","","","","","",""
+"28","HOSP - I/P/P","HOSP","","68-OG","Log Rec","","","","","","","","","","","","","","","","Log Rec","Receiving","","","Receiving","","","","","",""
+"29","HOSP - I/P/P","HOSP","","68-OJ","Log Rec","","","","","","","","","","","","","","","","Log Rec","Receiving","","","Receiving","","","","","",""
+"30","HOSP - I/P/P","HOSP","","68-OR","Log Rec","","","","","","","","","","","","","","","","Log Rec","Receiving","","","Receiving","","","","","",""
+"31","HOSP - I/P/P","HOSP","","68-OT","Log Rec","","","","","","","","","","","","","","","","Log Rec","Receiving","","","Receiving","","","","","",""
+"32","HOSP - DL/P/M","HOSP","","68-PC","Log Rec","","","","","","","","","","","","","","CYNTHIAM","x","Log Rec","Receiving","JENNIFERA
+KIM","x","Receiving","","","","","",""
+"33","HOSP - I/P/M","HOSP","","68-PM","Log Rec","","","","","","","","","","","","","","CHARLENE
+LESLIE
+SHANNONS","x","Log Rec","Receiving","CHARLENE
+LESLIE
+SHANNONS","x","Receiving","","","","","",""
+"34","HOSP - I/P/M","HOSP","","68-PU","Log Rec","","","","","","","","","","","","","","LESLIE
+SHANNONS","x","Log Rec","Receiving","LESLIE
+SHANNONS","x","Receiving","","","","","",""
+"35","HOSP - I/P/P","HOSP","","68-RA","Log Rec","","","","","","","","","","","","","","","x","Log Rec","Receiving","","","Receiving","","","","","",""
+"36","HOSP - I/P/M","HOSP","","68-RO","Log Rec","","","","","","","","","","","","","","EMILYS
+LESLIE
+MOLLYB
+SHANNONS
+CHERRIE","x","Log Rec","Receiving","EMILYS
+LESLIE
+MOLLYB
+SHANNONS
+CHERRIE","x","Receiving","","","","","",""
+"37","HOSP - I/P/M","HOSP","","68-W1","Log Rec","","","","","","","","","","","","","","LESLIE
+SHANNONS","x","Log Rec","Receiving","LESLIE
+SHANNONS","x","Receiving","","","","","",""
+"38","HOSP - I/M/M","HOSP","","71","Log Rec","","","","","","","","","","","","EMILYS
+KRISTENM","x","","","Log Rec","Receiving","CHARLENE
+JERRILYN
+MOLLYB
+SHANNONS","x","Receiving","","","","","",""
+"39","HOSP - I/P/P","HOSP","","82","Log Rec","","","","","","","","","","","","","","","","Log Rec","Receiving","","","Receiving","","","","","",""
+"40","HOSP - I/P/M","HOSP","","83","Log Rec","","","","","","","","","","","","","","LESLIE
+MOLLYB
+SHANNONS
+CHERRIE","x","Log Rec","Receiving","MOLLYB
+CHERRIE","x","Receiving","","","","","",""
+"41","HOSP - I/M/M","HH","","84","Log Rec","","","","","","","","","","","","KRISTENM
+MOLLYB","x","","","Log Rec","Receiving","CHARLENE
+LESLIE
+SHANNONS","x","Receiving","","","","","",""
+"42","RAD - DL/P/M","RAD","DL","68","Log Rec","","","","","","","BLAIRP
+CYNTHIAM
+VICKIEK","x","FRT OFC","","","","","CHARLENE
+JENNIFERA
+JERRILYN","x","Log Rec","Receiving","CHARLENE
+JENNIFERA
+JERRILYN","x","Receiving","","","HB","CHARLENE
+KIM","x","KIM"
+"43","RAD - Spec","RAD","SPEC","68","Log Rec","","","","","","","","","FRT OFC","","","","","CHARLENE
+JERRILYN","x","Log Rec","Receiving","CHARLENE
+JERRILYN","x","Receiving","","","","","",""
+"44","FD - I/P/M","FD","","3","Log Rec","","","","","","","","","","","","","","CHARLENE
+LESLIE
+SHANNONS","x","Log Rec","Receiving","CHARLENE
+LESLIE
+SHANNONS","x","Receiving","","","","","",""
+"45","FD - I/P/M","FD","","04-AE","Log Rec","","","","","","","","","","","","","","CYNTHIAM
+EMILYS
+KRISTENM
+VICKIEK","x","Log Rec","Receiving","EMILYS
+KRISTENM
+VICKIEK","x","Receiving","","","","","",""
+"46","FD - I/P/M","FD","","04-AJ","Log Rec","","","","","","","","","","","","","","CYNTHIAM
+EMILYS
+KRISTENM
+VICKIEK","x","Log Rec","Receiving","EMILYS
+KRISTENM
+VICKIEK","x","Receiving","","","","","",""
+"47","FD - I/P/M","FD","","04-AS","Log Rec","","","","","","","","","","","","","","CYNTHIAM
+EMILYS
+KRISTENM
+VICKIEK","x","Log Rec","Receiving","EMILYS
+KRISTENM
+VICKIEK","x","Receiving","","","","","",""
+"48","FD - I/P/M","FD","","04-EU-ENT","Log Rec","","","","","","","","","","","","","","CHARLENE
+LESLIE
+SHANNONS","x","Log Rec","Receiving","CHARLENE
+LESLIE
+SHANNONS","x","Receiving","","","","","",""
+"49","FD - I/P/M","FD","","04-EU-PED","Log Rec","","","","","","","","","","","","","","CHARLENE
+KRISTENM
+LESLIE
+SHANNONS","x","Log Rec","Receiving","CHARLENE
+LESLIE
+SHANNONS","x","Receiving","","","","","",""
+"50","FD - I/P/M","FD","","04-JE-ENT","Log Rec","","","","","","","","","","","","","","CHARLENE
+LESLIE
+SHANNONS","x","Log Rec","Receiving","CHARLENE
+LESLIE
+SHANNONS","x","Receiving","","","","","",""
+"51","FD - I/P/M","FD","","04-LA-ENT","Log Rec","","","","","","","","","","","","","","CHARLENE
+LESLIE
+SHANNONS","x","Log Rec","Receiving","CHARLENE
+LESLIE
+SHANNONS","x","Receiving","","","","","",""
+"52","FD - I/P/M","FD","","04-OE-GYN","Log Rec","","","","","","","","","","","","","","CHARLENE
+LESLIE
+SHANNONS","x","Log Rec","Receiving","CHARLENE
+LESLIE
+SHANNONS","x","Receiving","","","","","",""
+"53","FD - I/P/P","FD","","1-May","Log Rec","","","","","","","","","","","","","","","x","Log Rec","Receiving","","","Receiving","","","","","",""
+"54","FD - I/P/P","FD","","2-May","Log Rec","","","","","","","","","","","","","","","x","Log Rec","Receiving","","","Receiving","","","","","",""
+"55","FD - I/P/M","FD","","3-May","Log Rec","","","","","","","","","","","","","","CHARLENE
+LESLIE
+SHANNONS","x","Log Rec","Receiving","CHARLENE
+LESLIE
+SHANNONS","x","Receiving","","","","","",""
+"56","FD - I/P/P","FD","","10","Log Rec","","","","","","","","","","","","","","","","Log Rec","Receiving","","","Receiving","","","","","",""
+"57","FD - I/P/P","FD","","18","Log Rec","","","","","","","","","","","","","","","","Log Rec","Receiving","","","Receiving","","","","","",""
+"58","FD - I/P/P","FD","","38","Log Rec","","","","","","","","","","","","","","","","Log Rec","Receiving","","","Receiving","","","","","",""
+"59","FD - C/M/M","FD","","40","Log Rec","","","","","","","BLAIRP
+CYNTHIAM","x","","","","DEANAC
+EMILYS
+KRISTENM
+VICKIEK","x","","","Log Rec","Receiving","CHARLENE
+JENNIFERA
+JERRILYN
+LESLIE
+MOLLYB
+SHANNONS","x","Receiving","","","","","",""
+"60","FD - I/P/M","FD","","52","Log Rec","","","","","","","","","","","","","","CHARLENE
+DEANAC
+EMILYS
+JENNIFERA
+KRISTENM
+LESLIE
+MOLLYB
+SHANNONS
+VICKIEK","x","Log Rec","Receiving","CHARLENE
+LESLIE
+MOLLYB
+SHANNONS","x","Receiving","","","","","",""
+"61","FD - I/P/M","FD","","56","Log Rec","","","","","","","","","","","","","","CHARLENE
+JERRILYN
+LESLIE
+MOLLYB
+SHANNONS","x","Log Rec","Receiving","CHARLENE
+JERRILYN
+LESLIE
+MOLLYB
+SHANNONS","x","Receiving","","","","","",""
+"62","FD - I/P/M","FD","","60-ABA","Log Rec","","","","","","","","","","","","","","DEANAC
+EMILYS
+KRISTENM
+LESLIE
+MOLLYB
+SHANNONS
+VICKIEK
+CHERRIE","x","Log Rec","Receiving","CHERRIE","x","Receiving","","","","","",""
+"63","FD - I/P/M","FD","","60-AUD","Log Rec","","","","","","","","","","","","","","DEANAC
+EMILYS
+KRISTENM
+LESLIE
+MOLLYB
+SHANNONS
+VICKIEK
+CHERRIE","x","Log Rec","Receiving","CHERRIE","x","Receiving","","","","","",""
+"64","FD - I/P/M","FD","","60-ES","Log Rec","","","","","","","","","","","","","","DEANAC
+EMILYS
+KRISTENM
+LESLIE
+MOLLYB
+SHANNONS
+VICKIEK
+CHERRIE","x","Log Rec","Receiving","KRISTENM
+MOLLYB
+VICKIEK
+CHERRIE","x","Receiving","","","","","",""
+"65","FD - I/P/M","FD","","60-LAN","Log Rec","","","","","","","","","","","","","","DEANAC
+EMILYS
+KRISTENM
+LESLIE
+MOLLYB
+SHANNONS
+VICKIEK
+CHERRIE","x","Log Rec","Receiving","MOLLYB
+CHERRIE","x","Receiving","","","","","",""
+"66","FD - I/P/M","FD","","60-OCC","Log Rec","","","","","","","","","","","","","","DEANAC
+EMILYS
+KRISTENM
+LESLIE
+MOLLYB
+SHANNONS
+VICKIEK
+CHERRIE","x","Log Rec","Receiving","MOLLYB
+CHERRIE","x","Receiving","","","","","",""
+"67","FD - I/P/M","FD","","60-PSY","Log Rec","","","","","","","","","","","","","","DEANAC
+EMILYS
+KRISTENM
+LESLIE
+MOLLYB
+SHANNONS
+VICKIEK
+CHERRIE","x","Log Rec","Receiving","MOLLYB
+CHERRIE","x","Receiving","","","","","",""
+"68","FD - I/P/M","FD","","61","Log Rec","","","","","","","","","","","","","","KRISTENM
+VICKIEK","x","Log Rec","Receiving","CHERRIE","x","Receiving","","","","","",""
+"69","FD - I/P/P","FD","","64","Log Rec","","","","","","","","","","","","","","","","Log Rec","Receiving","","","Receiving","","","","","",""
+"70","FD - I/P/P","FD","","68-CV","Log Rec","","","","","","","","","","","","","","","","Log Rec","Receiving","","","Receiving","","","","","",""
+"71","FD - I/P/P","FD","","68-EN","Log Rec","","","","","","","","","","","","","","","","Log Rec","Receiving","","","Receiving","","","","","",""
+"72","FD - I/P/P","FD","","68-F1","Log Rec","","","","","","","","","","","","","","","","Log Rec","Receiving","","","Receiving","","","","","",""
+"73","FD - I/P/P","FD","","68-F2","Log Rec","","","","","","","","","","","","","","","","Log Rec","Receiving","","","Receiving","","","","","",""
+"74","FD - I/P/P","FD","","68-IM","Log Rec","","","","","","","","","","","","","","","","Log Rec","Receiving","","","Receiving","","","","","",""
+"75","FD - I/P/M/NH Demo","FD","","68-NL","Log Rec","","","","","","","","","","","","","","CHARLENE
+JENNIFERA
+LESLIE
+MOLLYB
+SHANNONS","x","Log Rec","Receiving","CHARLENE
+JENNIFERA
+LESLIE
+MOLLYB
+SHANNONS","x","Receiving","","","","","",""
+"76","FD - I/P/P","FD","","68-NS","Log Rec","","","","","","","","","","","","","","","","Log Rec","Receiving","","","Receiving","","","","","",""
+"77","FD - I/P/P","FD","","68-OG","Log Rec","","","","","","","","","","","","","","","","Log Rec","Receiving","","","Receiving","","","","","",""
+"78","FD - I/P/P","FD","","68-OJ","Log Rec","","","","","","","","","","","","","","","","Log Rec","Receiving","","","Receiving","","","","","",""
+"79","FD - I/P/P","FD","","68-OR","Log Rec","","","","","","","","","","","","","","","","Log Rec","Receiving","","","Receiving","","","","","",""
+"80","FD - I/P/P","FD","","68-OT","Log Rec","","","","","","","","","","","","","","","","Log Rec","Receiving","","","Receiving","","","","","",""
+"81","FD - I/P/P","FD","","68-PC","Log Rec","","","","","","","","","","","","","","","","Log Rec","Receiving","","","Receiving","","","","","",""
+"82","FD - I/P/M/NH Demo","FD","","68-PM","Log Rec","","","","","","","","","","","","","","CHARLENE
+JENNIFERA
+LESLIE
+MOLLYB
+SHANNONS","x","Log Rec","Receiving","CHARLENE
+JENNIFERA
+LESLIE
+MOLLYB
+SHANNONS","x","Receiving","","","","","",""
+"83","FD - I/P/M/NH Demo","FD","","68-PU","Log Rec","","","","","","","","","","","","","","CHARLENE
+JENNIFERA
+LESLIE
+MOLLYB
+SHANNONS","x","Log Rec","Receiving","CHARLENE
+JENNIFERA
+LESLIE
+MOLLYB
+SHANNONS","x","Receiving","","","","","",""
+"84","FD - I/P/P","FD","","68-RA","Log Rec","","","","","","","","","","","","","","","","Log Rec","Receiving","","","Receiving","","","","","",""
+"85","FD - I/P/P","FD","","68-RO","Log Rec","","","","","","","","","","","","","","","","Log Rec","Receiving","","","Receiving","","","","","",""
+"86","FD - I/P/M/QA","FD","","68-W1","Log Rec","","","","","EMILYS
+KRISTENM
+VICKIEK","x","","","","","","","","CHARLENE
+LESLIE
+SHANNONS","x","Log Rec","Receiving","CHARLENE
+LESLIE
+SHANNONS","x","Receiving","","","","","",""
+"87","FD - I/P/M","FD","","68-W2","Log Rec","","","","","","","","","","","","","","CHARLENE
+LESLIE
+SHANNONS","x","Log Rec","Receiving","CHARLENE
+LESLIE
+SHANNONS","x","Receiving","","","","","",""
+"88","FD - I/P/M","FD","","68-W3","Log Rec","","","","","","","","","","","","","","CHARLENE
+LESLIE
+SHANNONS","x","Log Rec","Receiving","CHARLENE
+LESLIE
+SHANNONS","x","Receiving","","","","","",""
+"89","FD - I/MP/M/QA","FD","","82-01","Log Rec","","","","","EMILYS
+KRISTENM
+VICKIEK","x","","","","","","DEANAC
+EMILYS
+KRISTENM","x","","","Log Rec","Receiving","MOLLYB
+CHERRIE","x","Receiving","","","","","",""
+"90","FD - I/M/M","FD","","82-04","Log Rec","","","","","","","","","","","","DEANAC
+EMILYS
+KRISTENM","x","","","Log Rec","Receiving","MOLLYB
+CHERRIE","x","Receiving","","","","","",""
+"91","FD - I/M/M","FD","","82-15","Log Rec","","","","","","","","","","","","DEANAC
+EMILYS
+KRISTENM","x","","","Log Rec","Receiving","KRISTENM
+MOLLYB
+CHERRIE","x","Receiving","","","","","",""
+"92","FD - I/P/M","FD","","83","Log Rec","","","","","","","","","","","","","","DEANAC
+EMILYS
+KRISTENM
+MOLLYB
+CHERRIE","x","Log Rec","Receiving","DEANAC
+EMILYS
+KRISTENM","x","Receiving","","","","","",""
+"93","FD - I/P/M/Appr Enc","FD","","84","Log Rec","HOLLYS
+MCCADE","x","","","","","","","","","","","","CYNTHIAM
+CHARLENE
+DEANAC
+EMILYS
+JENNIFERA
+KRISTENM
+LESLIE
+MOLLYB
+SHANNONS
+VICKIEK","x","Log Rec","Receiving","CHARLENE
+JENNIFERA
+KRISTENM
+LESLIE
+MOLLYB
+SHANNONS","x","Receiving","","","","","",""

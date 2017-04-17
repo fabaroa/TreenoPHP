@@ -1,0 +1,76 @@
+<html>
+<head>
+<link REL="stylesheet" TYPE="text/css" HREF="style.css">
+<style>
+BODY, B, STRONG, P, TD, UL, LI {
+font-family: Tahoma, Verdana, Arial, Sans-serif;
+font-size: 12px;
+}
+BODY {
+font-family: Tahoma, Verdana, sans-serif;
+}
+.sideMenu {
+color: #ffffff;
+font-weight: bold;
+}
+.borderRight {
+border-right: solid red;
+border-right: thin solid #000000;
+}
+</style>
+<script>
+var url=unescape(window.location);	//convert url into decoded string
+var temp=url.split("=");		//retrieve the value of "id"
+if (temp.length>1) {
+	var temp2=temp[1].split("&");
+	var cab_id=temp2[0];
+}
+
+function submission_check (sub_type) {
+
+//dont send an argument if the user is searching all fields
+//if(sub_type=="all")
+  // document.onload=parent.main.window.location='searchResults.html';
+
+var form_name="form_"+sub_type;
+var form_index;
+
+for(var i=0;i<document.forms.length;i++)
+{
+   if(document.forms[i].name==form_name)
+     form_index=i;
+}
+
+var q=document.forms[form_index].search_text.value;
+
+
+document.onload=parent.main.window.location='searchResults.html?form_index='+form_index+'&query='+q+'&cab_id='+cab_id;
+}
+</script>
+</head>
+<body bgcolor="#003b6f" class="borderRight">
+<p class="sideMenu">Cabinet Search</p>
+<table bgcolor="#003b6f" align="center" width="120">
+<div id="fields"></div>
+<script>
+  if (cab_id&&cab_id!="")
+  {
+  
+  var xml = new ActiveXObject("Msxml2.DOMDocument");
+  xml.async = false;
+  xml.load('../cabinet.xml');
+
+  var xsl = new ActiveXObject("Msxml2.DOMDocument");
+  xsl.async = false;
+  xsl.load('displaySearchFields.xslt');
+  var xParam = xsl.selectSingleNode("/*/xsl:param[@name = \'selected_id\']/@select");
+  xParam.value = cab_id;
+
+  document.getElementById("fields").innerHTML = xml.transformNode(xsl);
+  }
+  else {
+     document.write("<p class='sideMenu'>Please Select A Cabinet to Search</p>");
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,220 @@
+<?xml version="1.0"?>
+<help>
+ <info>
+  <k>odbcConnector</k>
+  <language>english</language>
+  <section>ODBC Mapping</section>
+  <title>ODBC Connector</title>
+  <description>The ODBC Connector allow you to integrate and map information to the cabinets in the Docutron System.</description>
+ </info>
+ <info>
+  <k>odbcCabinet</k>
+  <language>english</language>
+  <section>ODBC Mapping</section>
+  <title>ODBC Cabinet</title>
+  <description>The Docutron Cabinet that you want to map ODBC fields to.</description>
+ </info>
+ <info>
+  <k>odbcAddMapping</k>
+  <language>english</language>
+  <section>ODBC Mapping</section>
+  <title>ODBC Add Mapping</title>
+  <description>Add mapping row allows you to add as many rows to the mapping as you want.  You do not have to map each field from docutron to a corresponding field in an ODBC compliant database.</description>
+ </info>
+ <info>
+  <k>odbcRemoveMapping</k>
+  <language>english</language>
+  <section>ODBC Mapping</section>
+  <title>ODBC Remove Mapping</title>
+  <description>This will remove the mapping that has been established for a given cabinet.</description>
+ </info>
+ <info>
+  <k>odbcTable</k>
+  <language>english</language>
+  <section>ODBC Mapping</section>
+  <title>ODBC Table</title>
+  <description>ODBC table mapping allows you to pull information from another database to populate the fields in the Docutron Repository.</description>
+ </info>
+ <info>
+  <k>odbcTableFieldName</k>
+  <language>english</language>
+  <section>ODBC Mapping</section>
+  <title>ODBC Table Fieldname</title>
+  <description>The field name in the ODBC table</description>
+ </info>
+ <info>
+  <k>odbcFK</k>
+  <language>english</language>
+  <section>ODBC Mapping</section>
+  <title>ODBC Foreign Key</title>
+  <description>The Key used in another table to retrieve information</description>
+ </info>
+ <info>
+  <k>odbcPK</k>
+  <language>english</language>
+  <section>ODBC Mapping</section>
+  <title>ODBC Primary Search Value</title>
+  <description>The value first passed to the ODBC select statement(s). This value is typically unique.</description>
+ </info>
+ <info>
+  <k>odbcQuoted</k>
+  <language>english</language>
+  <section>ODBC Mapping</section>
+  <title>ODBC Quoted</title>
+  <description>This field denotes type.  If the value is a string you will want it to be quoted. If the value is numeric you do not typically want quotes.</description>
+ </info>
+ <info>
+  <k>odbcTrans</k>
+  <language>english</language>
+  <section>ODBC Mapping</section>
+  <title>ODBC Translation</title>
+  <description>If you need to translate this value to another field from earlier use type that value in here or select if from the drop down.</description>
+ </info>
+ <info>
+  <k>odbcDocutronFieldName</k>
+  <language>english</language>
+  <section>ODBC Mapping</section>
+  <title>ODBC Docutron Fieldname</title>
+  <description>The Docutron field name is the field you want the ODBC data to populate.</description>
+ </info>
+ <info>
+  <k>odbcEnableMapping</k>
+  <language>english</language>
+  <section>ODBC Mapping</section>
+  <title>ODBC Enable Mapping</title>
+  <description>This will turn on ODBC mapping to a cabinet.</description>
+ </info>
+ <info>
+  <k>odbcDisableMapping</k>
+  <language>english</language>
+  <section>ODBC Mapping</section>
+  <title>ODBC Disable Mapping</title>
+  <description>This will turn off ODBC mapping to a cabinet.</description>
+ </info>
+ <info>
+  <k>odbcTestMapping</k>
+  <language>english</language>
+  <section>ODBC Mapping</section>
+  <title>ODBC Test Mapping</title>
+  <description>Test Mapping will allow you to enter an identifier for your ODBC mappings and see if the data is returned correctly.</description>
+ </info>
+ <info>
+  <k>odbcIntegrationFunction</k>
+  <language>english</language>
+  <section>ODBC Integration</section>
+  <title>ODBC Integration Function</title>
+  <description>Functionality for integrating to other databases</description>
+ </info>
+ <info>
+  <k>odbcConnectorName</k>
+  <language>english</language>
+  <section>ODBC Integration</section>
+  <title>ODBC Connector Name</title>
+  <description>This field allows you to name the connector for your own reference.</description>
+ </info>
+ <info>
+  <k>odbcDatabaseHost</k>
+  <language>english</language>
+  <section>ODBC Integration</section>
+  <title>ODBC Database Host</title>
+  <description>IP address of the database you want to connect to.</description>
+ </info>
+ <info>
+  <k>odbcDatabaseDSN</k>
+  <language>english</language>
+  <section>ODBC Integration</section>
+  <title>ODBC Database DSN</title>
+  <description>This is the connector string that will allow ODBC access.</description>
+ </info>
+ <info>
+  <k>odbcDSNUsername</k>
+  <language>english</language>
+  <section>ODBC Integration</section>
+  <title>ODBC DSN Username</title>
+  <description>ODBC username if applicable.</description>
+ </info>
+ <info>
+  <k>odbcDSNPassword</k>
+  <language>english</language>
+  <section>ODBC Integration</section>
+  <title>ODBC DSN Password</title>
+  <description>ODBC password if applicable.</description>
+ </info>
+ <info>
+  <k>odbcConnectorType</k>
+  <language>english</language>
+  <section>ODBC Integration</section>
+  <title>ODBC Connector Type</title>
+  <description>The Connector Type is the type of DB connection you want to make such as ODBTP, MySQL, DB2...etc</description>
+ </info>
+ <info>
+  <k>documentAdd</k>
+  <language>english</language>
+  <section>Document Wizard</section>
+  <title>Document Add</title>
+  <description>Add a document type allows folders to be more organized and the ability to search more in dept locating a specific document.  Documents contain limitless indices that are have search capability</description>
+ </info>
+ <info>
+  <k>documentEdit</k>
+  <language>english</language>
+  <section>Document Wizard</section>
+  <title>Document Edit</title>
+  <description>Editing a document will allow a document type name to be renamed and document type indices to be renamed, reordered, deleted</description>
+ </info>
+ <info>
+  <k>documentDisable</k>
+  <language>english</language>
+  <section>Document Wizard</section>
+  <title>Document Disable</title>
+  <description>Disabling a document stops further creation of that document.  Enabling a document resumes creation for that document</description>
+ </info>
+ <info>
+  <k>documentDelete</k>
+  <language>english</language>
+  <section>Document Wizard</section>
+  <title>Document Delete</title>
+  <description>Deleting a document removes the document type and stops further creation.  Existing documents of that document type will return to default documents.  All document search data will be lost for existing documents</description>
+ </info>
+ <info>
+  <k>documentName</k>
+  <language>english</language>
+  <section>Document Wizard</section>
+  <title>Document Name</title>
+  <description>Document name will allow you to summarize the document type</description>
+ </info>
+ <info>
+  <k>documentIndexName</k>
+  <language>english</language>
+  <section>Document Wizard</section>
+  <title>Document Index Name</title>
+  <description>Document index name are used for searching capability when searching on document types</description>
+ </info>
+ <info>
+  <k>documentEnableDoc</k>
+  <language>english</language>
+  <section>Document Wizard</section>
+  <title>Confirm Document Enable</title>
+  <description>Confirming document enable reassures that the document type is enabled</description>
+ </info>
+ <info>
+  <k>documentDisableDoc</k>
+  <language>english</language>
+  <section>Document Wizard</section>
+  <title>Confirm Document Disable</title>
+  <description>Confirming document disable reassures that the document type is disabled</description>
+ </info>
+ <info>
+  <k>documentDeleteYes</k>
+  <language>english</language>
+  <section>Document Wizard</section>
+  <title>Confirm Document Deletion</title>
+  <description>Confirming document deletion reassures that the document type is deleted</description>
+ </info>
+ <info>
+  <k>documentDeleteNo</k>
+  <language>english</language>
+  <section>Document Wizard</section>
+  <title>Confirm Document Deletion</title>
+  <description>Confirming no document deletion reassures that the document type is not deleted</description>
+ </info>
+</help>

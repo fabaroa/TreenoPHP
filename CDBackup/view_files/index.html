@@ -1,0 +1,41 @@
+<html>
+<head>
+<title>Remote CD Cabinet Backup</title>
+<script>
+
+function getCookie(name) {
+  var dc = document.cookie;
+  var prefix = name + "=";
+  var begin = dc.indexOf("; " + prefix);
+  if (begin == -1) {
+    begin = dc.indexOf(prefix);
+    if (begin != 0) return null;
+  } else
+    begin += 2;
+  var end = document.cookie.indexOf(";", begin);
+  if (end == -1)
+    end = dc.length;
+  return unescape(dc.substring(begin + prefix.length, end));
+}
+
+var search_cookie=getCookie("search");
+if(search_cookie) {
+
+   document.write("<frameset id='all' cols='200,*,0' frameborder='no' border='0' framespacing='0'>\n");
+   document.write("<frame src='search.html' name='left' scrolling='no' noresize/>\n");
+
+   document.write("<frame src='searchResults.html?"+search_cookie+"' name='main' noresize/>\n");
+   document.write("<frame src='sidebar_white.html' name='right' noresize/>\n");
+   document.write("</frameset>");
+}
+else {
+   document.write("<frameset id='all' cols='200,*,0' frameborder='no' border='0' framespacing='0'>\n");
+   document.write("<frame src='search.html' name='left' scrolling='no' noresize/>\n");
+   document.write("<frame src='home.html' name='main' noresize/>\n");
+   document.write("<frame src='sidebar_white.html' name='right' noresize/>\n");
+   document.write("</frameset>");
+}
+</script>
+</head>
+</html>
+	

@@ -1,0 +1,391 @@
+doc_id,New_Workflow_Title,Pack_Type,Carrier_or_Type,PRs_and_LOCs,Contact_PR,Approve_EHR_Enc,Assign_To_Completer,HB,Assign_To_Completer_2,QA,Assign_To_Completer_3,Demographics,Assign_To_Completer_4,DL_Charges,Code,Assign_To_Completer_5,Key_Charges,Assign_To_Completer_6,First_Review,Assign_To_Completer_7,Contact_PR_2,Pndg_PR_K1,Process,Assign_To_Completer_8,Pndg_PR_P,Pndg_EOM,Post_Process_Rvw,HB_2,Second_Pass,Assign_To_Completer_9,Manager_Rvw
+,,,,,13,6,,,,7,,8,,9,10,,11,,12,,13,14,15,,16,17,18,,19,,20
+,ANES - I/M/M,ANES,,24,Log Rec,,,,,,,"BLAIRP
+CYNTHIAM
+JENNIFERA",,,"CHARLENE
+JERRILYN
+KIM",,"CHARLENE
+JENNIFERA
+JERRILYN",,,,Log Rec,Receiving,"CHARLENE
+JERRILYN
+KIM",,Receiving,,,,,,
+,ANES - C/M/M,ANES,,42,Log Rec,,,,,,,"BLAIRP
+CYNTHIAM
+JENNIFERA",,,"CHARLENE
+JERRILYN
+KIM",,"CHARLENE
+JENNIFERA
+JERRILYN",,,,Log Rec,Receiving,"CHARLENE
+JERRILYN
+KIM",,Receiving,,,,,,
+,ANES - I/M/M,ANES,,68-AG,Log Rec,,,,,,,"BLAIRP
+CYNTHIAM
+JENNIFERA",,,"CHARLENE
+JERRILYN
+KIM",,"CHARLENE
+CYNTHIAM
+JENNIFERA
+JERRILYN",,,,Log Rec,Receiving,"CYNTHIAM
+JENNIFERA
+JERRILYN
+KIM",,Receiving,,,,,,
+,ANES - I/M/M,ANES,,68-AN,Log Rec,,,HB,,,,"BLAIRP
+CYNTHIAM
+JENNIFERA",,,"CHARLENE
+JERRILYN
+KIM",,"CHARLENE
+CYNTHIAM
+JENNIFERA
+JERRILYN",,,,Log Rec,Receiving,"CHARLENE
+JENNIFERA
+JERRILYN
+KIM",,Receiving,,,,,,
+,EKG - DL/Bi-Weekly,EKG,,44,Log Rec,,,,,,,"BLAIRP
+CYNTHIAM
+VICKIEK",,FRT OFC,,,,,JENNIFERA,,Log Rec,Receiving,JENNIFERA,,Receiving,,,,,,
+,EKG - DL/Weekly,EKG,,68,Log Rec,,,,,,,,,FRT OFC,,,,,"CYNTHIAM
+JENNIFERA
+KIM",,Log Rec,Receiving,"JENNIFERA
+KIM",,Receiving,,,,,,
+,HOSP - I/P/M,HOSP,,03,Log Rec,,,,,,,,,,,,,,"LESLIE
+SHANNONS",,Log Rec,Receiving,"LESLIE
+SHANNONS",,Receiving,,,,,,
+,HOSP - I/P/M,HOSP,,04-ESURG,Log Rec,,,,,,,,,,,,,,"LESLIE
+SHANNONS",,Log Rec,Receiving,"LESLIE
+SHANNONS",,Receiving,,,,,,
+,HOSP - I/P/M,HOSP,,04-OSURG,Log Rec,,,,,,,,,,,,,,"CHARLENE
+LESLIE
+SHANNONS",,Log Rec,Receiving,"CHARLENE
+LESLIE
+SHANNONS",,Receiving,,,,,,
+,HOSP - I/P/M,HOSP,,05,Log Rec,,,,,,,,,,,,,,"LESLIE
+SHANNONS",,Log Rec,Receiving,"LESLIE
+SHANNONS",,Receiving,,,,,,
+,HOSP - I/P/P,HOSP,,10,Log Rec,,,,,,,,,,,,,,,,Log Rec,Receiving,,,Receiving,,,,,,
+,HOSP - I/P/P,HOSP,,18,Log Rec,,,,,,,,,,,,,,,,Log Rec,Receiving,,,Receiving,,,,,,
+,HOSP - I/P/P,HOSP,,38,Log Rec,,,,,,,,,,,,,,,,Log Rec,Receiving,,,Receiving,,,,,,
+,HOSP - C/M/M,HOSP,,40,Log Rec,,,,,,,,,,,,"KRISTENM
+MOLLYB",,,,Log Rec,Receiving,"CHARLENE
+LESLIE
+SHANNONS",,Receiving,,,,,,
+,HOSP - I/M/M,HOSP,,52,Log Rec,,,,,,,,,,,,"KRISTENM
+MOLLYB",,,,Log Rec,Receiving,"LESLIE
+SHANNONS",,Receiving,,,,,,
+,HOSP - I/P/M,HOSP,,56,Log Rec,,,,,,,,,,,,,,"KRISTENM
+LESLIE
+MOLLYB
+SHANNONS",,Log Rec,Receiving,"LESLIE
+MOLLYB
+SHANNONS",,Receiving,,,,,,
+,HOSP - I/P/P,HOSP,,64,Log Rec,,,,,,,,,,,,,,,,Log Rec,Receiving,,,Receiving,,,,,,
+,HOSP - I/P/P,HOSP,,68-CV,Log Rec,,,,,,,,,,,,,,,,Log Rec,Receiving,,,Receiving,,,,,,
+,HOSP - I/P/P,HOSP,,68-EN,Log Rec,,,,,,,,,,,,,,,,Log Rec,Receiving,,,Receiving,,,,,,
+,HOSP - I/P/P,HOSP,,68-F1,Log Rec,,,,,,,,,,,,,,,,Log Rec,Receiving,,,Receiving,,,,,,
+,HOSP - I/P/P,HOSP,,68-F2,Log Rec,,,,,,,,,,,,,,,,Log Rec,Receiving,,,Receiving,,,,,,
+,HOSP - I/M/M,HOSP,,68-GP,Log Rec,,,,,,,,,,,,"CYNTHIAM
+JENNIFERA",,,,Log Rec,Receiving,"JENNIFERA
+KIM",,Receiving,,,,,,
+,HOSP - I/P/P,HOSP,,68-IM,Log Rec,,,,,,,,,,,,,,,,Log Rec,Receiving,,,Receiving,,,,,,
+,HOSP - DL/P/M/25th,HOSP,,68-MF,Log Rec,,,,,,,,,,,,,,"CHARLENE
+JENNIFERA
+JERRILYN
+KIM",,Log Rec,Receiving,JERRILYN,,Receiving,,,,,,
+,HOSP - I/P/M,HOSP,,68-NL,Log Rec,,,,,,,,,,,,,,"LESLIE
+SHANNONS",,Log Rec,Receiving,"LESLIE
+SHANNONS",,Receiving,,,,,,
+,HOSP - I/P/P,HOSP,,68-NS,Log Rec,,,,,,,,,,,,,,,,Log Rec,Receiving,,,Receiving,,,,,,
+,HOSP - I/P/P,HOSP,,68-OG,Log Rec,,,,,,,,,,,,,,,,Log Rec,Receiving,,,Receiving,,,,,,
+,HOSP - I/P/P,HOSP,,68-OJ,Log Rec,,,,,,,,,,,,,,,,Log Rec,Receiving,,,Receiving,,,,,,
+,HOSP - I/P/P,HOSP,,68-OR,Log Rec,,,,,,,,,,,,,,,,Log Rec,Receiving,,,Receiving,,,,,,
+,HOSP - I/P/P,HOSP,,68-OT,Log Rec,,,,,,,,,,,,,,,,Log Rec,Receiving,,,Receiving,,,,,,
+,HOSP - DL/P/M,HOSP,,68-PC,Log Rec,,,,,,,,,,,,,,CYNTHIAM,,Log Rec,Receiving,"JENNIFERA
+KIM",,Receiving,,,,,,
+,HOSP - I/P/M,HOSP,,68-PM,Log Rec,,,,,,,,,,,,,,"CHARLENE
+LESLIE
+SHANNONS",,Log Rec,Receiving,"CHARLENE
+LESLIE
+SHANNONS",,Receiving,,,,,,
+,HOSP - I/P/M,HOSP,,68-PU,Log Rec,,,,,,,,,,,,,,"LESLIE
+SHANNONS",,Log Rec,Receiving,"LESLIE
+SHANNONS",,Receiving,,,,,,
+,HOSP - I/P/P,HOSP,,68-RA,Log Rec,,,,,,,,,,,,,,,,Log Rec,Receiving,,,Receiving,,,,,,
+,HOSP - I/P/M,HOSP,,68-RO,Log Rec,,,,,,,,,,,,,,"EMILYS
+LESLIE
+MOLLYB
+SHANNONS
+CHERRIE",,Log Rec,Receiving,"EMILYS
+LESLIE
+MOLLYB
+SHANNONS
+CHERRIE",,Receiving,,,,,,
+,HOSP - I/P/M,HOSP,,68-W1,Log Rec,,,,,,,,,,,,,,"LESLIE
+SHANNONS",,Log Rec,Receiving,"LESLIE
+SHANNONS",,Receiving,,,,,,
+,HOSP - I/M/M,HOSP,,71,Log Rec,,,,,,,,,,,,"EMILYS
+KRISTENM",,,,Log Rec,Receiving,"CHARLENE
+JERRILYN
+MOLLYB
+SHANNONS",,Receiving,,,,,,
+,HOSP - I/P/P,HOSP,,82,Log Rec,,,,,,,,,,,,,,,,Log Rec,Receiving,,,Receiving,,,,,,
+,HOSP - I/P/M,HOSP,,83,Log Rec,,,,,,,,,,,,,,"LESLIE
+MOLLYB
+SHANNONS
+CHERRIE",,Log Rec,Receiving,"MOLLYB
+CHERRIE",,Receiving,,,,,,
+,HOSP - I/M/M,HH,,84,Log Rec,,,,,,,,,,,,"KRISTENM
+MOLLYB",,,,Log Rec,Receiving,"CHARLENE
+LESLIE
+SHANNONS",,Receiving,,,,,,
+,RAD - DL/P/M,RAD,DL,68,Log Rec,,,,,,,"BLAIRP
+CYNTHIAM
+VICKIEK",,FRT OFC,,,,,"CHARLENE
+JENNIFERA
+JERRILYN",,Log Rec,Receiving,"CHARLENE
+JENNIFERA
+JERRILYN",,Receiving,,,HB,"CHARLENE
+KIM",,KIM
+,RAD - Spec,RAD,SPEC,68,Log Rec,,,,,,,,,FRT OFC,,,,,"CHARLENE
+JERRILYN",,Log Rec,Receiving,"CHARLENE
+JERRILYN",,Receiving,,,,,,
+,FD - I/P/M,FD,,03,Log Rec,,,,,,,,,,,,,,"CHARLENE
+LESLIE
+SHANNONS",,Log Rec,Receiving,"CHARLENE
+LESLIE
+SHANNONS",,Receiving,,,,,,
+,FD - I/P/M,FD,,04-AE,Log Rec,,,,,,,,,,,,,,"CYNTHIAM
+EMILYS
+KRISTENM
+VICKIEK",,Log Rec,Receiving,"EMILYS
+KRISTENM
+VICKIEK",,Receiving,,,,,,
+,FD - I/P/M,FD,,04-AJ,Log Rec,,,,,,,,,,,,,,"CYNTHIAM
+EMILYS
+KRISTENM
+VICKIEK",,Log Rec,Receiving,"EMILYS
+KRISTENM
+VICKIEK",,Receiving,,,,,,
+,FD - I/P/M,FD,,04-AS,Log Rec,,,,,,,,,,,,,,"CYNTHIAM
+EMILYS
+KRISTENM
+VICKIEK",,Log Rec,Receiving,"EMILYS
+KRISTENM
+VICKIEK",,Receiving,,,,,,
+,FD - I/P/M,FD,,04-EU-ENT,Log Rec,,,,,,,,,,,,,,"CHARLENE
+LESLIE
+SHANNONS",,Log Rec,Receiving,"CHARLENE
+LESLIE
+SHANNONS",,Receiving,,,,,,
+,FD - I/P/M,FD,,04-EU-PED,Log Rec,,,,,,,,,,,,,,"CHARLENE
+KRISTENM
+LESLIE
+SHANNONS",,Log Rec,Receiving,"CHARLENE
+LESLIE
+SHANNONS",,Receiving,,,,,,
+,FD - I/P/M,FD,,04-JE-ENT,Log Rec,,,,,,,,,,,,,,"CHARLENE
+LESLIE
+SHANNONS",,Log Rec,Receiving,"CHARLENE
+LESLIE
+SHANNONS",,Receiving,,,,,,
+,FD - I/P/M,FD,,04-LA-ENT,Log Rec,,,,,,,,,,,,,,"CHARLENE
+LESLIE
+SHANNONS",,Log Rec,Receiving,"CHARLENE
+LESLIE
+SHANNONS",,Receiving,,,,,,
+,FD - I/P/M,FD,,04-OE-GYN,Log Rec,,,,,,,,,,,,,,"CHARLENE
+LESLIE
+SHANNONS",,Log Rec,Receiving,"CHARLENE
+LESLIE
+SHANNONS",,Receiving,,,,,,
+,FD - I/P/P,FD,,05-01,Log Rec,,,,,,,,,,,,,,,,Log Rec,Receiving,,,Receiving,,,,,,
+,FD - I/P/P,FD,,05-02,Log Rec,,,,,,,,,,,,,,,,Log Rec,Receiving,,,Receiving,,,,,,
+,FD - I/P/M,FD,,05-03,Log Rec,,,,,,,,,,,,,,"CHARLENE
+LESLIE
+SHANNONS",,Log Rec,Receiving,"CHARLENE
+LESLIE
+SHANNONS",,Receiving,,,,,,
+,FD - I/P/P,FD,,10,Log Rec,,,,,,,,,,,,,,,,Log Rec,Receiving,,,Receiving,,,,,,
+,FD - I/P/P,FD,,18,Log Rec,,,,,,,,,,,,,,,,Log Rec,Receiving,,,Receiving,,,,,,
+,FD - I/P/P,FD,,38,Log Rec,,,,,,,,,,,,,,,,Log Rec,Receiving,,,Receiving,,,,,,
+,FD - C/M/M,FD,,40,Log Rec,,,,,,,"BLAIRP
+CYNTHIAM",,,,,"DEANAC
+EMILYS
+KRISTENM
+VICKIEK",,,,Log Rec,Receiving,"CHARLENE
+JENNIFERA
+JERRILYN
+LESLIE
+MOLLYB
+SHANNONS",,Receiving,,,,,,
+,FD - I/P/M,FD,,52,Log Rec,,,,,,,,,,,,,,"CHARLENE
+DEANAC
+EMILYS
+JENNIFERA
+KRISTENM
+LESLIE
+MOLLYB
+SHANNONS
+VICKIEK",,Log Rec,Receiving,"CHARLENE
+LESLIE
+MOLLYB
+SHANNONS",,Receiving,,,,,,
+,FD - I/P/M,FD,,56,Log Rec,,,,,,,,,,,,,,"CHARLENE
+JERRILYN
+LESLIE
+MOLLYB
+SHANNONS",,Log Rec,Receiving,"CHARLENE
+JERRILYN
+LESLIE
+MOLLYB
+SHANNONS",,Receiving,,,,,,
+,FD - I/P/M,FD,,60-ABA,Log Rec,,,,,,,,,,,,,,"DEANAC
+EMILYS
+KRISTENM
+LESLIE
+MOLLYB
+SHANNONS
+VICKIEK
+CHERRIE",,Log Rec,Receiving,CHERRIE,,Receiving,,,,,,
+,FD - I/P/M,FD,,60-AUD,Log Rec,,,,,,,,,,,,,,"DEANAC
+EMILYS
+KRISTENM
+LESLIE
+MOLLYB
+SHANNONS
+VICKIEK
+CHERRIE",,Log Rec,Receiving,CHERRIE,,Receiving,,,,,,
+,FD - I/P/M,FD,,60-ES,Log Rec,,,,,,,,,,,,,,"DEANAC
+EMILYS
+KRISTENM
+LESLIE
+MOLLYB
+SHANNONS
+VICKIEK
+CHERRIE",,Log Rec,Receiving,"KRISTENM
+MOLLYB
+VICKIEK
+CHERRIE",,Receiving,,,,,,
+,FD - I/P/M,FD,,60-LAN,Log Rec,,,,,,,,,,,,,,"DEANAC
+EMILYS
+KRISTENM
+LESLIE
+MOLLYB
+SHANNONS
+VICKIEK
+CHERRIE",,Log Rec,Receiving,"MOLLYB
+CHERRIE",,Receiving,,,,,,
+,FD - I/P/M,FD,,60-OCC,Log Rec,,,,,,,,,,,,,,"DEANAC
+EMILYS
+KRISTENM
+LESLIE
+MOLLYB
+SHANNONS
+VICKIEK
+CHERRIE",,Log Rec,Receiving,"MOLLYB
+CHERRIE",,Receiving,,,,,,
+,FD - I/P/M,FD,,60-PSY,Log Rec,,,,,,,,,,,,,,"DEANAC
+EMILYS
+KRISTENM
+LESLIE
+MOLLYB
+SHANNONS
+VICKIEK
+CHERRIE",,Log Rec,Receiving,"MOLLYB
+CHERRIE",,Receiving,,,,,,
+,FD - I/P/M,FD,,61,Log Rec,,,,,,,,,,,,,,"KRISTENM
+VICKIEK",,Log Rec,Receiving,CHERRIE,,Receiving,,,,,,
+,FD - I/P/P,FD,,64,Log Rec,,,,,,,,,,,,,,,,Log Rec,Receiving,,,Receiving,,,,,,
+,FD - I/P/P,FD,,68-CV,Log Rec,,,,,,,,,,,,,,,,Log Rec,Receiving,,,Receiving,,,,,,
+,FD - I/P/P,FD,,68-EN,Log Rec,,,,,,,,,,,,,,,,Log Rec,Receiving,,,Receiving,,,,,,
+,FD - I/P/P,FD,,68-F1,Log Rec,,,,,,,,,,,,,,,,Log Rec,Receiving,,,Receiving,,,,,,
+,FD - I/P/P,FD,,68-F2,Log Rec,,,,,,,,,,,,,,,,Log Rec,Receiving,,,Receiving,,,,,,
+,FD - I/P/P,FD,,68-IM,Log Rec,,,,,,,,,,,,,,,,Log Rec,Receiving,,,Receiving,,,,,,
+,FD - I/P/M/NH Demo,FD,,68-NL,Log Rec,,,,,,,,,,,,,,"CHARLENE
+JENNIFERA
+LESLIE
+MOLLYB
+SHANNONS",,Log Rec,Receiving,"CHARLENE
+JENNIFERA
+LESLIE
+MOLLYB
+SHANNONS",,Receiving,,,,,,
+,FD - I/P/P,FD,,68-NS,Log Rec,,,,,,,,,,,,,,,,Log Rec,Receiving,,,Receiving,,,,,,
+,FD - I/P/P,FD,,68-OG,Log Rec,,,,,,,,,,,,,,,,Log Rec,Receiving,,,Receiving,,,,,,
+,FD - I/P/P,FD,,68-OJ,Log Rec,,,,,,,,,,,,,,,,Log Rec,Receiving,,,Receiving,,,,,,
+,FD - I/P/P,FD,,68-OR,Log Rec,,,,,,,,,,,,,,,,Log Rec,Receiving,,,Receiving,,,,,,
+,FD - I/P/P,FD,,68-OT,Log Rec,,,,,,,,,,,,,,,,Log Rec,Receiving,,,Receiving,,,,,,
+,FD - I/P/P,FD,,68-PC,Log Rec,,,,,,,,,,,,,,,,Log Rec,Receiving,,,Receiving,,,,,,
+,FD - I/P/M/NH Demo,FD,,68-PM,Log Rec,,,,,,,,,,,,,,"CHARLENE
+JENNIFERA
+LESLIE
+MOLLYB
+SHANNONS",,Log Rec,Receiving,"CHARLENE
+JENNIFERA
+LESLIE
+MOLLYB
+SHANNONS",,Receiving,,,,,,
+,FD - I/P/M/NH Demo,FD,,68-PU,Log Rec,,,,,,,,,,,,,,"CHARLENE
+JENNIFERA
+LESLIE
+MOLLYB
+SHANNONS",,Log Rec,Receiving,"CHARLENE
+JENNIFERA
+LESLIE
+MOLLYB
+SHANNONS",,Receiving,,,,,,
+,FD - I/P/P,FD,,68-RA,Log Rec,,,,,,,,,,,,,,,,Log Rec,Receiving,,,Receiving,,,,,,
+,FD - I/P/P,FD,,68-RO,Log Rec,,,,,,,,,,,,,,,,Log Rec,Receiving,,,Receiving,,,,,,
+,FD - I/P/M/QA,FD,,68-W1,Log Rec,,,,,"EMILYS
+KRISTENM
+VICKIEK",,,,,,,,,"CHARLENE
+LESLIE
+SHANNONS",,Log Rec,Receiving,"CHARLENE
+LESLIE
+SHANNONS",,Receiving,,,,,,
+,FD - I/P/M,FD,,68-W2,Log Rec,,,,,,,,,,,,,,"CHARLENE
+LESLIE
+SHANNONS",,Log Rec,Receiving,"CHARLENE
+LESLIE
+SHANNONS",,Receiving,,,,,,
+,FD - I/P/M,FD,,68-W3,Log Rec,,,,,,,,,,,,,,"CHARLENE
+LESLIE
+SHANNONS",,Log Rec,Receiving,"CHARLENE
+LESLIE
+SHANNONS",,Receiving,,,,,,
+,FD - I/MP/M/QA,FD,,82-01,Log Rec,,,,,"EMILYS
+KRISTENM
+VICKIEK",,,,,,,"DEANAC
+EMILYS
+KRISTENM",,,,Log Rec,Receiving,"MOLLYB
+CHERRIE",,Receiving,,,,,,
+,FD - I/M/M,FD,,82-04,Log Rec,,,,,,,,,,,,"DEANAC
+EMILYS
+KRISTENM",,,,Log Rec,Receiving,"MOLLYB
+CHERRIE",,Receiving,,,,,,
+,FD - I/M/M,FD,,82-15,Log Rec,,,,,,,,,,,,"DEANAC
+EMILYS
+KRISTENM",,,,Log Rec,Receiving,"KRISTENM
+MOLLYB
+CHERRIE",,Receiving,,,,,,
+,FD - I/P/M,FD,,83,Log Rec,,,,,,,,,,,,,,"DEANAC
+EMILYS
+KRISTENM
+MOLLYB
+CHERRIE",,Log Rec,Receiving,"DEANAC
+EMILYS
+KRISTENM",,Receiving,,,,,,
+,FD - I/P/M/Appr Enc,FD,,84,Log Rec,"HOLLYS
+MCCADE",,,,,,,,,,,,,"CYNTHIAM
+CHARLENE
+DEANAC
+EMILYS
+JENNIFERA
+KRISTENM
+LESLIE
+MOLLYB
+SHANNONS
+VICKIEK",,Log Rec,Receiving,"CHARLENE
+JENNIFERA
+KRISTENM
+LESLIE
+MOLLYB
+SHANNONS",,Receiving,,,,,,

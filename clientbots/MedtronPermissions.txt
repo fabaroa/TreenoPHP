@@ -1,0 +1,119 @@
+Group	Username	Pack Type	PR-LOC	Workflow Step	Report ID	Trainee Buddy		
+	AMANDAP	Batch Charges - Hosp/Other	04-ESURG	1st Review				
+	AMANDAP	Front Desk	03-P 41 52 60-LAN 60-OCC 60-PSY 68-GP 68-NL 68-PM 68-PU 84 88	1st Review				
+	CHARLENE	Batch Charges - Hosp/Other	04-ESURG	1st Review				
+	CHARLENE	Batch Charges - Hosp/Other	56 68-NL	1st Review				
+	JENH	Batch Charges - Hosp/Other	03 68-MF 68-RO	1st Review				
+	JENH	Front Desk	04-PEDS	1st Review				
+	VICKIS	Batch Charges - EKG	44	1st Review				
+	JENNIFERA	Front Desk	52	1st Review				
+	JERRILYN	Batch Charges - Hosp/Other	04-ESURG 56	1st Review				
+	JERRILYN	Front Desk	03-P 04-ENT 04-PEDS 41 52 84	1st Review				
+	KIM	Front Desk	68-PU	1st Review				
+	LEEL	Front Desk	04-ENT 04-PEDS 52 60-ABA 60-AUD 60-LAN 83 88	1st Review				
+	MELINDAA	Batch Charges - Hosp/Other	68-RO	1st Review				
+	MELINDAA	Front Desk	03-P 41 60-LAN 60-OCC 60-PSY 84 88	1st Review				
+	MOLLYB	Batch Charges - Hosp/Other	56 68-RO	1st Review				
+	MOLLYB	Front Desk	60-ABA 68-PM	1st Review				
+	SHANNONF	Batch Charges - Hosp/Other	68-RO	1st Review				
+	SHANNONF	Front Desk	04-PEDS 60-LAN 60-OCC 60-PSY 84	1st Review				
+	VICKIS	Front Desk	41 52 60-LAN 60-OCC 60-PSY 68-GP 68-NL 68-PM 68-PU 84 88	1st Review				
+	DEANAC	Front Desk	04-AI 04-AT 04E-NT 04-GYN 04-PEDS 41 52 68-NL 68-PM 68-PU 68-W1 84 88	1st Review				
+	AMANDAP	Batch Charges - EKG	44	1st Review				
+	JERRILYN	Batch Charges - Radiology	68	2nd Pass				
+	CHARLENE	Batch Charges - Radiology	68	2nd Pass				
+	KIM	Batch Charges - Radiology	68	2nd Pass				
+	HOLLYS	Front Desk	88	Approve EHR Enc				
+	MCCADE	Front Desk	88	Approve EHR Enc				
+	CHARLENE	Batch Charges - Anesthesia	24 42-HS 42-LD 68-AN	Code				
+	JERRILYN	Batch Charges - Anesthesia	24 42-HS 42-LD 68-AN	Code				
+	KIM	Batch Charges - Anesthesia	24 42-HS 42-LD 68-AN	Code				
+Log Reconciliation				Contact PR				
+	AMANDAP	Front Desk	40 41 68-NL 68-PM 68-PU 84 88	Demographics				
+	JENNIFERA	Batch Charges - Anesthesia	68-AG	Demographics				
+	JENNIFERA	Front Desk	88	Demographics				
+	JENNIFERA	Front Desk	88	Demographics				
+	MELINDAA	Batch Charges - Anesthesia	24 42-HS 42-LD 68-AN-HS 68-AN-LD 68-AG	Demographics				
+	MELINDAA	Batch Charges - Radiology	68-DL	Demographics				
+	SHANNONF	Batch Charges - Anesthesia	24 42-HS 42-LD 68-AN-HS 68-AN-LD 68-AG	Demographics				
+	AMANDAP	Batch Charges - Anesthesia	24	Demographics				
+	AMANDAP	Batch Charges - Anesthesia	42-HS 42-LD	Demographics				
+	VICKIS	Batch Charges - Anesthesia	24	Demographics				
+	VICKIS	Batch Charges - Anesthesia	42-HS 42-LD	Demographics				
+Front Office				DL Charges				
+Front Office				DL Demographics				
+Scan		Batch Charges - Anesthesia		Import 				
+Scan		Batch Charges - EKG		Import 				
+Scan		Batch Charges - Hosp/Other		Import 				
+Scan		Batch Charges - Radiology		Import 				
+Scan		Front Desk		Import 				
+	AMANDAP	Front Desk	40	Key Charges				
+	CHARLENE	Batch Charges - Anesthesia	68-AN-RSTR	Key Charges				
+	JENH	Batch Charges - Hosp/Other	52	Key Charges				
+	JENNIFERA	Batch Charges - Anesthesia	68-AN-PQRS	Key Charges				
+	JENNIFERA	Batch Charges - Anesthesia	24 42-HS 42-LD 68-AN-HS 68-AN-LD	Key Charges				
+	JENNIFERA	Front Desk	40	Key Charges				
+	JERRILYN	Batch Charges - Anesthesia	68-AN-RSTR	Key Charges				
+	LEEL	Batch Charges - Hosp/Other	40 68-RO	Key Charges				
+	MELINDAA	Batch Charges - Anesthesia	68-AN-PQRS	Key Charges				
+	MELINDAA	Batch Charges - Hosp/Other	40 71	Key Charges				
+	MELINDAA	Front Desk	40	Key Charges				
+	MOLLYB	Batch Charges - Hosp/Other	40 71	Key Charges				
+	SHANNONF	Batch Charges - Hosp/Other	40 68-GP	Key Charges				
+	SHANNONF	Front Desk	82-01	Key Charges				
+	VICKIS	Front Desk	40	Key Charges				
+	DEANAC	Front Desk	40	Key Charges				
+Receiving		Batch Charges - Anesthesia		Log				
+Receiving		Batch Charges - EKG		Log				
+Receiving		Batch Charges - Hosp/Other		Log				
+Receiving		Batch Charges - Radiology		Log				
+Receiving		Front Desk		Log				
+	KIM	Batch Charges - Radiology	68	Manager Rvw				
+EOM				Pndg EOM				
+Receiving				Pndg PR - K/1				
+Receiving				Pndg PR - P				
+	CHARLENE	Batch Charges - Anesthesia	24 42-HS 42-LD 68-AN-HS 68-AN-LD 68-AN-FF 68-AG	Process				
+	CHARLENE	Batch Charges - EKG	44	Process				
+	CHARLENE	Batch Charges - Hosp/Other	04-OSURG 40 68-PM 71 84	Process				
+	CHARLENE	Batch Charges - Radiology	68-DL 68-SPEC	Process				
+	CHARLENE	Front Desk	03-L 03-O 03-P 04-AI 04-AT 04-ENT 04-GYN 04-PEDS 05-03 40 41 52 56 68-NL 68-PM 68-PU 68-W1 68-W2 68-W3 84 88	Process				
+	CHERRIE	Front Desk	03-L 03-O 03-P 04-AI 04-AT 04-ENT 04-GYN 04-PEDS 05-03 40 41 52 56 68-NL 68-PM 68-PU 68-W1 68-W2 68-W3 82-01 84	Process				
+	HOLLYS	Front Desk	88	Process				
+	JENH	Batch Charges - Hosp/Other	04-ESURG 04-OSURG 40 56 68-NL 68-PC 68-PM 68-PU 68-W1 71 84	Process				
+	JENH	Front Desk	03-L 03-O 03-P 04-AI 04-AT 04-ENT 04-GYN 40 41 52 56 60-ABA 60-AUD 60-ES 60-LAN 60-OCC 60-PSY 68-NL 68-PM 68-PU 68-W1 68-W2 68-W3 84 88	Process				
+	JENNIFERA	Batch Charges - EKG	44 68	Process				
+	JENNIFERA	Batch Charges - Radiology	68-DL	Process				
+	JENNIFERA	Front Desk	03-P 40 41 68-NL 68-PM 68-PU 84	Process				
+	JERRILYN	Batch Charges - Anesthesia	24 42-HS 42-LD 68-AN-HS 68-AN-LD 68-AN-FF 68-AG	Process				
+	JERRILYN	Batch Charges - EKG	44	Process				
+	JERRILYN	Batch Charges - Hosp/Other	71	Process				
+	JERRILYN	Batch Charges - Radiology	68-DL 68-SPEC	Process				
+	JERRILYN	Front Desk	04-AI 04-AT 40 56	Process				
+	KIM	Batch Charges - Anesthesia	68-AN-RSTR	Process				
+	KIM	Batch Charges - Anesthesia	24 42-HS 42-LD 68-AN-HS 68-AN-LD 68-AN-FF 68-AG	Process				
+	KIM	Batch Charges - Hosp/Other	68-GP 68-NL 68-PM	Process				
+	KIM	Front Desk	68-NL	Process				
+	LEEL	Batch Charges - Hosp/Other	04-ESURG 56 71	Process				
+	LEEL	Front Desk	03-P 04-AI 04-AT 40 41 56 60-ES 60-OCC 60-PSY 82-01 84	Process				
+	LESLIE	Batch Charges - Hosp/Other	03 04-ESURG 04-OSURG 05 40 52 56 68-MF 68-NL 68-PC 68-PM 68-PU 68-RO 68-W1 71 84	Process				
+	LESLIE	Front Desk	03-L 03-O 03-P 04-AI 04-AT 04-ENT 04-GYN 04-PEDS 05-03 40 41 52 56 68-NL 68-PM 68-PU 68-W1 68-W2 68-W3 84 88	Process				
+	MCCADE	Front Desk	88	Process				
+	MELINDAA	Batch Charges - Hosp/Other	56	Process				
+	MELINDAA	Front Desk	04-AI 04-AT 52 56 68-NL 68-PM 68-PU	Process				
+	MOLLYB	Front Desk	03-P 40 41 52 56 60-ES 60-LAN 60-OCC 60-PSY 68-NL 68-PU 82-01 83 84 88	Process				
+	SHANNONB	Batch Charges - Hosp/Other	03 04-ESURG 04-OSURG 05 40 52 56 68-MF 68-NL 68-PC 68-PM 68-PU 68-RO 68-W1 71 84	Process				
+	SHANNONB	Front Desk	03-L 03-O 03-P 04-AI 04-AT 04-ENT 04-GYN 04-PEDS 05-03 40 41 52 56 68-NL 68-PM 68-PU 68-W1 68-W2 68-W3 84 88	Process				
+	SHANNONF	Batch Charges - Hosp/Other	56	Process				
+	SHANNONF	Front Desk	04-AI 04-AT 04-ENT 40 41 52 56 68-NL 68-PM 68-PU 88	Process				
+	AMANDAP	Front Desk	68-W1 82-01	QA				
+	MELINDAA	Front Desk	68-W1 82-01	QA				
+Front Office		Batch Charges - Anesthesia		Reconcile Import				
+Front Office		Batch Charges - EKG		Reconcile Import				
+Front Office		Batch Charges - Hosp/Other		Reconcile Import				
+Front Office		Front Desk		Reconcile Import				
+Scan		Batch Charges - Anesthesia		Scan				
+Scan		Batch Charges - EKG		Scan				
+Scan		Batch Charges - Hosp/Other		Scan				
+Scan		Batch Charges - Radiology		Scan				
+Scan		Batch Charges - Radiology		Scan				
+Scan		Front Desk		Scan				

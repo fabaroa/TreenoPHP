@@ -1,0 +1,886 @@
+<?php
+//$Id: leftAdmin.php 14643 2012-01-27 14:25:35Z acavedon $
+include_once '../check_login.php';
+include_once '../modules/modules.php';
+include_once '../settings/settings.php';
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+    "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<?php
+if($logged_in and $user->username) {
+	$printUserBarcodes	= "Print User Barcodes";
+	//Has not been entered in language table
+	$workflowReport1 = "Average Time to Process";
+	$workflowReport2 = "Total # of Workflows";
+	$workflowReport3 = "Individual Workflow";
+	$workflowReport4 = "Work In Progress";
+	$viewAutoComplete = "View Auto Complete Table";
+	$manageDB = "Manage Departments";
+	$defaultDB = "Default Department";
+	$editDep = "Edit Department Name";
+	$DBpermissions = "Change Department Permissions";
+	$addDepartment = "Add Department";
+	$editQuota = "Edit Department Quota";
+	$createQuota = "Set Quota Limit";
+	$addDepAdmin = "Add Department Administrator";
+	$sysInfo = "System Information";
+	$systemModules = "System Modules";
+	$fileInfo = "Cabinet Information";
+	$userInfo = "License Information";
+	$manageBarcodes = "Manage Barcodes";
+	$barcodeReport = "Barcode";
+	$versioningReport = "Versioning";
+	/* Work Flow Translations */
+	$editGroups = "Edit Group";
+	$createGroups = "Create New Group";
+	$groupFunctions = "Group Functions";
+	$workflow = "Workflow";
+	$editWorkflow = "Edit Workflow";
+	$createWorkflow = "Create New Workflow";
+	$editEmail = "Edit User Info";
+	$viewWFHistory = "View Workflow History";
+	$editTabGroupPermissions = "Folder Tab Access";
+	$editGroupPermissions = "Group Cabinet Permissions";
+	$recycleBin = "Recycle Bin";
+	$barcodeReconciliation = "Unprocessed Barcodes";
+	$barcodeHistory = "Processed Barcodes";
+	$odbcIntegration = "ODBC Integration";
+	$editDepLicenses = "Manage Department Licenses";
+	$reports = "Reports";
+	$personalInboxReports = "Personal Inbox";
+	$licenseUsageReport = "License Usage";
+	$document = "Document Type Functions";
+	$documentWizard = "Document Type Wizard";
+	$documentFilter = "Show/Hide Document Types";
+	$documentPermissions = "Document Type Permissions";
+	$inboxDelegation = "Inbox Delegation History";
+	$centeraSettings = "Centera Settings";
+	$fieldFormat = "Index Requirements";
+	$reqDocs = "Compliance";
+	$filesInMainTab = "Files In Main Tab";
+
+	$user->setSecurity();
+	//calculate if this user can do CD backup
+	$db_doc = getDbObject ('docutron');
+	$settings = new GblStt($user->db_name, $db_doc);
+	$tutorial = "Setup Help";
+
+	$usrSett = new Usrsettings($user->username,$user->db_name);
+
+	$seeReport = false;
+	if(false !== ($sett = $usrSett->get('versioningReportAccess'))) {
+		$seeReport = ($sett) ? true : false;	
+	} else {
+		$seeReport = ($settings->get('versioningReportAccess')) ? true : false;
+	}
+	$showFileInMainReport = $settings->get('disallowFileInMain');
+?>
+<head>
+	<title>Settings</title>
+	<link rel="stylesheet" type="text/css" href="../lib/style.css"/>
+	<script type="text/javascript" src="../lib/settings2.js"></script>
+	<script type="text/javascript" src="../lib/prototype.js"></script> 
+	<script type="text/javascript" src="../lib/windowTitle.js"></script>
+	<script type="text/javascript" src="leftAdmin.js"></script>
+	<script type="text/javascript" src="../energie/func.js"></script>
+	<style type="text/css">
+		body, html {
+			background-color: #003b6f;
+			overflow-x: hidden;
+			border: 0;
+		}
+	</style>
+</head>
+<body onload="registerEvents()">
+	<script type="text/javascript">
+		setTitle(1, "Settings");
+	</script>
+	<!-- ==== User Functions ==== -->
+	<div class="adminMenu">
+		<div class="adminMenuTitle">
+			<div class="arrowImg">
+				<img src="../images/down.gif" alt="" />
+			</div>
+			<?php echo $trans['User Functions'] ?>
+		</div>
+		<div class="adminMenuItems">
+			<?php if($user->isDepAdmin()): ?>
+				<div onclick="sendURL('userAccess.php')">
+					<?php echo $trans['Change Permissions'] ?>
+				</div>
+				<?php if(!check_enable('lite', $user->db_name)): ?>
+					<!-- removed - not used and functionality is flawed
+					<div onclick="sendURL('customizeHotlinks.php')">
+						<?php echo $trans['Customize Hotlinks'] ?>
+					</div>
+					-->
+					<div onclick="sendURL('NewAccount.php?guest=1')">
+						<?php echo $trans['Create Guest User'] ?>
+					</div>
+				<?php endif ?>
+			<?php endif; ?>
+			<?php if($user->isDepAdmin()): ?>
+				<div onclick="sendURL('NewAccount.php?guest=0')">
+					<?php echo $trans['Create New User'] ?>
+				</div>
+				<div onclick="sendURL('deleteUser.php')">
+					<?php echo $trans['Delete a User'] ?>
+				</div>
+				<div onclick="sendURL('../groups/editGroups.php?display=1')">
+					<?php echo $editGroups ?>
+				</div>
+				<div onclick="sendURL('editUserInfo.html')">
+					<?php echo $editEmail ?>
+				</div>
+				<div onclick="sendURL('passwordmgmt.php')">
+					<?php echo $trans['Manage Passwords'] ?>
+				</div>
+				<div onclick="sendURL('../secure/viewUserFilterSearch.php')">
+					Folder Access
+				</div>
+				<div onclick="sendURL('../secure/deleteUserCabinetFilter.php')">
+					Remove Access Restrictions
+				</div>
+			<?php else: ?>
+				<div onclick="sendURL('changePassword.php')">
+					<?php echo $trans['Change Password'] ?>
+				</div>
+			<?php endif; ?>
+			<?php if(!check_enable('lite', $user->db_name)): ?>
+				<!-- removed - not exposed in (new) Treeno V4
+				<div onclick="sendURL('manageBookmarks.php')">
+					<?php echo $trans['Manage Bookmarks'] ?>
+				</div>
+				-->
+			<?php endif ?>
+			<div onclick="sendURL('indexing.php')">
+				<?php echo $trans['Indexing'] ?>
+			</div>
+			<?php if($user->db_name == 'client_files808'): ?>
+				<div onclick="sendURL('../clientbots/lfworkflowrpt.php')">
+					Individual Workflow Report
+				</div>
+			<?php endif ?>
+			<?php if($user->isSuperUser()||($user->db_name == 'client_files935' && $user->isDepAdmin() )): ?>
+				<div onclick="sendURL('IP_Restrictions_UI.php')">
+					IP Restrictions
+				</div>
+			<?php endif ?>
+			<?php if($user->db_name == 'client_files638' ): ?>
+				<div onclick="sendURL('../clientbots/ASteelRPTFolderNoFilesUI.php')">
+					PO Folder without Files
+				</div>
+			<?php endif; ?>
+<!--			<div onclick="sendURL('searchSettings.php')">
+				<?php echo $trans['Search Settings'] ?>
+			</div>
+-->
+		</div>
+	</div>
+	
+	<!-- ====  Groups Menu ==== -->
+	<?php if($user->isDepAdmin()): ?>
+		<?php //Groups  ?>
+		<div class="adminMenu">
+
+			<div class="adminMenuTitle">
+				<div class="arrowImg">
+					<img src="../images/down.gif" alt="" />
+				</div>
+				<?php echo $groupFunctions ?>
+			</div>
+			<div class="adminMenuItems">
+				<div onclick="sendURL('../groups/createGroups.php')">
+					<?php echo $createGroups ?>
+				</div>
+				<div onclick="sendURL('../groups/editGroups.php')">
+					<?php echo $editGroups ?>
+				</div>
+				<div onclick="sendURL('../groups/createGroupAccess.php?display=1')">
+					<?php echo $editGroupPermissions ?>
+				</div>
+				<!-- removed - not exposed in (new) Treeno V4 
+				<div onclick="sendURL('editTabGroupPermissions.php')">
+					<?php echo $editTabGroupPermissions ?>
+				</div>
+				-->
+			</div>
+		</div>
+	<?php endif; ?>
+
+	<!-- ==== Cabinet Functions ==== -->
+	<?php if($user->isDepAdmin()): ?>
+		<div class="adminMenu">
+			<div class="adminMenuTitle">
+				<div class="arrowImg">
+					<img src="../images/down.gif" alt="" />
+				</div>
+				<?php echo $trans['Cabinet Functions'] ?>
+			</div>
+			<div class="adminMenuItems">
+				<div onclick="sendURL('newCabinet.php')">
+					<?php echo $trans['Create New Cabinet'] ?>
+				</div>
+				<!-- removed - not exposed in (new) Treeno V4
+				<?php if(!check_enable('lite', $user->db_name)): ?>
+					<div onclick="sendURL('tabHiding.php')">
+						Show/Hide Empty Tabs
+					</div>
+				<?php endif ?>
+				-->
+				<div onclick="sendURL('../groups/createGroupAccess.php')">
+					<?php echo $editGroupPermissions ?>
+				</div>
+				<?php if(!check_enable('lite', $user->db_name)): ?>
+					<div onclick="sendURL('fieldFormat.php')">
+						<?php echo $fieldFormat ?>
+					</div>
+				<?php endif ?>
+				<?php if($user->isSuperUser()): ?>
+				<div onclick="sendURL('../ICEImport/index-admin.php')">
+					Mass Import Cabinet Folders
+				</div>
+				<?php endif ?>
+				<div onclick="sendURL('editCabinet.php')">
+					<?php echo $trans['Edit Cabinet'] ?>
+				</div>
+				<!-- removed - not exposed in (new) Treeno V4
+				<div onclick="sendURL('addTabs.php')">
+					<?php echo $trans['Create Tabs'] ?>
+				</div>
+				-->
+				<div onclick="sendURL('cabinetAccess.php?default=def')">
+					<?php echo $trans['Cabinet Access'] ?>
+				</div>
+				<div onclick="sendURL('../energie/delcab.php')">
+				   <?php echo 'Delete Cabinet' ?>
+				</div>
+			<?php if(check_enable('import_crawler', $user->db_name)): ?> 
+				<div onclick="sendURL('../canada/crawlerViewer.php')">
+					<?php echo "Crawler" ?>
+				</div>
+			<?php endif; ?>
+			</div> 
+		</div>
+	<?php endif; ?>
+
+	<!-- ==== Publishing Functions ==== -->
+	<?php if($user->isDepAdmin() and check_enable('publishing', $user->db_name)): ?>
+	<div class="adminMenu">
+		<div class="adminMenuTitle">
+			<div class="arrowImg">
+				<img src="../images/down.gif" alt="" />
+			</div>
+			Publishing Functions
+		</div>
+		<div class="adminMenuItems">
+			<div onclick="sendURL('../publishing/viewAddPublishUser.php?new=1')">
+				Add External User
+			</div>
+			<div onclick="sendURL('../publishing/viewAddPublishUser.php')">
+				Edit External User
+			</div>
+			<div onclick="sendURL('../publishing/viewPublishSearch.php?type=search&new=1')">
+				Auto-Publishing
+			</div>
+			<div onclick="sendURL('../publishing/viewPublishSearch.php?new=1')">
+				Publish Workflow/Upload
+			</div>
+			<div onclick="sendURL('../publishing/viewManagePublishUser.php')">
+				Manage Accounts
+			</div>
+			<div onclick="sendURL('../publishing/viewPublishSearch.php?type=search')">
+				Manage Auto-Publishing
+			</div>
+			<div onclick="sendURL('../publishing/viewPublishSearch.php')">
+				Manage Published Workflow/Upload
+			</div>
+			<div onclick="sendURL('../publishing/viewManagePublishSearch.php')">
+				Remove Published Searches
+			</div>
+			<div onclick="sendURL('../publishing/setExpireTime.html')">
+				Set Publishing Expiration 
+			</div>
+			<div onclick="sendURL('../publishing/passwordmgmt.php')">
+				Manage Passwords 
+			</div>
+			<div onclick="sendURL('../documents/viewDocumentFilters.php?type=1')">
+				<?php echo $documentFilter; ?>
+			</div>
+		</div> 
+	</div>
+	<?php endif; ?>
+
+	<!-- ====  Documents Menu ==== -->
+	<?php if($user->isDepAdmin()): ?>
+	<div class="adminMenu">
+		<div class="adminMenuTitle">
+			<div class="arrowImg">
+				<img src="../images/down.gif" alt="" />
+			</div>
+			<?php echo $document; ?>
+		</div>
+		<div class="adminMenuItems">
+			<div onclick="sendURL('../documents/documentsWizard.php')">
+				<?php echo $documentWizard; ?>
+			</div>
+			<div onclick="sendURL('../documents/viewDocumentFilters.php')">
+				<?php echo $documentFilter; ?>
+			</div>
+			<div onclick="sendURL('../documents/viewDocumentPermissions.php')">
+				<?php echo $documentPermissions; ?>
+			</div>
+			<div onclick="sendURL('../documents/docTypeDefs.html')">
+				Index Drop-Downs
+			</div>
+			<?php if(!check_enable('lite', $user->db_name)): ?>
+				<div onclick="sendURL('../documents/documentFieldFormat.php')">
+					Index Requirements
+				</div>
+			<?php endif; ?>
+		</div>
+	</div>
+	<?php endif; ?>
+
+	<!-- ==== Manage Departments ==== -->
+	<?php if(check_enable('departments', $user->db_name)): ?>
+		<div class="adminMenu">
+			<div class="adminMenuTitle">
+				<div class="arrowImg">
+					<img src="../images/down.gif" alt="" />
+				</div>
+				<?php echo $manageDB ?>
+			</div>
+			<div class="adminMenuItems">
+				<div onclick="sendURL('../departments/defaultDB.php')">
+					<?php echo $defaultDB ?>
+				</div>
+				<?php if($user->isDepAdmin()): ?>
+					<div onclick="sendURL('../departments/manageNewFileDate.php')">
+						<?php echo $trans ['M']?>
+					</div>
+					<div onclick="sendURL('../departments/editDBName.php')">
+						<?php echo $editDep ?>
+					</div>
+				<?php endif; ?>
+				<?php if($user->isSuperUser()): ?>
+					<div onclick="sendURL('../departments/addDepartment.php')">
+						<?php echo $addDepartment ?>
+					</div>
+					<div onclick="sendURL('../departments/addDepartmentAdmin.php')">
+						<?php echo $addDepAdmin ?>
+					</div>
+					<div onclick="sendURL('../departments/changePermissions.php')">
+						<?php echo $DBpermissions ?>
+					</div>
+					<div onclick="sendURL('../departments/editDepInfo.php?depLicenses=1')">
+						<?php echo $editDepLicenses ?>
+					</div>
+					<div onclick="sendURL('../clientbots/files2BOCR.htm')">
+						Files To Be OCR'd
+					</div>
+				
+				<?php endif; ?>
+			</div>
+		</div>
+	<?php endif; ?>
+
+	<!-- ==== Workflow Settings ==== -->
+	<?php if($user->isDepAdmin()): ?>
+		<?php if(check_enable('workflow', $user->db_name)): ?>
+			<div class="adminMenu">
+				<div class="adminMenuTitle">
+					<div class="arrowImg">
+						<img src="../images/down.gif" alt="" />
+					</div>
+					<?php echo $workflow ?>
+				</div>
+				<div class="adminMenuItems">
+					<?php if($user->isDepAdmin()): ?>
+						<div onclick="sendURL('../workflow/createWorkflow.php?defsAction=addWF')">
+							<?php echo $createWorkflow ?>
+						</div>
+						<div onclick="sendURL('../workflow/createWorkflow.php?defsAction=editWF')">
+							<?php echo $editWorkflow ?>
+						</div>
+						<div onclick="sendURL('../workflow/viewWFHistory.php')">
+							<?php echo $viewWFHistory ?>
+						</div>
+					<?php endif; ?>
+				</div>
+			</div>
+		<?php endif; ?>
+	<?php endif; ?>
+
+	<!-- ==== System Information ==== -->
+	<div class="adminMenu">
+		<div class="adminMenuTitle">
+			<div class="arrowImg">
+				<img src="../images/down.gif" alt="" />
+			</div>
+			<?php echo $sysInfo ?>
+		</div>
+		<div class="adminMenuItems">
+			<?php if(!check_enable('lite', $user->db_name) && $user->isDepAdmin()): ?>
+				<div onclick="sendURL('../modules/modulesWeb.php')">
+					<?php echo $systemModules ?>
+				</div>
+			<?php endif; ?>
+			<div onclick="sendURL('../modules/fileInfo.php')">
+				<?php echo $fileInfo ?>
+			</div>
+			<div onclick="sendURL('../modules/userInfo.php')">
+				<?php echo $userInfo ?>
+			</div>
+			<?php if($user->isSuperUser() && !check_enable('lite', $user->db_name)): ?>
+				<!-- removed - not exposed in (new) Treeno V4
+				<div onclick="sendURL('uploadLogo.php')" >
+					Upload Logo
+				</div>
+				-->
+				<!--<div onclick="sendURL('editWhiteLabel.php')" >
+					Edit White Label
+				</div>-->
+			<?php endif; ?>
+			<?php if($user->isSuperUser()): ?>
+				<div onclick="sendURL('../secure/enterLicense.php')">
+					License Manager
+				</div>
+					<div onclick="sendURL('License_UI.php')">
+					Create or Manage Licenses
+				</div>
+			<?php endif ?>
+		</div>
+	</div>
+
+	<!-- ==== System Preferences ==== -->
+	<?php if($user->isDepAdmin()): ?>
+		<div class="adminMenu">
+			<div class="adminMenuTitle">
+				<div class="arrowImg">
+					<img src="../images/down.gif" alt="" />
+				</div>
+				<?php echo $trans['System Preferences'] ?>
+			</div>
+			<div class="adminMenuItems">
+				<?php if(!check_enable('lite', $user->db_name)): ?>
+					<!-- removed - not exposed in (new) Treeno V4
+					<div onclick="sendURL('viewingRestrictions.php')">
+						Viewing Restrictions
+					</div>
+					-->
+					<?php if($user->isSuperUser()): ?>
+						<div onclick="sendURL('changeLang.php')">
+							<?php echo $trans['Change Language'] ?>
+						</div>
+					<?php endif; ?>
+					<!-- removed - not exposed in (new) Treeno V4
+					<div onclick="sendURL('dateFunctions.php')" >
+						Date Functions
+					</div>
+					<div onclick="sendURL('../secure/editTabOrder.php')" >
+						Edit Tab Ordering
+					</div>
+					-->
+				<?php endif ?>
+				<div onclick="sendURL('systemSettings.php')">
+					Advanced Folder Settings
+				</div>
+				<div onclick="sendURL('globalSettings.php')">
+					Global Settings
+				</div>
+				<?php if($user->isSuperUser() && check_enable('Centera',$user->db_name)): ?>
+					<div onclick="sendURL('editCentera.php')">
+						<?php echo $centeraSettings; ?>
+					</div>
+				<?php endif; ?>
+				<div onclick="sendURL('defaultPage.html')">
+					Default Settings Page
+				</div>
+				<div onclick="sendURL('passwordSettingsDisp.php')">
+					Password Restrictions
+				</div>					
+				<?php if(isset($DEFS['USE_SECURE_PASSWORDS'])):?>
+				<div onclick="sendURL('dmsPasswordGen.php')">
+					<?php echo "Generate DMS Password"; ?>
+				</div>
+				<?php endif; ?>	
+				<?php if($user->isSuperUser()): ?>
+					<div onclick="sendURL('ldapConnector.html')">
+						LDAP Connector
+					</div>
+					<div onclick="sendURL('importUsers.html')">
+						User Import
+					</div>
+					<!-- removed - not exposed in (new) Treeno V4
+					<?php if(!check_enable('lite', $user->db_name)): ?>
+						<div onclick="sendURL('multiPageSettings.html')">
+							Multi-Page Settings
+						</div>
+					<?php endif; ?>
+					-->
+				<?php endif; ?>
+				<?php if($user->isDepAdmin()): ?>
+					<div onclick="sendURL('../secure/exportTreeno.php')">
+						<?php echo "Import/Export Department"; ?>
+					</div>
+				<?php endif; ?>
+				<?php if($user->isSuperUser()): ?>
+					<div onclick="sendURL('../departments/editDepInfo.php')">
+						<?php echo $editQuota ?>
+					</div>
+					<div onclick="sendURL('../departments/createQuota.php')">
+						<?php echo $createQuota ?>
+					</div>
+				<?php endif; ?>
+			</div>
+		</div>
+	<?php endif; ?>
+
+	<!-- ==== Recycle Bin ==== -->
+	<?php if($user->isDepAdmin()): ?>
+		<div class="adminMenu">
+			<div class="adminMenuTitle">
+				<div class="arrowImg">
+					<img src="../images/down.gif" alt="" />
+				</div>
+				<?php echo $recycleBin ?>
+			</div>
+			<div class="adminMenuItems">
+				<?php if($user->isDepAdmin()): ?>
+					<div onclick="sendURL('../delete/recycleBin.php')">
+						Cabinet Recycle Bin
+					</div>
+					<div onclick="sendURL('../secure/inboxRecyclebin.php')">
+						Inbox Recycle Bin
+					</div>
+				<?php endif; ?>
+			</div>
+		</div>
+	<?php endif; ?>
+
+	<!-- ==== Manage Barcodes ==== -->
+	<div class="adminMenu">
+		<div class="adminMenuTitle">
+			<div class="arrowImg">
+				<img src="../images/down.gif" alt="" />
+			</div>
+			<?php echo $manageBarcodes ?>
+		</div>
+		<div class="adminMenuItems">
+				<div onclick="sendURL('../barcode/getBarcodeHistory.php')">
+					<?php echo $barcodeHistory ?>
+				</div>
+			<div onclick="sendURL('../barcode/getBarcodeReconciliation.php')">
+				<?php echo $barcodeReconciliation ?>
+			</div>
+			<div onclick="sendURL('printUserBarcodes.php')">
+				<?php echo $printUserBarcodes ?>
+			</div>
+			<div onclick="sendURL('../secure/printWorkflowBarcodes.php')">
+				Print Workflow Barcodes
+			</div>
+			<?php if(!check_enable('lite', $user->db_name)): ?>
+				<div onclick="sendURL('../barcode/printAnyBarcode.php')">
+					Print Any Barcode
+				</div>
+			<?php endif ?>
+			<?php if($user->isDepAdmin()): ?>
+				<div onclick="sendURL('barcodeSettings.php')">
+					Barcode Settings
+				</div>
+			<?php endif ?>
+			<?php if($user->db_name == 'client_files934'): ?>
+				<div onclick="sendURL('../bcode934/index.php')">
+					Mass Print Contract Barcodes
+				</div>
+			<?php elseif($user->db_name == 'client_files980'): ?>
+				<div onclick="sendURL('../bcode980/index.html')">
+					Mass Print Assessor Barcodes
+				</div>
+			<?php elseif($user->db_name == 'client_files996'): ?>
+				<div onclick="sendURL('../bcode996/index.html')">
+					Mass Print Human Resources Barcodes
+				</div>
+			<?php elseif($user->db_name == 'client_files1004'): ?>
+				<div onclick="sendURL('../bcode1004/index.html')">
+					Mass Print Student Record Barcodes
+				</div>
+				<?php elseif($user->db_name == 'client_files1012'): ?>
+				<div onclick="sendURL('../bcode1012/index.html')">
+					Mass Print CCFP Barcodes
+				</div>
+			<?php elseif(is_dir("../".str_replace("client_files","bcode",$user->db_name))): ?>
+				<div onclick="sendURL('../<?php echo str_replace("client_files","bcode",$user->db_name); ?>/index.html')">
+					Mass Print Barcodes
+				</div>
+			<?php endif ?>
+		</div>
+	</div>
+
+	<!-- ==== Indexing Settings ==== -->
+	<?php if($user->isDepAdmin()): ?>
+		<div class="adminMenu">
+			<div class="adminMenuTitle">
+				<div class="arrowImg">
+					<img src="../images/down.gif" alt="" />
+				</div>
+				<?php echo $trans['Upload File'] ?>
+			</div>
+			<div class="adminMenuItems">
+				<?php if($user->isDepAdmin() && !check_enable('lite', $user->db_name)): ?>
+					<div onclick="sendURL('../secure/odbcWizard.php')">
+						ODBC Wizard
+					</div>
+					<div onclick="sendURL('odbcSetup.php')">
+						<?php echo $odbcIntegration ?>
+					</div>
+				<?php endif; ?>
+				<div onclick="sendURL('uploadIndexFile.php')">
+					<?php echo $trans['auto complete indexing'] ?>
+				</div>
+				<div onclick="sendURL('../auto_complete_indexing/viewAutoCompleteTable.php')">
+					<?php echo $viewAutoComplete ?>
+				</div>
+				<?php if(!check_enable('lite', $user->db_name)): ?>
+					<div onclick="sendURL('indexExtensions.php')">
+						<?php echo $trans['Index File Extensions'] ?>
+					</div>
+				<?php endif ?>
+				<div onclick="sendURL('indexTypeDef.php')">
+					<?php echo $trans['Indexing Type Definitions'] ?>
+				</div>
+				<?php if(!check_enable('lite', $user->db_name)): ?>
+					<div onclick="sendURL('folderCreationSettings.php')">
+						<?php echo "Duplicate Folder Notification" ?>
+					</div>
+					<!--<div onclick="sendURL('scrollIndex.php')">
+						<?php echo $trans['indexScroll'] ?>
+					</div>-->
+					<!-- removed - not exposed in (new) Treeno V4
+					<div onclick="sendURL('indexingOrdering.php')">
+						File Order
+					</div>
+					-->
+				<?php endif ?>
+			</div>
+		</div>
+	<?php endif; ?>
+
+	<!-- ==== Audit Menu ==== -->
+	<?php if($user->isDepAdmin() or $settings->get('allowSelfAudit')): ?>
+		<div class="adminMenu">
+			<div class="adminMenuTitle">
+				<div class="arrowImg">
+					<img src="../images/down.gif" alt="" />
+				</div>
+				<?php echo $trans['Audit'] ?>
+			</div>
+			<div class="adminMenuItems">
+				<div onclick="sendURL('../audit/auditSearch.php')">
+					<?php echo $trans['Audit Table'] ?>
+				</div>
+				<?php if($user->isDepAdmin()): ?>
+					<div onclick="sendURL('../audit/downloadAudit.php')">
+						<?php echo $trans['Download Audit Table'] ?>
+					</div>
+					<div onclick="sendURL('../audit/auditTruncateTable.php')">
+						<?php echo $trans['Truncated Backup'] ?>
+					</div>
+					<div onclick="sendURL('../audit/auditRestoreBackupTable.php')">
+						Download an Archive
+					</div>
+					<?php if(!check_enable('lite', $user->db_name)): ?>
+						<div onclick="sendURL('../audit/auditBackupTable.php')">
+							Archive Whole Table
+						</div>
+						<div onclick="sendURL('../delegation/viewDelegationHistory.php')">
+							<?php echo $inboxDelegation ?>
+						</div>
+					<?php endif ?>
+				<?php endif; ?>
+			</div>
+		</div>
+	<?php endif; ?>
+
+	<!-- ==== Reports ==== -->
+<!-- not sure why the $seeReport    <?php /*if($user->isDepAdmin() || $seeReport): */?> -->
+    <?php if($user->isDepAdmin() or $user->db_name == 'client_files632' or $user->db_name == 'client_files1012'or $user->username == 'austint' or $user->username == 'wigginsm' or $user->username == 'trojnorl' or $user->username == 'gordang' or $user->username == 'melvinm'): ?>
+		<div class="adminMenu">
+			<div class="adminMenuTitle">
+				<div class="arrowImg">
+					<img src="../images/down.gif" alt="" />
+				</div>
+				<?php echo $reports ?>
+			</div>
+			<div class="adminMenuItems">
+			
+					<?php if($user->db_name == 'client_files1038' ): ?>
+						<div onclick="sendURL('..\\clientbots\\1038discrepancyReport.php')">
+							Invoice Discrepency Report
+						</div>
+					<?php endif; ?>
+					<?php if($user->isDepAdmin() && $user->db_name == 'client_files1012' ): ?>
+						<div onclick="sendURL('..\\clientbots\\report-new.php')">
+							CCFP Workflow Reports
+						</div>
+					<?php endif; ?>
+					<?php if($user->db_name == 'client_files940' ): ?>
+						<div onclick="sendURL('../clientbots/cf940mergeMembersUI.htm')">
+							Generate and Email Membership Forms
+						</div>
+					<?php endif; ?>
+					<?php if($user->db_name == 'client_files632'): ?>
+						<div onclick="sendURL('../reports/CheckList.php')">
+							Checklist Report
+						</div>
+					<?php endif; ?>
+					<?php if($user->db_name == 'client_files928'): ?>
+						<div onclick="sendURL('../reports/ASCA Updates.php')">
+							PDF Form Updates Report
+						</div>
+					<?php endif; ?>
+				<?php if($user->isDepAdmin() or $user->db_name == 'client_files682'): ?>
+					<div onclick="sendURL('../reports/userInboxReports.php')">
+						<?php echo $personalInboxReports ?>
+					</div>
+					<div onclick="sendURL('../reports/userInboxReports2.php')">
+						Advanced Inbox Report
+					</div>
+					<?php if(!check_enable('lite', $user->db_name)): ?>
+						<div onclick="sendURL('../reports/licenseReport.php')">
+							<?php echo $licenseUsageReport ?>
+						</div>
+						<?php if($user->db_name == 'client_files682'): ?>
+							<div onclick="sendURL('../clientbots/workflowReportCRT.php')">
+								Average Time to Process Node by User
+							</div>
+						<?php endif; ?>
+						<div onclick="sendURL('../reports/workflowReport1.php')">
+							<?php echo $workflowReport1 ?>
+						</div>
+						<div onclick="sendURL('../reports/workflowReport2.php')">
+							<?php echo $workflowReport2 ?>
+						</div>
+						<div onclick="sendURL('../reports/workflowReport3.php')">
+							<?php echo $workflowReport3 ?>
+						</div>
+						<div onclick="sendURL('../reports/workflowReport4.php')">
+							<?php echo $workflowReport4 ?>
+						</div>
+						<div onclick="sendURL('../reports/workflowReport5.php')">
+							Folders Without Workflow
+						</div>
+						<div onclick="sendURL('../reports/barcodeReport.php')">
+							<?php echo $barcodeReport ?>
+						</div>
+						<div onclick="sendURL('../reports/versioningReport.php')">
+							<?php echo $versioningReport ?>
+						</div>
+						<?php if($showFileInMainReport): ?>
+							<div onclick="sendURL('../reports/filesInMainTab.php')">
+								<?php echo $filesInMainTab ?>
+							</div>
+						<?php endif; ?>
+
+						<div onclick="sendURL('../reports/miAuditReportView.php')">
+							<?php echo "Batch Routed Audit Report" ?>
+						</div>
+						<?php $en = getTableInfo($db_doc, 'modules', array('enabled'),
+												array('arb_name' => $reqDocs,
+													'department' => $user->db_name),
+												'queryOne'); ?>
+						<!-- We only skip the display of Compliance reporting IF it is disabled.
+							 We purposely allow it if not registered as a licensed module -->
+						<?php if($en == "1"): ?>
+							<div onclick="sendURL('../reports/complianceReport.php')">
+								<?php echo $reqDocs ?>
+							</div>
+							<?php if($user->db_name == 'client_files'): ?>
+								<div onclick="sendURL('../reports/OXcomplianceReport.php')">
+									<?php echo "New Compliance" ?>
+								</div>
+							<?php endif; ?>
+						<?php endif; ?>
+					<?php endif ?>
+				<?php endif; ?>
+				<?php if($user->isSuperUser()): ?>
+					<div onclick="sendURL('../tools/usercabReport.php')">
+						<?php echo "User Cabinet Rights Report" ?>
+					</div>
+					<div onclick="sendURL('../reports/userDepCabAccessReport.php')">
+						<?php echo "User Access to Cabinets and Departments Report" ?>
+					</div>
+					<div onclick="sendURL('../reports/userLastLoginReport.php')">
+						<?php echo "User Last Login Report" ?>
+					</div>
+					<div onclick="sendURL('../reports/userGroupDepAccessReport.php')">
+						<?php echo "Group Memberships per User, per Department Report" ?>
+					</div>
+				<?php endif; ?>
+			</div>
+		</div>
+    <?php endif; ?>
+
+	<!-- ==== Backup ==== -->
+	<?php if(check_enable('CD_Backup', $user->db_name) and
+		($settings->get('userBackup') or
+			$user->isDepAdmin())):
+	?>
+		<?php if(check_enable('CD_Backup', $user->db_name) ): ?>
+			<div class="adminMenu">
+				<div class="adminMenuTitle">
+					<div class="arrowImg">
+						<img src="../images/down.gif" alt="" />
+					</div>
+					<?php echo $trans['Backup'] ?>
+				</div>
+				<div class="adminMenuItems">
+						<div onclick="sendURL('../CDBackup/backupCabinet.php')">
+							System Backup
+						</div>
+					<?php //endif; ?>
+					<?php if($user->isDepAdmin()): ?>
+						<div onclick="sendURL('backupMedia.php')">
+							<?php echo $trans['Backup Media Settings'] ?>
+						</div>
+						<div onclick="sendURL('cdBackupPermissions.php')">
+							System Backup Permissions
+						</div>
+					<?php endif; ?>
+				</div>
+			</div>
+		<?php endif; ?>
+	<?php endif; ?>
+
+	<!-- ==== Docutron Tutorial ==== -->
+	<div class="adminMenu">
+		<div
+			class="adminMenuTitle"
+			onclick="sendURL('../tutorial/tutorial.php')"
+		>
+			<div class="arrowImg">
+				<img src="../images/down.gif" alt="" />
+			</div>
+			<?php echo $tutorial; ?>
+		</div>
+	</div>
+</body>
+
+<?php
+	setSessionUser($user); 
+} else {
+?>
+<head>
+	<title>Logout</title>
+</head>
+<body>
+	<script type="text/javascript">
+		document.onload = top.window.location = "../logout.php";
+	</script>
+</body>
+<?php
+}
+?>
+</html>

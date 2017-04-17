@@ -1,0 +1,4 @@
+AuthType Digest
+AuthDigestFile /var/www/html/authupload/.htdigest
+AuthName docutron 
+Require user upload

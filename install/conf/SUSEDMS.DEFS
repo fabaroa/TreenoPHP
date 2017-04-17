@@ -1,0 +1,15 @@
+# DOCUTRON MANAGEMENT SOFTWARE
+# DEFINITIONS FILE
+#DOC_DIR is the place where apaches document root points to
+#and your main index.php
+DOC_DIR = /opt/docutron/htdocs
+#DATA_DIR is the place where client_files,client_files0 should be
+DATA_DIR=/var/opt/docutron
+#TMP_DIR is for temp files that are to be deleted later
+TMP_DIR=/tmp
+#
+#REMOTE_IP is for remote ODBC connection with sagitta
+#REMOTE_IP=192.168.1.11
+#
+#LOCAL_IP is a quick way to get the localhosts IP address if it doesn't change
+#LOCAL_IP=192.168.1.120
